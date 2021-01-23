@@ -14,16 +14,17 @@ const userSchema = new Schema({
         minlength: 3 // At least 3 chars for usernames.
     },
     // password ??
-
-    // When did this  user joined Geek.txt
-    date_joined : {
-        type: Date,
-        required: true
+    username: {
+        // Validations for username.
+        type: String,
+        required: true,
+        trim: true,
+        minlength: 5 // At least 5 chars for passwords.
     },
     // More stuff ??
     
 },  {
-    // Create a timestamps for latest creation or modification of document.
+    // Create a timestamps for the creation and modification of document.
     timestamps: true,
 });
 
