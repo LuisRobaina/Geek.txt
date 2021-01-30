@@ -1,0 +1,2699 @@
+{
+    "kind": "books#volumes",
+    "totalItems": 30,
+    "items": [
+        {
+            "kind": "books#volume",
+            "id": "aw7CKaaZQmUC",
+            "etag": "T/SRITLXWz0",
+            "selfLink": "https://www.googleapis.com/books/v1/volumes/aw7CKaaZQmUC",
+            "volumeInfo": {
+                "title": "Shadow Dragons",
+                "authors": [
+                    "James A. Owen"
+                ],
+                "publisher": "Simon and Schuster",
+                "publishedDate": "2010-04-29",
+                "description": "The Caretakers of the Imaginarium Geographica are at war. The last stones from the Keep of Time are falling, and, at the request of an old enemy, a new tower is being built in our world. The old enemy is the Winter King's Shadow, and he wields a ...",
+                "industryIdentifiers": [
+                    {
+                        "type": "ISBN_13",
+                        "identifier": "9780857070326"
+                    },
+                    {
+                        "type": "ISBN_10",
+                        "identifier": "0857070320"
+                    }
+                ],
+                "readingModes": {
+                    "text": true,
+                    "image": false
+                },
+                "pageCount": 432,
+                "printType": "BOOK",
+                "categories": [
+                    "Juvenile Fiction"
+                ],
+                "averageRating": 3.5,
+                "ratingsCount": 5,
+                "maturityRating": "NOT_MATURE",
+                "allowAnonLogging": false,
+                "contentVersion": "0.1.1.0.preview.2",
+                "panelizationSummary": {
+                    "containsEpubBubbles": false,
+                    "containsImageBubbles": false
+                },
+                "imageLinks": {
+                    "smallThumbnail": "http://books.google.com/books/content?id=aw7CKaaZQmUC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                    "thumbnail": "http://books.google.com/books/content?id=aw7CKaaZQmUC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+                },
+                "previewLink": "http://books.google.com/books?id=aw7CKaaZQmUC&printsec=frontcover&hl=&source=gbs_api",
+                "infoLink": "http://books.google.com/books?id=aw7CKaaZQmUC&hl=&source=gbs_api",
+                "canonicalVolumeLink": "https://books.google.com/books/about/Shadow_Dragons.html?hl=&id=aw7CKaaZQmUC"
+            },
+            "layerInfo": {
+                "layers": [
+                    {
+                        "layerId": "geo",
+                        "volumeAnnotationsVersion": "4"
+                    }
+                ]
+            },
+            "saleInfo": {
+                "country": "US",
+                "saleability": "NOT_FOR_SALE",
+                "isEbook": false
+            },
+            "accessInfo": {
+                "country": "US",
+                "viewability": "PARTIAL",
+                "embeddable": true,
+                "publicDomain": false,
+                "textToSpeechPermission": "ALLOWED_FOR_ACCESSIBILITY",
+                "epub": {
+                    "isAvailable": true,
+                    "acsTokenLink": "http://books.google.com/books/download/Shadow_Dragons-sample-epub.acsm?id=aw7CKaaZQmUC&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+                },
+                "pdf": {
+                    "isAvailable": false
+                },
+                "webReaderLink": "http://play.google.com/books/reader?id=aw7CKaaZQmUC&hl=&printsec=frontcover&source=gbs_api",
+                "accessViewStatus": "SAMPLE",
+                "quoteSharingAllowed": false
+            }
+        },
+        {
+            "kind": "books#volume",
+            "id": "gopywZ97mfUC",
+            "etag": "ptX+qfJAs1o",
+            "selfLink": "https://www.googleapis.com/books/v1/volumes/gopywZ97mfUC",
+            "volumeInfo": {
+                "title": "The Financial Lives of the Poets",
+                "authors": [
+                    "Jess Walter"
+                ],
+                "publisher": "Harper Collins",
+                "publishedDate": "2009-09-22",
+                "description": "Matt Prior is losing his job, his wife, and his house, and he's about to lose his mind—until he discovers a way that he might just possibly be able to save it all ... and have a pretty damn great time doing it, in a comic and heartfelt novel ...",
+                "industryIdentifiers": [
+                    {
+                        "type": "ISBN_13",
+                        "identifier": "9780061916045"
+                    },
+                    {
+                        "type": "ISBN_10",
+                        "identifier": "0061916048"
+                    }
+                ],
+                "readingModes": {
+                    "text": true,
+                    "image": false
+                },
+                "pageCount": 290,
+                "printType": "BOOK",
+                "categories": [
+                    "Fiction"
+                ],
+                "averageRating": 3.5,
+                "ratingsCount": 60,
+                "maturityRating": "NOT_MATURE",
+                "allowAnonLogging": true,
+                "contentVersion": "0.3.3.0.preview.2",
+                "imageLinks": {
+                    "smallThumbnail": "http://books.google.com/books/content?id=gopywZ97mfUC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                    "thumbnail": "http://books.google.com/books/content?id=gopywZ97mfUC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+                },
+                "previewLink": "http://books.google.com/books?id=gopywZ97mfUC&printsec=frontcover&hl=&source=gbs_api",
+                "infoLink": "http://books.google.com/books?id=gopywZ97mfUC&hl=&source=gbs_api",
+                "canonicalVolumeLink": "https://books.google.com/books/about/The_Financial_Lives_of_the_Poets.html?hl=&id=gopywZ97mfUC"
+            },
+            "layerInfo": {
+                "layers": [
+                    {
+                        "layerId": "geo",
+                        "volumeAnnotationsVersion": "4"
+                    }
+                ]
+            },
+            "saleInfo": {
+                "country": "US",
+                "saleability": "NOT_FOR_SALE",
+                "isEbook": false
+            },
+            "accessInfo": {
+                "country": "US",
+                "viewability": "PARTIAL",
+                "embeddable": true,
+                "publicDomain": false,
+                "textToSpeechPermission": "ALLOWED_FOR_ACCESSIBILITY",
+                "epub": {
+                    "isAvailable": true,
+                    "acsTokenLink": "http://books.google.com/books/download/The_Financial_Lives_of_the_Poets-sample-epub.acsm?id=gopywZ97mfUC&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+                },
+                "pdf": {
+                    "isAvailable": false
+                },
+                "webReaderLink": "http://play.google.com/books/reader?id=gopywZ97mfUC&hl=&printsec=frontcover&source=gbs_api",
+                "accessViewStatus": "SAMPLE",
+                "quoteSharingAllowed": false
+            }
+        },
+        {
+            "kind": "books#volume",
+            "id": "DiXIDwAAQBAJ",
+            "etag": "+RBOoum4hpY",
+            "selfLink": "https://www.googleapis.com/books/v1/volumes/DiXIDwAAQBAJ",
+            "volumeInfo": {
+                "title": "The Cold Millions",
+                "subtitle": "A Novel",
+                "authors": [
+                    "Jess Walter"
+                ],
+                "publisher": "HarperCollins",
+                "publishedDate": "2020-10-27",
+                "description": "“One of the most captivating novels of the year.” – Washington Post NATIONAL BESTSELLER A Best Book of the Year: Bloomberg | Boston Globe | Chicago Public Library | Chicago Tribune | Esquire | Kirkus | New York Public Library | New York Times ...",
+                "industryIdentifiers": [
+                    {
+                        "type": "ISBN_13",
+                        "identifier": "9780062868107"
+                    },
+                    {
+                        "type": "ISBN_10",
+                        "identifier": "0062868101"
+                    }
+                ],
+                "readingModes": {
+                    "text": true,
+                    "image": false
+                },
+                "pageCount": 352,
+                "printType": "BOOK",
+                "categories": [
+                    "Fiction"
+                ],
+                "maturityRating": "NOT_MATURE",
+                "allowAnonLogging": true,
+                "contentVersion": "1.6.5.0.preview.2",
+                "panelizationSummary": {
+                    "containsEpubBubbles": false,
+                    "containsImageBubbles": false
+                },
+                "imageLinks": {
+                    "smallThumbnail": "http://books.google.com/books/content?id=DiXIDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                    "thumbnail": "http://books.google.com/books/content?id=DiXIDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+                },
+                "previewLink": "http://books.google.com/books?id=DiXIDwAAQBAJ&printsec=frontcover&hl=&source=gbs_api",
+                "infoLink": "https://play.google.com/store/books/details?id=DiXIDwAAQBAJ&source=gbs_api",
+                "canonicalVolumeLink": "https://play.google.com/store/books/details?id=DiXIDwAAQBAJ"
+            },
+            "layerInfo": {
+                "layers": [
+                    {
+                        "layerId": "geo",
+                        "volumeAnnotationsVersion": "6"
+                    }
+                ]
+            },
+            "saleInfo": {
+                "country": "US",
+                "saleability": "FOR_SALE",
+                "isEbook": true,
+                "listPrice": {
+                    "amount": 14.99,
+                    "currencyCode": "USD"
+                },
+                "retailPrice": {
+                    "amount": 14.99,
+                    "currencyCode": "USD"
+                },
+                "buyLink": "https://play.google.com/store/books/details?id=DiXIDwAAQBAJ&rdid=book-DiXIDwAAQBAJ&rdot=1&source=gbs_api",
+                "offers": [
+                    {
+                        "finskyOfferType": 1,
+                        "listPrice": {
+                            "amountInMicros": 14990000,
+                            "currencyCode": "USD"
+                        },
+                        "retailPrice": {
+                            "amountInMicros": 14990000,
+                            "currencyCode": "USD"
+                        },
+                        "giftable": true
+                    }
+                ]
+            },
+            "accessInfo": {
+                "country": "US",
+                "viewability": "PARTIAL",
+                "embeddable": true,
+                "publicDomain": false,
+                "textToSpeechPermission": "ALLOWED_FOR_ACCESSIBILITY",
+                "epub": {
+                    "isAvailable": true,
+                    "acsTokenLink": "http://books.google.com/books/download/The_Cold_Millions-sample-epub.acsm?id=DiXIDwAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+                },
+                "pdf": {
+                    "isAvailable": false
+                },
+                "webReaderLink": "http://play.google.com/books/reader?id=DiXIDwAAQBAJ&hl=&printsec=frontcover&source=gbs_api",
+                "accessViewStatus": "SAMPLE",
+                "quoteSharingAllowed": false
+            }
+        },
+        {
+            "kind": "books#volume",
+            "id": "JJqEbvqo0ZgC",
+            "etag": "MXF6t6wVnqU",
+            "selfLink": "https://www.googleapis.com/books/v1/volumes/JJqEbvqo0ZgC",
+            "volumeInfo": {
+                "title": "Revelation",
+                "publisher": "Canongate Books",
+                "publishedDate": "1999-01-01",
+                "description": "The final book of the Bible, Revelation prophesies the ultimate judgement of mankind in a series of allegorical visions, grisly images and numerological predictions. According to these, empires will fall, the \"Beast\" will be destroyed and Christ ...",
+                "industryIdentifiers": [
+                    {
+                        "type": "ISBN_13",
+                        "identifier": "9780857861016"
+                    },
+                    {
+                        "type": "ISBN_10",
+                        "identifier": "0857861018"
+                    }
+                ],
+                "readingModes": {
+                    "text": true,
+                    "image": true
+                },
+                "pageCount": 64,
+                "printType": "BOOK",
+                "categories": [
+                    "Bibles"
+                ],
+                "averageRating": 5,
+                "ratingsCount": 1,
+                "maturityRating": "NOT_MATURE",
+                "allowAnonLogging": true,
+                "contentVersion": "2.8.7.0.preview.3",
+                "panelizationSummary": {
+                    "containsEpubBubbles": false,
+                    "containsImageBubbles": false
+                },
+                "imageLinks": {
+                    "smallThumbnail": "http://books.google.com/books/content?id=JJqEbvqo0ZgC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                    "thumbnail": "http://books.google.com/books/content?id=JJqEbvqo0ZgC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+                },
+                "previewLink": "http://books.google.com/books?id=JJqEbvqo0ZgC&printsec=frontcover&hl=&source=gbs_api",
+                "infoLink": "http://books.google.com/books?id=JJqEbvqo0ZgC&hl=&source=gbs_api",
+                "canonicalVolumeLink": "https://books.google.com/books/about/Revelation.html?hl=&id=JJqEbvqo0ZgC"
+            },
+            "layerInfo": {
+                "layers": [
+                    {
+                        "layerId": "geo",
+                        "volumeAnnotationsVersion": "9"
+                    }
+                ]
+            },
+            "saleInfo": {
+                "country": "US",
+                "saleability": "NOT_FOR_SALE",
+                "isEbook": false
+            },
+            "accessInfo": {
+                "country": "US",
+                "viewability": "PARTIAL",
+                "embeddable": true,
+                "publicDomain": false,
+                "textToSpeechPermission": "ALLOWED",
+                "epub": {
+                    "isAvailable": true,
+                    "acsTokenLink": "http://books.google.com/books/download/Revelation-sample-epub.acsm?id=JJqEbvqo0ZgC&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+                },
+                "pdf": {
+                    "isAvailable": true,
+                    "acsTokenLink": "http://books.google.com/books/download/Revelation-sample-pdf.acsm?id=JJqEbvqo0ZgC&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+                },
+                "webReaderLink": "http://play.google.com/books/reader?id=JJqEbvqo0ZgC&hl=&printsec=frontcover&source=gbs_api",
+                "accessViewStatus": "SAMPLE",
+                "quoteSharingAllowed": false
+            }
+        },
+        {
+            "kind": "books#volume",
+            "id": "t_xtDwAAQBAJ",
+            "etag": "2IUh6teNMBs",
+            "selfLink": "https://www.googleapis.com/books/v1/volumes/t_xtDwAAQBAJ",
+            "volumeInfo": {
+                "title": "The Witch Elm",
+                "subtitle": "A Novel",
+                "authors": [
+                    "Tana French"
+                ],
+                "publisher": "Viking",
+                "publishedDate": "2018-10-09",
+                "description": "\"Toby is a happy-go-lucky charmer who's dodged a scrape at work and is celebrating with friends when the night takes a turn that will change his life - he surprises two burglars who beat him and leave him for dead. Struggling to recover from his ...",
+                "industryIdentifiers": [
+                    {
+                        "type": "ISBN_13",
+                        "identifier": "9780735224629"
+                    },
+                    {
+                        "type": "ISBN_10",
+                        "identifier": "0735224625"
+                    }
+                ],
+                "readingModes": {
+                    "text": false,
+                    "image": false
+                },
+                "pageCount": 528,
+                "printType": "BOOK",
+                "categories": [
+                    "FICTION"
+                ],
+                "maturityRating": "NOT_MATURE",
+                "allowAnonLogging": false,
+                "contentVersion": "0.1.0.0.preview.0",
+                "panelizationSummary": {
+                    "containsEpubBubbles": false,
+                    "containsImageBubbles": false
+                },
+                "imageLinks": {
+                    "smallThumbnail": "http://books.google.com/books/content?id=t_xtDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                    "thumbnail": "http://books.google.com/books/content?id=t_xtDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+                },
+                "previewLink": "http://books.google.com/books?id=t_xtDwAAQBAJ&printsec=frontcover&hl=&source=gbs_api",
+                "infoLink": "http://books.google.com/books?id=t_xtDwAAQBAJ&hl=&source=gbs_api",
+                "canonicalVolumeLink": "https://books.google.com/books/about/The_Witch_Elm.html?hl=&id=t_xtDwAAQBAJ"
+            },
+            "saleInfo": {
+                "country": "US",
+                "saleability": "NOT_FOR_SALE",
+                "isEbook": false
+            },
+            "accessInfo": {
+                "country": "US",
+                "viewability": "PARTIAL",
+                "embeddable": true,
+                "publicDomain": false,
+                "textToSpeechPermission": "ALLOWED_FOR_ACCESSIBILITY",
+                "epub": {
+                    "isAvailable": false
+                },
+                "pdf": {
+                    "isAvailable": false
+                },
+                "webReaderLink": "http://play.google.com/books/reader?id=t_xtDwAAQBAJ&hl=&printsec=frontcover&source=gbs_api",
+                "accessViewStatus": "SAMPLE",
+                "quoteSharingAllowed": false
+            }
+        },
+        {
+            "kind": "books#volume",
+            "id": "MA78DwAAQBAJ",
+            "etag": "pAu9we5KRJo",
+            "selfLink": "https://www.googleapis.com/books/v1/volumes/MA78DwAAQBAJ",
+            "volumeInfo": {
+                "title": "The Searcher",
+                "authors": [
+                    "Tana French"
+                ],
+                "publisher": "Viking",
+                "publishedDate": "2020-10-06",
+                "description": "A spellbinding, propulsive new novel from the bestselling mystery writer who \"is in a class by herself.\" (The New York Times) Cal Hooper thought a fixer-upper in a bucolic Irish village would be the perfect escape. After twenty-five years in the ...",
+                "industryIdentifiers": [
+                    {
+                        "type": "ISBN_13",
+                        "identifier": "9780735224650"
+                    },
+                    {
+                        "type": "ISBN_10",
+                        "identifier": "073522465X"
+                    }
+                ],
+                "readingModes": {
+                    "text": false,
+                    "image": false
+                },
+                "pageCount": 464,
+                "printType": "BOOK",
+                "categories": [
+                    "Fiction"
+                ],
+                "maturityRating": "NOT_MATURE",
+                "allowAnonLogging": false,
+                "contentVersion": "preview-1.0.0",
+                "panelizationSummary": {
+                    "containsEpubBubbles": false,
+                    "containsImageBubbles": false
+                },
+                "imageLinks": {
+                    "smallThumbnail": "http://books.google.com/books/content?id=MA78DwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                    "thumbnail": "http://books.google.com/books/content?id=MA78DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+                },
+                "previewLink": "http://books.google.com/books?id=MA78DwAAQBAJ&printsec=frontcover&hl=&source=gbs_api",
+                "infoLink": "http://books.google.com/books?id=MA78DwAAQBAJ&hl=&source=gbs_api",
+                "canonicalVolumeLink": "https://books.google.com/books/about/The_Searcher.html?hl=&id=MA78DwAAQBAJ"
+            },
+            "saleInfo": {
+                "country": "US",
+                "saleability": "NOT_FOR_SALE",
+                "isEbook": false
+            },
+            "accessInfo": {
+                "country": "US",
+                "viewability": "PARTIAL",
+                "embeddable": true,
+                "publicDomain": false,
+                "textToSpeechPermission": "ALLOWED_FOR_ACCESSIBILITY",
+                "epub": {
+                    "isAvailable": false
+                },
+                "pdf": {
+                    "isAvailable": false
+                },
+                "webReaderLink": "http://play.google.com/books/reader?id=MA78DwAAQBAJ&hl=&printsec=frontcover&source=gbs_api",
+                "accessViewStatus": "SAMPLE",
+                "quoteSharingAllowed": false
+            }
+        },
+        {
+            "kind": "books#volume",
+            "id": "N9uJCwAAQBAJ",
+            "etag": "ozFVRvEDkng",
+            "selfLink": "https://www.googleapis.com/books/v1/volumes/N9uJCwAAQBAJ",
+            "volumeInfo": {
+                "title": "Building Tools with GitHub",
+                "subtitle": "Customize Your Workflow",
+                "authors": [
+                    "Chris Dawson",
+                    "Ben Straub"
+                ],
+                "publisher": "\"O'Reilly Media, Inc.\"",
+                "publishedDate": "2016-02-08",
+                "description": "For your next project on GitHub, take advantage of the service’s powerful API to meet your unique development requirements. This practical guide shows you how to build your own software tools for customizing the GitHub workflow. Each hands-on ...",
+                "industryIdentifiers": [
+                    {
+                        "type": "ISBN_13",
+                        "identifier": "9781491933459"
+                    },
+                    {
+                        "type": "ISBN_10",
+                        "identifier": "1491933453"
+                    }
+                ],
+                "readingModes": {
+                    "text": true,
+                    "image": true
+                },
+                "pageCount": 302,
+                "printType": "BOOK",
+                "categories": [
+                    "Computers"
+                ],
+                "maturityRating": "NOT_MATURE",
+                "allowAnonLogging": false,
+                "contentVersion": "1.4.5.0.preview.3",
+                "panelizationSummary": {
+                    "containsEpubBubbles": false,
+                    "containsImageBubbles": false
+                },
+                "imageLinks": {
+                    "smallThumbnail": "http://books.google.com/books/content?id=N9uJCwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                    "thumbnail": "http://books.google.com/books/content?id=N9uJCwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+                },
+                "previewLink": "http://books.google.com/books?id=N9uJCwAAQBAJ&printsec=frontcover&hl=&source=gbs_api",
+                "infoLink": "https://play.google.com/store/books/details?id=N9uJCwAAQBAJ&source=gbs_api",
+                "canonicalVolumeLink": "https://play.google.com/store/books/details?id=N9uJCwAAQBAJ"
+            },
+            "layerInfo": {
+                "layers": [
+                    {
+                        "layerId": "geo",
+                        "volumeAnnotationsVersion": "7"
+                    }
+                ]
+            },
+            "saleInfo": {
+                "country": "US",
+                "saleability": "FOR_SALE",
+                "isEbook": true,
+                "listPrice": {
+                    "amount": 33.99,
+                    "currencyCode": "USD"
+                },
+                "retailPrice": {
+                    "amount": 18.35,
+                    "currencyCode": "USD"
+                },
+                "buyLink": "https://play.google.com/store/books/details?id=N9uJCwAAQBAJ&rdid=book-N9uJCwAAQBAJ&rdot=1&source=gbs_api",
+                "offers": [
+                    {
+                        "finskyOfferType": 1,
+                        "listPrice": {
+                            "amountInMicros": 33990000,
+                            "currencyCode": "USD"
+                        },
+                        "retailPrice": {
+                            "amountInMicros": 18350000,
+                            "currencyCode": "USD"
+                        },
+                        "giftable": true
+                    }
+                ]
+            },
+            "accessInfo": {
+                "country": "US",
+                "viewability": "PARTIAL",
+                "embeddable": true,
+                "publicDomain": false,
+                "textToSpeechPermission": "ALLOWED",
+                "epub": {
+                    "isAvailable": true
+                },
+                "pdf": {
+                    "isAvailable": true
+                },
+                "webReaderLink": "http://play.google.com/books/reader?id=N9uJCwAAQBAJ&hl=&printsec=frontcover&source=gbs_api",
+                "accessViewStatus": "SAMPLE",
+                "quoteSharingAllowed": false
+            }
+        },
+        {
+            "kind": "books#volume",
+            "id": "HrTOa8-HPRYC",
+            "etag": "zx1pUcuBlDc",
+            "selfLink": "https://www.googleapis.com/books/v1/volumes/HrTOa8-HPRYC",
+            "volumeInfo": {
+                "title": "Pro Git",
+                "authors": [
+                    "Scott Chacon"
+                ],
+                "publisher": "Apress",
+                "publishedDate": "2009-10-06",
+                "description": "Git is the version control system developed by Linus Torvalds for Linux kernel development. It took the open source world by storm since its inception in 2005, and is used by small development shops and giants like Google, Red Hat, and IBM, and ...",
+                "industryIdentifiers": [
+                    {
+                        "type": "ISBN_13",
+                        "identifier": "9781430218340"
+                    },
+                    {
+                        "type": "ISBN_10",
+                        "identifier": "1430218347"
+                    }
+                ],
+                "readingModes": {
+                    "text": true,
+                    "image": true
+                },
+                "pageCount": 288,
+                "printType": "BOOK",
+                "categories": [
+                    "Computers"
+                ],
+                "averageRating": 4,
+                "ratingsCount": 4,
+                "maturityRating": "NOT_MATURE",
+                "allowAnonLogging": true,
+                "contentVersion": "1.5.4.0.preview.3",
+                "panelizationSummary": {
+                    "containsEpubBubbles": false,
+                    "containsImageBubbles": false
+                },
+                "imageLinks": {
+                    "smallThumbnail": "http://books.google.com/books/content?id=HrTOa8-HPRYC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                    "thumbnail": "http://books.google.com/books/content?id=HrTOa8-HPRYC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+                },
+                "previewLink": "http://books.google.com/books?id=HrTOa8-HPRYC&printsec=frontcover&hl=&source=gbs_api",
+                "infoLink": "https://play.google.com/store/books/details?id=HrTOa8-HPRYC&source=gbs_api",
+                "canonicalVolumeLink": "https://play.google.com/store/books/details?id=HrTOa8-HPRYC"
+            },
+            "layerInfo": {
+                "layers": [
+                    {
+                        "layerId": "geo",
+                        "volumeAnnotationsVersion": "12"
+                    }
+                ]
+            },
+            "saleInfo": {
+                "country": "US",
+                "saleability": "FOR_SALE",
+                "isEbook": true,
+                "listPrice": {
+                    "amount": 39.99,
+                    "currencyCode": "USD"
+                },
+                "retailPrice": {
+                    "amount": 31.19,
+                    "currencyCode": "USD"
+                },
+                "buyLink": "https://play.google.com/store/books/details?id=HrTOa8-HPRYC&rdid=book-HrTOa8-HPRYC&rdot=1&source=gbs_api",
+                "offers": [
+                    {
+                        "finskyOfferType": 1,
+                        "listPrice": {
+                            "amountInMicros": 39990000,
+                            "currencyCode": "USD"
+                        },
+                        "retailPrice": {
+                            "amountInMicros": 31190000,
+                            "currencyCode": "USD"
+                        },
+                        "giftable": true
+                    }
+                ]
+            },
+            "accessInfo": {
+                "country": "US",
+                "viewability": "PARTIAL",
+                "embeddable": true,
+                "publicDomain": false,
+                "textToSpeechPermission": "ALLOWED",
+                "epub": {
+                    "isAvailable": true,
+                    "acsTokenLink": "http://books.google.com/books/download/Pro_Git-sample-epub.acsm?id=HrTOa8-HPRYC&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+                },
+                "pdf": {
+                    "isAvailable": true,
+                    "acsTokenLink": "http://books.google.com/books/download/Pro_Git-sample-pdf.acsm?id=HrTOa8-HPRYC&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+                },
+                "webReaderLink": "http://play.google.com/books/reader?id=HrTOa8-HPRYC&hl=&printsec=frontcover&source=gbs_api",
+                "accessViewStatus": "SAMPLE",
+                "quoteSharingAllowed": false
+            }
+        },
+        {
+            "kind": "books#volume",
+            "id": "-ZXrAAAAMAAJ",
+            "etag": "JBUCNnsQnIg",
+            "selfLink": "https://www.googleapis.com/books/v1/volumes/-ZXrAAAAMAAJ",
+            "volumeInfo": {
+                "title": "The New Authentics",
+                "subtitle": "Artists of the Post-Jewish Generation",
+                "authors": [
+                    "Staci Boris",
+                    "Stephen J. Whitfield",
+                    "Sarah Giller Nelson",
+                    "Lori Waxman",
+                    "Nicole Krauss"
+                ],
+                "publisher": "Spertus College of Judaica Press",
+                "publishedDate": "2007",
+                "description": "Art and text defining a new generation of Jewish Americans",
+                "industryIdentifiers": [
+                    {
+                        "type": "ISBN_10",
+                        "identifier": "0935982655"
+                    },
+                    {
+                        "type": "ISBN_13",
+                        "identifier": "9780935982657"
+                    }
+                ],
+                "readingModes": {
+                    "text": false,
+                    "image": false
+                },
+                "pageCount": 143,
+                "printType": "BOOK",
+                "categories": [
+                    "Religion"
+                ],
+                "maturityRating": "NOT_MATURE",
+                "allowAnonLogging": false,
+                "contentVersion": "1.2.1.0.preview.0",
+                "panelizationSummary": {
+                    "containsEpubBubbles": false,
+                    "containsImageBubbles": false
+                },
+                "imageLinks": {
+                    "smallThumbnail": "http://books.google.com/books/content?id=-ZXrAAAAMAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+                    "thumbnail": "http://books.google.com/books/content?id=-ZXrAAAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+                },
+                "previewLink": "http://books.google.com/books?id=-ZXrAAAAMAAJ&hl=&source=gbs_api",
+                "infoLink": "http://books.google.com/books?id=-ZXrAAAAMAAJ&hl=&source=gbs_api",
+                "canonicalVolumeLink": "https://books.google.com/books/about/The_New_Authentics.html?hl=&id=-ZXrAAAAMAAJ"
+            },
+            "saleInfo": {
+                "country": "US",
+                "saleability": "NOT_FOR_SALE",
+                "isEbook": false
+            },
+            "accessInfo": {
+                "country": "US",
+                "viewability": "NO_PAGES",
+                "embeddable": false,
+                "publicDomain": false,
+                "textToSpeechPermission": "ALLOWED",
+                "epub": {
+                    "isAvailable": false
+                },
+                "pdf": {
+                    "isAvailable": false
+                },
+                "webReaderLink": "http://play.google.com/books/reader?id=-ZXrAAAAMAAJ&hl=&printsec=frontcover&source=gbs_api",
+                "accessViewStatus": "NONE",
+                "quoteSharingAllowed": false
+            }
+        },
+        {
+            "kind": "books#volume",
+            "id": "QLK-DQAAQBAJ",
+            "etag": "jgSOk2L5dNk",
+            "selfLink": "https://www.googleapis.com/books/v1/volumes/QLK-DQAAQBAJ",
+            "volumeInfo": {
+                "title": "Forest Dark",
+                "subtitle": "A Novel",
+                "authors": [
+                    "Nicole Krauss"
+                ],
+                "publisher": "HarperCollins",
+                "publishedDate": "2017-09-12",
+                "description": "National Bestseller A New York Times Notable Book of 2017 Named Best Book of 2017 by Esquire, Times Literary Supplement, Elle Magazine, LitHub, Publishers Weekly, Financial Times, Guardian, Refinery29, Popsugar, and Globe and Mail \"A brilliant ...",
+                "industryIdentifiers": [
+                    {
+                        "type": "ISBN_13",
+                        "identifier": "9780062431011"
+                    },
+                    {
+                        "type": "ISBN_10",
+                        "identifier": "0062431013"
+                    }
+                ],
+                "readingModes": {
+                    "text": true,
+                    "image": false
+                },
+                "pageCount": 304,
+                "printType": "BOOK",
+                "categories": [
+                    "Fiction"
+                ],
+                "averageRating": 4,
+                "ratingsCount": 3,
+                "maturityRating": "NOT_MATURE",
+                "allowAnonLogging": true,
+                "contentVersion": "1.8.7.0.preview.2",
+                "panelizationSummary": {
+                    "containsEpubBubbles": false,
+                    "containsImageBubbles": false
+                },
+                "imageLinks": {
+                    "smallThumbnail": "http://books.google.com/books/content?id=QLK-DQAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                    "thumbnail": "http://books.google.com/books/content?id=QLK-DQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+                },
+                "previewLink": "http://books.google.com/books?id=QLK-DQAAQBAJ&printsec=frontcover&hl=&source=gbs_api",
+                "infoLink": "https://play.google.com/store/books/details?id=QLK-DQAAQBAJ&source=gbs_api",
+                "canonicalVolumeLink": "https://play.google.com/store/books/details?id=QLK-DQAAQBAJ"
+            },
+            "layerInfo": {
+                "layers": [
+                    {
+                        "layerId": "geo",
+                        "volumeAnnotationsVersion": "10"
+                    }
+                ]
+            },
+            "saleInfo": {
+                "country": "US",
+                "saleability": "FOR_SALE",
+                "isEbook": true,
+                "listPrice": {
+                    "amount": 7.49,
+                    "currencyCode": "USD"
+                },
+                "retailPrice": {
+                    "amount": 7.49,
+                    "currencyCode": "USD"
+                },
+                "buyLink": "https://play.google.com/store/books/details?id=QLK-DQAAQBAJ&rdid=book-QLK-DQAAQBAJ&rdot=1&source=gbs_api",
+                "offers": [
+                    {
+                        "finskyOfferType": 1,
+                        "listPrice": {
+                            "amountInMicros": 7490000,
+                            "currencyCode": "USD"
+                        },
+                        "retailPrice": {
+                            "amountInMicros": 7490000,
+                            "currencyCode": "USD"
+                        },
+                        "giftable": true
+                    }
+                ]
+            },
+            "accessInfo": {
+                "country": "US",
+                "viewability": "PARTIAL",
+                "embeddable": true,
+                "publicDomain": false,
+                "textToSpeechPermission": "ALLOWED_FOR_ACCESSIBILITY",
+                "epub": {
+                    "isAvailable": true,
+                    "acsTokenLink": "http://books.google.com/books/download/Forest_Dark-sample-epub.acsm?id=QLK-DQAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+                },
+                "pdf": {
+                    "isAvailable": false
+                },
+                "webReaderLink": "http://play.google.com/books/reader?id=QLK-DQAAQBAJ&hl=&printsec=frontcover&source=gbs_api",
+                "accessViewStatus": "SAMPLE",
+                "quoteSharingAllowed": false
+            }
+        },
+        {
+            "kind": "books#volume",
+            "id": "Of6KDQAAQBAJ",
+            "etag": "2s8EIvsEfvk",
+            "selfLink": "https://www.googleapis.com/books/v1/volumes/Of6KDQAAQBAJ",
+            "volumeInfo": {
+                "title": "Best Business Crime Writing of the Year",
+                "authors": [
+                    "James Surowiecki"
+                ],
+                "publisher": "Anchor",
+                "publishedDate": "2002",
+                "description": "A year ago it would have been difficult to conceive of an anthology of stories soley devoted to corporate malfeasance. Today, the challenge has been to keep it confined to one volume. From P.J. O’Rourke’s hilarious “How To Stuff A Wild Enron,” in ...",
+                "industryIdentifiers": [
+                    {
+                        "type": "ISBN_13",
+                        "identifier": "9781400033713"
+                    },
+                    {
+                        "type": "ISBN_10",
+                        "identifier": "1400033713"
+                    }
+                ],
+                "readingModes": {
+                    "text": false,
+                    "image": false
+                },
+                "pageCount": 253,
+                "printType": "BOOK",
+                "categories": [
+                    "True Crime"
+                ],
+                "maturityRating": "NOT_MATURE",
+                "allowAnonLogging": false,
+                "contentVersion": "0.1.0.0.preview.0",
+                "panelizationSummary": {
+                    "containsEpubBubbles": false,
+                    "containsImageBubbles": false
+                },
+                "imageLinks": {
+                    "smallThumbnail": "http://books.google.com/books/content?id=Of6KDQAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                    "thumbnail": "http://books.google.com/books/content?id=Of6KDQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+                },
+                "previewLink": "http://books.google.com/books?id=Of6KDQAAQBAJ&printsec=frontcover&hl=&source=gbs_api",
+                "infoLink": "http://books.google.com/books?id=Of6KDQAAQBAJ&hl=&source=gbs_api",
+                "canonicalVolumeLink": "https://books.google.com/books/about/Best_Business_Crime_Writing_of_the_Year.html?hl=&id=Of6KDQAAQBAJ"
+            },
+            "saleInfo": {
+                "country": "US",
+                "saleability": "NOT_FOR_SALE",
+                "isEbook": false
+            },
+            "accessInfo": {
+                "country": "US",
+                "viewability": "PARTIAL",
+                "embeddable": true,
+                "publicDomain": false,
+                "textToSpeechPermission": "ALLOWED_FOR_ACCESSIBILITY",
+                "epub": {
+                    "isAvailable": false
+                },
+                "pdf": {
+                    "isAvailable": false
+                },
+                "webReaderLink": "http://play.google.com/books/reader?id=Of6KDQAAQBAJ&hl=&printsec=frontcover&source=gbs_api",
+                "accessViewStatus": "SAMPLE",
+                "quoteSharingAllowed": false
+            }
+        },
+        {
+            "kind": "books#volume",
+            "id": "hHUsHOHqVzEC",
+            "etag": "gqQGrF+k/+0",
+            "selfLink": "https://www.googleapis.com/books/v1/volumes/hHUsHOHqVzEC",
+            "volumeInfo": {
+                "title": "The Wisdom of Crowds",
+                "authors": [
+                    "James Surowiecki"
+                ],
+                "publisher": "Anchor",
+                "publishedDate": "2005-08-16",
+                "description": "In this fascinating book, New Yorker business columnist James Surowiecki explores a deceptively simple idea: Large groups of people are smarter than an elite few, no matter how brilliant—better at solving problems, fostering innovation, coming ...",
+                "industryIdentifiers": [
+                    {
+                        "type": "ISBN_13",
+                        "identifier": "9780307275059"
+                    },
+                    {
+                        "type": "ISBN_10",
+                        "identifier": "0307275051"
+                    }
+                ],
+                "readingModes": {
+                    "text": true,
+                    "image": true
+                },
+                "pageCount": 336,
+                "printType": "BOOK",
+                "categories": [
+                    "Business & Economics"
+                ],
+                "averageRating": 3.5,
+                "ratingsCount": 40,
+                "maturityRating": "NOT_MATURE",
+                "allowAnonLogging": true,
+                "contentVersion": "3.7.7.0.preview.3",
+                "panelizationSummary": {
+                    "containsEpubBubbles": false,
+                    "containsImageBubbles": false
+                },
+                "imageLinks": {
+                    "smallThumbnail": "http://books.google.com/books/content?id=hHUsHOHqVzEC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                    "thumbnail": "http://books.google.com/books/content?id=hHUsHOHqVzEC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+                },
+                "previewLink": "http://books.google.com/books?id=hHUsHOHqVzEC&printsec=frontcover&hl=&source=gbs_api",
+                "infoLink": "https://play.google.com/store/books/details?id=hHUsHOHqVzEC&source=gbs_api",
+                "canonicalVolumeLink": "https://play.google.com/store/books/details?id=hHUsHOHqVzEC"
+            },
+            "layerInfo": {
+                "layers": [
+                    {
+                        "layerId": "geo",
+                        "volumeAnnotationsVersion": "8"
+                    }
+                ]
+            },
+            "saleInfo": {
+                "country": "US",
+                "saleability": "FOR_SALE",
+                "isEbook": true,
+                "listPrice": {
+                    "amount": 4.99,
+                    "currencyCode": "USD"
+                },
+                "retailPrice": {
+                    "amount": 4.99,
+                    "currencyCode": "USD"
+                },
+                "buyLink": "https://play.google.com/store/books/details?id=hHUsHOHqVzEC&rdid=book-hHUsHOHqVzEC&rdot=1&source=gbs_api",
+                "offers": [
+                    {
+                        "finskyOfferType": 1,
+                        "listPrice": {
+                            "amountInMicros": 4990000,
+                            "currencyCode": "USD"
+                        },
+                        "retailPrice": {
+                            "amountInMicros": 4990000,
+                            "currencyCode": "USD"
+                        },
+                        "giftable": true
+                    }
+                ]
+            },
+            "accessInfo": {
+                "country": "US",
+                "viewability": "PARTIAL",
+                "embeddable": true,
+                "publicDomain": false,
+                "textToSpeechPermission": "ALLOWED_FOR_ACCESSIBILITY",
+                "epub": {
+                    "isAvailable": true,
+                    "acsTokenLink": "http://books.google.com/books/download/The_Wisdom_of_Crowds-sample-epub.acsm?id=hHUsHOHqVzEC&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+                },
+                "pdf": {
+                    "isAvailable": true,
+                    "acsTokenLink": "http://books.google.com/books/download/The_Wisdom_of_Crowds-sample-pdf.acsm?id=hHUsHOHqVzEC&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+                },
+                "webReaderLink": "http://play.google.com/books/reader?id=hHUsHOHqVzEC&hl=&printsec=frontcover&source=gbs_api",
+                "accessViewStatus": "SAMPLE",
+                "quoteSharingAllowed": false
+            }
+        },
+        {
+            "kind": "books#volume",
+            "id": "UJORDQAAQBAJ",
+            "etag": "HEJeRP2PexE",
+            "selfLink": "https://www.googleapis.com/books/v1/volumes/UJORDQAAQBAJ",
+            "volumeInfo": {
+                "title": "Marsupial Sue Presents \"The Runaway Pancake",
+                "authors": [
+                    "John Lithgow"
+                ],
+                "publisher": "Simon and Schuster",
+                "publishedDate": "2008-10-21",
+                "description": "Sue, a kangaroo, and some of her Australian animal friends put on a play called \"The Runaway Pancake.\"",
+                "industryIdentifiers": [
+                    {
+                        "type": "ISBN_13",
+                        "identifier": "9780689878480"
+                    },
+                    {
+                        "type": "ISBN_10",
+                        "identifier": "0689878486"
+                    }
+                ],
+                "readingModes": {
+                    "text": false,
+                    "image": false
+                },
+                "pageCount": 40,
+                "printType": "BOOK",
+                "categories": [
+                    "Juvenile Fiction"
+                ],
+                "averageRating": 4.5,
+                "ratingsCount": 2,
+                "maturityRating": "NOT_MATURE",
+                "allowAnonLogging": false,
+                "contentVersion": "0.1.0.0.preview.0",
+                "panelizationSummary": {
+                    "containsEpubBubbles": false,
+                    "containsImageBubbles": false
+                },
+                "imageLinks": {
+                    "smallThumbnail": "http://books.google.com/books/content?id=UJORDQAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                    "thumbnail": "http://books.google.com/books/content?id=UJORDQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+                },
+                "previewLink": "http://books.google.com/books?id=UJORDQAAQBAJ&printsec=frontcover&hl=&source=gbs_api",
+                "infoLink": "http://books.google.com/books?id=UJORDQAAQBAJ&hl=&source=gbs_api",
+                "canonicalVolumeLink": "https://books.google.com/books/about/Marsupial_Sue_Presents_The_Runaway_Panca.html?hl=&id=UJORDQAAQBAJ"
+            },
+            "saleInfo": {
+                "country": "US",
+                "saleability": "NOT_FOR_SALE",
+                "isEbook": false
+            },
+            "accessInfo": {
+                "country": "US",
+                "viewability": "PARTIAL",
+                "embeddable": true,
+                "publicDomain": false,
+                "textToSpeechPermission": "ALLOWED_FOR_ACCESSIBILITY",
+                "epub": {
+                    "isAvailable": false
+                },
+                "pdf": {
+                    "isAvailable": false
+                },
+                "webReaderLink": "http://play.google.com/books/reader?id=UJORDQAAQBAJ&hl=&printsec=frontcover&source=gbs_api",
+                "accessViewStatus": "SAMPLE",
+                "quoteSharingAllowed": false
+            }
+        },
+        {
+            "kind": "books#volume",
+            "id": "NZVBDwAAQBAJ",
+            "etag": "Fh7XIEiXUwk",
+            "selfLink": "https://www.googleapis.com/books/v1/volumes/NZVBDwAAQBAJ",
+            "volumeInfo": {
+                "title": "Man Walks Into a Room",
+                "subtitle": "A Novel",
+                "authors": [
+                    "Nicole Krauss"
+                ],
+                "publisher": "Anchor",
+                "publishedDate": "2003",
+                "description": "Found wandering in the desert outside of Las Vegas, Samson Greene, a thirty-six-year-old Columbia University English professor, is discovered to have a brain tumor, but when surgery removes the tumor, leaving him with no recollection of his life ...",
+                "industryIdentifiers": [
+                    {
+                        "type": "ISBN_13",
+                        "identifier": "9780385721912"
+                    },
+                    {
+                        "type": "ISBN_10",
+                        "identifier": "0385721919"
+                    }
+                ],
+                "readingModes": {
+                    "text": false,
+                    "image": false
+                },
+                "pageCount": 248,
+                "printType": "BOOK",
+                "categories": [
+                    "Fiction"
+                ],
+                "averageRating": 4,
+                "ratingsCount": 17,
+                "maturityRating": "NOT_MATURE",
+                "allowAnonLogging": false,
+                "contentVersion": "0.1.0.0.preview.0",
+                "panelizationSummary": {
+                    "containsEpubBubbles": false,
+                    "containsImageBubbles": false
+                },
+                "imageLinks": {
+                    "smallThumbnail": "http://books.google.com/books/content?id=NZVBDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                    "thumbnail": "http://books.google.com/books/content?id=NZVBDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+                },
+                "previewLink": "http://books.google.com/books?id=NZVBDwAAQBAJ&printsec=frontcover&hl=&source=gbs_api",
+                "infoLink": "http://books.google.com/books?id=NZVBDwAAQBAJ&hl=&source=gbs_api",
+                "canonicalVolumeLink": "https://books.google.com/books/about/Man_Walks_Into_a_Room.html?hl=&id=NZVBDwAAQBAJ"
+            },
+            "saleInfo": {
+                "country": "US",
+                "saleability": "NOT_FOR_SALE",
+                "isEbook": false
+            },
+            "accessInfo": {
+                "country": "US",
+                "viewability": "PARTIAL",
+                "embeddable": true,
+                "publicDomain": false,
+                "textToSpeechPermission": "ALLOWED_FOR_ACCESSIBILITY",
+                "epub": {
+                    "isAvailable": false
+                },
+                "pdf": {
+                    "isAvailable": false
+                },
+                "webReaderLink": "http://play.google.com/books/reader?id=NZVBDwAAQBAJ&hl=&printsec=frontcover&source=gbs_api",
+                "accessViewStatus": "SAMPLE",
+                "quoteSharingAllowed": false
+            }
+        },
+        {
+            "kind": "books#volume",
+            "id": "tde-DwAAQBAJ",
+            "etag": "0kFxmJjCMY0",
+            "selfLink": "https://www.googleapis.com/books/v1/volumes/tde-DwAAQBAJ",
+            "volumeInfo": {
+                "title": "To Be a Man",
+                "subtitle": "Stories",
+                "authors": [
+                    "Nicole Krauss"
+                ],
+                "publisher": "HarperCollins",
+                "publishedDate": "2020-11-03",
+                "description": "In this dazzling collection of short fiction, the National Book Award Finalist and New York Times bestselling author of The History of Love—“one of America’s most important novelists and an international literary sensation” (New York Times ...",
+                "industryIdentifiers": [
+                    {
+                        "type": "ISBN_13",
+                        "identifier": "9780062431035"
+                    },
+                    {
+                        "type": "ISBN_10",
+                        "identifier": "006243103X"
+                    }
+                ],
+                "readingModes": {
+                    "text": true,
+                    "image": false
+                },
+                "pageCount": 240,
+                "printType": "BOOK",
+                "categories": [
+                    "Fiction"
+                ],
+                "maturityRating": "NOT_MATURE",
+                "allowAnonLogging": true,
+                "contentVersion": "1.2.2.0.preview.2",
+                "panelizationSummary": {
+                    "containsEpubBubbles": false,
+                    "containsImageBubbles": false
+                },
+                "imageLinks": {
+                    "smallThumbnail": "http://books.google.com/books/content?id=tde-DwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                    "thumbnail": "http://books.google.com/books/content?id=tde-DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+                },
+                "previewLink": "http://books.google.com/books?id=tde-DwAAQBAJ&printsec=frontcover&hl=&source=gbs_api",
+                "infoLink": "https://play.google.com/store/books/details?id=tde-DwAAQBAJ&source=gbs_api",
+                "canonicalVolumeLink": "https://play.google.com/store/books/details?id=tde-DwAAQBAJ"
+            },
+            "layerInfo": {
+                "layers": [
+                    {
+                        "layerId": "geo",
+                        "volumeAnnotationsVersion": "2"
+                    }
+                ]
+            },
+            "saleInfo": {
+                "country": "US",
+                "saleability": "FOR_SALE",
+                "isEbook": true,
+                "listPrice": {
+                    "amount": 13.99,
+                    "currencyCode": "USD"
+                },
+                "retailPrice": {
+                    "amount": 13.99,
+                    "currencyCode": "USD"
+                },
+                "buyLink": "https://play.google.com/store/books/details?id=tde-DwAAQBAJ&rdid=book-tde-DwAAQBAJ&rdot=1&source=gbs_api",
+                "offers": [
+                    {
+                        "finskyOfferType": 1,
+                        "listPrice": {
+                            "amountInMicros": 13990000,
+                            "currencyCode": "USD"
+                        },
+                        "retailPrice": {
+                            "amountInMicros": 13990000,
+                            "currencyCode": "USD"
+                        },
+                        "giftable": true
+                    }
+                ]
+            },
+            "accessInfo": {
+                "country": "US",
+                "viewability": "PARTIAL",
+                "embeddable": true,
+                "publicDomain": false,
+                "textToSpeechPermission": "ALLOWED_FOR_ACCESSIBILITY",
+                "epub": {
+                    "isAvailable": true,
+                    "acsTokenLink": "http://books.google.com/books/download/To_Be_a_Man-sample-epub.acsm?id=tde-DwAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+                },
+                "pdf": {
+                    "isAvailable": false
+                },
+                "webReaderLink": "http://play.google.com/books/reader?id=tde-DwAAQBAJ&hl=&printsec=frontcover&source=gbs_api",
+                "accessViewStatus": "SAMPLE",
+                "quoteSharingAllowed": false
+            }
+        },
+        {
+            "kind": "books#volume",
+            "id": "d_OUg9Wiu4AC",
+            "etag": "jFW2fS4CHdU",
+            "selfLink": "https://www.googleapis.com/books/v1/volumes/d_OUg9Wiu4AC",
+            "volumeInfo": {
+                "title": "The Mystery Cave",
+                "authors": [
+                    "Paul Hutchens"
+                ],
+                "publisher": "Moody Publishers",
+                "publishedDate": "1997-08-01",
+                "description": "The tales and travels of the Sugar Creek Gang have passed the test of time, delighting young readers for more than fifty years. Great mysteries with a message, The Sugar Creek Gang series chronicles the faith-building adventures of a group of fun ...",
+                "industryIdentifiers": [
+                    {
+                        "type": "ISBN_10",
+                        "identifier": "1575677415"
+                    },
+                    {
+                        "type": "ISBN_13",
+                        "identifier": "9781575677415"
+                    }
+                ],
+                "readingModes": {
+                    "text": true,
+                    "image": true
+                },
+                "pageCount": 112,
+                "printType": "BOOK",
+                "categories": [
+                    "Juvenile Fiction"
+                ],
+                "averageRating": 5,
+                "ratingsCount": 1,
+                "maturityRating": "NOT_MATURE",
+                "allowAnonLogging": true,
+                "contentVersion": "0.4.5.0.preview.3",
+                "panelizationSummary": {
+                    "containsEpubBubbles": false,
+                    "containsImageBubbles": false
+                },
+                "imageLinks": {
+                    "smallThumbnail": "http://books.google.com/books/content?id=d_OUg9Wiu4AC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                    "thumbnail": "http://books.google.com/books/content?id=d_OUg9Wiu4AC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+                },
+                "previewLink": "http://books.google.com/books?id=d_OUg9Wiu4AC&printsec=frontcover&hl=&source=gbs_api",
+                "infoLink": "https://play.google.com/store/books/details?id=d_OUg9Wiu4AC&source=gbs_api",
+                "canonicalVolumeLink": "https://play.google.com/store/books/details?id=d_OUg9Wiu4AC"
+            },
+            "layerInfo": {
+                "layers": [
+                    {
+                        "layerId": "geo",
+                        "volumeAnnotationsVersion": "11"
+                    }
+                ]
+            },
+            "saleInfo": {
+                "country": "US",
+                "saleability": "FOR_SALE",
+                "isEbook": true,
+                "listPrice": {
+                    "amount": 3.99,
+                    "currencyCode": "USD"
+                },
+                "retailPrice": {
+                    "amount": 3.99,
+                    "currencyCode": "USD"
+                },
+                "buyLink": "https://play.google.com/store/books/details?id=d_OUg9Wiu4AC&rdid=book-d_OUg9Wiu4AC&rdot=1&source=gbs_api",
+                "offers": [
+                    {
+                        "finskyOfferType": 1,
+                        "listPrice": {
+                            "amountInMicros": 3990000,
+                            "currencyCode": "USD"
+                        },
+                        "retailPrice": {
+                            "amountInMicros": 3990000,
+                            "currencyCode": "USD"
+                        },
+                        "giftable": true
+                    }
+                ]
+            },
+            "accessInfo": {
+                "country": "US",
+                "viewability": "PARTIAL",
+                "embeddable": true,
+                "publicDomain": false,
+                "textToSpeechPermission": "ALLOWED",
+                "epub": {
+                    "isAvailable": true,
+                    "acsTokenLink": "http://books.google.com/books/download/The_Mystery_Cave-sample-epub.acsm?id=d_OUg9Wiu4AC&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+                },
+                "pdf": {
+                    "isAvailable": true,
+                    "acsTokenLink": "http://books.google.com/books/download/The_Mystery_Cave-sample-pdf.acsm?id=d_OUg9Wiu4AC&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+                },
+                "webReaderLink": "http://play.google.com/books/reader?id=d_OUg9Wiu4AC&hl=&printsec=frontcover&source=gbs_api",
+                "accessViewStatus": "SAMPLE",
+                "quoteSharingAllowed": false
+            }
+        },
+        {
+            "kind": "books#volume",
+            "id": "4dowVvjK0PAC",
+            "etag": "M/zn7mAMCsE",
+            "selfLink": "https://www.googleapis.com/books/v1/volumes/4dowVvjK0PAC",
+            "volumeInfo": {
+                "title": "The Chicago Adventure",
+                "authors": [
+                    "Paul Hutchens"
+                ],
+                "publisher": "Moody Publishers",
+                "publishedDate": "1997-06-01",
+                "description": "The tales and travels of the Sugar Creek Gang have passed the test of time, delighting young readers for more than fifty years. Great mysteries for kids with a message, The Sugar Creek Gang series chronicles the faith-building adventures of a ...",
+                "industryIdentifiers": [
+                    {
+                        "type": "ISBN_10",
+                        "identifier": "1575677393"
+                    },
+                    {
+                        "type": "ISBN_13",
+                        "identifier": "9781575677392"
+                    }
+                ],
+                "readingModes": {
+                    "text": true,
+                    "image": true
+                },
+                "pageCount": 112,
+                "printType": "BOOK",
+                "categories": [
+                    "Juvenile Fiction"
+                ],
+                "averageRating": 5,
+                "ratingsCount": 1,
+                "maturityRating": "NOT_MATURE",
+                "allowAnonLogging": true,
+                "contentVersion": "0.5.6.0.preview.3",
+                "panelizationSummary": {
+                    "containsEpubBubbles": false,
+                    "containsImageBubbles": false
+                },
+                "imageLinks": {
+                    "smallThumbnail": "http://books.google.com/books/content?id=4dowVvjK0PAC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                    "thumbnail": "http://books.google.com/books/content?id=4dowVvjK0PAC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+                },
+                "previewLink": "http://books.google.com/books?id=4dowVvjK0PAC&printsec=frontcover&hl=&source=gbs_api",
+                "infoLink": "https://play.google.com/store/books/details?id=4dowVvjK0PAC&source=gbs_api",
+                "canonicalVolumeLink": "https://play.google.com/store/books/details?id=4dowVvjK0PAC"
+            },
+            "layerInfo": {
+                "layers": [
+                    {
+                        "layerId": "geo",
+                        "volumeAnnotationsVersion": "12"
+                    }
+                ]
+            },
+            "saleInfo": {
+                "country": "US",
+                "saleability": "FOR_SALE",
+                "isEbook": true,
+                "listPrice": {
+                    "amount": 3.99,
+                    "currencyCode": "USD"
+                },
+                "retailPrice": {
+                    "amount": 3.99,
+                    "currencyCode": "USD"
+                },
+                "buyLink": "https://play.google.com/store/books/details?id=4dowVvjK0PAC&rdid=book-4dowVvjK0PAC&rdot=1&source=gbs_api",
+                "offers": [
+                    {
+                        "finskyOfferType": 1,
+                        "listPrice": {
+                            "amountInMicros": 3990000,
+                            "currencyCode": "USD"
+                        },
+                        "retailPrice": {
+                            "amountInMicros": 3990000,
+                            "currencyCode": "USD"
+                        },
+                        "giftable": true
+                    }
+                ]
+            },
+            "accessInfo": {
+                "country": "US",
+                "viewability": "PARTIAL",
+                "embeddable": true,
+                "publicDomain": false,
+                "textToSpeechPermission": "ALLOWED",
+                "epub": {
+                    "isAvailable": true,
+                    "acsTokenLink": "http://books.google.com/books/download/The_Chicago_Adventure-sample-epub.acsm?id=4dowVvjK0PAC&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+                },
+                "pdf": {
+                    "isAvailable": true,
+                    "acsTokenLink": "http://books.google.com/books/download/The_Chicago_Adventure-sample-pdf.acsm?id=4dowVvjK0PAC&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+                },
+                "webReaderLink": "http://play.google.com/books/reader?id=4dowVvjK0PAC&hl=&printsec=frontcover&source=gbs_api",
+                "accessViewStatus": "SAMPLE",
+                "quoteSharingAllowed": false
+            }
+        },
+        {
+            "kind": "books#volume",
+            "id": "vfi3DQAAQBAJ",
+            "etag": "r3XynDhiAWA",
+            "selfLink": "https://www.googleapis.com/books/v1/volumes/vfi3DQAAQBAJ",
+            "volumeInfo": {
+                "title": "R for Data Science",
+                "subtitle": "Import, Tidy, Transform, Visualize, and Model Data",
+                "authors": [
+                    "Hadley Wickham",
+                    "Garrett Grolemund"
+                ],
+                "publisher": "\"O'Reilly Media, Inc.\"",
+                "publishedDate": "2016-12-12",
+                "description": "\"This book introduces you to R, RStudio, and the tidyverse, a collection of R packages designed to work together to make data science fast, fluent, and fun. Suitable for readers with no previous programming experience\"--",
+                "industryIdentifiers": [
+                    {
+                        "type": "ISBN_13",
+                        "identifier": "9781491910368"
+                    },
+                    {
+                        "type": "ISBN_10",
+                        "identifier": "1491910364"
+                    }
+                ],
+                "readingModes": {
+                    "text": false,
+                    "image": true
+                },
+                "pageCount": 492,
+                "printType": "BOOK",
+                "categories": [
+                    "Computers"
+                ],
+                "averageRating": 5,
+                "ratingsCount": 3,
+                "maturityRating": "NOT_MATURE",
+                "allowAnonLogging": false,
+                "contentVersion": "0.2.0.0.preview.1",
+                "panelizationSummary": {
+                    "containsEpubBubbles": false,
+                    "containsImageBubbles": false
+                },
+                "imageLinks": {
+                    "smallThumbnail": "http://books.google.com/books/content?id=vfi3DQAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                    "thumbnail": "http://books.google.com/books/content?id=vfi3DQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+                },
+                "previewLink": "http://books.google.com/books?id=vfi3DQAAQBAJ&printsec=frontcover&hl=&source=gbs_api",
+                "infoLink": "http://books.google.com/books?id=vfi3DQAAQBAJ&hl=&source=gbs_api",
+                "canonicalVolumeLink": "https://books.google.com/books/about/R_for_Data_Science.html?hl=&id=vfi3DQAAQBAJ"
+            },
+            "saleInfo": {
+                "country": "US",
+                "saleability": "NOT_FOR_SALE",
+                "isEbook": false
+            },
+            "accessInfo": {
+                "country": "US",
+                "viewability": "PARTIAL",
+                "embeddable": true,
+                "publicDomain": false,
+                "textToSpeechPermission": "ALLOWED",
+                "epub": {
+                    "isAvailable": false
+                },
+                "pdf": {
+                    "isAvailable": false
+                },
+                "webReaderLink": "http://play.google.com/books/reader?id=vfi3DQAAQBAJ&hl=&printsec=frontcover&source=gbs_api",
+                "accessViewStatus": "SAMPLE",
+                "quoteSharingAllowed": false
+            }
+        },
+        {
+            "kind": "books#volume",
+            "id": "Qw7qj5nXSPUC",
+            "etag": "ZnX9WNolkHo",
+            "selfLink": "https://www.googleapis.com/books/v1/volumes/Qw7qj5nXSPUC",
+            "volumeInfo": {
+                "title": "The Brain That Changes Itself",
+                "subtitle": "Stories of Personal Triumph from the Frontiers of Brain Science",
+                "authors": [
+                    "Norman Doidge"
+                ],
+                "publisher": "Penguin",
+                "publishedDate": "2007-03-15",
+                "description": "What is neuroplasticity? Is it possible to change your brain? Norman Doidge’s inspiring guide to the new brain science explains all of this and more An astonishing new science called neuroplasticity is overthrowing the centuries-old notion that ...",
+                "industryIdentifiers": [
+                    {
+                        "type": "ISBN_10",
+                        "identifier": "1101147113"
+                    },
+                    {
+                        "type": "ISBN_13",
+                        "identifier": "9781101147115"
+                    }
+                ],
+                "readingModes": {
+                    "text": true,
+                    "image": false
+                },
+                "pageCount": 448,
+                "printType": "BOOK",
+                "categories": [
+                    "Psychology"
+                ],
+                "averageRating": 4,
+                "ratingsCount": 55,
+                "maturityRating": "NOT_MATURE",
+                "allowAnonLogging": true,
+                "contentVersion": "0.7.8.0.preview.2",
+                "panelizationSummary": {
+                    "containsEpubBubbles": false,
+                    "containsImageBubbles": false
+                },
+                "imageLinks": {
+                    "smallThumbnail": "http://books.google.com/books/content?id=Qw7qj5nXSPUC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                    "thumbnail": "http://books.google.com/books/content?id=Qw7qj5nXSPUC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+                },
+                "previewLink": "http://books.google.com/books?id=Qw7qj5nXSPUC&printsec=frontcover&hl=&source=gbs_api",
+                "infoLink": "https://play.google.com/store/books/details?id=Qw7qj5nXSPUC&source=gbs_api",
+                "canonicalVolumeLink": "https://play.google.com/store/books/details?id=Qw7qj5nXSPUC"
+            },
+            "layerInfo": {
+                "layers": [
+                    {
+                        "layerId": "geo",
+                        "volumeAnnotationsVersion": "19"
+                    }
+                ]
+            },
+            "saleInfo": {
+                "country": "US",
+                "saleability": "FOR_SALE",
+                "isEbook": true,
+                "listPrice": {
+                    "amount": 13.99,
+                    "currencyCode": "USD"
+                },
+                "retailPrice": {
+                    "amount": 13.99,
+                    "currencyCode": "USD"
+                },
+                "buyLink": "https://play.google.com/store/books/details?id=Qw7qj5nXSPUC&rdid=book-Qw7qj5nXSPUC&rdot=1&source=gbs_api",
+                "offers": [
+                    {
+                        "finskyOfferType": 1,
+                        "listPrice": {
+                            "amountInMicros": 13990000,
+                            "currencyCode": "USD"
+                        },
+                        "retailPrice": {
+                            "amountInMicros": 13990000,
+                            "currencyCode": "USD"
+                        },
+                        "giftable": true
+                    }
+                ]
+            },
+            "accessInfo": {
+                "country": "US",
+                "viewability": "PARTIAL",
+                "embeddable": true,
+                "publicDomain": false,
+                "textToSpeechPermission": "ALLOWED_FOR_ACCESSIBILITY",
+                "epub": {
+                    "isAvailable": true,
+                    "acsTokenLink": "http://books.google.com/books/download/The_Brain_That_Changes_Itself-sample-epub.acsm?id=Qw7qj5nXSPUC&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+                },
+                "pdf": {
+                    "isAvailable": false
+                },
+                "webReaderLink": "http://play.google.com/books/reader?id=Qw7qj5nXSPUC&hl=&printsec=frontcover&source=gbs_api",
+                "accessViewStatus": "SAMPLE",
+                "quoteSharingAllowed": false
+            }
+        },
+        {
+            "kind": "books#volume",
+            "id": "V5veDAAAQBAJ",
+            "etag": "QOwgbyfP4n8",
+            "selfLink": "https://www.googleapis.com/books/v1/volumes/V5veDAAAQBAJ",
+            "volumeInfo": {
+                "title": "Neuroplasticity",
+                "authors": [
+                    "Moheb Costandi"
+                ],
+                "publisher": "MIT Press",
+                "publishedDate": "2016-08-19",
+                "description": "A concise and engaging overview of neuroplasticity for the general reader, describing how our brains change continuously in response to our actions and experiences. --Cover.",
+                "industryIdentifiers": [
+                    {
+                        "type": "ISBN_13",
+                        "identifier": "9780262529334"
+                    },
+                    {
+                        "type": "ISBN_10",
+                        "identifier": "0262529335"
+                    }
+                ],
+                "readingModes": {
+                    "text": false,
+                    "image": true
+                },
+                "pageCount": 181,
+                "printType": "BOOK",
+                "categories": [
+                    "Science"
+                ],
+                "maturityRating": "NOT_MATURE",
+                "allowAnonLogging": false,
+                "contentVersion": "1.2.1.0.preview.1",
+                "panelizationSummary": {
+                    "containsEpubBubbles": false,
+                    "containsImageBubbles": false
+                },
+                "imageLinks": {
+                    "smallThumbnail": "http://books.google.com/books/content?id=V5veDAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                    "thumbnail": "http://books.google.com/books/content?id=V5veDAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+                },
+                "previewLink": "http://books.google.com/books?id=V5veDAAAQBAJ&printsec=frontcover&hl=&source=gbs_api",
+                "infoLink": "http://books.google.com/books?id=V5veDAAAQBAJ&hl=&source=gbs_api",
+                "canonicalVolumeLink": "https://books.google.com/books/about/Neuroplasticity.html?hl=&id=V5veDAAAQBAJ"
+            },
+            "saleInfo": {
+                "country": "US",
+                "saleability": "NOT_FOR_SALE",
+                "isEbook": false
+            },
+            "accessInfo": {
+                "country": "US",
+                "viewability": "PARTIAL",
+                "embeddable": true,
+                "publicDomain": false,
+                "textToSpeechPermission": "ALLOWED",
+                "epub": {
+                    "isAvailable": false
+                },
+                "pdf": {
+                    "isAvailable": false
+                },
+                "webReaderLink": "http://play.google.com/books/reader?id=V5veDAAAQBAJ&hl=&printsec=frontcover&source=gbs_api",
+                "accessViewStatus": "SAMPLE",
+                "quoteSharingAllowed": false
+            }
+        },
+        {
+            "kind": "books#volume",
+            "id": "7ZZvDgAAQBAJ",
+            "etag": "+ltBJ2KYisA",
+            "selfLink": "https://www.googleapis.com/books/v1/volumes/7ZZvDgAAQBAJ",
+            "volumeInfo": {
+                "title": "Information and Society",
+                "authors": [
+                    "Michael Buckland"
+                ],
+                "publisher": "MIT Press",
+                "publishedDate": "2017-03-03",
+                "description": "A short, informal account of our ever-increasing dependence on a complex multiplicity of messages, records, documents, and data. We live in an information society, or so we are often told. But what does that mean? This volume in the MIT Press ...",
+                "industryIdentifiers": [
+                    {
+                        "type": "ISBN_13",
+                        "identifier": "9780262533386"
+                    },
+                    {
+                        "type": "ISBN_10",
+                        "identifier": "0262533383"
+                    }
+                ],
+                "readingModes": {
+                    "text": false,
+                    "image": true
+                },
+                "pageCount": 217,
+                "printType": "BOOK",
+                "categories": [
+                    "Language Arts & Disciplines"
+                ],
+                "maturityRating": "NOT_MATURE",
+                "allowAnonLogging": false,
+                "contentVersion": "1.2.1.0.preview.1",
+                "panelizationSummary": {
+                    "containsEpubBubbles": false,
+                    "containsImageBubbles": false
+                },
+                "imageLinks": {
+                    "smallThumbnail": "http://books.google.com/books/content?id=7ZZvDgAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                    "thumbnail": "http://books.google.com/books/content?id=7ZZvDgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+                },
+                "previewLink": "http://books.google.com/books?id=7ZZvDgAAQBAJ&printsec=frontcover&hl=&source=gbs_api",
+                "infoLink": "http://books.google.com/books?id=7ZZvDgAAQBAJ&hl=&source=gbs_api",
+                "canonicalVolumeLink": "https://books.google.com/books/about/Information_and_Society.html?hl=&id=7ZZvDgAAQBAJ"
+            },
+            "saleInfo": {
+                "country": "US",
+                "saleability": "NOT_FOR_SALE",
+                "isEbook": false
+            },
+            "accessInfo": {
+                "country": "US",
+                "viewability": "PARTIAL",
+                "embeddable": true,
+                "publicDomain": false,
+                "textToSpeechPermission": "ALLOWED",
+                "epub": {
+                    "isAvailable": false
+                },
+                "pdf": {
+                    "isAvailable": false
+                },
+                "webReaderLink": "http://play.google.com/books/reader?id=7ZZvDgAAQBAJ&hl=&printsec=frontcover&source=gbs_api",
+                "accessViewStatus": "SAMPLE",
+                "quoteSharingAllowed": false
+            }
+        },
+        {
+            "kind": "books#volume",
+            "id": "VRdZDwAAQBAJ",
+            "etag": "qFiveScDd9Q",
+            "selfLink": "https://www.googleapis.com/books/v1/volumes/VRdZDwAAQBAJ",
+            "volumeInfo": {
+                "title": "The Book",
+                "authors": [
+                    "Amaranth Borsuk"
+                ],
+                "publisher": "MIT Press",
+                "publishedDate": "2018-05-04",
+                "description": "The book as object, as content, as idea, as interface. What is the book in a digital age? Is it a physical object containing pages encased in covers? Is it a portable device that gives us access to entire libraries? The codex, the book as bound ...",
+                "industryIdentifiers": [
+                    {
+                        "type": "ISBN_13",
+                        "identifier": "9780262346894"
+                    },
+                    {
+                        "type": "ISBN_10",
+                        "identifier": "0262346893"
+                    }
+                ],
+                "readingModes": {
+                    "text": true,
+                    "image": true
+                },
+                "pageCount": 344,
+                "printType": "BOOK",
+                "categories": [
+                    "Literary Criticism"
+                ],
+                "averageRating": 3.5,
+                "ratingsCount": 3,
+                "maturityRating": "NOT_MATURE",
+                "allowAnonLogging": true,
+                "contentVersion": "1.2.4.0.preview.3",
+                "panelizationSummary": {
+                    "containsEpubBubbles": false,
+                    "containsImageBubbles": false
+                },
+                "imageLinks": {
+                    "smallThumbnail": "http://books.google.com/books/content?id=VRdZDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                    "thumbnail": "http://books.google.com/books/content?id=VRdZDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+                },
+                "previewLink": "http://books.google.com/books?id=VRdZDwAAQBAJ&printsec=frontcover&hl=&source=gbs_api",
+                "infoLink": "https://play.google.com/store/books/details?id=VRdZDwAAQBAJ&source=gbs_api",
+                "canonicalVolumeLink": "https://play.google.com/store/books/details?id=VRdZDwAAQBAJ"
+            },
+            "layerInfo": {
+                "layers": [
+                    {
+                        "layerId": "geo",
+                        "volumeAnnotationsVersion": "3"
+                    }
+                ]
+            },
+            "saleInfo": {
+                "country": "US",
+                "saleability": "FOR_SALE",
+                "isEbook": true,
+                "listPrice": {
+                    "amount": 12.99,
+                    "currencyCode": "USD"
+                },
+                "retailPrice": {
+                    "amount": 12.99,
+                    "currencyCode": "USD"
+                },
+                "buyLink": "https://play.google.com/store/books/details?id=VRdZDwAAQBAJ&rdid=book-VRdZDwAAQBAJ&rdot=1&source=gbs_api",
+                "offers": [
+                    {
+                        "finskyOfferType": 1,
+                        "listPrice": {
+                            "amountInMicros": 12990000,
+                            "currencyCode": "USD"
+                        },
+                        "retailPrice": {
+                            "amountInMicros": 12990000,
+                            "currencyCode": "USD"
+                        },
+                        "giftable": true
+                    }
+                ]
+            },
+            "accessInfo": {
+                "country": "US",
+                "viewability": "PARTIAL",
+                "embeddable": true,
+                "publicDomain": false,
+                "textToSpeechPermission": "ALLOWED",
+                "epub": {
+                    "isAvailable": true,
+                    "acsTokenLink": "http://books.google.com/books/download/The_Book-sample-epub.acsm?id=VRdZDwAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+                },
+                "pdf": {
+                    "isAvailable": true,
+                    "acsTokenLink": "http://books.google.com/books/download/The_Book-sample-pdf.acsm?id=VRdZDwAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+                },
+                "webReaderLink": "http://play.google.com/books/reader?id=VRdZDwAAQBAJ&hl=&printsec=frontcover&source=gbs_api",
+                "accessViewStatus": "SAMPLE",
+                "quoteSharingAllowed": false
+            }
+        },
+        {
+            "kind": "books#volume",
+            "id": "U4AqDwAAQBAJ",
+            "etag": "UTdEmk+N7bs",
+            "selfLink": "https://www.googleapis.com/books/v1/volumes/U4AqDwAAQBAJ",
+            "volumeInfo": {
+                "title": "Dread Nation",
+                "authors": [
+                    "Justina Ireland"
+                ],
+                "publisher": "HarperCollins",
+                "publishedDate": "2018-04-03",
+                "description": "At once provocative, terrifying, and darkly subversive, Dread Nation is Justina Ireland's stunning vision of an America both foreign and familiar—a country on the brink, at the explosive crossroads where race, humanity, and survival meet. Jane ...",
+                "industryIdentifiers": [
+                    {
+                        "type": "ISBN_13",
+                        "identifier": "9780062570628"
+                    },
+                    {
+                        "type": "ISBN_10",
+                        "identifier": "0062570625"
+                    }
+                ],
+                "readingModes": {
+                    "text": true,
+                    "image": false
+                },
+                "pageCount": 464,
+                "printType": "BOOK",
+                "categories": [
+                    "Young Adult Fiction"
+                ],
+                "averageRating": 4,
+                "ratingsCount": 30,
+                "maturityRating": "NOT_MATURE",
+                "allowAnonLogging": true,
+                "contentVersion": "1.2.2.0.preview.2",
+                "panelizationSummary": {
+                    "containsEpubBubbles": false,
+                    "containsImageBubbles": false
+                },
+                "imageLinks": {
+                    "smallThumbnail": "http://books.google.com/books/content?id=U4AqDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                    "thumbnail": "http://books.google.com/books/content?id=U4AqDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+                },
+                "previewLink": "http://books.google.com/books?id=U4AqDwAAQBAJ&printsec=frontcover&hl=&source=gbs_api",
+                "infoLink": "https://play.google.com/store/books/details?id=U4AqDwAAQBAJ&source=gbs_api",
+                "canonicalVolumeLink": "https://play.google.com/store/books/details?id=U4AqDwAAQBAJ"
+            },
+            "layerInfo": {
+                "layers": [
+                    {
+                        "layerId": "geo",
+                        "volumeAnnotationsVersion": "2"
+                    }
+                ]
+            },
+            "saleInfo": {
+                "country": "US",
+                "saleability": "FOR_SALE",
+                "isEbook": true,
+                "listPrice": {
+                    "amount": 9.99,
+                    "currencyCode": "USD"
+                },
+                "retailPrice": {
+                    "amount": 9.99,
+                    "currencyCode": "USD"
+                },
+                "buyLink": "https://play.google.com/store/books/details?id=U4AqDwAAQBAJ&rdid=book-U4AqDwAAQBAJ&rdot=1&source=gbs_api",
+                "offers": [
+                    {
+                        "finskyOfferType": 1,
+                        "listPrice": {
+                            "amountInMicros": 9990000,
+                            "currencyCode": "USD"
+                        },
+                        "retailPrice": {
+                            "amountInMicros": 9990000,
+                            "currencyCode": "USD"
+                        },
+                        "giftable": true
+                    }
+                ]
+            },
+            "accessInfo": {
+                "country": "US",
+                "viewability": "PARTIAL",
+                "embeddable": true,
+                "publicDomain": false,
+                "textToSpeechPermission": "ALLOWED_FOR_ACCESSIBILITY",
+                "epub": {
+                    "isAvailable": true,
+                    "acsTokenLink": "http://books.google.com/books/download/Dread_Nation-sample-epub.acsm?id=U4AqDwAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+                },
+                "pdf": {
+                    "isAvailable": false
+                },
+                "webReaderLink": "http://play.google.com/books/reader?id=U4AqDwAAQBAJ&hl=&printsec=frontcover&source=gbs_api",
+                "accessViewStatus": "SAMPLE",
+                "quoteSharingAllowed": false
+            }
+        },
+        {
+            "kind": "books#volume",
+            "id": "5tCXDwAAQBAJ",
+            "etag": "49N1+F+bpc8",
+            "selfLink": "https://www.googleapis.com/books/v1/volumes/5tCXDwAAQBAJ",
+            "volumeInfo": {
+                "title": "Deathless Divide",
+                "authors": [
+                    "Justina Ireland"
+                ],
+                "publisher": "HarperCollins",
+                "publishedDate": "2020-02-04",
+                "description": "The sequel to the New York Times bestselling epic Dread Nation is an unforgettable journey of revenge and salvation across a divided America. After the fall of Summerland, Jane McKeene hoped her life would get simpler: Get out of town, stay alive ...",
+                "industryIdentifiers": [
+                    {
+                        "type": "ISBN_13",
+                        "identifier": "9780062570659"
+                    },
+                    {
+                        "type": "ISBN_10",
+                        "identifier": "006257065X"
+                    }
+                ],
+                "readingModes": {
+                    "text": true,
+                    "image": false
+                },
+                "pageCount": 560,
+                "printType": "BOOK",
+                "categories": [
+                    "Young Adult Fiction"
+                ],
+                "averageRating": 4,
+                "ratingsCount": 5,
+                "maturityRating": "NOT_MATURE",
+                "allowAnonLogging": true,
+                "contentVersion": "1.2.2.0.preview.2",
+                "panelizationSummary": {
+                    "containsEpubBubbles": false,
+                    "containsImageBubbles": false
+                },
+                "imageLinks": {
+                    "smallThumbnail": "http://books.google.com/books/content?id=5tCXDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                    "thumbnail": "http://books.google.com/books/content?id=5tCXDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+                },
+                "previewLink": "http://books.google.com/books?id=5tCXDwAAQBAJ&printsec=frontcover&hl=&source=gbs_api",
+                "infoLink": "https://play.google.com/store/books/details?id=5tCXDwAAQBAJ&source=gbs_api",
+                "canonicalVolumeLink": "https://play.google.com/store/books/details?id=5tCXDwAAQBAJ"
+            },
+            "layerInfo": {
+                "layers": [
+                    {
+                        "layerId": "geo",
+                        "volumeAnnotationsVersion": "2"
+                    }
+                ]
+            },
+            "saleInfo": {
+                "country": "US",
+                "saleability": "FOR_SALE",
+                "isEbook": true,
+                "listPrice": {
+                    "amount": 9.99,
+                    "currencyCode": "USD"
+                },
+                "retailPrice": {
+                    "amount": 9.99,
+                    "currencyCode": "USD"
+                },
+                "buyLink": "https://play.google.com/store/books/details?id=5tCXDwAAQBAJ&rdid=book-5tCXDwAAQBAJ&rdot=1&source=gbs_api",
+                "offers": [
+                    {
+                        "finskyOfferType": 1,
+                        "listPrice": {
+                            "amountInMicros": 9990000,
+                            "currencyCode": "USD"
+                        },
+                        "retailPrice": {
+                            "amountInMicros": 9990000,
+                            "currencyCode": "USD"
+                        },
+                        "giftable": true
+                    }
+                ]
+            },
+            "accessInfo": {
+                "country": "US",
+                "viewability": "PARTIAL",
+                "embeddable": true,
+                "publicDomain": false,
+                "textToSpeechPermission": "ALLOWED_FOR_ACCESSIBILITY",
+                "epub": {
+                    "isAvailable": true,
+                    "acsTokenLink": "http://books.google.com/books/download/Deathless_Divide-sample-epub.acsm?id=5tCXDwAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+                },
+                "pdf": {
+                    "isAvailable": false
+                },
+                "webReaderLink": "http://play.google.com/books/reader?id=5tCXDwAAQBAJ&hl=&printsec=frontcover&source=gbs_api",
+                "accessViewStatus": "SAMPLE",
+                "quoteSharingAllowed": false
+            }
+        },
+        {
+            "kind": "books#volume",
+            "id": "IIaMDwAAQBAJ",
+            "etag": "4bNZ8icm4mI",
+            "selfLink": "https://www.googleapis.com/books/v1/volumes/IIaMDwAAQBAJ",
+            "volumeInfo": {
+                "title": "Black Girl Unlimited",
+                "subtitle": "The Remarkable Story of a Teenage Wizard",
+                "authors": [
+                    "Echo Brown"
+                ],
+                "publisher": "Henry Holt and Company (BYR)",
+                "publishedDate": "2020-01-14",
+                "description": "\"Just brilliant.\"—Kirkus Reviews Heavily autobiographical and infused with magical realism, Black Girl Unlimited fearlessly explores the intersections of poverty, sexual violence, depression, racism, and sexism—all through the arc of a ...",
+                "industryIdentifiers": [
+                    {
+                        "type": "ISBN_13",
+                        "identifier": "9781250309860"
+                    },
+                    {
+                        "type": "ISBN_10",
+                        "identifier": "1250309867"
+                    }
+                ],
+                "readingModes": {
+                    "text": true,
+                    "image": false
+                },
+                "pageCount": 304,
+                "printType": "BOOK",
+                "categories": [
+                    "Young Adult Fiction"
+                ],
+                "maturityRating": "NOT_MATURE",
+                "allowAnonLogging": true,
+                "contentVersion": "1.3.3.0.preview.2",
+                "panelizationSummary": {
+                    "containsEpubBubbles": false,
+                    "containsImageBubbles": false
+                },
+                "imageLinks": {
+                    "smallThumbnail": "http://books.google.com/books/content?id=IIaMDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                    "thumbnail": "http://books.google.com/books/content?id=IIaMDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+                },
+                "previewLink": "http://books.google.com/books?id=IIaMDwAAQBAJ&printsec=frontcover&hl=&source=gbs_api",
+                "infoLink": "https://play.google.com/store/books/details?id=IIaMDwAAQBAJ&source=gbs_api",
+                "canonicalVolumeLink": "https://play.google.com/store/books/details?id=IIaMDwAAQBAJ"
+            },
+            "layerInfo": {
+                "layers": [
+                    {
+                        "layerId": "geo",
+                        "volumeAnnotationsVersion": "3"
+                    }
+                ]
+            },
+            "saleInfo": {
+                "country": "US",
+                "saleability": "FOR_SALE",
+                "isEbook": true,
+                "listPrice": {
+                    "amount": 10.99,
+                    "currencyCode": "USD"
+                },
+                "retailPrice": {
+                    "amount": 10.99,
+                    "currencyCode": "USD"
+                },
+                "buyLink": "https://play.google.com/store/books/details?id=IIaMDwAAQBAJ&rdid=book-IIaMDwAAQBAJ&rdot=1&source=gbs_api",
+                "offers": [
+                    {
+                        "finskyOfferType": 1,
+                        "listPrice": {
+                            "amountInMicros": 10990000,
+                            "currencyCode": "USD"
+                        },
+                        "retailPrice": {
+                            "amountInMicros": 10990000,
+                            "currencyCode": "USD"
+                        },
+                        "giftable": true
+                    }
+                ]
+            },
+            "accessInfo": {
+                "country": "US",
+                "viewability": "PARTIAL",
+                "embeddable": true,
+                "publicDomain": false,
+                "textToSpeechPermission": "ALLOWED",
+                "epub": {
+                    "isAvailable": true,
+                    "acsTokenLink": "http://books.google.com/books/download/Black_Girl_Unlimited-sample-epub.acsm?id=IIaMDwAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+                },
+                "pdf": {
+                    "isAvailable": false
+                },
+                "webReaderLink": "http://play.google.com/books/reader?id=IIaMDwAAQBAJ&hl=&printsec=frontcover&source=gbs_api",
+                "accessViewStatus": "SAMPLE",
+                "quoteSharingAllowed": false
+            }
+        },
+        {
+            "kind": "books#volume",
+            "id": "ZI6PDwAAQBAJ",
+            "etag": "yv9OT4yk64Q",
+            "selfLink": "https://www.googleapis.com/books/v1/volumes/ZI6PDwAAQBAJ",
+            "volumeInfo": {
+                "title": "A Love Hate Thing",
+                "authors": [
+                    "Whitney D. Grandison"
+                ],
+                "publisher": "Harlequin",
+                "publishedDate": "2020-01-07",
+                "description": "“If you love a good enemies-to-lovers trope, run—don’t walk—to the nearest bookstore or library near you.”—Buzzfeed “A Love Hate Thing is an irresistible romance that you’ll gobble up whole.”—Popsugar When they’re stuck under one roof, the ...",
+                "industryIdentifiers": [
+                    {
+                        "type": "ISBN_13",
+                        "identifier": "9781488056574"
+                    },
+                    {
+                        "type": "ISBN_10",
+                        "identifier": "1488056579"
+                    }
+                ],
+                "readingModes": {
+                    "text": true,
+                    "image": false
+                },
+                "pageCount": 304,
+                "printType": "BOOK",
+                "categories": [
+                    "Young Adult Fiction"
+                ],
+                "averageRating": 4,
+                "ratingsCount": 1,
+                "maturityRating": "NOT_MATURE",
+                "allowAnonLogging": true,
+                "contentVersion": "1.1.1.0.preview.2",
+                "panelizationSummary": {
+                    "containsEpubBubbles": false,
+                    "containsImageBubbles": false
+                },
+                "imageLinks": {
+                    "smallThumbnail": "http://books.google.com/books/content?id=ZI6PDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                    "thumbnail": "http://books.google.com/books/content?id=ZI6PDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+                },
+                "previewLink": "http://books.google.com/books?id=ZI6PDwAAQBAJ&printsec=frontcover&hl=&source=gbs_api",
+                "infoLink": "https://play.google.com/store/books/details?id=ZI6PDwAAQBAJ&source=gbs_api",
+                "canonicalVolumeLink": "https://play.google.com/store/books/details?id=ZI6PDwAAQBAJ"
+            },
+            "layerInfo": {
+                "layers": [
+                    {
+                        "layerId": "geo",
+                        "volumeAnnotationsVersion": "1"
+                    }
+                ]
+            },
+            "saleInfo": {
+                "country": "US",
+                "saleability": "FOR_SALE",
+                "isEbook": true,
+                "listPrice": {
+                    "amount": 2.99,
+                    "currencyCode": "USD"
+                },
+                "retailPrice": {
+                    "amount": 2.99,
+                    "currencyCode": "USD"
+                },
+                "buyLink": "https://play.google.com/store/books/details?id=ZI6PDwAAQBAJ&rdid=book-ZI6PDwAAQBAJ&rdot=1&source=gbs_api",
+                "offers": [
+                    {
+                        "finskyOfferType": 1,
+                        "listPrice": {
+                            "amountInMicros": 2990000,
+                            "currencyCode": "USD"
+                        },
+                        "retailPrice": {
+                            "amountInMicros": 2990000,
+                            "currencyCode": "USD"
+                        },
+                        "giftable": true
+                    }
+                ]
+            },
+            "accessInfo": {
+                "country": "US",
+                "viewability": "PARTIAL",
+                "embeddable": true,
+                "publicDomain": false,
+                "textToSpeechPermission": "ALLOWED",
+                "epub": {
+                    "isAvailable": true,
+                    "acsTokenLink": "http://books.google.com/books/download/A_Love_Hate_Thing-sample-epub.acsm?id=ZI6PDwAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+                },
+                "pdf": {
+                    "isAvailable": false
+                },
+                "webReaderLink": "http://play.google.com/books/reader?id=ZI6PDwAAQBAJ&hl=&printsec=frontcover&source=gbs_api",
+                "accessViewStatus": "SAMPLE",
+                "quoteSharingAllowed": false
+            }
+        },
+        {
+            "kind": "books#volume",
+            "id": "iY6PDwAAQBAJ",
+            "etag": "eI+WF592Vzs",
+            "selfLink": "https://www.googleapis.com/books/v1/volumes/iY6PDwAAQBAJ",
+            "volumeInfo": {
+                "title": "The Sound of Stars",
+                "authors": [
+                    "Alechia Dow"
+                ],
+                "publisher": "Harlequin",
+                "publishedDate": "2020-02-25",
+                "description": "Can a girl who risks her life for books and an alien who loves pop music work together to save humanity? A beautiful and thrilling debut novel for fans of Marie Lu and Veronica Roth. Two years ago, a misunderstanding between the leaders of Earth ...",
+                "industryIdentifiers": [
+                    {
+                        "type": "ISBN_13",
+                        "identifier": "9781488056581"
+                    },
+                    {
+                        "type": "ISBN_10",
+                        "identifier": "1488056587"
+                    }
+                ],
+                "readingModes": {
+                    "text": true,
+                    "image": false
+                },
+                "pageCount": 304,
+                "printType": "BOOK",
+                "categories": [
+                    "Young Adult Fiction"
+                ],
+                "averageRating": 4.5,
+                "ratingsCount": 2,
+                "maturityRating": "NOT_MATURE",
+                "allowAnonLogging": true,
+                "contentVersion": "1.4.4.0.preview.2",
+                "panelizationSummary": {
+                    "containsEpubBubbles": false,
+                    "containsImageBubbles": false
+                },
+                "imageLinks": {
+                    "smallThumbnail": "http://books.google.com/books/content?id=iY6PDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                    "thumbnail": "http://books.google.com/books/content?id=iY6PDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+                },
+                "previewLink": "http://books.google.com/books?id=iY6PDwAAQBAJ&printsec=frontcover&hl=&source=gbs_api",
+                "infoLink": "https://play.google.com/store/books/details?id=iY6PDwAAQBAJ&source=gbs_api",
+                "canonicalVolumeLink": "https://play.google.com/store/books/details?id=iY6PDwAAQBAJ"
+            },
+            "layerInfo": {
+                "layers": [
+                    {
+                        "layerId": "geo",
+                        "volumeAnnotationsVersion": "5"
+                    }
+                ]
+            },
+            "saleInfo": {
+                "country": "US",
+                "saleability": "FOR_SALE",
+                "isEbook": true,
+                "listPrice": {
+                    "amount": 9.99,
+                    "currencyCode": "USD"
+                },
+                "retailPrice": {
+                    "amount": 9.99,
+                    "currencyCode": "USD"
+                },
+                "buyLink": "https://play.google.com/store/books/details?id=iY6PDwAAQBAJ&rdid=book-iY6PDwAAQBAJ&rdot=1&source=gbs_api",
+                "offers": [
+                    {
+                        "finskyOfferType": 1,
+                        "listPrice": {
+                            "amountInMicros": 9990000,
+                            "currencyCode": "USD"
+                        },
+                        "retailPrice": {
+                            "amountInMicros": 9990000,
+                            "currencyCode": "USD"
+                        },
+                        "giftable": true
+                    }
+                ]
+            },
+            "accessInfo": {
+                "country": "US",
+                "viewability": "PARTIAL",
+                "embeddable": true,
+                "publicDomain": false,
+                "textToSpeechPermission": "ALLOWED",
+                "epub": {
+                    "isAvailable": true,
+                    "acsTokenLink": "http://books.google.com/books/download/The_Sound_of_Stars-sample-epub.acsm?id=iY6PDwAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+                },
+                "pdf": {
+                    "isAvailable": false
+                },
+                "webReaderLink": "http://play.google.com/books/reader?id=iY6PDwAAQBAJ&hl=&printsec=frontcover&source=gbs_api",
+                "accessViewStatus": "SAMPLE",
+                "quoteSharingAllowed": false
+            }
+        },
+        {
+            "kind": "books#volume",
+            "id": "rhfCuu5ZZwEC",
+            "etag": "5cfQr+7lxFw",
+            "selfLink": "https://www.googleapis.com/books/v1/volumes/rhfCuu5ZZwEC",
+            "volumeInfo": {
+                "title": "The Lost Campers",
+                "authors": [
+                    "Paul Hutchens"
+                ],
+                "publisher": "Moody Publishers",
+                "publishedDate": "1997-06-01",
+                "description": "The tales and travels of the Sugar Creek Gang have passed the test of time, delighting young readers for more than fifty years. Great mysteries for kids with a message, The Sugar Creek Gang series chronicles the faith-building adventures of a ...",
+                "industryIdentifiers": [
+                    {
+                        "type": "ISBN_10",
+                        "identifier": "1575677385"
+                    },
+                    {
+                        "type": "ISBN_13",
+                        "identifier": "9781575677385"
+                    }
+                ],
+                "readingModes": {
+                    "text": true,
+                    "image": true
+                },
+                "pageCount": 128,
+                "printType": "BOOK",
+                "categories": [
+                    "Juvenile Fiction"
+                ],
+                "averageRating": 5,
+                "ratingsCount": 2,
+                "maturityRating": "NOT_MATURE",
+                "allowAnonLogging": true,
+                "contentVersion": "0.4.5.0.preview.3",
+                "panelizationSummary": {
+                    "containsEpubBubbles": false,
+                    "containsImageBubbles": false
+                },
+                "imageLinks": {
+                    "smallThumbnail": "http://books.google.com/books/content?id=rhfCuu5ZZwEC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                    "thumbnail": "http://books.google.com/books/content?id=rhfCuu5ZZwEC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+                },
+                "previewLink": "http://books.google.com/books?id=rhfCuu5ZZwEC&printsec=frontcover&hl=&source=gbs_api",
+                "infoLink": "https://play.google.com/store/books/details?id=rhfCuu5ZZwEC&source=gbs_api",
+                "canonicalVolumeLink": "https://play.google.com/store/books/details?id=rhfCuu5ZZwEC"
+            },
+            "layerInfo": {
+                "layers": [
+                    {
+                        "layerId": "geo",
+                        "volumeAnnotationsVersion": "11"
+                    }
+                ]
+            },
+            "saleInfo": {
+                "country": "US",
+                "saleability": "FOR_SALE",
+                "isEbook": true,
+                "listPrice": {
+                    "amount": 3.99,
+                    "currencyCode": "USD"
+                },
+                "retailPrice": {
+                    "amount": 3.99,
+                    "currencyCode": "USD"
+                },
+                "buyLink": "https://play.google.com/store/books/details?id=rhfCuu5ZZwEC&rdid=book-rhfCuu5ZZwEC&rdot=1&source=gbs_api",
+                "offers": [
+                    {
+                        "finskyOfferType": 1,
+                        "listPrice": {
+                            "amountInMicros": 3990000,
+                            "currencyCode": "USD"
+                        },
+                        "retailPrice": {
+                            "amountInMicros": 3990000,
+                            "currencyCode": "USD"
+                        },
+                        "giftable": true
+                    }
+                ]
+            },
+            "accessInfo": {
+                "country": "US",
+                "viewability": "PARTIAL",
+                "embeddable": true,
+                "publicDomain": false,
+                "textToSpeechPermission": "ALLOWED",
+                "epub": {
+                    "isAvailable": true,
+                    "acsTokenLink": "http://books.google.com/books/download/The_Lost_Campers-sample-epub.acsm?id=rhfCuu5ZZwEC&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+                },
+                "pdf": {
+                    "isAvailable": true,
+                    "acsTokenLink": "http://books.google.com/books/download/The_Lost_Campers-sample-pdf.acsm?id=rhfCuu5ZZwEC&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+                },
+                "webReaderLink": "http://play.google.com/books/reader?id=rhfCuu5ZZwEC&hl=&printsec=frontcover&source=gbs_api",
+                "accessViewStatus": "SAMPLE",
+                "quoteSharingAllowed": false
+            }
+        },
+        {
+            "kind": "books#volume",
+            "id": "PvRRPQAACAAJ",
+            "etag": "sHQltnf8S/0",
+            "selfLink": "https://www.googleapis.com/books/v1/volumes/PvRRPQAACAAJ",
+            "volumeInfo": {
+                "title": "Sugar Creek Gang Books",
+                "authors": [
+                    "Paul Hutchens"
+                ],
+                "publisher": "Moody Pub",
+                "publishedDate": "1996-07-15",
+                "description": "The Sugar Creek Gang sets out on adventures near and far. In the process, they solve mysteries and teach readers a thing or two.Save $5 by purchasing The Sugar Creek Gang Book Set #1-6 which include:The Swamp Robber #1The Killer Bear #2The Winter ...",
+                "industryIdentifiers": [
+                    {
+                        "type": "ISBN_10",
+                        "identifier": "0802469949"
+                    },
+                    {
+                        "type": "ISBN_13",
+                        "identifier": "9780802469946"
+                    }
+                ],
+                "readingModes": {
+                    "text": false,
+                    "image": false
+                },
+                "pageCount": 688,
+                "printType": "BOOK",
+                "categories": [
+                    "Fiction"
+                ],
+                "averageRating": 4.5,
+                "ratingsCount": 51,
+                "maturityRating": "NOT_MATURE",
+                "allowAnonLogging": false,
+                "contentVersion": "preview-1.0.0",
+                "imageLinks": {
+                    "smallThumbnail": "http://books.google.com/books/content?id=PvRRPQAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+                    "thumbnail": "http://books.google.com/books/content?id=PvRRPQAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+                },
+                "previewLink": "http://books.google.com/books?id=PvRRPQAACAAJ&hl=&source=gbs_api",
+                "infoLink": "http://books.google.com/books?id=PvRRPQAACAAJ&hl=&source=gbs_api",
+                "canonicalVolumeLink": "https://books.google.com/books/about/Sugar_Creek_Gang_Books.html?hl=&id=PvRRPQAACAAJ"
+            },
+            "saleInfo": {
+                "country": "US",
+                "saleability": "NOT_FOR_SALE",
+                "isEbook": false
+            },
+            "accessInfo": {
+                "country": "US",
+                "viewability": "NO_PAGES",
+                "embeddable": false,
+                "publicDomain": false,
+                "textToSpeechPermission": "ALLOWED",
+                "epub": {
+                    "isAvailable": false
+                },
+                "pdf": {
+                    "isAvailable": false
+                },
+                "webReaderLink": "http://play.google.com/books/reader?id=PvRRPQAACAAJ&hl=&printsec=frontcover&source=gbs_api",
+                "accessViewStatus": "NONE",
+                "quoteSharingAllowed": false
+            }
+        },
+        {
+            "kind": "books#volume",
+            "id": "omivDQAAQBAJ",
+            "etag": "L4l/PsQdW80",
+            "selfLink": "https://www.googleapis.com/books/v1/volumes/omivDQAAQBAJ",
+            "volumeInfo": {
+                "title": "Deep Learning",
+                "authors": [
+                    "Ian Goodfellow",
+                    "Yoshua Bengio",
+                    "Aaron Courville"
+                ],
+                "publisher": "MIT Press",
+                "publishedDate": "2016-11-10",
+                "description": "An introduction to a broad range of topics in deep learning, covering mathematical and conceptual background, deep learning techniques used in industry, and research perspectives. “Written by three experts in the field, Deep Learning is the only ...",
+                "industryIdentifiers": [
+                    {
+                        "type": "ISBN_13",
+                        "identifier": "9780262337373"
+                    },
+                    {
+                        "type": "ISBN_10",
+                        "identifier": "0262337371"
+                    }
+                ],
+                "readingModes": {
+                    "text": true,
+                    "image": true
+                },
+                "pageCount": 800,
+                "printType": "BOOK",
+                "categories": [
+                    "Computers"
+                ],
+                "maturityRating": "NOT_MATURE",
+                "allowAnonLogging": true,
+                "contentVersion": "1.7.2.0.preview.3",
+                "panelizationSummary": {
+                    "containsEpubBubbles": false,
+                    "containsImageBubbles": false
+                },
+                "imageLinks": {
+                    "smallThumbnail": "http://books.google.com/books/content?id=omivDQAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                    "thumbnail": "http://books.google.com/books/content?id=omivDQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+                },
+                "previewLink": "http://books.google.com/books?id=omivDQAAQBAJ&printsec=frontcover&hl=&source=gbs_api",
+                "infoLink": "https://play.google.com/store/books/details?id=omivDQAAQBAJ&source=gbs_api",
+                "canonicalVolumeLink": "https://play.google.com/store/books/details?id=omivDQAAQBAJ"
+            },
+            "layerInfo": {
+                "layers": [
+                    {
+                        "layerId": "geo",
+                        "volumeAnnotationsVersion": "1"
+                    }
+                ]
+            },
+            "saleInfo": {
+                "country": "US",
+                "saleability": "FOR_SALE",
+                "isEbook": true,
+                "listPrice": {
+                    "amount": 50.99,
+                    "currencyCode": "USD"
+                },
+                "retailPrice": {
+                    "amount": 50.99,
+                    "currencyCode": "USD"
+                },
+                "buyLink": "https://play.google.com/store/books/details?id=omivDQAAQBAJ&rdid=book-omivDQAAQBAJ&rdot=1&source=gbs_api",
+                "offers": [
+                    {
+                        "finskyOfferType": 1,
+                        "listPrice": {
+                            "amountInMicros": 50990000,
+                            "currencyCode": "USD"
+                        },
+                        "retailPrice": {
+                            "amountInMicros": 50990000,
+                            "currencyCode": "USD"
+                        },
+                        "giftable": true
+                    }
+                ]
+            },
+            "accessInfo": {
+                "country": "US",
+                "viewability": "PARTIAL",
+                "embeddable": true,
+                "publicDomain": false,
+                "textToSpeechPermission": "ALLOWED",
+                "epub": {
+                    "isAvailable": true,
+                    "acsTokenLink": "http://books.google.com/books/download/Deep_Learning-sample-epub.acsm?id=omivDQAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+                },
+                "pdf": {
+                    "isAvailable": true,
+                    "acsTokenLink": "http://books.google.com/books/download/Deep_Learning-sample-pdf.acsm?id=omivDQAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+                },
+                "webReaderLink": "http://play.google.com/books/reader?id=omivDQAAQBAJ&hl=&printsec=frontcover&source=gbs_api",
+                "accessViewStatus": "SAMPLE",
+                "quoteSharingAllowed": false
+            }
+        }
+    ]
+}
