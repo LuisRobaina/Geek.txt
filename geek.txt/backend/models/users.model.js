@@ -1,47 +1,62 @@
 // This is a base for the user model.
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const { isEmail } = require("validator");
 
 const userSchema = new Schema({
     // Features
+    Nickname: {
+        type: String,
+        required: true
+    },
     firstName: {
         type: String,
         required: true,
         trim: true,
-        minlength: 5
+        minlength: 3,
+        maxlength: 20
     },
     lastName: {
         type: String,
         required: true,
         trim: true,
-        minlength: 5
+        minlength: 3,
+        maxlength: 20
     },
-    username: {
-        // Validations for username.
+    email: { // Primary key.
         type: String,
-        required: true,
         unique: true,
-        trim: true,
-        minlength: 3 // At least 3 chars for usernames.
+        validate: [isEmail, "Invalid Email"]
     },
-    // password ??
     password: {
-        // Validations for username.
         type: String,
         required: true,
-        trim: true,
-        minlength: 5 // At least 5 chars for passwords.
     },
-    // More stuff ??
-},  {
+    Credit_cards: [
+        {
+            name: { type: String },
+            Number: { type: Number },
+            ExpDate: { type: Date },
+            CSV: { type: Number },
+            Address: { type: String }
+        }
+    ],
+    ShippingAddress: [
+        {
+            Address: { type: String }
+        }
+    ],
+    WishList: [
+        {
+            List: { type: mongoose.Schema.Types.ObjectId, ref: 'WishList' },
+            max: 3 // TODO verify this.
+        }
+    ]
+}, {
     // Create a timestamps for the creation and modification of document.
     timestamps: true,
 });
 
-// Instance method to get initials of a user.
-userSchema.methods.getInitials = function() {
-    return this.firstName[0] + this.lastName[0]
-  }
 
 // Export userSchema as User.
 const User = mongoose.model('User', userSchema)
