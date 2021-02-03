@@ -1,13 +1,18 @@
-import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import {useState} from 'react'
+import { Menu, Segment } from 'semantic-ui-react'
 
-export default class Navbar extends Component {
-    render() {
-        return (
-            <nav className="navbar navbar-dark bg-dark navbar-expand-lg">
-                <Link to='/' className="navbar-brand">Book Browser</Link>
-            </nav>
-        );
-    }
-
+const NavBar = () => {
+    const [active, setActive] = useState("home")
+    return(
+        <Segment>
+            <Menu secondary size="large">
+                <Link to="/">
+                    <Menu.Item name="BookLib" />
+                </Link>
+            </Menu>
+        </Segment>
+    );
 }
+
+export default NavBar;
