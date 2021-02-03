@@ -29,14 +29,15 @@ const BookList = ({bookData}) => {
                 )}
 
         </Grid>
-        <Pagination
-        boundaryRange={0}
-        ellipsisItem={null}
-        siblingRange={1}
-        totalPages={Math.ceil(bookData.length / bookPerPage)}
-        onPageChange={handleChange}
-        activePage={currentPage}
-        />        </>
+            <Pagination
+                boundaryRange={0}
+                ellipsisItem={null}
+                siblingRange={1}
+                totalPages={Math.ceil(bookData.length / bookPerPage)}
+                onPageChange={handleChange}
+                activePage={currentPage}
+            />        
+        </>
     )
 }
 
