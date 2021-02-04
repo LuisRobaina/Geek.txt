@@ -1,7 +1,7 @@
 // This is a base for the user model.
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const { isEmail } = require("validator");
+// const { isEmail } = require("validator");
 
 const userSchema = new Schema({
     // Features
@@ -13,20 +13,20 @@ const userSchema = new Schema({
         type: String,
         required: true,
         trim: true,
-        minlength: 3,
-        maxlength: 20
+        minLength: 3,
+        maxLength: 20
     },
     lastName: {
         type: String,
         required: true,
         trim: true,
-        minlength: 3,
-        maxlength: 20
+        minLength: 3,
+        maxLength: 20
     },
     email: { // Primary key.
         type: String,
         unique: true,
-        validate: [isEmail, "Invalid Email"]
+        // validate: [isEmail, "Invalid Email"]
     },
     password: {
         type: String,
@@ -49,7 +49,7 @@ const userSchema = new Schema({
     WishList: [
         {
             List: { type: mongoose.Schema.Types.ObjectId, ref: 'WishList' },
-            max: 3 // TODO verify this.
+            // max: 3 // TODO verify this.
         }
     ]
 }, {

@@ -18,15 +18,15 @@ app.use(cors());
 app.use(express.json());
 
 // Load ATLAS_URI environment variable.
-const uri = process.env.ATLAS_URI
+// const uri = process.env.ATLAS_URI
 
 // Connect to the remote database.
-mongoose.connect(uri, {useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology:true});
+// mongoose.connect(uri, {useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology:true});
 
-const connection = mongoose.connection;
-connection.once('open', () => {
-    console.log("Geek.txt MongoDB is connected");
-});
+// const connection = mongoose.connection;
+// connection.once('open', () => {
+//     console.log("Geek.txt MongoDB is connected");
+// });
 
 // Handle request to root url
 app.get('/', function(req, res){
@@ -40,10 +40,12 @@ app.get('/', function(req, res){
  TODO: Add routers here.
 */
 const usersRouter =require('./routes/users');
+const bookRouter = require('./routes/book')
 
 // If a user browsers our API to the /users it will load all the
 // users router in routers/users.js.
 app.use('/users', usersRouter);
+app.use('/books', bookRouter);
 
 
 /*
