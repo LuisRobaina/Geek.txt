@@ -12,8 +12,8 @@ const Home = () => {
     }, [])
     return (
         <Container>
-        <p>Home page!</p>
-        <BookList bookData={books}/>
+        <p>Welcome Geek Text Home Page!</p>
+        {/* <BookList bookData={books}/> */}
         </ Container>
     )
 }

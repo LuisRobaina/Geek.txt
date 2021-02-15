@@ -30,7 +30,7 @@ app.use(express.json());
 
 // Handle request to root url
 app.get('/', function(req, res){
-    res.send("Welcome to Geek.txt")
+    res.send("Welcome to Geek.txt backend built with NodeJS+Express.")
 })
 
 
