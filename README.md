@@ -5,7 +5,7 @@
     <img src="GeekText.jpg" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Geek.txt</h3>
+  <h3 align="center">Geek.txt: Your fav Geek Library!</h3>
 
   <p align="center">
     An awesome bookstore!
