@@ -9,8 +9,10 @@ const bookSchema = new Schema({
         trim: true, // Remove whitespaces.
     },
     Cover: {
-        url: String,
-        required: true
+        url: {
+            type: String,
+            required: true
+        }
     },
     Title: {
         type: String,
@@ -57,11 +59,6 @@ const bookSchema = new Schema({
     // Create a timestamps for the creation and modification of document.
     timestamps: true,
 });
-
-// Instance method to get initials of a user.
-// bookSchema.methods.getSoldCount = function () {
-//     return this.Sold_Count
-// }
 
 // Export userSchema as User.
 const Books = mongoose.model('Books', bookSchema)
