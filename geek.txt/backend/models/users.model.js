@@ -4,10 +4,10 @@ const Schema = mongoose.Schema;
 // const { isEmail } = require("validator");
 
 const userSchema = new Schema({
-    // Features
-    Nickname: {
+    // Features.
+    geekID: {
         type: String,
-        required: true
+        unique: true,
     },
     firstName: {
         type: String,
@@ -43,7 +43,13 @@ const userSchema = new Schema({
     ],
     ShippingAddress: [
         {
-            Address: { type: String }
+            Address: {
+                name: {type: String}, 
+                street: {type: String},
+                state: {type: String},
+                city: {type: String},
+                zipcode: {type: Number},
+            }
         }
     ],
     WishList: [

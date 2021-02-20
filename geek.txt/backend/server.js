@@ -10,7 +10,7 @@ require('dotenv').config();
 // Create express server
 const app = express()
 // Use the port sepecified in env or use port 5000
-const port = process.env.PORT || 5000
+const port = process.env.PORT || 5200
 
 // Cors middleware
 app.use(cors());
@@ -18,17 +18,17 @@ app.use(cors());
 app.use(express.json());
 
 // Load ATLAS_URI environment variable.
-// const uri = process.env.ATLAS_URI
+const uri = process.env.ATLAS_URI
 
 // Connect to the remote database.
-// mongoose.connect(uri, {useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology:true});
+mongoose.connect(uri, {useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology:true});
 
-// const connection = mongoose.connection;
-// connection.once('open', () => {
-//     console.log("Geek.txt MongoDB is connected");
-// });
+const connection = mongoose.connection;
+connection.once('open', () => {
+    console.log("Geek.txt MongoDB is connected");
+});
 
-// Handle request to root url
+// Handle request to root url.
 app.get('/', function(req, res){
     res.send("Welcome to Geek.txt backend built with NodeJS+Express.")
 })
