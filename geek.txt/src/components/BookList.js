@@ -1,12 +1,12 @@
-import { Grid, Image, Pagination } from "semantic-ui-react";
+import { Grid, Pagination } from "semantic-ui-react";
 import { useState } from 'react';
+import BookItem from "./BookItem";
 
-const BookList = ({bookData}) => {
-    const [bookPerPage, setBookPerPage] = useState(10);
+const BookList = ({bookData, bookCount}) => {
     const [currentPage, setcurrentPage] = useState(1);
 
-    const lastPageindex = bookPerPage * currentPage;
-    const firstPageIndex = lastPageindex - bookPerPage;
+    const lastPageindex = bookCount * currentPage;
+    const firstPageIndex = lastPageindex - bookCount;
     const books =  bookData.slice(firstPageIndex, lastPageindex);
 
 
@@ -18,26 +18,28 @@ const BookList = ({bookData}) => {
 
 
     return(
-        <>
-        <Grid  stackable >
+        <div style={{marginTop: '10px'}}>
+        <Grid stackable >
             {books ? (books.map((book, index) => (
                 <Grid.Column key={index} mobile={16} tablet={8} computer={4}>
-                    <Image src={book.url} centered/>
+                    <BookItem book={book}/>
                 </Grid.Column>
             ))) : (
                 <p>Loading...</p>
                 )}
 
         </Grid>
+        <div className="paginate">
             <Pagination
                 boundaryRange={0}
                 ellipsisItem={null}
                 siblingRange={1}
-                totalPages={Math.ceil(bookData.length / bookPerPage)}
+                totalPages={Math.ceil(bookData.length / bookCount)}
                 onPageChange={handleChange}
                 activePage={currentPage}
             />        
-        </>
+        </div>
+        </div>
     )
 }
 
