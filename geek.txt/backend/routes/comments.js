@@ -2,11 +2,13 @@ const mongoose = require('mongoose');
 let Books = require('../models/books.model')
 
 const router = require('express').Router();
-let Comment = require('../models/CommentingModels/comments.model')
+let Comment = require('../models/CommentingModels/ratings.model')
 
 // Handles incomming GET requests to url/comments/ .
 router.route('/').get((req, res) => {
-    // Route to get all the comments for a given book.
+    /**
+     * Route to get all the comments for a given book.
+    */
 
     /* 
     Sample request body:
@@ -14,7 +16,6 @@ router.route('/').get((req, res) => {
         "BookID": "601d7b8e7e0708245caabc48"
     }
     */
-
     Comment.where("BookID").equals(req.body.BookID)
         // If promise return then return all comments as JSON.
         .then(comments => res.json(comments))
@@ -22,8 +23,8 @@ router.route('/').get((req, res) => {
         .catch(err => res.status(400).json('Error: ' + err))
 });
 
+// Handles POST request to add new comment to a given book
 router.route('/add').post((req, res) => {
-    // Handles POST request to add new comment to a given book.
 
     /* 
     Sample POST request body:
@@ -39,7 +40,7 @@ router.route('/add').post((req, res) => {
     
     Books.count({_id : BookID}, function (err, count) {
         if(count == 0){
-            // Book does not exists
+            // Book does not exists.
             res.status(400).json('Error: Invalid Book ID.')
         }
     });
@@ -64,13 +65,14 @@ router.route('/add').post((req, res) => {
 
 router.route('/reply').post((req, res) => {
     // Handles POST request to add new reply for a given comment.
-    /* 
-    Sample POST request body
-    {
-        "OriginalCommentID": "602abe0c22ebdf09e077f33f",
-        "Creator": "601d7b8e7e0708245caabc48",
-        "Text": "This book is amazing!"
-    }
+    
+    /*
+        Sample POST request body
+        {
+            "OriginalCommentID": "602abe0c22ebdf09e077f33f",
+            "Creator": "601d7b8e7e0708245caabc48",
+            "Text": "This book is amazing!"
+        }
     */
    
     const OriginalCommentID = req.body.OriginalCommentID;
@@ -89,6 +91,20 @@ router.route('/reply').post((req, res) => {
     // If there is an error return status 400 with Error.
     .catch(err => res.status(400).json('Error: ' + err))
 
+});
+
+router.route('/delete').post((req, res) => {
+    // Handles POST request to delete a comment for a given book.
+    /*
+        Sample POST request body
+        {
+            "OriginalCommentID": "602abe0c22ebdf09e077f33f",
+            "Creator": "601d7b8e7e0708245caabc48",
+            "Text": "This book is amazing!"
+        }
+    */
+   
+    const OriginalCommentID = req.body.OriginalCommentID;
 });
 
 // Export all Comments routes in this routers object.

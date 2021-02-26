@@ -7,9 +7,9 @@ const RatingsSchema = new Schema({
         type: mongoose.Schema.Types.ObjectId, ref: 'User',
         required: true
     },
-    Book: {
+    BookID: {
         type: mongoose.Schema.Types.ObjectId, ref: 'Book',
-        required: true
+        required: true,
     },
     Rating: {
         type: Number,

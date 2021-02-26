@@ -46,7 +46,7 @@ const bookSchema = new Schema({
         type: Number,
         max: 5,
         min: 0,
-        default: 5
+        default: 0
     },
     Price: {
         type: Number,

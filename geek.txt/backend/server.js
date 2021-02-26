@@ -41,13 +41,14 @@ app.get('/', function(req, res){
 const usersRouter =require('./routes/users');
 const bookRouter = require('./routes/books');
 const commentsRouter = require('./routes/comments');
+const ratingsRouter = require('./routes/ratings');
 
 // If a user browsers our API to the /users it will load all the
 // users router in routers/users.js.
 app.use('/users', usersRouter);
 app.use('/books', bookRouter);
 app.use('/comments', commentsRouter);
-
+app.use('/rate', ratingsRouter);
 
 /*
  Start the server.
