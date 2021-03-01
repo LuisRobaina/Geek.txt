@@ -33,7 +33,7 @@
               "created_date": "2021-01-20 23:02:09",
               "description": "The first book in the Bridgerton series. Daphne Bridgerton’s reputation soars when she colludes with the Duke of Hastings. The basis of the Netflix series “Bridgerton.”",
               "first_chapter_link": "",
-              "price": 0,
+              "price": "$14.99",
               "primary_isbn10": "None",
               "primary_isbn13": "9780062424037",
               "book_uri": "nyt://book/d95504cd-88d6-5879-9b66-312e18f8494c",
@@ -73,58 +73,6 @@
             },
             {
               "age_group": "",
-              "amazon_product_url": "https://www.amazon.com/dp/1538747278?tag=NYTBSREV-20",
-              "article_chapter_link": "",
-              "author": "Douglas Preston and Lincoln Child",
-              "book_image": "https://s1.nyt.com/du/books/images/9781538747278.jpg",
-              "book_image_width": 327,
-              "book_image_height": 500,
-              "book_review_link": "",
-              "contributor": "by Douglas Preston and Lincoln Child",
-              "contributor_note": "",
-              "created_date": "2021-01-20 23:02:09",
-              "description": "The second book in the Nora Kelly series. An F.B.I. agent and an archaeologist identify a mummified corpse and its gruesome cause of death.",
-              "first_chapter_link": "",
-              "price": 0,
-              "primary_isbn10": "None",
-              "primary_isbn13": "9781538747292",
-              "book_uri": "nyt://book/20bc42b2-8935-5efe-8218-7c6435fdc4a0",
-              "publisher": "Grand Central",
-              "rank": 2,
-              "rank_last_week": 0,
-              "sunday_review_link": "",
-              "title": "THE SCORPION’S TAIL",
-              "updated_date": "2021-01-20 23:02:09",
-              "weeks_on_list": 1,
-              "buy_links": [
-                {
-                  "name": "Amazon",
-                  "url": "https://www.amazon.com/dp/1538747278?tag=NYTBSREV-20"
-                },
-                {
-                  "name": "Apple Books",
-                  "url": "https://du-gae-books-dot-nyt-du-prd.appspot.com/buy?title=THE+SCORPION%E2%80%99S+TAIL&author=Douglas+Preston+and+Lincoln+Child"
-                },
-                {
-                  "name": "Barnes and Noble",
-                  "url": "https://www.anrdoezrs.net/click-7990613-11819508?url=https%3A%2F%2Fwww.barnesandnoble.com%2Fw%2F%3Fean%3D9781538747292"
-                },
-                {
-                  "name": "Books-A-Million",
-                  "url": "https://www.anrdoezrs.net/click-7990613-35140?url=https%3A%2F%2Fwww.booksamillion.com%2Fp%2FTHE%2BSCORPION%25E2%2580%2599S%2BTAIL%2FDouglas%2BPreston%2Band%2BLincoln%2BChild%2F9781538747292"
-                },
-                {
-                  "name": "Bookshop",
-                  "url": "https://bookshop.org/a/3546/9781538747292"
-                },
-                {
-                  "name": "Indiebound",
-                  "url": "https://www.indiebound.org/book/9781538747292?aff=NYT"
-                }
-              ]
-            },
-            {
-              "age_group": "",
               "amazon_product_url": "https://www.amazon.com/dp/0525536299?tag=NYTBSREV-20",
               "article_chapter_link": "",
               "author": "Brit Bennett",
@@ -137,7 +85,7 @@
               "created_date": "2021-01-20 23:02:09",
               "description": "The lives of twin sisters who run away from a Southern Black community at age 16 diverge as one returns and the other takes on a different racial identity but their fates intertwine.",
               "first_chapter_link": "",
-              "price": 0,
+              "price": "$19.99",
               "primary_isbn10": "0525536299",
               "primary_isbn13": "9780525536291",
               "book_uri": "nyt://book/6db17f1d-4bd0-562a-80ef-efa2a272cf64",
@@ -177,58 +125,6 @@
             },
             {
               "age_group": "",
-              "amazon_product_url": "https://www.amazon.com/dp/0525559477?tag=NYTBSREV-20",
-              "article_chapter_link": "",
-              "author": "Matt Haig",
-              "book_image": "https://s1.nyt.com/du/books/images/9780525559474.jpg",
-              "book_image_width": 331,
-              "book_image_height": 500,
-              "book_review_link": "",
-              "contributor": "by Matt Haig",
-              "contributor_note": "",
-              "created_date": "2021-01-20 23:02:09",
-              "description": "Nora Seed finds a library beyond the edge of the universe that contains books with multiple possibilities of the lives one could have lived.",
-              "first_chapter_link": "",
-              "price": 0,
-              "primary_isbn10": "0525559477",
-              "primary_isbn13": "9780525559474",
-              "book_uri": "nyt://book/60d0ee2d-3d05-50c9-a484-050d17a2308e",
-              "publisher": "Viking",
-              "rank": 4,
-              "rank_last_week": 11,
-              "sunday_review_link": "",
-              "title": "THE MIDNIGHT LIBRARY",
-              "updated_date": "2021-01-20 23:02:09",
-              "weeks_on_list": 7,
-              "buy_links": [
-                {
-                  "name": "Amazon",
-                  "url": "https://www.amazon.com/dp/0525559477?tag=NYTBSREV-20"
-                },
-                {
-                  "name": "Apple Books",
-                  "url": "https://du-gae-books-dot-nyt-du-prd.appspot.com/buy?title=THE+MIDNIGHT+LIBRARY&author=Matt+Haig"
-                },
-                {
-                  "name": "Barnes and Noble",
-                  "url": "https://www.anrdoezrs.net/click-7990613-11819508?url=https%3A%2F%2Fwww.barnesandnoble.com%2Fw%2F%3Fean%3D9780525559474"
-                },
-                {
-                  "name": "Books-A-Million",
-                  "url": "https://www.anrdoezrs.net/click-7990613-35140?url=https%3A%2F%2Fwww.booksamillion.com%2Fp%2FTHE%2BMIDNIGHT%2BLIBRARY%2FMatt%2BHaig%2F9780525559474"
-                },
-                {
-                  "name": "Bookshop",
-                  "url": "https://bookshop.org/a/3546/9780525559474"
-                },
-                {
-                  "name": "Indiebound",
-                  "url": "https://www.indiebound.org/book/9780525559474?aff=NYT"
-                }
-              ]
-            },
-            {
-              "age_group": "",
               "amazon_product_url": "https://www.amazon.com/dp/B08N2H5HMB?tag=NYTBSREV-20",
               "article_chapter_link": "",
               "author": "Ilona Andrews",
@@ -241,7 +137,7 @@
               "created_date": "2021-01-20 23:02:09",
               "description": "Julie Lennart returns to Atlanta with a new face and magic abilities and is known as Aurelia Ryder.",
               "first_chapter_link": "",
-              "price": 0,
+              "price": "$19.99",
               "primary_isbn10": "1641971584",
               "primary_isbn13": "9781641971584",
               "book_uri": "nyt://book/de7fbde8-e830-5caf-b0ce-d2bdc7606730",
@@ -293,214 +189,6 @@
           "books": [
             {
               "age_group": "",
-              "amazon_product_url": "https://www.amazon.com/dp/1524763160?tag=NYTBSREV-20",
-              "article_chapter_link": "",
-              "author": "Barack Obama",
-              "book_image": "https://s1.nyt.com/du/books/images/9781524763169.jpg",
-              "book_image_width": 329,
-              "book_image_height": 500,
-              "book_review_link": "",
-              "contributor": "by Barack Obama",
-              "contributor_note": "",
-              "created_date": "2021-01-20 23:02:10",
-              "description": "In the first volume of his presidential memoirs, Barack Obama offers personal reflections on his formative years and pivotal moments through his first term.",
-              "first_chapter_link": "",
-              "price": 0,
-              "primary_isbn10": "1524763160",
-              "primary_isbn13": "9781524763169",
-              "book_uri": "nyt://book/945a5dfb-d1e6-53f2-95e2-ed6ffe3c5052",
-              "publisher": "Crown",
-              "rank": 1,
-              "rank_last_week": 1,
-              "sunday_review_link": "",
-              "title": "A PROMISED LAND",
-              "updated_date": "2021-01-20 23:02:10",
-              "weeks_on_list": 9,
-              "buy_links": [
-                {
-                  "name": "Amazon",
-                  "url": "https://www.amazon.com/dp/1524763160?tag=NYTBSREV-20"
-                },
-                {
-                  "name": "Apple Books",
-                  "url": "https://du-gae-books-dot-nyt-du-prd.appspot.com/buy?title=A+PROMISED+LAND&author=Barack+Obama"
-                },
-                {
-                  "name": "Barnes and Noble",
-                  "url": "https://www.anrdoezrs.net/click-7990613-11819508?url=https%3A%2F%2Fwww.barnesandnoble.com%2Fw%2F%3Fean%3D9781524763169"
-                },
-                {
-                  "name": "Books-A-Million",
-                  "url": "https://www.anrdoezrs.net/click-7990613-35140?url=https%3A%2F%2Fwww.booksamillion.com%2Fp%2FA%2BPROMISED%2BLAND%2FBarack%2BObama%2F9781524763169"
-                },
-                {
-                  "name": "Bookshop",
-                  "url": "https://bookshop.org/a/3546/9781524763169"
-                },
-                {
-                  "name": "Indiebound",
-                  "url": "https://www.indiebound.org/book/9781524763169?aff=NYT"
-                }
-              ]
-            },
-            {
-              "age_group": "",
-              "amazon_product_url": "https://www.amazon.com/dp/0593230256?tag=NYTBSREV-20",
-              "article_chapter_link": "",
-              "author": "Isabel Wilkerson",
-              "book_image": "https://s1.nyt.com/du/books/images/9780593230251.jpg",
-              "book_image_width": 330,
-              "book_image_height": 500,
-              "book_review_link": "",
-              "contributor": "by Isabel Wilkerson",
-              "contributor_note": "",
-              "created_date": "2021-01-20 23:02:10",
-              "description": "The Pulitzer Prize-winning journalist examines aspects of caste systems across civilizations and reveals a rigid hierarchy in America today.",
-              "first_chapter_link": "",
-              "price": 0,
-              "primary_isbn10": "0593230256",
-              "primary_isbn13": "9780593230251",
-              "book_uri": "nyt://book/970c3c3d-b5b3-5cf4-bd49-fa2e441babb7",
-              "publisher": "Random House",
-              "rank": 2,
-              "rank_last_week": 6,
-              "sunday_review_link": "",
-              "title": "CASTE",
-              "updated_date": "2021-01-20 23:02:10",
-              "weeks_on_list": 24,
-              "buy_links": [
-                {
-                  "name": "Amazon",
-                  "url": "https://www.amazon.com/dp/0593230256?tag=NYTBSREV-20"
-                },
-                {
-                  "name": "Apple Books",
-                  "url": "https://du-gae-books-dot-nyt-du-prd.appspot.com/buy?title=CASTE&author=Isabel+Wilkerson"
-                },
-                {
-                  "name": "Barnes and Noble",
-                  "url": "https://www.anrdoezrs.net/click-7990613-11819508?url=https%3A%2F%2Fwww.barnesandnoble.com%2Fw%2F%3Fean%3D9780593230251"
-                },
-                {
-                  "name": "Books-A-Million",
-                  "url": "https://www.anrdoezrs.net/click-7990613-35140?url=https%3A%2F%2Fwww.booksamillion.com%2Fp%2FCASTE%2FIsabel%2BWilkerson%2F9780593230251"
-                },
-                {
-                  "name": "Bookshop",
-                  "url": "https://bookshop.org/a/3546/9780593230251"
-                },
-                {
-                  "name": "Indiebound",
-                  "url": "https://www.indiebound.org/book/9780593230251?aff=NYT"
-                }
-              ]
-            },
-            {
-              "age_group": "",
-              "amazon_product_url": "https://www.amazon.com/dp/0593139135?tag=NYTBSREV-20",
-              "article_chapter_link": "",
-              "author": "Matthew McConaughey",
-              "book_image": "https://s1.nyt.com/du/books/images/9780593139134.jpg",
-              "book_image_width": 392,
-              "book_image_height": 500,
-              "book_review_link": "",
-              "contributor": "by Matthew McConaughey",
-              "contributor_note": "",
-              "created_date": "2021-01-20 23:02:10",
-              "description": "The Academy Award-winning actor shares snippets from the diaries he kept over the last 35 years.",
-              "first_chapter_link": "",
-              "price": 0,
-              "primary_isbn10": "0593139135",
-              "primary_isbn13": "9780593139134",
-              "book_uri": "nyt://book/a13e8e1e-0fdd-5551-925b-d89690f4eb37",
-              "publisher": "Crown",
-              "rank": 3,
-              "rank_last_week": 3,
-              "sunday_review_link": "",
-              "title": "GREENLIGHTS",
-              "updated_date": "2021-01-20 23:02:10",
-              "weeks_on_list": 13,
-              "buy_links": [
-                {
-                  "name": "Amazon",
-                  "url": "https://www.amazon.com/dp/0593139135?tag=NYTBSREV-20"
-                },
-                {
-                  "name": "Apple Books",
-                  "url": "https://du-gae-books-dot-nyt-du-prd.appspot.com/buy?title=GREENLIGHTS&author=Matthew+McConaughey"
-                },
-                {
-                  "name": "Barnes and Noble",
-                  "url": "https://www.anrdoezrs.net/click-7990613-11819508?url=https%3A%2F%2Fwww.barnesandnoble.com%2Fw%2F%3Fean%3D9780593139134"
-                },
-                {
-                  "name": "Books-A-Million",
-                  "url": "https://www.anrdoezrs.net/click-7990613-35140?url=https%3A%2F%2Fwww.booksamillion.com%2Fp%2FGREENLIGHTS%2FMatthew%2BMcConaughey%2F9780593139134"
-                },
-                {
-                  "name": "Bookshop",
-                  "url": "https://bookshop.org/a/3546/9780593139134"
-                },
-                {
-                  "name": "Indiebound",
-                  "url": "https://www.indiebound.org/book/9780593139134?aff=NYT"
-                }
-              ]
-            },
-            {
-              "age_group": "",
-              "amazon_product_url": "https://www.amazon.com/Tyranny-Twenty-Lessons-Twentieth-Century/dp/0804190119?tag=NYTBSREV-20",
-              "article_chapter_link": "",
-              "author": "Timothy Snyder",
-              "book_image": "https://s1.nyt.com/du/books/images/9780804190114.jpg",
-              "book_image_width": 330,
-              "book_image_height": 465,
-              "book_review_link": "",
-              "contributor": "by Timothy Snyder",
-              "contributor_note": "",
-              "created_date": "2021-01-20 23:02:10",
-              "description": "Twenty lessons from the 20th century about the course of tyranny.",
-              "first_chapter_link": "",
-              "price": 0,
-              "primary_isbn10": "0804190119",
-              "primary_isbn13": "9780804190114",
-              "book_uri": "nyt://book/eeb07cb6-f672-5b8d-b85d-6ce6f62b1856",
-              "publisher": "Tim Duggan",
-              "rank": 4,
-              "rank_last_week": 4,
-              "sunday_review_link": "",
-              "title": "ON TYRANNY",
-              "updated_date": "2021-01-20 23:02:10",
-              "weeks_on_list": 25,
-              "buy_links": [
-                {
-                  "name": "Amazon",
-                  "url": "https://www.amazon.com/Tyranny-Twenty-Lessons-Twentieth-Century/dp/0804190119?tag=NYTBSREV-20"
-                },
-                {
-                  "name": "Apple Books",
-                  "url": "https://du-gae-books-dot-nyt-du-prd.appspot.com/buy?title=ON+TYRANNY&author=Timothy+Snyder"
-                },
-                {
-                  "name": "Barnes and Noble",
-                  "url": "https://www.anrdoezrs.net/click-7990613-11819508?url=https%3A%2F%2Fwww.barnesandnoble.com%2Fw%2F%3Fean%3D9780804190114"
-                },
-                {
-                  "name": "Books-A-Million",
-                  "url": "https://www.anrdoezrs.net/click-7990613-35140?url=https%3A%2F%2Fwww.booksamillion.com%2Fp%2FON%2BTYRANNY%2FTimothy%2BSnyder%2F9780804190114"
-                },
-                {
-                  "name": "Bookshop",
-                  "url": "https://bookshop.org/a/3546/9780804190114"
-                },
-                {
-                  "name": "Indiebound",
-                  "url": "https://www.indiebound.org/book/9780804190114?aff=NYT"
-                }
-              ]
-            },
-            {
-              "age_group": "",
               "amazon_product_url": "https://www.amazon.com/dp/1984801252?tag=NYTBSREV-20",
               "article_chapter_link": "",
               "author": "Glennon Doyle",
@@ -513,7 +201,7 @@
               "created_date": "2021-01-20 23:02:10",
               "description": "The activist and public speaker describes her journey of listening to her inner voice.",
               "first_chapter_link": "",
-              "price": 0,
+              "price": "$15.99",
               "primary_isbn10": "1984801252",
               "primary_isbn13": "9781984801258",
               "book_uri": "nyt://book/fbeeab6c-34bb-5c38-8f27-9fc3ced2ff01",
@@ -565,58 +253,6 @@
           "books": [
             {
               "age_group": "",
-              "amazon_product_url": "https://www.amazon.com/dp/0525536299?tag=NYTBSREV-20",
-              "article_chapter_link": "",
-              "author": "Brit Bennett",
-              "book_image": "https://s1.nyt.com/du/books/images/9780525536291.jpg",
-              "book_image_width": 331,
-              "book_image_height": 500,
-              "book_review_link": "",
-              "contributor": "by Brit Bennett",
-              "contributor_note": "",
-              "created_date": "2021-01-20 23:02:02",
-              "description": "The lives of twin sisters who run away from a Southern Black community at age 16 diverge as one returns and the other takes on a different racial identity but their fates intertwine.",
-              "first_chapter_link": "",
-              "price": 0,
-              "primary_isbn10": "0525536299",
-              "primary_isbn13": "9780525536291",
-              "book_uri": "nyt://book/6db17f1d-4bd0-562a-80ef-efa2a272cf64",
-              "publisher": "Riverhead",
-              "rank": 1,
-              "rank_last_week": 3,
-              "sunday_review_link": "",
-              "title": "THE VANISHING HALF",
-              "updated_date": "2021-01-20 23:02:02",
-              "weeks_on_list": 33,
-              "buy_links": [
-                {
-                  "name": "Amazon",
-                  "url": "https://www.amazon.com/dp/0525536299?tag=NYTBSREV-20"
-                },
-                {
-                  "name": "Apple Books",
-                  "url": "https://du-gae-books-dot-nyt-du-prd.appspot.com/buy?title=THE+VANISHING+HALF&author=Brit+Bennett"
-                },
-                {
-                  "name": "Barnes and Noble",
-                  "url": "https://www.anrdoezrs.net/click-7990613-11819508?url=https%3A%2F%2Fwww.barnesandnoble.com%2Fw%2F%3Fean%3D9780525536291"
-                },
-                {
-                  "name": "Books-A-Million",
-                  "url": "https://www.anrdoezrs.net/click-7990613-35140?url=https%3A%2F%2Fwww.booksamillion.com%2Fp%2FTHE%2BVANISHING%2BHALF%2FBrit%2BBennett%2F9780525536291"
-                },
-                {
-                  "name": "Bookshop",
-                  "url": "https://bookshop.org/a/3546/9780525536291"
-                },
-                {
-                  "name": "Indiebound",
-                  "url": "https://www.indiebound.org/book/9780525536291?aff=NYT"
-                }
-              ]
-            },
-            {
-              "age_group": "",
               "amazon_product_url": "https://www.amazon.com/dp/1538747278?tag=NYTBSREV-20",
               "article_chapter_link": "",
               "author": "Douglas Preston and Lincoln Child",
@@ -629,7 +265,7 @@
               "created_date": "2021-01-20 23:02:02",
               "description": "The second book in the Nora Kelly series. An F.B.I. agent and an archaeologist identify a mummified corpse and its gruesome cause of death.",
               "first_chapter_link": "",
-              "price": 0,
+              "price": "$12.99",
               "primary_isbn10": "1538747278",
               "primary_isbn13": "9781538747278",
               "book_uri": "nyt://book/0258186f-4af2-5a77-b16a-bdf34e51f97a",
@@ -681,7 +317,7 @@
               "created_date": "2021-01-20 23:02:02",
               "description": "A Hollywood recluse’s perspective changes when she invites her neighbors into her mansion after an earthquake.",
               "first_chapter_link": "",
-              "price": 0,
+              "price": "$12.99",
               "primary_isbn10": "1984821377",
               "primary_isbn13": "9781984821379",
               "book_uri": "nyt://book/c7c1f39f-3c2e-5910-8e5f-a8468ad2e7a5",
@@ -733,7 +369,7 @@
               "created_date": "2021-01-20 23:02:02",
               "description": "In this installment of the High Republic series, a disaster in hyperspace may cause far greater damage.",
               "first_chapter_link": "",
-              "price": 0,
+              "price": "$4.99",
               "primary_isbn10": "0593157710",
               "primary_isbn13": "9780593157718",
               "book_uri": "nyt://book/0802e755-6d7b-5f08-8f85-a855ee4251eb",
@@ -785,7 +421,7 @@
               "created_date": "2021-01-20 23:02:02",
               "description": "Nora Seed finds a library beyond the edge of the universe that contains books with multiple possibilities of the lives one could have lived.",
               "first_chapter_link": "",
-              "price": 0,
+              "price": "$24.99",
               "primary_isbn10": "0525559477",
               "primary_isbn13": "9780525559474",
               "book_uri": "nyt://book/60d0ee2d-3d05-50c9-a484-050d17a2308e",
@@ -849,7 +485,7 @@
               "created_date": "2021-01-20 23:02:07",
               "description": "In the first volume of his presidential memoirs, Barack Obama offers personal reflections on his formative years and pivotal moments through his first term.",
               "first_chapter_link": "",
-              "price": 0,
+              "price": "$24.99",
               "primary_isbn10": "1524763160",
               "primary_isbn13": "9781524763169",
               "book_uri": "nyt://book/945a5dfb-d1e6-53f2-95e2-ed6ffe3c5052",
@@ -901,7 +537,7 @@
               "created_date": "2021-01-20 23:02:07",
               "description": "The Academy Award-winning actor shares snippets from the diaries he kept over the last 35 years.",
               "first_chapter_link": "",
-              "price": 0,
+              "price": "$19.99",
               "primary_isbn10": "0593139135",
               "primary_isbn13": "9780593139134",
               "book_uri": "nyt://book/a13e8e1e-0fdd-5551-925b-d89690f4eb37",
@@ -941,110 +577,6 @@
             },
             {
               "age_group": "",
-              "amazon_product_url": "https://www.amazon.com/dp/0593230256?tag=NYTBSREV-20",
-              "article_chapter_link": "",
-              "author": "Isabel Wilkerson",
-              "book_image": "https://s1.nyt.com/du/books/images/9780593230251.jpg",
-              "book_image_width": 330,
-              "book_image_height": 500,
-              "book_review_link": "",
-              "contributor": "by Isabel Wilkerson",
-              "contributor_note": "",
-              "created_date": "2021-01-20 23:02:07",
-              "description": "The Pulitzer Prize-winning journalist examines aspects of caste systems across civilizations and reveals a rigid hierarchy in America today.",
-              "first_chapter_link": "",
-              "price": 0,
-              "primary_isbn10": "0593230256",
-              "primary_isbn13": "9780593230251",
-              "book_uri": "nyt://book/970c3c3d-b5b3-5cf4-bd49-fa2e441babb7",
-              "publisher": "Random House",
-              "rank": 3,
-              "rank_last_week": 4,
-              "sunday_review_link": "",
-              "title": "CASTE",
-              "updated_date": "2021-01-20 23:02:07",
-              "weeks_on_list": 24,
-              "buy_links": [
-                {
-                  "name": "Amazon",
-                  "url": "https://www.amazon.com/dp/0593230256?tag=NYTBSREV-20"
-                },
-                {
-                  "name": "Apple Books",
-                  "url": "https://du-gae-books-dot-nyt-du-prd.appspot.com/buy?title=CASTE&author=Isabel+Wilkerson"
-                },
-                {
-                  "name": "Barnes and Noble",
-                  "url": "https://www.anrdoezrs.net/click-7990613-11819508?url=https%3A%2F%2Fwww.barnesandnoble.com%2Fw%2F%3Fean%3D9780593230251"
-                },
-                {
-                  "name": "Books-A-Million",
-                  "url": "https://www.anrdoezrs.net/click-7990613-35140?url=https%3A%2F%2Fwww.booksamillion.com%2Fp%2FCASTE%2FIsabel%2BWilkerson%2F9780593230251"
-                },
-                {
-                  "name": "Bookshop",
-                  "url": "https://bookshop.org/a/3546/9780593230251"
-                },
-                {
-                  "name": "Indiebound",
-                  "url": "https://www.indiebound.org/book/9780593230251?aff=NYT"
-                }
-              ]
-            },
-            {
-              "age_group": "",
-              "amazon_product_url": "https://www.amazon.com/dp/1984801252?tag=NYTBSREV-20",
-              "article_chapter_link": "",
-              "author": "Glennon Doyle",
-              "book_image": "https://s1.nyt.com/du/books/images/9781984801258.jpg",
-              "book_image_width": 330,
-              "book_image_height": 500,
-              "book_review_link": "",
-              "contributor": "by Glennon Doyle",
-              "contributor_note": "",
-              "created_date": "2021-01-20 23:02:07",
-              "description": "The activist and public speaker describes her journey of listening to her inner voice.",
-              "first_chapter_link": "",
-              "price": 0,
-              "primary_isbn10": "1984801252",
-              "primary_isbn13": "9781984801258",
-              "book_uri": "nyt://book/fbeeab6c-34bb-5c38-8f27-9fc3ced2ff01",
-              "publisher": "Dial",
-              "rank": 4,
-              "rank_last_week": 2,
-              "sunday_review_link": "",
-              "title": "UNTAMED",
-              "updated_date": "2021-01-20 23:02:07",
-              "weeks_on_list": 45,
-              "buy_links": [
-                {
-                  "name": "Amazon",
-                  "url": "https://www.amazon.com/dp/1984801252?tag=NYTBSREV-20"
-                },
-                {
-                  "name": "Apple Books",
-                  "url": "https://du-gae-books-dot-nyt-du-prd.appspot.com/buy?title=UNTAMED&author=Glennon+Doyle"
-                },
-                {
-                  "name": "Barnes and Noble",
-                  "url": "https://www.anrdoezrs.net/click-7990613-11819508?url=https%3A%2F%2Fwww.barnesandnoble.com%2Fw%2F%3Fean%3D9781984801258"
-                },
-                {
-                  "name": "Books-A-Million",
-                  "url": "https://www.anrdoezrs.net/click-7990613-35140?url=https%3A%2F%2Fwww.booksamillion.com%2Fp%2FUNTAMED%2FGlennon%2BDoyle%2F9781984801258"
-                },
-                {
-                  "name": "Bookshop",
-                  "url": "https://bookshop.org/a/3546/9781984801258"
-                },
-                {
-                  "name": "Indiebound",
-                  "url": "https://www.indiebound.org/book/9781984801258?aff=NYT"
-                }
-              ]
-            },
-            {
-              "age_group": "",
               "amazon_product_url": "https://www.amazon.com/dp/1984856022?tag=NYTBSREV-20",
               "article_chapter_link": "",
               "author": "George Saunders",
@@ -1057,7 +589,7 @@
               "created_date": "2021-01-20 23:02:07",
               "description": "A collection of essays examining the functions and importance of works of fiction.",
               "first_chapter_link": "",
-              "price": 0,
+              "price": "$13.99",
               "primary_isbn10": "1984856022",
               "primary_isbn13": "9781984856029",
               "book_uri": "nyt://book/bbf540c6-cd16-561e-a548-e0155926be95",
@@ -1121,7 +653,7 @@
               "created_date": "2021-01-20 23:02:07",
               "description": "Poems and illustrations by the author of “Milk and Honey” and “The Sun and Her Flowers.”",
               "first_chapter_link": "",
-              "price": 0,
+              "price": "$16.99",
               "primary_isbn10": "1449486800",
               "primary_isbn13": "9781449486808",
               "book_uri": "nyt://book/dca12e0f-07bf-5f10-9ce4-f7809db21663",
@@ -1173,7 +705,7 @@
               "created_date": "2021-01-20 23:02:07",
               "description": "A sibling relationship is impacted when the family goes from poverty to wealth and back again over the course of many decades.",
               "first_chapter_link": "",
-              "price": 0,
+              "price": "$18.99",
               "primary_isbn10": "0062963686",
               "primary_isbn13": "9780062963680",
               "book_uri": "nyt://book/a08e13ef-edc2-5104-9b49-f1a2b0784d10",
@@ -1225,7 +757,7 @@
               "created_date": "2021-01-20 23:02:07",
               "description": "A friendship between two women in the Pacific Northwest endures for more than three decades.",
               "first_chapter_link": "",
-              "price": 0,
+              "price": "$23.99",
               "primary_isbn10": "0312537077",
               "primary_isbn13": "9780312537074",
               "book_uri": "nyt://book/0eb6a970-20ab-50c1-9980-f3ad3da13003",
@@ -1277,7 +809,7 @@
               "created_date": "2021-01-20 23:02:07",
               "description": "Following the Civil War, a man who reads newspapers to paying audiences agrees to deliver an orphan girl across difficult terrain to her relatives.",
               "first_chapter_link": "",
-              "price": 0,
+              "price": "$8.99",
               "primary_isbn10": "0063011956",
               "primary_isbn13": "9780063011953",
               "book_uri": "nyt://book/07a385af-5f2f-53a0-a76e-91b1608c7c87",
@@ -1329,7 +861,7 @@
               "created_date": "2021-01-20 23:02:07",
               "description": "A reimagining of Homer’s “Iliad” that is narrated by Achilles' companion Patroclus.",
               "first_chapter_link": "",
-              "price": 0,
+              "price": "$9.99",
               "primary_isbn10": "0062060627",
               "primary_isbn13": "9780062060624",
               "book_uri": "nyt://book/5404511a-729b-542b-9315-5ef827b7850e",
@@ -1393,7 +925,7 @@
               "created_date": "2021-01-20 23:02:08",
               "description": "Twenty lessons from the 20th century about the course of tyranny.",
               "first_chapter_link": "",
-              "price": 0,
+              "price": "$15.99",
               "primary_isbn10": "0804190119",
               "primary_isbn13": "9780804190114",
               "book_uri": "nyt://book/eeb07cb6-f672-5b8d-b85d-6ce6f62b1856",
@@ -1445,7 +977,7 @@
               "created_date": "2021-01-20 23:02:08",
               "description": "How trauma affects the body and mind, and innovative treatments for recovery.",
               "first_chapter_link": "",
-              "price": 0,
+              "price": "$19.99",
               "primary_isbn10": "0143127748",
               "primary_isbn13": "9780143127741",
               "book_uri": "nyt://book/e3e33e9d-0e67-5fec-b0d2-2ecddc38ce0e",
@@ -1497,7 +1029,7 @@
               "created_date": "2021-01-20 23:02:08",
               "description": "Historical and cultural analyses on what causes defensive moves by white people and how this inhibits cross-racial dialogue.",
               "first_chapter_link": "",
-              "price": 0,
+              "price": "$34.99",
               "primary_isbn10": "0807047414",
               "primary_isbn13": "9780807047415",
               "book_uri": "nyt://book/27f88b69-d265-5d7b-8950-01377374e783",
@@ -1549,7 +1081,7 @@
               "created_date": "2021-01-20 23:02:08",
               "description": "A botanist and member of the Citizen Potawatomi Nation espouses having an understanding and appreciation of plants and animals.",
               "first_chapter_link": "",
-              "price": 0,
+              "price": "$29.99",
               "primary_isbn10": "1571313567",
               "primary_isbn13": "9781571313560",
               "book_uri": "nyt://book/194ea111-42ad-5795-9fb5-3e155ffa5e79",
@@ -1601,7 +1133,7 @@
               "created_date": "2021-01-20 23:02:08",
               "description": "A Yale Law School graduate looks at the struggles of the white working class through the story of his own childhood.",
               "first_chapter_link": "",
-              "price": 0,
+              "price": "$24.99",
               "primary_isbn10": "0063045982",
               "primary_isbn13": "9780063045989",
               "book_uri": "nyt://book/65ee8953-a2b9-594d-8e74-42497879d829",
@@ -1665,7 +1197,7 @@
               "created_date": "2021-01-20 23:02:08",
               "description": "",
               "first_chapter_link": "",
-              "price": 0,
+              "price": "$14.99",
               "primary_isbn10": "1501166735",
               "primary_isbn13": "9781501166730",
               "book_uri": "nyt://book/71daffa9-b1de-584e-91a1-2676789b5764",
@@ -1717,7 +1249,7 @@
               "created_date": "2021-01-20 23:02:08",
               "description": "",
               "first_chapter_link": "",
-              "price": 0,
+              "price": "$4.99",
               "primary_isbn10": "0062976583",
               "primary_isbn13": "9780062976581",
               "book_uri": "nyt://book/858fb0b9-07d7-5b8a-b3de-cdcf6ea6fe7a",
@@ -1769,7 +1301,7 @@
               "created_date": "2021-01-20 23:02:08",
               "description": "",
               "first_chapter_link": "",
-              "price": 0,
+              "price": "$14.99",
               "primary_isbn10": "0735211299",
               "primary_isbn13": "9780735211292",
               "book_uri": "nyt://book/0398a355-c032-534e-a0af-647b06f0840d",
@@ -1821,7 +1353,7 @@
               "created_date": "2021-01-20 23:02:08",
               "description": "",
               "first_chapter_link": "",
-              "price": 0,
+              "price": "$17.99",
               "primary_isbn10": "1984825070",
               "primary_isbn13": "9781984825070",
               "book_uri": "nyt://book/1285bd80-f6d8-525c-abec-6f6e09ade44f",
@@ -1873,7 +1405,7 @@
               "created_date": "2021-01-20 23:02:08",
               "description": "",
               "first_chapter_link": "",
-              "price": 0,
+              "price": "$19.99",
               "primary_isbn10": "0718039874",
               "primary_isbn13": "9780718039875",
               "book_uri": "nyt://book/85fad639-1d55-5351-8922-be8e28df308b",
@@ -1937,7 +1469,7 @@
               "created_date": "2021-01-20 23:02:06",
               "description": "A fearsome monster threatens the kingdom of Cornucopia.",
               "first_chapter_link": "",
-              "price": 0,
+              "price": "$9.99",
               "primary_isbn10": "1338732870",
               "primary_isbn13": "9781338732870",
               "book_uri": "nyt://book/9c1873f5-0249-5f05-9a48-ae5745cfe4ac",
@@ -1989,7 +1521,7 @@
               "created_date": "2021-01-20 23:02:06",
               "description": "The biographies of 40 African-American women who made a difference.",
               "first_chapter_link": "",
-              "price": 0,
+              "price": "$24.99",
               "primary_isbn10": "0316475114",
               "primary_isbn13": "9780316475112",
               "book_uri": "nyt://book/cb51822f-0f9a-52c8-b301-1d6961a45ab3",
@@ -2041,7 +1573,7 @@
               "created_date": "2021-01-20 23:02:06",
               "description": "Roland and Garg the Barbarian embark on a quest to save Roland's mom from the White Warlock.",
               "first_chapter_link": "",
-              "price": 0,
+              "price": "$22.99",
               "primary_isbn10": "1419749099",
               "primary_isbn13": "9781419749094",
               "book_uri": "nyt://book/0f198b73-e6ac-51b5-87ee-a33e0984a379",
@@ -2093,7 +1625,7 @@
               "created_date": "2021-01-20 23:02:06",
               "description": "Ruby Bridges integrates New Orleans's all-white public school system in 1960.",
               "first_chapter_link": "",
-              "price": 0,
+              "price": "$29.99",
               "primary_isbn10": "0593378520",
               "primary_isbn13": "9780593378526",
               "book_uri": "nyt://book/4590d6bb-2d01-5009-a081-cd371b2fcf64",
@@ -2145,7 +1677,7 @@
               "created_date": "2021-01-20 23:02:06",
               "description": "A boy with a facial deformity starts school.",
               "first_chapter_link": "",
-              "price": 0,
+              "price": "$39.99",
               "primary_isbn10": "0375869026",
               "primary_isbn13": "9780375869020",
               "book_uri": "nyt://book/ae6bd2cf-a5d7-535a-99dd-ca8e283c2b01",
@@ -3117,58 +2649,6 @@
             },
             {
               "age_group": "",
-              "amazon_product_url": "https://www.amazon.com/dp/0525536299?tag=NYTBSREV-20",
-              "article_chapter_link": "",
-              "author": "Brit Bennett",
-              "book_image": "https://s1.nyt.com/du/books/images/9780525536291.jpg",
-              "book_image_width": 331,
-              "book_image_height": 500,
-              "book_review_link": "",
-              "contributor": "by Brit Bennett",
-              "contributor_note": "",
-              "created_date": "2021-01-07 00:02:06",
-              "description": "The lives of twin sisters who run away from a Southern Black community at age 16 diverge but their fates intertwine. Read by Shayna Small. 11 hours, 34 minutes unabridged.",
-              "first_chapter_link": "",
-              "price": 0,
-              "primary_isbn10": "",
-              "primary_isbn13": "9780525637141",
-              "book_uri": "nyt://book/9b76a9c1-2d26-518a-aebc-6ee57332b540",
-              "publisher": "Penguin Audio",
-              "rank": 3,
-              "rank_last_week": 13,
-              "sunday_review_link": "",
-              "title": "THE VANISHING HALF",
-              "updated_date": "2021-01-07 00:02:06",
-              "weeks_on_list": 0,
-              "buy_links": [
-                {
-                  "name": "Amazon",
-                  "url": "https://www.amazon.com/dp/0525536299?tag=NYTBSREV-20"
-                },
-                {
-                  "name": "Apple Books",
-                  "url": "https://du-gae-books-dot-nyt-du-prd.appspot.com/buy?title=THE+VANISHING+HALF&author=Brit+Bennett"
-                },
-                {
-                  "name": "Barnes and Noble",
-                  "url": "https://www.anrdoezrs.net/click-7990613-11819508?url=https%3A%2F%2Fwww.barnesandnoble.com%2Fw%2F%3Fean%3D9780525637141"
-                },
-                {
-                  "name": "Books-A-Million",
-                  "url": "https://www.anrdoezrs.net/click-7990613-35140?url=https%3A%2F%2Fwww.booksamillion.com%2Fp%2FTHE%2BVANISHING%2BHALF%2FBrit%2BBennett%2F9780525637141"
-                },
-                {
-                  "name": "Bookshop",
-                  "url": "https://bookshop.org/a/3546/9780525637141"
-                },
-                {
-                  "name": "Indiebound",
-                  "url": "https://www.indiebound.org/book/9780525637141?aff=NYT"
-                }
-              ]
-            },
-            {
-              "age_group": "",
               "amazon_product_url": "https://www.amazon.com/dp/0765326388?tag=NYTBSREV-20",
               "article_chapter_link": "",
               "author": "Brandon Sanderson",
@@ -3285,58 +2765,6 @@
           "books": [
             {
               "age_group": "",
-              "amazon_product_url": "https://www.amazon.com/dp/0593139135?tag=NYTBSREV-20",
-              "article_chapter_link": "",
-              "author": "Matthew McConaughey",
-              "book_image": "https://s1.nyt.com/du/books/images/9780593139134.jpg",
-              "book_image_width": 392,
-              "book_image_height": 500,
-              "book_review_link": "",
-              "contributor": "by Matthew McConaughey",
-              "contributor_note": "",
-              "created_date": "2021-01-07 00:02:05",
-              "description": "The Academy Award-winning actor shares snippets from the diaries he kept over the last 35 years. Read by the author. 6 hours, 42 minutes unabridged.",
-              "first_chapter_link": "",
-              "price": 0,
-              "primary_isbn10": "",
-              "primary_isbn13": "9780593294185",
-              "book_uri": "nyt://book/cdd69a90-455d-5194-8060-86c0df2ea509",
-              "publisher": "Random House Audio",
-              "rank": 2,
-              "rank_last_week": 2,
-              "sunday_review_link": "",
-              "title": "GREENLIGHTS",
-              "updated_date": "2021-01-07 00:02:05",
-              "weeks_on_list": 0,
-              "buy_links": [
-                {
-                  "name": "Amazon",
-                  "url": "https://www.amazon.com/dp/0593139135?tag=NYTBSREV-20"
-                },
-                {
-                  "name": "Apple Books",
-                  "url": "https://du-gae-books-dot-nyt-du-prd.appspot.com/buy?title=GREENLIGHTS&author=Matthew+McConaughey"
-                },
-                {
-                  "name": "Barnes and Noble",
-                  "url": "https://www.anrdoezrs.net/click-7990613-11819508?url=https%3A%2F%2Fwww.barnesandnoble.com%2Fw%2F%3Fean%3D9780593294185"
-                },
-                {
-                  "name": "Books-A-Million",
-                  "url": "https://www.anrdoezrs.net/click-7990613-35140?url=https%3A%2F%2Fwww.booksamillion.com%2Fp%2FGREENLIGHTS%2FMatthew%2BMcConaughey%2F9780593294185"
-                },
-                {
-                  "name": "Bookshop",
-                  "url": "https://bookshop.org/a/3546/9780593294185"
-                },
-                {
-                  "name": "Indiebound",
-                  "url": "https://www.indiebound.org/book/9780593294185?aff=NYT"
-                }
-              ]
-            },
-            {
-              "age_group": "",
               "amazon_product_url": "https://www.amazon.com/dp/0593230256?tag=NYTBSREV-20",
               "article_chapter_link": "",
               "author": "Isabel Wilkerson",
@@ -3384,58 +2812,6 @@
                 {
                   "name": "Indiebound",
                   "url": "https://www.indiebound.org/book/9780593339800?aff=NYT"
-                }
-              ]
-            },
-            {
-              "age_group": "",
-              "amazon_product_url": "https://www.amazon.com/dp/1984801252?tag=NYTBSREV-20",
-              "article_chapter_link": "",
-              "author": "Glennon Doyle",
-              "book_image": "https://s1.nyt.com/du/books/images/9781984801258.jpg",
-              "book_image_width": 330,
-              "book_image_height": 500,
-              "book_review_link": "",
-              "contributor": "by Glennon Doyle",
-              "contributor_note": "",
-              "created_date": "2021-01-07 00:02:05",
-              "description": "The activist and public speaker describes her journey of listening to her inner voice. Read by the author. 8 hours, 22 minutes unabridged.",
-              "first_chapter_link": "",
-              "price": 0,
-              "primary_isbn10": "",
-              "primary_isbn13": "9780593156070",
-              "book_uri": "nyt://book/d5dde89f-20af-51f1-a86e-d029fa64ea4b",
-              "publisher": "Random House Audio",
-              "rank": 4,
-              "rank_last_week": 7,
-              "sunday_review_link": "",
-              "title": "UNTAMED",
-              "updated_date": "2021-01-07 00:02:05",
-              "weeks_on_list": 0,
-              "buy_links": [
-                {
-                  "name": "Amazon",
-                  "url": "https://www.amazon.com/dp/1984801252?tag=NYTBSREV-20"
-                },
-                {
-                  "name": "Apple Books",
-                  "url": "https://du-gae-books-dot-nyt-du-prd.appspot.com/buy?title=UNTAMED&author=Glennon+Doyle"
-                },
-                {
-                  "name": "Barnes and Noble",
-                  "url": "https://www.anrdoezrs.net/click-7990613-11819508?url=https%3A%2F%2Fwww.barnesandnoble.com%2Fw%2F%3Fean%3D9780593156070"
-                },
-                {
-                  "name": "Books-A-Million",
-                  "url": "https://www.anrdoezrs.net/click-7990613-35140?url=https%3A%2F%2Fwww.booksamillion.com%2Fp%2FUNTAMED%2FGlennon%2BDoyle%2F9780593156070"
-                },
-                {
-                  "name": "Bookshop",
-                  "url": "https://bookshop.org/a/3546/9780593156070"
-                },
-                {
-                  "name": "Indiebound",
-                  "url": "https://www.indiebound.org/book/9780593156070?aff=NYT"
                 }
               ]
             },
@@ -3503,58 +2879,6 @@
           "list_image_width": 328,
           "list_image_height": 495,
           "books": [
-            {
-              "age_group": "",
-              "amazon_product_url": "https://www.amazon.com/Atomic-Habits-Proven-Build-Break/dp/0735211299?tag=NYTBSREV-20",
-              "article_chapter_link": "",
-              "author": "James Clear",
-              "book_image": "https://s1.nyt.com/du/books/images/9780735211292.jpg",
-              "book_image_width": 328,
-              "book_image_height": 495,
-              "book_review_link": "",
-              "contributor": "by James Clear",
-              "contributor_note": "",
-              "created_date": "2021-01-07 00:02:04",
-              "description": "",
-              "first_chapter_link": "",
-              "price": 0,
-              "primary_isbn10": "0735211299",
-              "primary_isbn13": "9780735211292",
-              "book_uri": "nyt://book/0398a355-c032-534e-a0af-647b06f0840d",
-              "publisher": "Avery",
-              "rank": 1,
-              "rank_last_week": 0,
-              "sunday_review_link": "",
-              "title": "ATOMIC HABITS",
-              "updated_date": "2021-01-07 00:02:04",
-              "weeks_on_list": 0,
-              "buy_links": [
-                {
-                  "name": "Amazon",
-                  "url": "https://www.amazon.com/Atomic-Habits-Proven-Build-Break/dp/0735211299?tag=NYTBSREV-20"
-                },
-                {
-                  "name": "Apple Books",
-                  "url": "https://du-gae-books-dot-nyt-du-prd.appspot.com/buy?title=ATOMIC+HABITS&author=James+Clear"
-                },
-                {
-                  "name": "Barnes and Noble",
-                  "url": "https://www.anrdoezrs.net/click-7990613-11819508?url=https%3A%2F%2Fwww.barnesandnoble.com%2Fw%2F%3Fean%3D9780735211292"
-                },
-                {
-                  "name": "Books-A-Million",
-                  "url": "https://www.anrdoezrs.net/click-7990613-35140?url=https%3A%2F%2Fwww.booksamillion.com%2Fp%2FATOMIC%2BHABITS%2FJames%2BClear%2F9780735211292"
-                },
-                {
-                  "name": "Bookshop",
-                  "url": "https://bookshop.org/a/3546/9780735211292"
-                },
-                {
-                  "name": "Indiebound",
-                  "url": "https://www.indiebound.org/book/9780735211292?aff=NYT"
-                }
-              ]
-            },
             {
               "age_group": "",
               "amazon_product_url": "https://www.amazon.com/dp/0735221251?tag=NYTBSREV-20",
@@ -4148,58 +3472,6 @@
                 {
                   "name": "Indiebound",
                   "url": "https://www.indiebound.org/book/9781538731642?aff=NYT"
-                }
-              ]
-            },
-            {
-              "age_group": "",
-              "amazon_product_url": "https://www.amazon.com/dp/0062911414?tag=NYTBSREV-20",
-              "article_chapter_link": "",
-              "author": "Julia Quinn",
-              "book_image": "https://s1.nyt.com/du/books/images/9780062424037.jpg",
-              "book_image_width": 332,
-              "book_image_height": 500,
-              "book_review_link": "",
-              "contributor": "by Julia Quinn",
-              "contributor_note": "",
-              "created_date": "2021-01-07 00:02:03",
-              "description": "The first book in the Bridgerton series. Daphne Bridgerton’s reputation soars when she colludes with the Duke of Hastings. The basis of the Netflix series “Bridgerton.”",
-              "first_chapter_link": "",
-              "price": 0,
-              "primary_isbn10": "",
-              "primary_isbn13": "9780062424037",
-              "book_uri": "nyt://book/d95504cd-88d6-5879-9b66-312e18f8494c",
-              "publisher": "Avon",
-              "rank": 3,
-              "rank_last_week": 0,
-              "sunday_review_link": "",
-              "title": "THE DUKE AND I",
-              "updated_date": "2021-01-07 00:02:03",
-              "weeks_on_list": 0,
-              "buy_links": [
-                {
-                  "name": "Amazon",
-                  "url": "https://www.amazon.com/dp/0062911414?tag=NYTBSREV-20"
-                },
-                {
-                  "name": "Apple Books",
-                  "url": "https://du-gae-books-dot-nyt-du-prd.appspot.com/buy?title=THE+DUKE+AND+I&author=Julia+Quinn"
-                },
-                {
-                  "name": "Barnes and Noble",
-                  "url": "https://www.anrdoezrs.net/click-7990613-11819508?url=https%3A%2F%2Fwww.barnesandnoble.com%2Fw%2F%3Fean%3D9780062424037"
-                },
-                {
-                  "name": "Books-A-Million",
-                  "url": "https://www.anrdoezrs.net/click-7990613-35140?url=https%3A%2F%2Fwww.booksamillion.com%2Fp%2FTHE%2BDUKE%2BAND%2BI%2FJulia%2BQuinn%2F9780062424037"
-                },
-                {
-                  "name": "Bookshop",
-                  "url": "https://bookshop.org/a/3546/9780062424037"
-                },
-                {
-                  "name": "Indiebound",
-                  "url": "https://www.indiebound.org/book/9780062424037?aff=NYT"
                 }
               ]
             },

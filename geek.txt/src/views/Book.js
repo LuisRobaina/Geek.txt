@@ -1,4 +1,4 @@
-const Book = () => {
+const Book = (props) => {
     return (<h1>Book information</h1>)
 }
 

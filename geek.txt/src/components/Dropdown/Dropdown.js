@@ -7,7 +7,6 @@ const Dropdown = ({prompt, value, onChange,width, options}) => {
     const ref = useRef(null);
 
     useEffect(() => {
-        console.log("rended")
         document.addEventListener('click', close);
         return () => document.removeEventListener('click', close);
     }, [])
