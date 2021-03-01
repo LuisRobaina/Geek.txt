@@ -5,15 +5,9 @@ import ModalBook from './ModalBook';
 
 const BookList = ({ bookData, bookCount, currentPage, setCurrentPage}) => {
     const [open, setOpen] = useState(false);
-    const [_, setModalInfo] = useState("");
     const lastPageindex = bookCount * currentPage;
     const firstPageIndex = lastPageindex - bookCount;
     const books =  bookData.slice(firstPageIndex, lastPageindex);
-
-    const handleModal = (options) => {
-        setModalInfo(options);
-        setOpen(true);
-    }
 
     const handleChange = (e, {activePage}) => {
         setCurrentPage(activePage)
@@ -25,7 +19,7 @@ const BookList = ({ bookData, bookCount, currentPage, setCurrentPage}) => {
         <Grid stackable >
             {books ? (books.map((book, index) => (
                 <Grid.Column key={index} mobile={16} tablet={8} computer={4}>
-                    <BookItem book={book} handleModal={handleModal}/>
+                    <BookItem book={book} />
                 </Grid.Column>
             ))) : (
                 <p>Loading...</p>

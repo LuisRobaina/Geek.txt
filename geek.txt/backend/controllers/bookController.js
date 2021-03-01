@@ -5,6 +5,7 @@ module.exports = {
     getBooks
 };
 
+const randPrice = [12.99, 14.99, 24.99, 30.99, 34.99, 9.99, 4.99, 19.99, 17.99, 39.99];
 
 function getBooks(req, res){
     const bookData = data.results.lists;
@@ -18,7 +19,7 @@ function getBooks(req, res){
                 "author":bookinfo[j].author,
                 "publisher":bookinfo[j].publisher,
                 "description": bookinfo[j].description,
-                "height": bookinfo[j].book_image_height
+                "price": randPrice[Math.floor(Math.random() * 10)]
             };
         bookList.list.push(info);
         }
