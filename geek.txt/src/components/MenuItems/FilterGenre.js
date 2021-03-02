@@ -35,7 +35,7 @@ export default function SortRadio(){
                   <Radio
                     label={option}
                     value={option.toLowerCase()}
-                    onChange={handleChange}
+                    // onChange={handleChange}
                     checked={val === option.toLowerCase()}
                     onClick={handleClick}
                   />
