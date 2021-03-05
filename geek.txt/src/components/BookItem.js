@@ -5,12 +5,12 @@ const BookItem = ({book}) => {
     return(
         <>
         <Card centered style={{boxShadow: 'none'}} >
-            <Link to={`book/${book.title}`}>
-            <Image src={book.url} centered style={{height: '350px'}}/>
+            <Link to={`book/${book._id}`}>
+            <Image src={book.coverUrl} centered style={{height: '350px'}}/>
             <Card.Content style={{borderTop: 'none'}}>
                 <Card.Header style={{color: 'black', fontSize: "18px", fontWeight: '600', padding: '10px 0'}}>{book.title}</Card.Header>
                 <Card.Meta>Author: {book.author}</Card.Meta>
-                <Rating icon="star" defaultRating={3} maxRating={5} disabled style={{margin: '10px 0 '}} />
+                <Rating icon="star" defaultRating={book.rating} maxRating={5} disabled style={{margin: '10px 0 '}} />
                 <span style={{color: '#909090', fontSize: "12px"}}>(192)</span>
             </Card.Content>
         </Link>
