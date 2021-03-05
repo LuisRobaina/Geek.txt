@@ -28,7 +28,6 @@ connection.once('open', () => {
     console.log("Geek.txt MongoDB is connected");
 });
 
-
 // Handle request to root url.
 app.get('/', function(req, res){
     res.send("Welcome to Geek.txt backend built with NodeJS+Express.")
