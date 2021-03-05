@@ -12,5 +12,5 @@ export function sortBy(arr, value){
 
 
 export function filterBy(arr, value){
-    
+    return arr.filter(item => item.genre === value);
 }
