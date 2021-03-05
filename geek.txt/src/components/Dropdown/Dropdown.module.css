@@ -33,7 +33,7 @@
   box-sizing: border-box;
   cursor: pointer;
   outline: none;
-  padding: 8px 45px 8px 10px;
+  padding: 8px 20px 8px 10px;
   transition: all 200ms ease;
   width: 100%;
 }
