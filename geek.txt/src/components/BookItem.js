@@ -1,18 +1,29 @@
-import { Card, Image } from "semantic-ui-react";
+import { Card, Image, Button, Icon, Rating } from "semantic-ui-react";
+import { Link } from 'react-router-dom'
 
 const BookItem = ({book}) => {
     return(
-        <Card centered>
-            <Image src={book.url} centered/>
-            <Card.Content>
-                <Card.Header>{book.title}</Card.Header>
+        <>
+        <Card centered style={{boxShadow: 'none'}} >
+            <Link to={`book/${book.title}`}>
+            <Image src={book.url} centered style={{height: '350px'}}/>
+            <Card.Content style={{borderTop: 'none'}}>
+                <Card.Header style={{color: 'black', fontSize: "18px", fontWeight: '600', padding: '10px 0'}}>{book.title}</Card.Header>
                 <Card.Meta>Author: {book.author}</Card.Meta>
+                <Rating icon="star" defaultRating={3} maxRating={5} disabled style={{margin: '10px 0 '}} />
+                <span style={{color: '#909090', fontSize: "12px"}}>(192)</span>
             </Card.Content>
-            <Card.Content>
-                <p>$14.99</p>
-                <button className='btn'>Add to Cart</button>
-            </Card.Content>
+        </Link>
+                <div style={{textAlign: 'center'}}>
+                <Button animated style={{background:  'linear-gradient(98.95deg, #FF785A 19.47%, #FE5B00 82.33%)', margin: '10px 0'}} onClick={() => console.log("click")}>
+                    <Button.Content visible style={{color: 'white'}}>$ {book.price}</Button.Content>
+                    <Button.Content hidden style={{color: 'white'}}>
+                        <Icon name='cart' />
+                    </Button.Content>
+                </Button>
+                </div>
         </Card>
+        </>
     )
 }
 
