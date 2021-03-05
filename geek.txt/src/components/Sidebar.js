@@ -1,6 +1,7 @@
-import {  Menu,Rating  } from 'semantic-ui-react';
+import {  Menu } from 'semantic-ui-react';
 import SortRadio from './MenuItems/SortRadio';
 import FilterGenre from './MenuItems/FilterGenre';
+import FilterRating from './MenuItems/FilterRating';
 
 
 
@@ -8,7 +9,6 @@ import FilterGenre from './MenuItems/FilterGenre';
 // For genre gonna use filter also for rating
 // can move sort and filter components to helper function outside component
 
-const ratingOptions = [5,4,3,2,1];
 
 
 export default function Sidebar(){
@@ -28,11 +28,7 @@ export default function Sidebar(){
         <Menu.Item>
           Rating
           <Menu.Menu>
-            {ratingOptions.map(rate => (
-              <Menu.Item key={rate}>
-              <Rating icon="star" defaultRating={rate} maxRating={5} disabled/>({rate})
-            </Menu.Item>
-            ))}
+            <FilterRating />
           </Menu.Menu>
         </Menu.Item>
       </Menu>
