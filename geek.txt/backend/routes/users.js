@@ -49,9 +49,9 @@ router.route('/login').post((req, res) => {
     }
     else {
         // Look user by GeekID.
-        Users.find()
+        Users.find({geekID: credential, password: hashed_password})
         // If promise return then return all users as JSON.
-        .then(users => res.json(users))
+        .then(user => res.json(user))
         // If there is an error return status 400 with Error.
         .catch(err => res.status(400).json('Error: ' + err))
     }
@@ -67,10 +67,7 @@ router.route('/add').post((req, res) => {
         "firstName" : "User",
         "lastName" : "Test",
         "email": "testuser@test.com",
-        "password" : "ABCD3F5", 
-        "credit_cards" : [],
-        "shippingAddress" : [],
-        "wishList" : []
+        "password" : "ABCD3F5"
     */
 
     const geekID = req.body.geekID;
