@@ -2,14 +2,16 @@ import { useEffect, useState } from 'react';
 import BookList from '../components/BookList';
 import Footer from '../components/Footer';
 import axios from '../config/axios';
-import { Container } from 'semantic-ui-react'
+import { Container } from 'semantic-ui-react';
 import Dropdown from '../components/Dropdown/Dropdown';
 import Sidebar from '../components/Sidebar';
-import { BookContext } from '../contexts/BookContext'
+import { BookContext } from '../contexts/BookContext';
+
+
 
 const bookOptions = [
-    {"id": 1, "name" : 10},
-    {"id": 2, "name" : 20}
+    { "id": 1, "name": 10 },
+    { "id": 2, "name": 20 }
 ]
 
 const Home = () => {
@@ -24,22 +26,22 @@ const Home = () => {
             // This causes the component to render a third time
             setDefaultBooks([...res.data])
         }
-            ).catch(err => console.log(err))
+        ).catch(err => console.log(err))
     }, [])
 
     return (
         <Container>
-        <h3>Featured Books </h3>
-        <div style={{display: 'flex', justifyContent:"flex-end"}}>
-            <Dropdown prompt="Books per Page" value={bookCount} onChange={val => setBookCount(val)} width={135} options={bookOptions}/>
-        </div>
-        <BookContext.Provider value={{books, setBooks, currentPage, setCurrentPage, defaultBooks}}>
-        <div style={{display: 'flex', flex: '10'}}>
-        <Sidebar />
-        <BookList bookData={books} bookCount={bookCount} setBookCount={setBookCount} currentPage={currentPage} setCurrentPage={setCurrentPage}/>
-        </div>
-        </BookContext.Provider>
-        <Footer />
+            <h3>Featured Books </h3>
+            <div style={{ display: 'flex', justifyContent: "flex-end" }}>
+                <Dropdown prompt="Books per Page" value={bookCount} onChange={val => setBookCount(val)} width={135} options={bookOptions} />
+            </div>
+            <BookContext.Provider value={{ books, setBooks, currentPage, setCurrentPage, defaultBooks }}>
+                <div style={{ display: 'flex', flex: '10' }}>
+                    <Sidebar />
+                    <BookList bookData={books} bookCount={bookCount} setBookCount={setBookCount} currentPage={currentPage} setCurrentPage={setCurrentPage} />
+                </div>
+            </BookContext.Provider>
+            <Footer />
         </ Container>
     )
 }
