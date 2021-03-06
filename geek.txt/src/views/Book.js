@@ -4,8 +4,6 @@ import axios from '../config/axios';
 import { Header, Comment, Form, TextArea, Segment, Button } from 'semantic-ui-react';
 import Comments from '../components/Comments';
 
-import axios from '../config/axios';
-
 
 const Book = (props) => {
     const [bookData, setBookData] = useState({})
