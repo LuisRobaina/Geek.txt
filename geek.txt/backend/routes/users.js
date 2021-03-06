@@ -18,6 +18,7 @@ router.route('/').get((req, res) => {
 
 // Handles incomming POST requests to users/login.
 router.route('/login').post((req, res) => {
+
     /*
     Sample POST request:
         "credential" : "testUser",
@@ -25,21 +26,43 @@ router.route('/login').post((req, res) => {
     */
     
     // Credential can be an email or a geek ID.
-    const [credential, password] = req.body;
+    const credential = req.body.credential;
+    const password = req.body.password;
     
     if(EmailValidator.validateEmail(credential)){
-        // Lookup user by email.
+
         Users.find({email: credential}) 
-        // If promise return then return all users as JSON.     check if password  matches hashed in DB, return error if not
-        .then(user => res.json(user))
-        // If there is an error return status 400 with Error.
+
+        .then(users => {
+            
+            bcrypt.compare(password, hash, function(err, valid) {
+
+                if(!valid) return res.json("Invalid");
+                if(err) return err;
+
+                //json web token or something
+
+            });
+            res.json(users)
+        })
+
         .catch(err => res.status(400).json('Error: ' + err))
-    }
-    else {
+    } else {
         // Look user by GeekID.
         Users.find({geekID: credential}) 
         // If promise return then return all users as JSON.
-        .then(user => res.json(user))
+        .then(users => {
+            bcrypt.compare(password, hash, function(err, valid) {
+
+                if(!valid) return res.json("Invalid");
+                if(err) return err;
+
+                //json web token or something
+
+            });
+            
+            res.json(users)
+        })
         // If there is an error return status 400 with Error.   check if password  matches hashed in DB, return error if not
         .catch(err => res.status(400).json('Error: ' + err))
     }  
