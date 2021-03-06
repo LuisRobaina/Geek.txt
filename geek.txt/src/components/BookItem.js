@@ -5,7 +5,7 @@ const BookItem = ({book}) => {
     return(
         <>
         <Card centered style={{boxShadow: 'none'}} key={book._id}>
-            <Link to={`book/${book._id}`}>
+            <Link to={`books/${book._id}`}>
             <Image src={book.coverUrl} centered style={{height: '350px'}}/>
             <Card.Content style={{borderTop: 'none'}}>
                 <Card.Header style={{color: 'black', fontSize: "18px", fontWeight: '600', padding: '10px 0'}}>{book.title}</Card.Header>
