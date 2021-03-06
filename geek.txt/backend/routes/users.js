@@ -1,15 +1,11 @@
-/*
-   API routes related to the User model.
-*/
+// API routes related to the User model.
 
 const router = require('express').Router();
 const bcrypt = require('bcrypt');
+const saltRounds = 10;
 let Users = require('../models/users.model');
 let EmailValidator = require('./utils/validators')
-
-// Generate Salt
-const salt = bcrypt.genSaltSync(10);
-    
+   
 // Handles incomming GET requests to users/.
 router.route('/').get((req, res) => {
     // List of all users in the DB.
@@ -20,7 +16,6 @@ router.route('/').get((req, res) => {
         .catch(err => res.status(400).json('Error: ' + err))
 });
 
-
 // Handles incomming POST requests to users/login.
 router.route('/login').post((req, res) => {
     /*
@@ -29,39 +24,30 @@ router.route('/login').post((req, res) => {
         "password" : "User"
     */
     
-    // Can be an email or a geek ID.
-    const credential = req.body.credential
-    const password = req.body.password
+    // Credential can be an email or a geek ID.
+    const [credential, password] = req.body;
     
-    console.log(password)
-
-    // Hash Password
-    const hashed_password = bcrypt.hashSync(password, salt);
-
-    console.log(hashed_password)
     if(EmailValidator.validateEmail(credential)){
         // Lookup user by email.
-        Users.find({email: credential, password: hashed_password})
-        // If promise return then return all users as JSON.
+        Users.find({email: credential}) 
+        // If promise return then return all users as JSON.     check if password  matches hashed in DB, return error if not
         .then(user => res.json(user))
         // If there is an error return status 400 with Error.
         .catch(err => res.status(400).json('Error: ' + err))
     }
     else {
         // Look user by GeekID.
-        Users.find({geekID: credential, password: hashed_password})
+        Users.find({geekID: credential}) 
         // If promise return then return all users as JSON.
         .then(user => res.json(user))
-        // If there is an error return status 400 with Error.
+        // If there is an error return status 400 with Error.   check if password  matches hashed in DB, return error if not
         .catch(err => res.status(400).json('Error: ' + err))
-    }
-    
+    }  
 });
 
 // Handle post request to add new user.
-router.route('/add').post((req, res) => {
-    
-    /**
+router.route('/add').post((req, res) => {  
+    /*
     Sample POST request:
         "geekID" : "testUser",
         "firstName" : "User",
@@ -74,16 +60,16 @@ router.route('/add').post((req, res) => {
     const firstName = req.body.firstName;
     const lastName = req.body.lastName;
     const email = req.body.email;
-    password = req.body.password;
-   
-    // Hash Password
-    password = bcrypt.hashSync(password, salt);     
+    const password = req.body.password;
     const creditCard = []
     const shippingAddress = []
     const wishList = []
-    
+
+    bcrypt.hash(password, saltRounds, function(err, hash) {
+
+    if(err) return res.status(400);
+
     // Create new user using the User model.
-    // User model validations.
     const newUser = new Users({
         geekID,
         firstName,
@@ -94,10 +80,14 @@ router.route('/add').post((req, res) => {
         shippingAddress,
         wishList
     });
+
     // Save new user to database. 
     newUser.save()
         .then(() => res.json('User Added Successfully.'))
         .catch(err => res.status(400).json('Error: ' + err))
+
+    });
+
 });
 
 // Export all User routes in this routers object.
