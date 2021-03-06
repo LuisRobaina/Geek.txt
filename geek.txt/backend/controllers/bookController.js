@@ -44,6 +44,7 @@ function getBooks(req, res){
 }
 
 function getABook(req, res) {
+    console.log("Getting A Book")
     const bookID = req.params.id;
     Book.findById(bookID).then(doc => res.json(doc)).catch(err => res.json(err))
 }
