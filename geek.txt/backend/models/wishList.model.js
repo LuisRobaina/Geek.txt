@@ -4,15 +4,25 @@ const Schema = mongoose.Schema;
 
 const wishListSchema = new Schema({
     // Features
-    Owner: {
+    User: {
         type: mongoose.Schema.Types.ObjectId, ref: 'User'
     },
     Name: {
         type: String,
         required: true,
         trim: true,
+        unique: true,
         minlength: 3,
         maxlength: 20
+    },
+    Hierarchy: {
+        type: Number,
+        required: true,
+        trim: true, 
+        unique: true,
+        1: true,
+        2: false,
+        3: false, 
     },
     Items: [
         {
@@ -24,5 +34,5 @@ const wishListSchema = new Schema({
     timestamps: true,
 });
 
-const wishLists = mongoose.model('WishLists', wishListSchema)
-module.exports = wishLists;
+const wishList = mongoose.model('wishList', wishListSchema)
+module.exports = wishList;
