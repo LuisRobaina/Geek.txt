@@ -15,10 +15,10 @@ const BookList = ({ bookData, bookCount, currentPage, setCurrentPage}) => {
     }
 
     return(
-        <div style={{marginTop: '10px'}}>
-        <Grid stackable >
+        <div style={{marginTop: '10px', width: '100%'}}>
+        <Grid stackable style={{marginBottom: '10px'}}>
             {books ? (books.map((book, index) => (
-                <Grid.Column key={index} mobile={16} tablet={8} computer={4}>
+                <Grid.Column key={index} mobile={16} tablet={8} computer={4} >
                     <BookItem book={book} />
                 </Grid.Column>
             ))) : (

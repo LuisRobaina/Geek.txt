@@ -14,7 +14,7 @@ export default function SortRadio(){
     const handleChange = (e, {value}) => {
       setVal(value);
       // sort by said value
-      const modArry = filterBy(bookData.books, value);
+      const modArry = filterBy(bookData.defaultBooks, value);
       bookData.setBooks([...modArry]);
       bookData.setCurrentPage(1);
     };
@@ -34,9 +34,9 @@ export default function SortRadio(){
                 <Menu.Item key={option}>
                   <Radio
                     label={option}
-                    value={option.toLowerCase()}
-                    // onChange={handleChange}
-                    checked={val === option.toLowerCase()}
+                    value={option}
+                    onChange={handleChange}
+                    checked={val === option}
                     onClick={handleClick}
                   />
                 </Menu.Item>

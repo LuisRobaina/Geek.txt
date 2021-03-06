@@ -12,5 +12,9 @@ export function sortBy(arr, value){
 
 
 export function filterBy(arr, value){
-    
+    return arr.filter(item => item.genre === value);
+}
+
+export function filterRating(arr, rate){
+  return arr.filter(item => item.rating === rate)
 }

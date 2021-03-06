@@ -20,9 +20,9 @@ const Home = () => {
 
     useEffect(() => {
         axios.get('/books').then(res => {
-            setBooks(res.data.list)
+            setBooks(res.data)
             // This causes the component to render a third time
-            setDefaultBooks([...res.data.list])
+            setDefaultBooks([...res.data])
         }
             ).catch(err => console.log(err))
     }, [])
