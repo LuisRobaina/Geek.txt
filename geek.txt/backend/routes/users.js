@@ -1,6 +1,7 @@
 // API routes related to the User model.
 
 const router = require('express').Router();
+var jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 let Users = require('../models/users.model');
@@ -40,7 +41,7 @@ router.route('/login').post((req, res) => {
                 if(!valid) return res.json("Invalid");
                 if(err) return err;
 
-                //json web token or something
+                var token = jwt.sign({ foo: 'bar' }, 'shhhhh'); //?????
 
             });
             res.json(users)
@@ -57,7 +58,7 @@ router.route('/login').post((req, res) => {
                 if(!valid) return res.json("Invalid");
                 if(err) return err;
 
-                //json web token or something
+                var token = jwt.sign({ foo: 'bar' }, 'shhhhh'); //?????
 
             });
             
