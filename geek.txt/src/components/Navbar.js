@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import {useState} from 'react'
-import { Menu, Segment } from 'semantic-ui-react'
+import { Button, Menu, Segment } from 'semantic-ui-react'
+import {userProfile} from './userProfile';
 
 const NavBar = () => {
     const [active, setActive] = useState("home")
@@ -8,8 +9,12 @@ const NavBar = () => {
         <Segment>
             <Menu secondary size="large">
                 <Link to="/">
-                    <Menu.Item name="BookLib" />
+                    <Menu.Item name="Geek Text, Your Geeky Book Store"/>
                 </Link>
+                <Link to="/login">
+                    <Button positive>Login or Register</Button>
+                </Link>
+                <userProfile />
             </Menu>
         </Segment>
     );
