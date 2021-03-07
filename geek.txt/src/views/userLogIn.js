@@ -1,9 +1,10 @@
-import { useReducer } from 'react';
+import { useReducer, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Grid, Button, Form, Segment } from 'semantic-ui-react';
+import { Grid, Button, Form, Segment, Message } from 'semantic-ui-react';
 import axios from '../config/axios';
 
 const UserLogIn = () => {
+  const [errors, setErrors] = useState("");
   const [userInput, setUserInput] = useReducer(
     (state, newState) => ({ ...state, ...newState }),
     {
@@ -16,10 +17,12 @@ const UserLogIn = () => {
     setUserInput({[e.target.name]: e.target.value})
   }
 
-  const handleClick= (e) => {
+  const handleSubmit= (e) => {
+    setErrors("");
     e.preventDefault();
-    console.log(userInput)
-    axios.post('/users/add', userInput).then(res => console.log(res))
+    axios.post('/users/login', userInput).then(res => {
+      console.log(res);
+    }).catch(({response}) => setErrors(response.data))
   }
 
   return (
@@ -27,7 +30,12 @@ const UserLogIn = () => {
       <Grid centered>
         <Grid.Column style={{ maxWidth: 550, margin: 20 }}>
           <Segment>
-            <Form onSubmit={handleClick} >
+            {errors && (
+              <Message negative>
+                <Message.Header>{errors}</Message.Header>
+            </Message>
+            )}
+            <Form onSubmit={handleSubmit} >
               <Form.Field>
                 <label>GeekID or E-mail</label>
                 <input placeholder='GeekID/E-mail' name="email" value={userInput.email} onChange={handleChange} />
@@ -45,7 +53,7 @@ const UserLogIn = () => {
                   <Button positive>Log In!</Button>
                   <Button.Or />
                   <Link to="/register">
-                    <Button animated='fade' onClick={() => handleClick}>
+                    <Button animated='fade' onClick={() => handleSubmit}>
                       <Button.Content visible>Register for an account</Button.Content>
                       <Button.Content hidden>It is free!</Button.Content>
                     </Button>
