@@ -2,7 +2,7 @@ import React from 'react'
 import { Grid, Button, Form, Segment } from 'semantic-ui-react'
 import { Link } from 'react-router-dom';
 
-const userRegister = () => {
+const UserRegister = () => {
     
     return (
         <div>
@@ -74,4 +74,4 @@ const userRegister = () => {
     )
 };
 
-export default userRegister;
+export default UserRegister;

@@ -9,7 +9,7 @@ const NavBar = () => {
         <nav>
             <Link to="/" >
             <div className={classes.logoContainer}>
-                <img src="./GeekText.jpg" alt="logo" className={classes.logo}/>
+                <img src="https://res.cloudinary.com/rocasto/image/upload/v1615102284/logo_sno9j8.jpg" alt="logo" className={classes.logo}/>
                 <span className={classes.title}>GeekText</span>
             </div>
             </Link>
