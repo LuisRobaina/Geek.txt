@@ -3,7 +3,7 @@ var jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 let Users = require('../models/users.model');
-let EmailValidator = require('./utils/validators')
+let EmailValidator = require('../utils/validators')
 const router = require('express').Router();
 
 // Handles incomming GET requests to url/users/ .
