@@ -21,8 +21,8 @@ const wishListSchema = new Schema({
         trim: true, 
         unique: true,
         1: true,
-        2: false,
-        3: false, 
+     //   2: false,
+     //   3: false, 
     },
     Items: [
         {
