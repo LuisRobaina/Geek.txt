@@ -1,16 +1,10 @@
 // API routes related to the User model.
-
-const router = require('express').Router();
 var jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 let Users = require('../models/users.model');
 let EmailValidator = require('./utils/validators')
-   
-// Handles incomming GET requests to users/.
-
 const router = require('express').Router();
-let User = require('../models/users.model')
 
 // Handles incomming GET requests to url/users/ .
 router.route('/').get((req, res) => {
