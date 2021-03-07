@@ -1,6 +1,6 @@
+import { Comment } from 'semantic-ui-react';
 
-const Comment = ({ commentsList }) => {
-
+const Comments = ({ commentsList }) => {
     return (
 
         <Comment>
@@ -19,4 +19,4 @@ const Comment = ({ commentsList }) => {
     )
 }
 
-export default Comment;
+export default Comments;

@@ -3,9 +3,9 @@ import { Grid, Button, Form, Segment } from 'semantic-ui-react'
 import { Link } from 'react-router-dom';
 
 const userRegister = () => {
+    
     return (
         <div>
-
             <Grid centered>
                 <Grid.Column style={{ maxWidth: 550, margin: 20 }}>
                     <Segment>
