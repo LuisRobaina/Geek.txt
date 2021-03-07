@@ -6,8 +6,8 @@ import './App.css';
 import Home from './views/Home';
 import Book from './views/Book';
 import NotFound from './views/NotFound';
-import userLogIn from './views/userLogIn';
-import userRegister from './views/userRegister';
+import UserLogIn from './views/UserLogIn';
+import UserRegister from './views/UserRegister';
 
 
 // Example of component routing:
@@ -18,8 +18,8 @@ const App = () => {
     <Router>
       <NavBar />
       <Switch>
-        <Route path="/login" exact component={userLogIn}/>
-        <Route path="/register" exact component={userRegister} />
+        <Route path="/login" exact component={UserLogIn}/>
+        <Route path="/register" exact component={UserRegister} />
         <Route path="/books/:id" exact component={Book} />
         <Route path="/" exact component={Home} />
         <Route path="/*" component={NotFound} />
