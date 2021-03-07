@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 
-// Mongoose: Allows us to connect to MongoDB database
+// Mongoose: Allows us to connect to MongoDB database.
 const mongoose = require('mongoose');
 
 // Require env variables.
@@ -33,20 +33,21 @@ app.get('/', function(req, res){
     res.send("Welcome to Geek.txt backend built with NodeJS+Express.")
 })
 
-
-
 /*
  Require and use the routes. 
- TODO: Add routers here.
+ TODO: Add all routers here.
 */
 const usersRouter =require('./routes/users');
-const bookRouter = require('./routes/book')
+const bookRouter = require('./routes/books');
+const commentsRouter = require('./routes/comments');
+const ratingsRouter = require('./routes/ratings');
 
 // If a user browsers our API to the /users it will load all the
 // users router in routers/users.js.
 app.use('/users', usersRouter);
 app.use('/books', bookRouter);
-
+app.use('/comments', commentsRouter);
+app.use('/rate', ratingsRouter);
 
 /*
  Start the server.

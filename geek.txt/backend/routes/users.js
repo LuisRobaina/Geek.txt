@@ -8,6 +8,11 @@ let Users = require('../models/users.model');
 let EmailValidator = require('./utils/validators')
    
 // Handles incomming GET requests to users/.
+
+const router = require('express').Router();
+let User = require('../models/users.model')
+
+// Handles incomming GET requests to url/users/ .
 router.route('/').get((req, res) => {
     // List of all users in the DB.
     Users.find()

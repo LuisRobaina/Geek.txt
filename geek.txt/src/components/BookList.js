@@ -1,43 +1,43 @@
-import { Grid, Image, Pagination } from "semantic-ui-react";
+import { Grid, Pagination } from "semantic-ui-react";
 import { useState } from 'react';
+import BookItem from "./BookItem";
+import ModalBook from './ModalBook';
 
-const BookList = ({bookData}) => {
-    const [bookPerPage, setBookPerPage] = useState(10);
-    const [currentPage, setcurrentPage] = useState(1);
-
-    const lastPageindex = bookPerPage * currentPage;
-    const firstPageIndex = lastPageindex - bookPerPage;
+const BookList = ({ bookData, bookCount, currentPage, setCurrentPage}) => {
+    const [open, setOpen] = useState(false);
+    const lastPageindex = bookCount * currentPage;
+    const firstPageIndex = lastPageindex - bookCount;
     const books =  bookData.slice(firstPageIndex, lastPageindex);
 
-
     const handleChange = (e, {activePage}) => {
-        setcurrentPage(activePage)
+        setCurrentPage(activePage)
         window.scrollTo({top: 0, behavior: "smooth"})
     }
 
-
-
     return(
-        <>
-        <Grid  stackable >
+        <div style={{marginTop: '10px', width: '100%'}}>
+        <Grid stackable style={{marginBottom: '10px'}}>
             {books ? (books.map((book, index) => (
-                <Grid.Column key={index} mobile={16} tablet={8} computer={4}>
-                    <Image src={book.url} centered/>
+                <Grid.Column key={index} mobile={16} tablet={8} computer={4} >
+                    <BookItem book={book} />
                 </Grid.Column>
             ))) : (
                 <p>Loading...</p>
                 )}
 
         </Grid>
+        {open && <ModalBook open={open} setOpen={setOpen}/>}
+        <div className="paginate">
             <Pagination
                 boundaryRange={0}
                 ellipsisItem={null}
                 siblingRange={1}
-                totalPages={Math.ceil(bookData.length / bookPerPage)}
+                totalPages={Math.ceil(bookData.length / bookCount)}
                 onPageChange={handleChange}
                 activePage={currentPage}
             />        
-        </>
+        </div>
+        </div>
     )
 }
 

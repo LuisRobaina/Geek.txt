@@ -3,54 +3,49 @@ const Schema = mongoose.Schema;
 
 const bookSchema = new Schema({
     // Features
-    Genre: {
+    genre: {
         type: String,
         required: true,
-        trim: true, // Remove whitespaces.
+        trim: true // Remove whitespaces.
     },
-    Cover: {
-        url: String,
+    coverUrl: {
+        type: String,
         required: true
     },
-    Title: {
+    title: {
         type: String,
         required: true,
-        unique: true,
-        trim: true,
+        trim: true
     },
-    AuthorName: {
+    author: {
         type: String,
         required: true,
-        trim: true,
+        trim: true
     },
-    AuthorBio: {
+    authorBio: {
         type: String
         // TODO: Make required.
     },
-    Description: {
+    description: {
         type: String,
         required: true
     },
-
-    // Publisher: {
-    //     // TODO: Fix embedding.
-    //     {
-    //         name: String,
-    //         date: Date
-    //     }
-    // },
-
-    Rating: {
+    publisher: {
+        // TODO: Fix embedding.
+        type: String,
+        trim: true
+    },
+    rating: {
         type: Number,
         max: 5,
         min: 0,
-        default: 5
+        default: 0
     },
-    Price: {
+    price: {
         type: Number,
         required: true
     },
-    Sold_Count: {
+    soldCount: {
         type: Number
     }
 }, {
@@ -58,11 +53,5 @@ const bookSchema = new Schema({
     timestamps: true,
 });
 
-// Instance method to get initials of a user.
-// bookSchema.methods.getSoldCount = function () {
-//     return this.Sold_Count
-// }
-
 // Export userSchema as User.
-const Books = mongoose.model('Books', bookSchema)
-module.exports = Books;
+module.exports = mongoose.model('Books', bookSchema);
