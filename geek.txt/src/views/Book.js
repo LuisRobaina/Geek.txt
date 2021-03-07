@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Container, Grid, Image } from 'semantic-ui-react'
+import { Container, Grid, Image, Rating, Icon } from 'semantic-ui-react'
 import axios from '../config/axios';
 import { Header, Comment, Form, TextArea, Segment, Button } from 'semantic-ui-react';
 import Comments from '../components/Comments';
@@ -21,11 +21,31 @@ const Book = (props) => {
                 </Grid.Column>
                 <Grid.Column largeScreen={5}>
                     <h2>{bookData.title}</h2>
-                    <h4>Author: {bookData.author}</h4>
+                    <h3>Author: {bookData.author}</h3>
+                    <h4>Genre: {bookData.genre}</h4>
                     <p>Description: {bookData.description}</p>
-                </Grid.Column>
-            </Grid>
 
+            
+            <Rating icon="star" defaultRating={bookData.rating} maxRating={5} disabled key = {bookData.rating} style={{margin: '25px 0 ', fontSize: "18px"}} />
+             <span style={{color: '#909090', fontSize: "18px"}}>({bookData.rating})</span>
+             
+            <Grid.Column>
+
+            <Button animated style={{background:  'linear-gradient(98.95deg, #FF785A 19.47%, #FE5B00 82.33%)'}} onClick={() => console.log("click")}>
+                    <Button.Content visible style={{color: 'white'}}>$ {bookData.price}</Button.Content>
+                    <Button.Content hidden style={{color: 'white'}}>
+                        <Icon name='cart' />
+                    </Button.Content>
+            </Button> 
+            
+            </Grid.Column>
+
+              
+            </Grid.Column>  
+
+            </Grid>
+        
+        
             <div>
                 <Segment>
                     <Comments />
