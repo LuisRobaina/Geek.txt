@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 let Books = require('../models/books.model')
 
 const router = require('express').Router();
-let Comment = require('../models/CommentingModels/ratings.model')
+let Comment = require('../models/CommentingModels/comments.model')
 
 // Handles incomming GET requests to url/comments/ .
 router.route('/').get((req, res) => {
