@@ -1,5 +1,5 @@
 // API routes related to the User model.
-var jwt = require('jsonwebtoken');
+//var jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 let Users = require('../models/users.model');
@@ -81,6 +81,8 @@ router.route('/add').post((req, res) => {
     const email = req.body.email;
     const password = req.body.password;
     const password2 = req.body.password2;
+    const nickname = req.body.nickname;
+    // const password3: password to check if entered is alphanumeric
     // const creditCard = []
     // const shippingAddress = []
     // const wishList = []
@@ -97,6 +99,7 @@ router.route('/add').post((req, res) => {
             lastName,
             email,
             password: hash,
+            nickname
             // creditCard,
             // shippingAddress,
             // wishList

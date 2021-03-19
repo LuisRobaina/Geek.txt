@@ -5,9 +5,12 @@ const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
     // Features.
+    nickname: {
+        type: String
+    },
     geekID: {
         type: String,
-        unique: true,
+        unique: true
     },
     firstName: {
         type: String,
