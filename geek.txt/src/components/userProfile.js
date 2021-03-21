@@ -1,7 +1,7 @@
 import React from 'react'
 import { Header, Image } from 'semantic-ui-react'
 
-const userProfile = () => {
+const UserProfile = () => {
     return (
     <Header as='h2'>
         <Image circular src='https://react.semantic-ui.com/images/avatar/large/patrick.png' /> Patrick
@@ -9,4 +9,4 @@ const userProfile = () => {
 
 )};
 
-export default userProfile;
+export default UserProfile;
