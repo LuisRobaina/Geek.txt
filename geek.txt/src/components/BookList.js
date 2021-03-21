@@ -1,10 +1,7 @@
 import { Grid, Pagination } from "semantic-ui-react";
-import { useState } from 'react';
 import BookItem from "./BookItem";
-import ModalBook from './ModalBook';
 
 const BookList = ({ bookData, bookCount, currentPage, setCurrentPage}) => {
-    const [open, setOpen] = useState(false);
     const lastPageindex = bookCount * currentPage;
     const firstPageIndex = lastPageindex - bookCount;
     const books =  bookData.slice(firstPageIndex, lastPageindex);
@@ -26,7 +23,6 @@ const BookList = ({ bookData, bookCount, currentPage, setCurrentPage}) => {
                 )}
 
         </Grid>
-        {open && <ModalBook open={open} setOpen={setOpen}/>}
         <div className="paginate">
             <Pagination
                 boundaryRange={0}

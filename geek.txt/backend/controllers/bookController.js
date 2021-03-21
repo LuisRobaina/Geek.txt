@@ -30,7 +30,8 @@ function getBooks(req, res){
     //             "rating": Math.floor(Math.random() * 5) + 1,
     //             "price": randPrice[Math.floor(Math.random() * 10)],
     //             "genre": genreOptions[Math.floor(Math.random() * 8)],
-    //             "bookCount": Math.floor(Math.random() * 100) + 1
+    //             "bookCount": Math.floor(Math.random() * 100) + 1.
+    //             "date": `${Math.floor(Math.random() * 12) + 1},${Math.floor(Math.random() * 31) + 1}, ${Math.floor(Math.random() * 2020) + 2010}`
     //         };
 
     //     bookList.push(info);

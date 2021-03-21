@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Container, Grid, Image } from 'semantic-ui-react'
 import axios from '../config/axios';
-import { Header, Comment, Form, TextArea, Segment, Button } from 'semantic-ui-react';
+import { Segment } from 'semantic-ui-react';
 import Comments from '../components/Comments';
 
 
