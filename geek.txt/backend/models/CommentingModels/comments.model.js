@@ -7,6 +7,14 @@ const CommentsSchema= new Schema({
     Creator: { // References to a User.
         type: mongoose.Schema.Types.ObjectId, ref: 'User'
     },
+    CreatorName: {
+        type: String,
+        required: true
+    },
+    Anonymous: {
+        type: Boolean,
+        required: true
+    },
     BookID: { // References to a book.
         type: mongoose.Schema.Types.ObjectId, ref: 'Book'
     },
