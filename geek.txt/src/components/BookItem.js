@@ -1,7 +1,8 @@
-import { Card, Image, Button, Icon, Rating } from "semantic-ui-react";
-import { Link } from 'react-router-dom'
+import { Card, Image, Button, Icon, Rating, TextArea } from "semantic-ui-react";
+import { Link } from 'react-router-dom';
 
 const BookItem = ({book}) => {
+
     return(
         <>
         <Card centered style={{boxShadow: 'none'}} key={book._id}>

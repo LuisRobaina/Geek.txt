@@ -1,19 +1,19 @@
-import axios from 'axios';
-import { useState } from 'react';
-import { Button, Comment, TextArea } from 'semantic-ui-react';
 import SingleComment from './SingleComment';
 
 const CommentsList = ({ commentsList }) => {
-
-    // State.
-    const [CommentText, setComment] = useState("")
+    const getComments = () => {
+        let comments = commentsList.map(function (comment) {
+            return <SingleComment Creator={comment.CreatorName} Text={comment.Text} />;
+        });
+        return comments;
+    }
     return (
-        <ul>
-            {
-                commentsList.map(function (comment) {
-                    return <SingleComment Creator={comment.CreatorName} Text={comment.Text} />;
-                })}
-        </ul>
+        <div>
+            <h2>What Geeks like you are saying...</h2>
+            <ul>
+                {getComments()}
+            </ul>
+        </div>
     )
 }
 

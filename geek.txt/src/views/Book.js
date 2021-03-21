@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Container, Grid, Image, Rating, Icon } from 'semantic-ui-react'
+import { Container, Grid, Image, Rating, Icon, TextArea } from 'semantic-ui-react'
 import axios from '../config/axios';
 import { Segment, Button } from 'semantic-ui-react';
 import CommentsList from '../components/CommentsList';
@@ -7,6 +7,44 @@ import CommentsList from '../components/CommentsList';
 const Book = (props) => {
     const [bookData, setBookData] = useState({})
     const [commentsSet, setCommentsSet] = useState([])
+    const [NewCommentText, setNewComment] = useState("")
+
+    const handleNewCommentChange = (e) => {
+        setNewComment(e.currentTarget.value)
+    }
+    const handleNewAnonymousCommentPost = (e) => {
+        e.preventDefault()
+        // TODO: Add the creators ID once we get login running.
+        const postObject = {
+            Creator: "60426686e0804e3b0cc20702",
+            CreatorName: "Anonymous",
+            Anonymous: "true",
+            BookID: props.match.params.id,
+            Text: NewCommentText
+        }
+        axios.post('/comments/add', postObject).then(res => {
+            // TODO: remove this log.
+            console.log(res)
+        })
+            .catch(err => console.log(err))
+    }
+
+    const handleNewCommentPost = (e) => {
+        e.preventDefault()
+        // TODO: Add the creators ID once we get login running.
+        const postObject = {
+            Creator: "60426686e0804e3b0cc20702",
+            CreatorName: "Peter",
+            Anonymous: "false",
+            BookID: props.match.params.id,
+            Text: NewCommentText
+        }
+        axios.post('/comments/add', postObject).then(res => {
+            // TODO: remove this log.
+            console.log(res);
+        })
+        .catch(err => console.log(err))
+    }
 
     useEffect(() => {
         // Make api cal to database for Book information and all related comments
@@ -16,14 +54,14 @@ const Book = (props) => {
 
         // Make an api call to get the comments associated with this book.
         // TODO change book request string to props.match.params.id
-        axios.get(`/comments/${"60426686e0804e3b0cc20702"}`)
+        axios.get(`/comments/${props.match.params.id}`)
             .then(comments => {
                 // TODO: remove this log.
                 console.log(comments)
                 setCommentsSet(comments.data)
             })
             .catch(err => console.log(err))
-        
+
         axios.get(`/users/${"60426686e0804e3b0cc20702"}`)
             .then(comments => {
                 // TODO: remove this log.
@@ -61,11 +99,28 @@ const Book = (props) => {
                 </Grid.Column>
             </Grid>
             <div>
+                {/* Comments section */}
+                <h2>Post a Comment</h2>
+                <TextArea
+                    style={{ width: '100%', borderRadius: '5px' }}
+                    placeholder={"Post your comment"}
+                    onChange={handleNewCommentChange}
+                    value={NewCommentText}
+                />
+                <Button positive
+                    onClick={handleNewCommentPost}
+                >Post Comment</Button>
+                <Button secondary
+                    onClick={handleNewAnonymousCommentPost}
+                >Post Anonymously</Button>
+            </div>
+            <div>
                 <Segment>
                     <CommentsList commentsList={commentsSet} />
                 </Segment>
             </div>
         </Container>
+
     )
 };
 
