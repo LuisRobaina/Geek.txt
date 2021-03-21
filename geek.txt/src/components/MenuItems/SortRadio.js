@@ -4,7 +4,7 @@ import { BookContext } from '../../contexts/BookContext';
 import { sortBy } from '../../config/sortHelpers'
 
 
-const sortOptions = ["Title", "Author", "Price"];
+const sortOptions = ["Most Popular", "Title", "Author", "Price", "Published Date"];
 
 
 export default function SortRadio(){

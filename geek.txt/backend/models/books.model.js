@@ -47,7 +47,8 @@ const bookSchema = new Schema({
     },
     soldCount: {
         type: Number
-    }
+    },
+    publisherDate: Date
 }, {
     // Create a timestamps for the creation and modification of document.
     timestamps: true,

@@ -3,3 +3,11 @@
   justify-content: center;
   margin: 2rem 0;
 }
+
+.ratingSpan {
+  padding-bottom: 2px;
+}
+
+.ratingSpan:hover {
+  border-bottom: 1px solid rgb(156, 156, 156);
+}
