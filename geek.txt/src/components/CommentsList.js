@@ -1,19 +1,25 @@
 import SingleComment from './SingleComment';
+import {Comment, Header, Statistic } from 'semantic-ui-react';
+import { useState } from 'react';
 
 const CommentsList = ({ commentsList }) => {
     const getComments = () => {
         let comments = commentsList.map(function (comment) {
-            return <SingleComment Creator={comment.CreatorName} Text={comment.Text} />;
+            return <SingleComment CommentID={comment._id} Creator={comment.CreatorName} Text={comment.Text} Replies={comment.Replies} />;
         });
-        return comments;
+        return comments.reverse();
     }
     return (
-        <div>
-            <h2>What Geeks like you are saying...</h2>
-            <ul>
-                {getComments()}
-            </ul>
-        </div>
+        <Comment.Group>
+            <Header as='h3' dividing>
+                Geeks like you are saying...
+            </Header>
+            <Statistic>
+                <Statistic.Value>{commentsList.length}</Statistic.Value>
+                <Statistic.Label>Comments</Statistic.Label>
+            </Statistic>
+            {getComments()}
+        </Comment.Group>
     )
 }
 

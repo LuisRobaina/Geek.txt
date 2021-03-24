@@ -1,12 +1,45 @@
-import axios from 'axios';
+import axios from '../config/axios';
 import { useState } from 'react';
-import { Button, Comment, TextArea } from 'semantic-ui-react';
+import { Button, Comment, Form } from 'semantic-ui-react';
 
-const SingleComment = ({ Creator, Text }) => {
+const SingleComment = ({ CommentID, Creator, Text, Replies }) => {
 
     // State.
     const [CommentText, setComment] = useState("")
+    const [RepliesSet, setRepliesSet] = useState([])
+    const [Reply, setReply] = useState(false)
 
+    const loadReplies = () => {
+        let replies = Replies.map(function (reply) {
+            return (
+                <Comment>
+                    <Comment.Avatar src='https://react.semantic-ui.com/images/avatar/small/matt.jpg' />
+                    <Comment.Content>
+                        <Comment.Author as='a'>{reply.Creator}</Comment.Author>
+                        <Comment.Metadata>
+                            <div>Just now</div>
+                        </Comment.Metadata>
+                        <Comment.Text>
+                            <p>{reply.Text}</p>
+                        </Comment.Text>
+                    </Comment.Content>
+                </Comment>
+            )
+        });
+        return replies.reverse();
+    }
+    const handleAddReply = () => {
+        setReply(!Reply)
+    }
+
+    const getReplyBox = () => {
+        return (
+            <div>
+                <Form.TextArea onChange={handleChange} value={CommentText} />
+                <Button content='Add Reply' labelPosition='left' icon='edit' primary onClick={handleReplyPost} />
+            </div>
+        )
+    }
     const handleChange = (e) => {
         setComment(e.currentTarget.value)
     }
@@ -14,32 +47,39 @@ const SingleComment = ({ Creator, Text }) => {
         e.preventDefault()
         // TODO: Add the creators ID once we get login running.
         const postObject = {
-            Creator: "601d7b8e7e0708245caabc48",
+            OriginalCommentID: CommentID,
+            Creator: "MyUser",
             Text: CommentText
         }
         axios.post('/comments/reply', postObject)
+            .then(res => console.log(res))
+            .catch(err => alert(err))
     }
+
     return (
         <Comment>
-            <Comment.Avatar as='a' src='https://react.semantic-ui.com/images/avatar/small/elliot.jpg' />
+            <Comment.Avatar src='https://react.semantic-ui.com/images/avatar/small/matt.jpg' />
             <Comment.Content>
                 <Comment.Author as='a'>{Creator}</Comment.Author>
                 <Comment.Metadata>
-                    <span>Today at 5:42PM</span>
+                    <div>Yesterday at 12:30AM</div>
                 </Comment.Metadata>
-                <Comment.Text>{Text}</Comment.Text>
-                {/* Reply section */}
-                <br></br>
-                <TextArea
-                    style={{ width: '100%', borderRadius: '5px' }}
-                    onChange={handleChange}
-                    value={CommentText}
-                    placeholder={"Reply to " + Creator}
-                />
-                <Button positive
-                    onClick={handleReplyPost}
-                >Post Reply</Button>
+                <Comment.Text>
+                    <p>{Text}</p>
+                </Comment.Text>
+                <Comment.Actions>
+                    <a onClick={handleAddReply}>Reply</a>
+                </Comment.Actions>
+                <Form reply>
+                    {Reply ? getReplyBox() : null}
+                </Form>
+
             </Comment.Content>
+            <Comment.Group>
+                {/* Replies */}
+                {loadReplies()}
+            </Comment.Group>
+            {/* end of comment */}
         </Comment>
     )
 }

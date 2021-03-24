@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Container, Grid, Image, Rating, Icon, TextArea } from 'semantic-ui-react'
+import { Container, Grid, Image, Rating, Icon, TextArea, Popup } from 'semantic-ui-react'
 import axios from '../config/axios';
 import { Segment, Button } from 'semantic-ui-react';
 import CommentsList from '../components/CommentsList';
@@ -8,8 +8,10 @@ const Book = (props) => {
     const [bookData, setBookData] = useState({})
     const [commentsSet, setCommentsSet] = useState([])
     const [NewCommentText, setNewComment] = useState("")
+    const [rating, setNewRating] = useState(0)
 
     const handleNewCommentChange = (e) => {
+        e.preventDefault()
         setNewComment(e.currentTarget.value)
     }
     const handleNewAnonymousCommentPost = (e) => {
@@ -28,7 +30,11 @@ const Book = (props) => {
         })
             .catch(err => console.log(err))
     }
-
+    const handleNewRating = (e, data) => {
+        console.log(e.currentTarget)
+        setNewRating(data.rating)
+        alert("Thanks for rating")
+    }
     const handleNewCommentPost = (e) => {
         e.preventDefault()
         // TODO: Add the creators ID once we get login running.
@@ -43,7 +49,7 @@ const Book = (props) => {
             // TODO: remove this log.
             console.log(res);
         })
-        .catch(err => console.log(err))
+            .catch(err => console.log(err))
     }
 
     useEffect(() => {
@@ -82,11 +88,8 @@ const Book = (props) => {
                     <h3>Author: {bookData.author}</h3>
                     <h4>Genre: {bookData.genre}</h4>
                     <p>Description: {bookData.description}</p>
-
-
                     <Rating icon="star" defaultRating={bookData.rating} maxRating={5} disabled key={bookData.rating} style={{ margin: '25px 0 ', fontSize: "18px" }} />
                     <span style={{ color: '#909090', fontSize: "18px" }}>({bookData.rating})</span>
-
                     <Grid.Column>
 
                         <Button animated style={{ background: 'linear-gradient(98.95deg, #FF785A 19.47%, #FE5B00 82.33%)' }} onClick={() => console.log("click")}>
@@ -107,12 +110,20 @@ const Book = (props) => {
                     onChange={handleNewCommentChange}
                     value={NewCommentText}
                 />
-                <Button positive
-                    onClick={handleNewCommentPost}
-                >Post Comment</Button>
-                <Button secondary
-                    onClick={handleNewAnonymousCommentPost}
-                >Post Anonymously</Button>
+                <Popup trigger={<Button positive>Post Comment</Button>} flowing hoverable>
+                    <Grid centered divided columns={3}>
+                        <Grid.Column textAlign='center'>
+                            <Button positive onClick={handleNewCommentPost}>Post with name</Button>
+                        </Grid.Column>
+                        <Grid.Column textAlign='center'>
+                            <Button secondary onClick={handleNewAnonymousCommentPost}>Hide my name!</Button>
+                        </Grid.Column>
+                    </Grid>
+                </Popup>
+            </div>
+            <div>
+                <h2>Rate this book</h2>
+                <Rating icon='star' size='massive' defaultRating={1} maxRating={5} value={rating} onRate={handleNewRating}  />
             </div>
             <div>
                 <Segment>

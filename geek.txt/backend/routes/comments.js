@@ -70,7 +70,6 @@ router.route('/add').post((req, res) => {
 
 router.route('/reply').post((req, res) => {
     // Handles POST request to add new reply for a given comment.
-    
     /*
         Sample POST request body
         {
@@ -79,7 +78,6 @@ router.route('/reply').post((req, res) => {
             "Text": "This book is amazing!"
         }
     */
-   
     const OriginalCommentID = req.body.OriginalCommentID;
     const Creator = req.body.Creator;
     const Text = req.body.Text;

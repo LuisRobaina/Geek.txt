@@ -25,13 +25,13 @@ const CommentsSchema= new Schema({
     Replies: [
         // Each reply has a creator and a text.
         { 
-            Creator: { // References a User.
-                type: mongoose.Schema.Types.ObjectId, ref: 'User',
-                required: true
+            Creator: {
+                type: String,
+                required:true
             },
             Text: {
                 type: String,
-                required: true,
+                required: true
             }
         }
     ]
