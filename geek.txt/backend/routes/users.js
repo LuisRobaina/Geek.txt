@@ -99,7 +99,7 @@ router.route('/add').post((req, res) => {
             email,
             password: hash,
             nickname,
-            creditCard
+            //creditCard
             // shippingAddress,
             // wishList
     });

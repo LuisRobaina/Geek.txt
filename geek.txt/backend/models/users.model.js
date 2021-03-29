@@ -41,7 +41,7 @@ const userSchema = new Schema({
     },
     creditCard: [
         {
-            cardName
+            cardName: {type: String},
             nameOnCard: { type: String },
             number: { type: Number },
             expDate: { type: Date },
