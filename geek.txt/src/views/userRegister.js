@@ -65,16 +65,14 @@ const UserRegister = () => {
                                 <input />
                             </Form.Field> */}
 
-                            {/* <Form.Field>
+                           <Form.Field>
                                 <label>Nickname</label>
-                                <input placeholder="This is how other Geeks will see you in the comments!" name="nickname" value={userInput.nickname} onChange={handleChange}/>
-                           </Form.Field> */}
+                                <input placeholder="This is how other Geeks will know you! Leave blank to be anonymous." name="nickname" value={userInput.nickname} onChange={handleChange}/>
+                           </Form.Field> 
 
-                           {//potentially change geekid placeholder?
-                           }
                             <Form.Field>
                                 <label>Geek ID</label>
-                                <input placeholder="This is how other Geeks will know you!" name="geekId" value={userInput.geekId} onChange={handleChange}/> 
+                                <input name="geekId" value={userInput.geekId} onChange={handleChange}/> 
                             </Form.Field>
 
                             <Form.Field>
@@ -84,7 +82,7 @@ const UserRegister = () => {
 
                             <Form.Field>
                                 <label>Password</label>
-                                <input name="password" value={userInput.password} onChange={handleChange}/>
+                                <input placeholder="Must be atleast 8 characters long, and contain letters and numbers."name="password" value={userInput.password} onChange={handleChange}/>
                             </Form.Field>
 
                             <Form.Field>

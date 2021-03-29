@@ -82,8 +82,7 @@ router.route('/add').post((req, res) => {
     const password = req.body.password;
     const password2 = req.body.password2;
     const nickname = req.body.nickname;
-    // const password3: password to check if entered is alphanumeric
-    // const creditCard = []
+    // const creditCard = [];
     // const shippingAddress = []
     // const wishList = []
     if(password !== password2) return res.status(400).json("Invalid Credentials");
@@ -99,8 +98,8 @@ router.route('/add').post((req, res) => {
             lastName,
             email,
             password: hash,
-            nickname
-            // creditCard,
+            nickname,
+            creditCard
             // shippingAddress,
             // wishList
     });

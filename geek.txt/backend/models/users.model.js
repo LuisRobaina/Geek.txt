@@ -6,7 +6,8 @@ const Schema = mongoose.Schema;
 const userSchema = new Schema({
     // Features.
     nickname: {
-        type: String
+        type: String,
+        default: 'Anonymous'
     },
     geekID: {
         type: String,
@@ -30,18 +31,22 @@ const userSchema = new Schema({
         type: String,
         unique: true,
         // validate: [isEmail, "Invalid Email"]
+        //match: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i email validation???
     },
     password: {
         type: String,
         required: true,
+        //match: /(?=.*[a-zA-Z])(?=.*[0-9]+).*/,  alphanumeric
+        //minlength: 8 //must be atleast 8 characters long 
     },
-    Credit_cards: [
+    creditCard: [
         {
-            name: { type: String },
-            Number: { type: Number },
-            ExpDate: { type: Date },
-            CSV: { type: Number },
-            Address: { type: String }
+            cardName
+            nameOnCard: { type: String },
+            number: { type: Number },
+            expDate: { type: Date },
+            CVV: { type: Number },
+            //Address: { type: String }
         }
     ],
     ShippingAddress: [
