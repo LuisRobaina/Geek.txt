@@ -1,5 +1,6 @@
 // API routes related to the User model.
 //var jwt = require('jsonwebtoken');
+const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 let Users = require('../models/users.model');
@@ -72,7 +73,10 @@ router.route('/add').post((req, res) => {
         "firstName" : "User",
         "lastName" : "Test",
         "email": "testuser@test.com",
-        "password" : "ABCD3F5"
+        "password" : "ABCD3F5",
+        "nickname" : "User",
+        "creditCard" : [],
+        "Address" : [],
     */
 
     const geekID = req.body.geekId;
@@ -82,9 +86,10 @@ router.route('/add').post((req, res) => {
     const password = req.body.password;
     const password2 = req.body.password2;
     const nickname = req.body.nickname;
-    // const creditCard = [];
-    // const shippingAddress = []
-    // const wishList = []
+    const creditCard = [];
+    const Address = [];
+    // const wishList = [];
+
     if(password !== password2) return res.status(400).json("Invalid Credentials");
 
     bcrypt.hash(password, saltRounds, function(err, hash) {
@@ -99,8 +104,8 @@ router.route('/add').post((req, res) => {
             email,
             password: hash,
             nickname,
-            //creditCard
-            // shippingAddress,
+            creditCard,
+            Address,
             // wishList
     });
 
@@ -111,5 +116,80 @@ router.route('/add').post((req, res) => {
     });
 
 });
+
+router.route('/addcard').post((req, res) => {
+
+    /* 
+    Sample POST request body:
+    {
+        "cardOwner": "601d7b8e7e0708245caabc48"
+        "cardName": "Card 1",
+        "nameOnCard": "Logan Simijoski",
+        "number": 0123 4567 8910
+        "expDate":03/21
+        "CVV":123
+    }
+    */
+   
+    const cardOwner = mongoose.Types.ObjectId(req.body.cardOwner);
+    const cardName = req.body.cardName;
+    const nameOnCard = req.body.nameOnCard;
+    const number = req.body.number;
+    const expDate = req.body.expDate;
+    const CVV = req.body.CVV;
+
+    // Create new comment using the Comments model.
+    const newCard = new Users.creditCard({
+        cardOwner,
+        cardName,
+        nameOnCard,
+        number,
+        expDate,
+        CVV
+    });
+    
+    // Save new card to database. 
+    newCard.save()
+        .then(() => res.status(200).json('Card Added Successfully.'))
+        .catch(err => res.status(400).json('Error: ' + err))
+});
+
+router.route('/addaddress').post((req, res) => {
+
+    /* 
+    Sample POST request body:
+    {
+        "addressOwner": "601d7b8e7e0708245caabc48"
+        "addressName": "Address 1", 
+        "street": "123 Something Lane",
+        "state": "FL", //make arraylist of states?
+        "city": "Miami",
+        "zipcode": "33199" 
+    }
+    */
+   
+    const addressOwner = mongoose.Types.ObjectId(req.body.addressOwner);
+    const addressName = req.body.addressName;
+    const street = req.body.street;
+    const state = req.body.state;
+    const city = req.body.city;
+    const zipcode = req.body.zipcode;
+    
+    // Create new comment using the Comments model.
+    const newAddress = new Users.Address({
+        addressOwner,
+        addressName,
+        street,
+        state,
+        city,
+        zipcode
+    });
+    
+    // Save new address to database. 
+    newAddress.save()
+        .then(() => res.status(200).json('Address Added Successfully.'))
+        .catch(err => res.status(400).json('Error: ' + err))
+});
+
 // Export all User routes in this routers object.
 module.exports = router

@@ -43,23 +43,22 @@ const userSchema = new Schema({
         {
             cardName: {type: String},
             nameOnCard: { type: String },
-            number: { type: Number },
-            expDate: { type: Date },
-            CVV: { type: Number },
+            number: { type: Number }, //must be 16 long
+            expDate: { type: Date },    //date?
+            CVV: { type: Number }, //must be 3 long
             //Address: { type: String }
         }
     ],
-    ShippingAddress: [
+    Address: [
         {
-            Address: {
-                name: {type: String}, 
-                street: {type: String},
-                state: {type: String},
-                city: {type: String},
-                zipcode: {type: Number},
-            }
+            addressName: {type: String}, 
+            street: {type: String},
+            state: {type: String},
+            city: {type: String},
+            zipcode: {type: Number},
         }
     ],
+
     WishList: [
         {
             List: { type: mongoose.Schema.Types.ObjectId, ref: 'WishList' },
