@@ -2,10 +2,10 @@ const mongoose = require('mongoose');
 let Books = require('../models/books.model')
 
 const router = require('express').Router();
-let Comment = require('../models/CommentingModels/ratings.model')
+let Comment = require('../models/CommentingModels/comments.model')
 
 // Handles incomming GET requests to url/comments/ .
-router.route('/').get((req, res) => {
+router.route('/:BookID').get((req, res) => {
     /**
      * Route to get all the comments for a given book.
     */
@@ -16,7 +16,7 @@ router.route('/').get((req, res) => {
         "BookID": "601d7b8e7e0708245caabc48"
     }
     */
-    Comment.where("BookID").equals(req.body.BookID)
+    Comment.where("BookID").equals(req.params.BookID)
         // If promise return then return all comments as JSON.
         .then(comments => res.json(comments))
         // If there is an error return status 400 with Error.
@@ -30,6 +30,8 @@ router.route('/add').post((req, res) => {
     Sample POST request body:
     {
         "Creator": "601d7b8e7e0708245caabc48",
+        "CreatorName": "Luis",
+        "Anonymous": false,
         "BookID": "601d7b8e7e0708245caabc48",
         "Text": "This book is amazing!"
     }
@@ -37,6 +39,8 @@ router.route('/add').post((req, res) => {
    
     const Creator = mongoose.Types.ObjectId(req.body.Creator);
     const BookID = mongoose.Types.ObjectId(req.body.BookID);
+    const CreatorName = req.body.CreatorName;
+    const Anonymous = req.body.Anonymous;
     
     Books.count({_id : BookID}, function (err, count) {
         if(count == 0){
@@ -51,11 +55,12 @@ router.route('/add').post((req, res) => {
     // Create new comment using the Comments model.
     const newComment = new Comment({
         Creator,
+        CreatorName,
+        Anonymous,
         BookID,
         Text,
         Replies
     });
-
     // Save new user to database. 
     newComment.save()
         .then(() => res.status(200).json('Comment Added Successfully.'))
@@ -65,7 +70,6 @@ router.route('/add').post((req, res) => {
 
 router.route('/reply').post((req, res) => {
     // Handles POST request to add new reply for a given comment.
-    
     /*
         Sample POST request body
         {
@@ -74,7 +78,6 @@ router.route('/reply').post((req, res) => {
             "Text": "This book is amazing!"
         }
     */
-   
     const OriginalCommentID = req.body.OriginalCommentID;
     const Creator = req.body.Creator;
     const Text = req.body.Text;

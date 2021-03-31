@@ -9,7 +9,6 @@ import NotFound from './views/NotFound';
 import UserLogIn from './views/UserLogIn';
 import UserRegister from './views/UserRegister';
 
-
 // Example of component routing:
 // <Route path="/" exact component={BookBrowser} />
 

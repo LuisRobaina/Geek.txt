@@ -7,6 +7,14 @@ const CommentsSchema= new Schema({
     Creator: { // References to a User.
         type: mongoose.Schema.Types.ObjectId, ref: 'User'
     },
+    CreatorName: {
+        type: String,
+        required: true
+    },
+    Anonymous: {
+        type: Boolean,
+        required: true
+    },
     BookID: { // References to a book.
         type: mongoose.Schema.Types.ObjectId, ref: 'Book'
     },
@@ -17,13 +25,13 @@ const CommentsSchema= new Schema({
     Replies: [
         // Each reply has a creator and a text.
         { 
-            Creator: { // References a User.
-                type: mongoose.Schema.Types.ObjectId, ref: 'User',
-                required: true
+            Creator: {
+                type: String,
+                required:true
             },
             Text: {
                 type: String,
-                required: true,
+                required: true
             }
         }
     ]

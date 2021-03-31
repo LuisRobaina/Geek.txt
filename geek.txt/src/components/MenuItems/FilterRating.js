@@ -21,7 +21,7 @@ export function FilterRating(){
         <>
         {ratingOptions.map(rate => (
                 <Menu.Item key={rate} >
-                    <span onClick={() => handleClick(rate)}>
+                    <span className="ratingSpan" onClick={() => handleClick(rate)}>
                     <Rating icon="star" defaultRating={rate} maxRating={5} disabled />({rate})
                     </span>
                 </Menu.Item>
