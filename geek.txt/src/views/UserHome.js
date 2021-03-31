@@ -6,8 +6,8 @@ import { Container } from 'semantic-ui-react';
 import Dropdown from '../components/Dropdown/Dropdown';
 import Sidebar from '../components/Sidebar';
 import { BookContext } from '../contexts/BookContext';
-import { Link } from 'react-router-dom';
-import { Message } from 'semantic-ui-react';
+
+
 
 const bookOptions = [
     { "id": 1, "name": 10 },
@@ -19,7 +19,7 @@ const Home = () => {
     const [defaultBooks, setDefaultBooks] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [bookCount, setBookCount] = useState(10);
-
+    
     useEffect(() => {
         axios.get('/books').then(res => {
             setBooks(res.data)
@@ -31,12 +31,7 @@ const Home = () => {
 
     return (
         <Container>
-            <Message positive>
-                <Message.Header>Hello... mmm not sure who you are :(</Message.Header>
-                <p>
-                    Please <Link to={`/login`}><b>log in</b></Link> or <Link to={`/register`}><b>register</b></Link>
-                </p>
-            </Message>
+            <h2>Hello {'Luis'}, we missed you!</h2>
             <h2>Our collection of Books</h2>
             <div style={{ display: 'flex', justifyContent: "flex-end" }}>
                 <Dropdown prompt="Books per Page" value={bookCount} onChange={val => setBookCount(val)} width={135} options={bookOptions} />

@@ -4,11 +4,6 @@ const Schema = mongoose.Schema;
 // const { isEmail } = require("validator");
 
 const userSchema = new Schema({
-    // Features.
-    nickname: {
-        type: String,
-        default: 'Anonymous'
-    },
     geekID: {
         type: String,
         unique: true
@@ -39,17 +34,17 @@ const userSchema = new Schema({
         //match: /(?=.*[a-zA-Z])(?=.*[0-9]+).*/,  alphanumeric
         //minlength: 8 //must be atleast 8 characters long 
     },
-    creditCard: [
+    creditCards: [
         {
             cardName: {type: String},
             nameOnCard: { type: String },
-            number: { type: Number }, //must be 16 long
+            number: { type: Number },   //must be 16 long
             expDate: { type: Date },    //date?
-            CVV: { type: Number }, //must be 3 long
-            //Address: { type: String }
+            CVV: { type: Number },      //must be 3 long
+            Address: { type: String }
         }
     ],
-    Address: [
+    Addresses: [
         {
             addressName: {type: String}, 
             street: {type: String},

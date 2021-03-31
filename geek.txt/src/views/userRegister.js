@@ -3,9 +3,9 @@ import { Grid, Button, Form, Segment, Message } from 'semantic-ui-react'
 import { Link } from 'react-router-dom';
 import axios from '../config/axios';
 
-
 const UserRegister = () => {
     const [errors, setErrors] = useState("");
+    const [registered, setRegistered] = useState(false);
     const [userInput, setUserInput] = useReducer(
         (state, newState) => ({ ...state, ...newState }),
         {
@@ -26,12 +26,23 @@ const UserRegister = () => {
         setErrors("");
         e.preventDefault();
         axios.post('/users/add', userInput).then(res => {
-            console.log(res);
-        }).catch(({ response }) => setErrors(response.data))
+            setRegistered(true)
+        }).catch(response => {
+            setErrors(response.data)
+            alert("Something went wrong, account not created.")
+        })
     }
 
     return (
         <div>
+            {registered && (
+                <Message positive>
+                    <Message.Header>Welcome! We have created your account</Message.Header>
+                    <p>
+                        Now <Link to={`/login`}><b>login</b></Link> with your cretentials. See you around!
+                      </p>
+                </Message>
+            )}
             <Grid centered>
                 <Grid.Column style={{ maxWidth: 550, margin: 20 }}>
                     <Segment>
@@ -45,16 +56,10 @@ const UserRegister = () => {
                                 <label>First Name</label>
                                 <input name="firstName" value={userInput.firstName} onChange={handleChange} />
                             </Form.Field>
-
                             <Form.Field>
                                 <label>Last Name</label>
-                                <input name="lastName" value={userInput.lastName}  />
+                                <input name="lastName" value={userInput.lastName} onChange={handleChange} />
                             </Form.Field>
-                           <Form.Field>
-                                <label>Nickname</label>
-                                <input placeholder="This is how other Geeks will know you! Leave blank to be anonymous." name="nickname" value={userInput.nickname} onChange={handleChange}/>
-                           </Form.Field> 
-
                             <Form.Field>
                                 <label>Geek ID</label>
                                 <input placeholder="This is how other Geeks will know you!" name="geekId" value={userInput.geekId} onChange={handleChange} />

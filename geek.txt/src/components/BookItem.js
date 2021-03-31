@@ -1,8 +1,17 @@
 import { Card, Image, Button, Icon, Rating, TextArea } from "semantic-ui-react";
 import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import axios from '../config/axios';
 
 const BookItem = ({ book }) => {
-
+    const [currentRating, setCurrentRating] = useState(0)
+    useEffect(() => {
+        axios.get(`/rate/getAvg/${book._id}`)
+            .then(res => {
+                setCurrentRating((res.data.avg).toFixed(2))
+            })
+            .catch(err => console.log(err))
+    },[]);
     return (
         <>
             <Card centered style={{ boxShadow: 'none' }} key={book._id}>
@@ -11,8 +20,8 @@ const BookItem = ({ book }) => {
                     <Card.Content style={{ borderTop: 'none' }}>
                         <Card.Header style={{ color: 'black', fontSize: "18px", fontWeight: '600', padding: '10px 0' }}>{book.title}</Card.Header>
                         <Card.Meta>Author: {book.author}</Card.Meta>
-                        <Rating icon="star" defaultRating={book.rating} maxRating={5} disabled style={{ margin: '10px 0 ' }} />
-                        <span style={{ color: '#909090', fontSize: "12px" }}>({book.rating})</span>
+                        <Rating icon="star" defaultRating={currentRating} disabled key={currentRating} maxRating={5} disabled style={{ margin: '10px 0 ' }} />
+                        <span style={{ color: '#909090', fontSize: "12px" }}>({currentRating})</span>
                     </Card.Content>
                 </Link>
                 <div style={{ textAlign: 'center' }}>

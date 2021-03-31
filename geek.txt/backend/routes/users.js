@@ -26,43 +26,42 @@ router.route('/login').post((req, res) => {
         "password" : "User"
     */
     // Credential can be an email or a geek ID.
-    const credential = req.body.email;
+    const credential = req.body.credential;
     const password = req.body.password;
     
     // Login by email.
     if(EmailValidator.validateEmail(credential)){
         Users.findOne({email: credential}) 
         .then(user => {
-            if(!user) {return res.status(400).json('Invalid Credentials')}
+            if(!user) {
+                return res.status(401).json({errors: {form: 'Invalid Credentials' }})
+            }
             bcrypt.compare(password, user.password, function(err, valid){
-                if(!valid) {return res.status(400).json('Invalid Credentials')}
+                if(!valid) {return res.status(401).json({errors: {form: 'Invalid Credentials' }})}
                 return res.json(user)
             });
         })
-        .catch(err => res.status(400).json('Error: ' + err))
-    } else{
-        return res.status(400).json("Invalid Email");
-    }
-    // else {
-    //     console.log("id place")
-    //     // Look user by GeekID.
-    //     Users.findOne({geekID: credential}) 
-    //     // If promise return then return all users as JSON.
-    //     .then(user => {
-    //         if(!user){
-    //             return res.status(400).json('Invalid Credentials')
-    //         }
-    //         result = bcrypt.compareSync(password, user.password);
-    //         if(result){
-    //             return res.json(user)
-    //         }
-    //         else{
-    //             return res.status(400).json('Invalid Credentials')
-    //         }
-    //     })
-    //     // If there is an error return status 400 with Error.   check if password  matches hashed in DB, return error if not
-    //     .catch(err => res.status(400).json('Error: ' + err))
-    // }  
+        .catch(err => res.status(401).json({errors: {form: 'Invalid Credentials' }}))
+    } 
+    else {
+        // Look user by GeekID.
+        Users.findOne({geekID: credential}) 
+        // If promise return then return all users as JSON.
+        .then(user => {
+            if(!user){
+                return res.status(401).json({errors: {form: 'Invalid Credentials'}})
+            }
+            result = bcrypt.compareSync(password, user.password);
+            if(result){
+                return res.json(user)
+            }
+            else{
+                return res.status(401).json({errors: {form: 'Invalid Credentials' }})
+            }
+        })
+        // If there is an error return status 400 with Error. check if password  matches hashed in DB, return error if not
+        .catch(err => res.status(401).json({errors: {form: 'Something went wrong!' }}))
+    }  
 });
 
 // Handle post request to add new user.
