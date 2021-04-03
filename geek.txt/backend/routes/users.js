@@ -159,7 +159,7 @@ router.route('/addaddress').post((req, res) => {
     /* 
     Sample POST request body:
     {
-        "addressOwner": "601d7b8e7e0708245caabc48"
+        "addressOwner": ""
         "addressName": "Address 1", 
         "street": "123 Something Lane",
         "state": "FL", //make arraylist of states?
@@ -174,21 +174,21 @@ router.route('/addaddress').post((req, res) => {
     const state = req.body.state;
     const city = req.body.city;
     const zipcode = req.body.zipcode;
-    
-    // Create new comment using the Comments model.
-    const newAddress = new Users.Address({
-        addressOwner,
-        addressName,
-        street,
-        state,
-        city,
-        zipcode
-    });
-    
-    // Save new address to database. 
-    newAddress.save()
-        .then(() => res.status(200).json('Address Added Successfully.'))
-        .catch(err => res.status(400).json('Error: ' + err))
+
+    Users.updateOne(
+        {_id: addressOwner},
+        {$push: {
+            Address: {
+                addressName,
+                street,
+                state,
+                city,
+                zipcode
+            }
+        }}
+    ).then(res.status(200).json('Added new address Successfully'))
+    // If there is an error return status 400 with Error.
+    .catch(err => res.status(400).json('Error: ' + err))
 });
 
 // Export all User routes in this routers object.
