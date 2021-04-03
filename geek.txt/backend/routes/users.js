@@ -74,6 +74,7 @@ router.route('/add').post((req, res) => {
         "lastName" : "Test",
         "email": "testuser@test.com",
         "password" : "ABCD3F5",
+        "password2" : "ABCD3F5",
         "nickname" : "User",
         "creditCard" : [],
         "Address" : [],
@@ -122,16 +123,16 @@ router.route('/addcard').post((req, res) => {
     /* 
     Sample POST request body:
     {
-        "cardOwner": "601d7b8e7e0708245caabc48"
+        "Creator": "601d7b8e7e0708245caabc48"
         "cardName": "Card 1",
-        "nameOnCard": "Logan Simijoski",
-        "number": 0123 4567 8910
-        "expDate":03/21
+        "nameOnCard": "Name User",
+        "number": 0123 4567 8910,
+        "expDate":03/21,
         "CVV":123
     }
     */
    
-    const cardOwner = mongoose.Types.ObjectId(req.body.cardOwner);
+    const Creator = mongoose.Types.ObjectId(req.body.Creator);
     const cardName = req.body.cardName;
     const nameOnCard = req.body.nameOnCard;
     const number = req.body.number;
@@ -140,7 +141,7 @@ router.route('/addcard').post((req, res) => {
 
     // Create new comment using the Comments model.
     const newCard = new Users.creditCard({
-        cardOwner,
+        Creator,
         cardName,
         nameOnCard,
         number,
@@ -162,13 +163,13 @@ router.route('/addaddress').post((req, res) => {
         "addressOwner": ""
         "addressName": "Address 1", 
         "street": "123 Something Lane",
-        "state": "FL", //make arraylist of states?
+        "state": "FL",
         "city": "Miami",
         "zipcode": "33199" 
     }
     */
    
-    const addressOwner = mongoose.Types.ObjectId(req.body.addressOwner);
+    const Creator = mongoose.Types.ObjectId(req.body.Creator); //?
     const addressName = req.body.addressName;
     const street = req.body.street;
     const state = req.body.state;
@@ -190,6 +191,138 @@ router.route('/addaddress').post((req, res) => {
     // If there is an error return status 400 with Error.
     .catch(err => res.status(400).json('Error: ' + err))
 });
+
+router.route('/editprofile').post((req, res) => {
+    /**
+     * Sample POST request body:
+     *  {
+     *      "Creator": "60392b329b00b252eaa3b3b8",
+     *      "geekID" : "replacementgeekID or original depending",
+            "firstName" : "replacementfirstName or original depending",
+            "lastName" : "replacementlastName or original depending",
+            "email": "replacementemail or original depending",
+            "password" : "replacementpassword or original depending",
+            "password2" : "replacementpassword inserted again or original depending",
+            "nickname" : "replacementnickname or original depending",
+     *      
+     *  }
+     */
+
+    const Creator = mongoose.Types.ObjectId(req.body.Creator);
+    const geekID = req.body.geekId;
+    const firstName = req.body.firstName;
+    const lastName = req.body.lastName;
+    const email = req.body.email;
+    const password = req.body.password;
+    const password2 = req.body.password2;
+    const nickname = req.body.nickname; 
+    
+      Users.findOneAndUpdate(
+        { 
+            Creator: Creator, 
+        },
+        {   geekID : geekID,
+            firstName : firstName,
+            lastName : lastName,
+            email: email,
+            password : password,
+            password2 : password2,
+            nickname : nickname
+        },
+        {
+            upsert: true
+        } 
+
+        //checks if new password was correctly entered twice
+        //if(password !== password2) return res.status(400).json("Invalid Credentials");
+        //when editing profile does the password need to be rehashed?
+
+    ).then(updatedProf => res.status(200).json('Profile Updated' + updatedProf))
+        .catch(err => res.status(400).json('Error: ' + err))
+});
+
+router.route('/editcard').post((req, res) => {
+    /**
+     * Sample POST request body:
+     *  {
+     *      "Creator": "60392b329b00b252eaa3b3b8",
+     *      "cardName": "Card 1",
+            "nameOnCard": "Name User",
+            "number": 0123 4567 8910,
+            "expDate":03/21,
+            "CVV":123
+     *      
+     *  }
+     */
+
+    const Creator = mongoose.Types.ObjectId(req.body.Creator);
+    const cardName = req.body.cardName;
+    const nameOnCard = req.body.nameOnCard;
+    const number = req.body.number;
+    const expDate = req.body.expDate;
+    const CVV = req.body.CVV;
+    
+      Users.findOneAndUpdate(
+        { 
+            Creator: Creator, 
+        },
+        {   
+            cardName: cardName,
+            nameOnCard : nameOnCard,
+            number : number,
+            expDate : expDate,
+            CVV : CVV
+        },
+        {  
+            upsert: true
+        } 
+
+        //when editing card does the expiration date need to be verified again?
+        
+    ).then(updatedCard => res.status(200).json('Credit Card Updated' + updatedCard))
+        .catch(err => res.status(400).json('Error: ' + err))
+});
+
+router.route('/editaddress').post((req, res) => {
+    /**
+     * Sample POST request body:
+     *  {
+     *      "Creator": "60392b329b00b252eaa3b3b8",
+     *      "addressName": "Home Address",
+            "street": "123 Somewhere Lane",
+            "state": "FL"
+            "city": "Miami",
+            "zipcode": "33199"
+     *      
+     *  }
+     */
+
+      const Creator = mongoose.Types.ObjectId(req.body.Creator); //?
+      const addressName = req.body.addressName;
+      const street = req.body.street;
+      const state = req.body.state;
+      const city = req.body.city;
+      const zipcode = req.body.zipcode;
+    
+      Users.findOneAndUpdate(
+        { 
+            Creator: Creator, 
+        },
+        {   
+            addressName: addressName,
+            street : street,
+            state : state,
+            city : city,
+            zipcode : zipcode
+        },
+        {  
+            upsert: true
+        } 
+ 
+    ).then(updatedAddr => res.status(200).json('Address Updated' + updatedAddr))
+        .catch(err => res.status(400).json('Error: ' + err))
+});
+
 
 // Export all User routes in this routers object.
 module.exports = router
