@@ -48,7 +48,7 @@ const UserRegister = () => {
 
                             <Form.Field>
                                 <label>Last Name</label>
-                                <input name="lastName" value={userInput.lastName}  />
+                                <input name="lastName" value={userInput.lastName} onChange={handleChange} />
                             </Form.Field>
                            <Form.Field>
                                 <label>Nickname</label>

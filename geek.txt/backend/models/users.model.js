@@ -40,13 +40,13 @@ const userSchema = new Schema({
         //minlength: 8 //must be atleast 8 characters long 
     },
     creditCard: [
-        {
+        {   
             cardName: {type: String},
             nameOnCard: { type: String },
             number: { type: Number }, //must be 16 long
             expDate: { type: Date },    //date?
             CVV: { type: Number }, //must be 3 long
-            //Address: { type: String }
+            Address: { type: String }
         }
     ],
     Address: [
