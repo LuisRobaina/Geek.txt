@@ -23,7 +23,6 @@ const UserLogIn = () => {
     setErrors("");
     e.preventDefault();
     axios.post('/users/login', userInput).then(res => {
-      alert("Welcome!")
       setLoggedIn(true)
       console.log(res)
     }).catch((response) => {
@@ -36,12 +35,12 @@ const UserLogIn = () => {
     <div>
       {errors.form && <div className="alert alert-danger">{errors.form}</div>}
       {loggedIn && (
-      <Message positive>
-        <Message.Header>You are in! We missed you</Message.Header>
-        <p>
-          Go to your <Link to={`/userhome`}><b>Home</b></Link> page to see books.
+        <Message positive>
+          <Message.Header>You are in! We missed you</Message.Header>
+          <p>
+            Go to your <Link to={`/userhome`}><b>Home</b></Link> page to see books.
         </p>
-      </Message>
+        </Message>
       )}
       <Grid centered>
         <Grid.Column style={{ maxWidth: 550, margin: 20 }}>
