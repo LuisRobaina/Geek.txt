@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Container, Grid, Image, Rating, Icon, TextArea, Popup } from 'semantic-ui-react'
 import axios from '../config/axios';
-import { Segment, Button } from 'semantic-ui-react';
+import { Segment, Button, Message } from 'semantic-ui-react';
 import CommentsList from '../components/CommentsList';
 import { Link } from 'react-router-dom';
 
@@ -12,6 +12,7 @@ const Book = (props) => {
     const [currentRating, setCurrentRating] = useState(0)
     const [rating, setNewRating] = useState(0)
 
+    const userOwnsBook = true
     const handleNewCommentChange = (e) => {
         e.preventDefault()
         setNewComment(e.currentTarget.value)
@@ -176,13 +177,27 @@ const Book = (props) => {
                 
                 {/* Comments section */}
                 <h2>Post a Comment</h2>
+                {!userOwnsBook && (
+                    <Message negative>
+                    <Message.Header>You can only comment and rate books you already own</Message.Header>
+                    <p>Buy  <b>{bookData.title}</b> to unlock comments and rating</p>
+                </Message>
+                )
+                }
+                {userOwnsBook && (
+                    <Message positive>
+                    <Message.Header>You own this book, share with us your feedback</Message.Header>
+                    <p>Please be respectful, check our <Link to='/guidelines'><b>community guidelines</b></Link></p>
+                </Message>
+                )}
                 <TextArea
+                    disabled={!userOwnsBook}
                     style={{ width: '100%', borderRadius: '5px' }}
                     placeholder={"Post your comment"}
                     onChange={handleNewCommentChange}
                     value={NewCommentText}
                 />
-                <Popup trigger={<Button positive>Post Comment</Button>} flowing hoverable>
+                <Popup trigger={<Button disabled={!userOwnsBook} positive>Post Comment</Button>} flowing hoverable>
                     <h4>We value privacy</h4>   
                     <Grid centered divided columns={2}>
                         <Grid.Column textAlign='center'>
@@ -198,8 +213,8 @@ const Book = (props) => {
             <div>
                 <Segment>
                 <h2>Rate this book</h2>
-                <Rating icon='star' size='massive' defaultRating={0} maxRating={5} value={rating} onRate={handleNewRatingChange} />
-                <Popup trigger={<Button>Post My Rating</Button>} flowing hoverable>
+                <Rating disabled={!userOwnsBook} icon='star' size='massive' defaultRating={0} maxRating={5} value={rating} onRate={handleNewRatingChange} />
+                <Popup disabled={!userOwnsBook} trigger={<Button>Post My Rating</Button>} flowing hoverable>
                     <h4>We value privacy</h4>    
                     <Grid centered divided columns={2}>
                         <Grid.Column textAlign='center'>
