@@ -281,7 +281,7 @@ router.route('/editcard').post((req, res) => {
     // Get the user by its _id.
     Users.where("_id").equals(Owner)
         .then(user => {
-            cards = user.creditCard
+            let cards = user.creditCard
             cards.forEach(card => {
                 if (card._id === cardID) {
                     // Update.
@@ -336,7 +336,7 @@ router.route('/editaddress').post((req, res) => {
 
         Users.where("_id").equals(Owner)
         .then(user => {
-            addresses = user.Address
+            let addresses = user.Address
             addresses.forEach(address => {
                 if (address._id === addressID) {
                     // Update.
