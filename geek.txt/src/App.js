@@ -29,9 +29,11 @@ const App = () => {
         <Route path="/register" exact>
           <UserRegister setUser={setUser} />
         </Route>
-        <Route path="/books/:id" exact>
-          <Book />
-        </Route>
+        <Route
+          path="/books/:id"
+          exact
+          render={(props) => <Book {...props} user={user} />}
+        />
         <Route path="/guidelines" exact component={CommunityGuidelines} />
         <Route path="/ratings/:id" exact component={RatingsRecord} />
         <Route path="/" exact>
