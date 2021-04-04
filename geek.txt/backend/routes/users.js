@@ -43,7 +43,8 @@ router.route("/login").post((req, res) => {
               .status(401)
               .json({ errors: { form: "Invalid Credentials" } });
           }
-          return res.json(user);
+          const token = generateJWT(user);
+          return res.json(token);
         });
       })
       .catch((err) =>
@@ -59,14 +60,10 @@ router.route("/login").post((req, res) => {
             .status(401)
             .json({ errors: { form: "Invalid Credentials" } });
         }
-        let result = bcrypt.compareSync(password, user.password);
-        if (result) {
-          return res.json(user);
-        } else {
-          return res
-            .status(401)
-            .json({ errors: { form: "Invalid Credentials" } });
-        }
+        bcrypt.compare(password, user.password, function (err, valid) {
+          if (!valid) return res.status(401).json("Invalid Credentials");
+          res.json(generateJWT(user));
+        });
       })
       // If there is an error return status 400 with Error. check if password  matches hashed in DB, return error if not
       .catch((err) =>
@@ -118,7 +115,7 @@ router.route("/add").post((req, res) => {
 
   // Save new user to database.
   Users.create(newUser, function (err, doc) {
-    if (err) return res.status(401).json(err);
+    if (err) return res.status(401).json("Unable to create user"); // need better error response
     const token = generateJWT(doc);
     return res.json(token);
   });

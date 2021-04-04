@@ -1,11 +1,12 @@
 import { useReducer, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { Grid, Button, Form, Segment, Message } from "semantic-ui-react";
 import { getUser, login } from "../utils/userService";
 
 const UserLogIn = ({ setUser }) => {
   const [errors, setErrors] = useState("");
   const [loggedIn, setLoggedIn] = useState(false);
+  const history = useHistory();
 
   const [userInput, setUserInput] = useReducer(
     (state, newState) => ({ ...state, ...newState }),
@@ -25,8 +26,9 @@ const UserLogIn = ({ setUser }) => {
     try {
       const token = await login(userInput);
       setUser(getUser(token));
+      history.push("/");
     } catch (err) {
-      setErrors(err);
+      setErrors(err.response.data);
     }
   };
 

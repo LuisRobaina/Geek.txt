@@ -17,18 +17,18 @@ export function getUser() {
   return token ? JSON.parse(atob(token.split(".")[1])) : null;
 }
 
-export function signUp(userData) {
-  console.log("inside sign up beginning");
-  axios.post("/users/add", userData).then((res) => {
-    console.log(res, "inside userservice");
-    localStorage.setItem("token", res.data);
-    return res.data;
-  });
+export async function signUp(userData) {
+  const res = await axios.post("/users/add", userData);
+  localStorage.setItem("token", res.data);
+  return res.data;
 }
 
-export function login(userData) {
-  axios.post("/users/login", userData).then((res) => {
-    localStorage.setItem("token", res.data);
-    return res.data;
-  });
+export async function login(userData) {
+  const res = await axios.post("/users/login", userData);
+  localStorage.setItem("token", res.data);
+  return res.data;
+}
+
+export function signOut() {
+  localStorage.removeItem("token");
 }

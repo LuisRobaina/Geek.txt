@@ -1,11 +1,11 @@
 import { useState, useReducer } from "react";
 import { Grid, Button, Form, Segment, Message } from "semantic-ui-react";
-import { Link } from "react-router-dom";
-import axios from "../config/axios";
+import { Link, useHistory } from "react-router-dom";
 import { getUser, signUp } from "../utils/userService";
 
 const UserRegister = ({ setUser }) => {
   const [errors, setErrors] = useState("");
+  const history = useHistory();
   const [registered, setRegistered] = useState(false);
   const [userInput, setUserInput] = useReducer(
     (state, newState) => ({ ...state, ...newState }),
@@ -28,10 +28,11 @@ const UserRegister = ({ setUser }) => {
     setErrors("");
     try {
       const token = await signUp(userInput);
-      console.log(token);
       setUser(getUser(token));
+      history.push("/");
     } catch (err) {
-      setErrors(err);
+      console.dir(err.response.data);
+      //setErrors(err);
     }
   };
 
