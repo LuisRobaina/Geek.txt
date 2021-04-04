@@ -9,6 +9,7 @@ router.route('/add').post((req, res) => {
      * Sample POST request body:
      *  {
      *      "Creator": "60392b329b00b252eaa3b3b8",
+     *      "NickName": not required, defaults to annonymous.
      *      "BookID": "601d7b8e7e0708245caabc48",
      *      "Rating": 5
      *  }
@@ -16,8 +17,12 @@ router.route('/add').post((req, res) => {
 
     const Creator = mongoose.Types.ObjectId(req.body.Creator);
     const BookID = mongoose.Types.ObjectId(req.body.BookID);
-    const Rating = req.body.Rating;
 
+    const Rating = req.body.Rating;
+    Nick = req.body.NickName;
+    if(Nick == undefined){
+        Nick = "Anonymous";
+    }
     Books.count({ _id: BookID }, function (err, count) {
         if (count == 0) {
             // Book does not exists.
@@ -29,11 +34,14 @@ router.route('/add').post((req, res) => {
             Creator: Creator, 
             BookID: BookID 
         },
-        { Rating: Rating },
+        { 
+            NickName: Nick,
+            Rating: Rating 
+        },
         {
             upsert: true
         }
-    ).then(newRating => res.status(200).json('Rating added' + newRating))
+    ).then(newRating => res.status(200).json('Rating added (Prev)= ' + newRating))
         .catch(err => res.status(400).json('Error: ' + err))
 });
 
@@ -56,6 +64,15 @@ router.route('/getAvg/:BookID').get((req, res) => {
         });
         res.status(200).json({avg: avg});
     }).catch(err => res.status(400).json('Error: ' + err));
+});
+
+router.route('/get/:BookID').get((req, res) => {
+    const bookID = mongoose.Types.ObjectId(req.params.BookID);
+    Ratings.where("BookID").equals(bookID)
+        // If promise return then return all ratings as JSON.
+        .then(ratings => res.json(ratings))
+        // If there is an error return status 400 with Error.
+        .catch(err => res.status(400).json('Error: ' + err))
 });
 
 // Export all Rating routes in this routers object.
