@@ -7,6 +7,10 @@ const RatingsSchema = new Schema({
         type: mongoose.Schema.Types.ObjectId, ref: 'User',
         required: true
     },
+    NickName: {
+        type: String,
+        default: "Anonymous"
+    },
     BookID: {
         type: mongoose.Schema.Types.ObjectId, ref: 'Book',
         required: true,

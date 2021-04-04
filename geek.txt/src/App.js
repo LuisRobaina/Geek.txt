@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { useState } from "react";
 import { getUser } from "./utils/userService";
+
 // Import React Components
 import NavBar from "./components/Navbar/Navbar";
 import "./App.css";
@@ -9,6 +10,8 @@ import Book from "./views/Book";
 import NotFound from "./views/NotFound";
 import UserLogIn from "./views/UserLogIn";
 import UserRegister from "./views/UserRegister";
+import RatingsRecord from "./views/RatingRecods";
+import CommunityGuidelines from "./views/CommunityGuidelines";
 
 // Example of component routing:
 // <Route path="/" exact component={BookBrowser} />
@@ -29,6 +32,8 @@ const App = () => {
         <Route path="/books/:id" exact>
           <Book />
         </Route>
+        <Route path="/guidelines" exact component={CommunityGuidelines} />
+        <Route path="/ratings/:id" exact component={RatingsRecord} />
         <Route path="/" exact>
           <Home user={user} />
         </Route>
