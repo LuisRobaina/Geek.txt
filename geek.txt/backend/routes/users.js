@@ -129,30 +129,39 @@ router.route('/addcard').post((req, res) => {
         "number": 0123 4567 8910,
         "expDate":03/21,
         "CVV":123
+        "address" : 1234 Lane Dr
     }
     */
 
-    const Creator = mongoose.Types.ObjectId(req.body.Creator);
+    const cardOwner = mongoose.Types.ObjectId(req.body.cardOwner);
     const cardName = req.body.cardName;
     const nameOnCard = req.body.nameOnCard;
     const number = req.body.number;
     const expDate = req.body.expDate;
     const CVV = req.body.CVV;
+    const address = req.body.address;
 
-    // Create new comment using the Comments model.
-    const newCard = new Users.creditCard({
-        Creator,
-        cardName,
-        nameOnCard,
-        number,
-        expDate,
-        CVV
-    });
+    Users.updateOne(
+        { _id: cardOwner },
+        {
+            $push: {
+                creditCard: {
+                    cardName,
+                    nameOnCard,
+                    number,
+                    expDate,
+                    CVV,
+                    address
+                }
+            }
+        }
 
-    // Save new card to database. 
-    newCard.save()
-        .then(() => res.status(200).json('Card Added Successfully.'))
+        //check for expDate validity
+
+    ).then(res.status(200).json('Added new address Successfully'))
+        // If there is an error return status 400 with Error.
         .catch(err => res.status(400).json('Error: ' + err))
+
 });
 
 router.route('/addaddress').post((req, res) => {
@@ -160,7 +169,7 @@ router.route('/addaddress').post((req, res) => {
     /* 
     Sample POST request body:
     {
-        "addressOwner": ""
+        "addressOwner": "60392b329b00b252eaa3b3b8"
         "addressName": "Address 1", 
         "street": "123 Something Lane",
         "state": "FL",
@@ -198,19 +207,19 @@ router.route('/editprofile').post((req, res) => {
     /**
      * Sample POST request body:
      *  {
-     *      "Creator": "60392b329b00b252eaa3b3b8",
-     *      "geekID" : "replacementgeekID or original depending",
-            "firstName" : "replacementfirstName or original depending",
-            "lastName" : "replacementlastName or original depending",
-            "email": "replacementemail or original depending",
-            "password" : "replacementpassword or original depending",
-            "password2" : "replacementpassword inserted again or original depending",
-            "nickname" : "replacementnickname or original depending",
+     *      "Owner": "60392b329b00b252eaa3b3b8",
+     *      "geekID" : "Geek123",
+            "firstName" : "User",
+            "lastName" : "Test",
+            "email": "usertest@test.com",
+            "password" : "123password",
+            "password2" : "123password",
+            "nickname" : "Booklover1",
      *      
      *  }
      */
 
-    const Creator = mongoose.Types.ObjectId(req.body.Creator);
+    const Owner = mongoose.Types.ObjectId(req.body.Owner);
     const geekID = req.body.geekId;
     const firstName = req.body.firstName;
     const lastName = req.body.lastName;
@@ -221,7 +230,7 @@ router.route('/editprofile').post((req, res) => {
 
     Users.findOneAndUpdate(
         {
-            Creator: Creator,
+            Owner: Owner,
         },
         {
             geekID: geekID,
@@ -255,6 +264,7 @@ router.route('/editcard').post((req, res) => {
             "number": 0123 4567 8910,
             "expDate":03/21,
             "CVV":123
+            "address" : 123 Lane Dr
      *      
      *  }
      */
@@ -266,20 +276,21 @@ router.route('/editcard').post((req, res) => {
     const number = req.body.number;
     const expDate = req.body.expDate;
     const CVV = req.body.CVV;
+    const address = req.body.address;
 
     // Get the user by its _id.
     Users.where("_id").equals(Owner)
-        // If promise return then return all comments as JSON.
         .then(user => {
             cards = user.creditCard
             cards.forEach(card => {
-                if (card._id == cardID) {
+                if (card._id === cardID) {
                     // Update.
-                    car.cardName = cardName
+                    card.cardName = cardName
                     card.nameOnCard = nameOnCard
                     card.number = number
                     card.expDate = expDate
                     card.CVV = CVV
+                    card.address = address;
                 }
             });
             // Update.
@@ -293,24 +304,19 @@ router.route('/editcard').post((req, res) => {
                 .then(updatedCard => res.status(200).json('Credit Card Updated' + updatedCard))
                 .catch(err => res.status(400).json('Error: ' + err))
         })
+
+        //check for expDate validity
+
         // If there is an error return status 400 with Error.
         .catch(err => res.status(400).json('Error: ' + err))
-    // Get the set of cards in the users document.
-
-    // Loop through the cards and find the one with matching name
-
-
-
-    //When editing card does the expiration date need to be verified again?
-
-
 });
 
 router.route('/editaddress').post((req, res) => {
     /**
      * Sample POST request body:
      *  {
-     *      "Creator": "60392b329b00b252eaa3b3b8",
+     *      "Owner": "60392b329b00b252eaa3b3b8",
+     *      "addressID" : "60392b329b00b252eaa3b3b9",
      *      "addressName": "Home Address",
             "street": "123 Somewhere Lane",
             "state": "FL"
@@ -320,29 +326,39 @@ router.route('/editaddress').post((req, res) => {
      *  }
      */
 
-    const Creator = mongoose.Types.ObjectId(req.body.Creator); //?
+    const Owner = mongoose.Types.ObjectId(req.body.Owner); 
+    const addressID = mongoose.Types.ObjectId(req.body.addressID);
     const addressName = req.body.addressName;
     const street = req.body.street;
     const state = req.body.state;
     const city = req.body.city;
     const zipcode = req.body.zipcode;
 
-    Users.findOneAndUpdate(
-        {
-            Creator: Creator,
-        },
-        {
-            addressName: addressName,
-            street: street,
-            state: state,
-            city: city,
-            zipcode: zipcode
-        },
-        {
-            upsert: true
-        }
-
-    ).then(updatedAddr => res.status(200).json('Address Updated' + updatedAddr))
+        Users.where("_id").equals(Owner)
+        .then(user => {
+            addresses = user.Address
+            addresses.forEach(address => {
+                if (address._id === addressID) {
+                    // Update.
+                    address.addressName = addressName
+                    address.street = street
+                    address.state = state
+                    address.city = city
+                    address.zipcode = zipcode
+                }
+            });
+            // Update.
+            Users.findOneAndUpdate(
+                {
+                    _id: Owner,
+                },
+                {
+                    Address: addresses
+                })
+                .then(updatedCard => res.status(200).json('Address Updated' + updatedCard))
+                .catch(err => res.status(400).json('Error: ' + err))
+        })
+        // If there is an error return status 400 with Error.
         .catch(err => res.status(400).json('Error: ' + err))
 });
 

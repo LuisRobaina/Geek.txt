@@ -46,7 +46,7 @@ const userSchema = new Schema({
             number: { type: Number }, //must be 16 long
             expDate: { type: Date },    //date?
             CVV: { type: Number }, //must be 3 long
-            Address: { type: String }
+            address: { type: String }
         }
     ],
     Address: [
