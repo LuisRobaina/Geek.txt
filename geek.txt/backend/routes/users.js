@@ -198,6 +198,7 @@ router.route("/addaddress").post((req, res) => {
 // <------ Helper Functions ----->
 
 function generateJWT(user) {
+  console.log(user);
   return jwt.sign({ user }, process.env.SECERT, { expiresIn: "2h" });
 }
 

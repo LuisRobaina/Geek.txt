@@ -29,11 +29,18 @@ const NavBar = ({ user, setUser }) => {
             <li className={classes.listItem}>Home</li>
           </Link>
           {user ? (
-            <Link to="/">
-              <li className={classes.listItem} onClick={handleLogOut}>
-                Logout
-              </li>
-            </Link>
+            <>
+              <Link to="/">
+                <li className={classes.listItem} onClick={handleLogOut}>
+                  {user.firstName} Profile
+                </li>
+              </Link>
+              <Link to="/">
+                <li className={classes.listItem} onClick={handleLogOut}>
+                  Logout
+                </li>
+              </Link>
+            </>
           ) : (
             <>
               <Link to="/login">
