@@ -67,7 +67,7 @@ const UserRegister = () => {
 
                             <Form.Field>
                                 <label>Password</label>
-                                <input name="password" value={userInput.password} onChange={handleChange} />
+                                <input placeholder="Must be 6-20 long, have an upper and lowercase letter, and a number." name="password" value={userInput.password} onChange={handleChange} />
                             </Form.Field>
 
                             <Form.Field>

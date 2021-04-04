@@ -91,9 +91,11 @@ router.route('/add').post((req, res) => {
     const Address = [];
     // const wishList = [];
 
-    if (password !== password2) return res.status(400).json("Invalid Credentials");
+    if (email !== /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/) return res.status(400).json("Invalid Email");
+    if (password !== password2) return res.status(400).json("Passwords do not match");
+    if (password !== /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/) return res.status(400).json("Password must be between 6-20 characters, contain an uppercase letter, lowercase letter, and a number");
 
-    bcrypt.hash(password, saltRounds, function (err, hash) {
+    bcrypt.hash(password, saltRounds, function (err, hash) { // });
 
         if (err) return res.status(400);
         // password = hash;
@@ -240,14 +242,13 @@ router.route('/editprofile').post((req, res) => {
             password: password,
             password2: password2,
             nickname: nickname
-        },
-        {
-            upsert: true
         }
 
-        //checks if new password was correctly entered twice
-        //if(password !== password2) return res.status(400).json("Invalid Credentials");
-        //when editing profile does the password need to be rehashed?
+        //if (email !== /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/) return res.status(400).json("Invalid Email");
+        //if (password !== password2) return res.status(400).json("Passwords do not match");
+        //if (password !== /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/) return res.status(400).json("Password must be between 6-20 characters, contain an uppercase letter, lowercase letter, and a number");
+
+        //rehash password
 
     ).then(updatedProf => res.status(200).json('Profile Updated' + updatedProf))
         .catch(err => res.status(400).json('Error: ' + err))
