@@ -2,9 +2,8 @@
 const jwt = require("jsonwebtoken");
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
-const saltRounds = 10;
 const Users = require("../models/users.model");
-let EmailValidator = require("../utils/validators");
+let { EmailValidator, registerValidate } = require("../utils/validators");
 const router = require("express").Router();
 
 // Handles incomming GET requests to url/users/ .
@@ -96,9 +95,9 @@ router.route("/add").post((req, res) => {
   const creditCard = [];
   const Address = [];
   // const wishList = [];
-
-  if (password !== password2)
-    return res.status(400).json("Invalid Credentials");
+  console.log("made it in here");
+  let { errors, isValid } = registerValidate(req.body);
+  if (!isValid) return res.json({ errors });
 
   // Create new user using the User model.
   const newUser = {
@@ -198,7 +197,6 @@ router.route("/addaddress").post((req, res) => {
 // <------ Helper Functions ----->
 
 function generateJWT(user) {
-  console.log(user);
   return jwt.sign({ user }, process.env.SECERT, { expiresIn: "2h" });
 }
 
