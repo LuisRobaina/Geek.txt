@@ -39,7 +39,8 @@ const userSchema = new Schema({
             cardName: {type: String},
             nameOnCard: { type: String },
             number: { type: Number }, //must be 16 long
-            expDate: { type: Date },    //date?
+            expMonth: { type: Number },
+            expYear: {type: Number},
             CVV: { type: Number }, //must be 3 long
             address: { type: String }
         }

@@ -40,29 +40,27 @@ router.route('/login').post((req, res) => {
                 });
             })
             .catch(err => res.status(400).json('Error: ' + err))
-    } else {
-        return res.status(400).json("Invalid Email");
-    }
-    // else {
-    //     console.log("id place")
-    //     // Look user by GeekID.
-    //     Users.findOne({geekID: credential}) 
-    //     // If promise return then return all users as JSON.
-    //     .then(user => {
-    //         if(!user){
-    //             return res.status(400).json('Invalid Credentials')
-    //         }
-    //         result = bcrypt.compareSync(password, user.password);
-    //         if(result){
-    //             return res.json(user)
-    //         }
-    //         else{
-    //             return res.status(400).json('Invalid Credentials')
-    //         }
-    //     })
-    //     // If there is an error return status 400 with Error.   check if password  matches hashed in DB, return error if not
-    //     .catch(err => res.status(400).json('Error: ' + err))
-    // }  
+    } 
+     else {
+         console.log("id place")
+        // Look user by GeekID.
+         Users.findOne({geekID: credential}) 
+        // If promise return then return all users as JSON.
+         .then(user => {
+             if(!user){
+                 return res.status(400).json('Invalid Credentials')
+             }
+             result = bcrypt.compareSync(password, user.password);
+             if(result){
+                 return res.json(user)
+             }
+             else{
+                 return res.status(400).json('Invalid Credentials')
+             }
+         })
+         // If there is an error return status 400 with Error.   check if password  matches hashed in DB, return error if not
+         .catch(err => res.status(400).json('Error: ' + err))
+    }  
 });
 
 // Handle post request to add new user.
@@ -129,19 +127,28 @@ router.route('/addcard').post((req, res) => {
         "cardName": "Card 1",
         "nameOnCard": "Name User",
         "number": 0123 4567 8910,
-        "expDate":03/21,
-        "CVV":123
+        "expYear":2022,
+        "expMonth":7,
+        "CVV":123,
         "address" : 1234 Lane Dr
     }
     */
+
+    var today = new Date();
+    var currMonth = today.getMonth();
+    var currYear = today.getFullYear();   
 
     const cardOwner = mongoose.Types.ObjectId(req.body.cardOwner);
     const cardName = req.body.cardName;
     const nameOnCard = req.body.nameOnCard;
     const number = req.body.number;
-    const expDate = req.body.expDate;
+    const expYear = req.body.expYear;
+    const expMonth = req.body.expMonth;
     const CVV = req.body.CVV;
     const address = req.body.address;
+
+    if (expYear < currYear) return res.status(400).json("Invalid Expiration Date");
+    if (((expMonth - 1) < currMonth) && (expYear === currYear)) return res.status(400).json("Invalid Expiration Date");
 
     Users.updateOne(
         { _id: cardOwner },
@@ -151,19 +158,16 @@ router.route('/addcard').post((req, res) => {
                     cardName,
                     nameOnCard,
                     number,
-                    expDate,
+                    expYear,
+                    expMonth,
                     CVV,
                     address
                 }
             }
         }
 
-        //check for expDate validity
-
     ).then(res.status(200).json('Added new address Successfully'))
-        // If there is an error return status 400 with Error.
         .catch(err => res.status(400).json('Error: ' + err))
-
 });
 
 router.route('/addaddress').post((req, res) => {
@@ -230,6 +234,10 @@ router.route('/editprofile').post((req, res) => {
     const password2 = req.body.password2;
     const nickname = req.body.nickname;
 
+    if (email !== /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/) return res.status(400).json("Invalid Email");
+    if (password !== password2) return res.status(400).json("Passwords do not match");
+    if (password !== /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/) return res.status(400).json("Password must be between 6-20 characters, contain an uppercase letter, lowercase letter, and a number");
+
     Users.findOneAndUpdate(
         {
             Owner: Owner,
@@ -244,11 +252,6 @@ router.route('/editprofile').post((req, res) => {
             nickname: nickname
         }
 
-        //if (email !== /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/) return res.status(400).json("Invalid Email");
-        //if (password !== password2) return res.status(400).json("Passwords do not match");
-        //if (password !== /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/) return res.status(400).json("Password must be between 6-20 characters, contain an uppercase letter, lowercase letter, and a number");
-
-        //rehash password
 
     ).then(updatedProf => res.status(200).json('Profile Updated' + updatedProf))
         .catch(err => res.status(400).json('Error: ' + err))
@@ -263,21 +266,30 @@ router.route('/editcard').post((req, res) => {
      *      "cardName": "Card 1",
             "nameOnCard": "Name User",
             "number": 0123 4567 8910,
-            "expDate":03/21,
-            "CVV":123
+            "expYear":2022,
+            "expMonth":7,
+            "CVV":123,
             "address" : 123 Lane Dr
      *      
      *  }
      */
+
+    var today = new Date();
+    var currMonth = today.getMonth();
+    var currYear = today.getFullYear(); 
 
     const Owner = mongoose.Types.ObjectId(req.body.Owner);
     const cardName = req.body.cardName;
     const cardID = mongoose.Types.ObjectId(req.body.cardID);
     const nameOnCard = req.body.nameOnCard;
     const number = req.body.number;
-    const expDate = req.body.expDate;
+    const expYear = req.body.expYear;
+    const expMonth = req.body.expMonth;
     const CVV = req.body.CVV;
     const address = req.body.address;
+
+    if (expYear < currYear) return res.status(400).json("Invalid Expiration Date");
+    if (((expMonth - 1) < currMonth) && (expYear === currYear)) return res.status(400).json("Invalid Expiration Date");
 
     // Get the user by its _id.
     Users.where("_id").equals(Owner)
@@ -289,9 +301,10 @@ router.route('/editcard').post((req, res) => {
                     card.cardName = cardName
                     card.nameOnCard = nameOnCard
                     card.number = number
-                    card.expDate = expDate
+                    card.expYear = expYear
+                    card.expMonth = expMonth
                     card.CVV = CVV
-                    card.address = address;
+                    card.address = address
                 }
             });
             // Update.
@@ -305,9 +318,6 @@ router.route('/editcard').post((req, res) => {
                 .then(updatedCard => res.status(200).json('Credit Card Updated' + updatedCard))
                 .catch(err => res.status(400).json('Error: ' + err))
         })
-
-        //check for expDate validity
-
         // If there is an error return status 400 with Error.
         .catch(err => res.status(400).json('Error: ' + err))
 });
