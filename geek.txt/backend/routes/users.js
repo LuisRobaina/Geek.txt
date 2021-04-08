@@ -50,7 +50,7 @@ router.route('/login').post((req, res) => {
              if(!user){
                  return res.status(400).json('Invalid Credentials')
              }
-             result = bcrypt.compareSync(password, user.password);
+             const result = bcrypt.compareSync(password, user.password); //look into changing later
              if(result){
                  return res.json(user)
              }
