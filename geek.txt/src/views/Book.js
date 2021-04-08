@@ -12,6 +12,7 @@ import axios from "../config/axios";
 import { Segment, Button, Message } from "semantic-ui-react";
 import CommentsList from "../components/CommentsList";
 import { Link } from "react-router-dom";
+import pusher from "../config/pusher";
 
 const Book = (props) => {
   const [bookData, setBookData] = useState({});
@@ -48,14 +49,14 @@ const Book = (props) => {
         console.log(res);
         // Make an api call to get the comments associated with this book.
         // TODO change book request string to props.match.params.id
-        axios
-          .get(`/comments/${props.match.params.id}`)
-          .then((comments) => {
-            // TODO: remove this log.
-            console.log(comments);
-            setCommentsSet(comments.data);
-          })
-          .catch((err) => console.log(err));
+        // axios
+        //   .get(`/comments/${props.match.params.id}`)
+        //   .then((comments) => {
+        //     // TODO: remove this log.
+        //     console.log(comments);
+        //     setCommentsSet(comments.data);
+        //   })
+        //   .catch((err) => console.log(err));
       })
       .catch((err) => console.log(err));
   };
@@ -74,8 +75,8 @@ const Book = (props) => {
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
 
-    alert("Thanks for rating");
-    window.location.reload();
+    console.log("Thanks for rating");
+    //window.location.reload();
   };
   const handleNewAnonymousRating = (e) => {
     console.log(e.currentTarget);
@@ -92,7 +93,7 @@ const Book = (props) => {
       .catch((err) => console.log(err));
 
     alert("Thanks for rating anonymously.");
-    window.location.reload();
+    //window.location.reload();
   };
   const handleNewCommentPost = (e) => {
     e.preventDefault();
@@ -110,14 +111,14 @@ const Book = (props) => {
         // Get the set of comments
         // Make an api call to get the comments associated with this book.
         // TODO change book request string to props.match.params.id
-        axios
-          .get(`/comments/${props.match.params.id}`)
-          .then((comments) => {
-            // TODO: remove this log.
-            console.log(comments);
-            setCommentsSet(comments.data);
-          })
-          .catch((err) => console.log(err));
+        // axios
+        //   .get(`/comments/${props.match.params.id}`)
+        //   .then((comments) => {
+        //     // TODO: remove this log.
+        //     console.log(comments);
+        //     setCommentsSet(comments.data);
+        //   })
+        //   .catch((err) => console.log(err));
       })
       .catch((err) => console.log(err));
   };
@@ -131,12 +132,12 @@ const Book = (props) => {
       })
       .catch((err) => console.log(err));
 
-    axios
-      .get(`/rate/getAvg/${props.match.params.id}`)
-      .then((res) => {
-        setCurrentRating(res.data.avg.toFixed(2));
-      })
-      .catch((err) => console.log(err));
+    // axios
+    //   .get(`/rate/getAvg/${props.match.params.id}`)
+    //   .then((res) => {
+    //     setCurrentRating(res.data.avg.toFixed(2));
+    //   })
+    //   .catch((err) => console.log(err));
 
     // Make an api call to get the comments associated with this book.
     // TODO change book request string to props.match.params.id
@@ -159,6 +160,30 @@ const Book = (props) => {
       .catch((err) => console.log(err));
   }, []);
 
+  useEffect(() => {
+    const channel = pusher.subscribe("books");
+    channel.bind("updated-rating", function (data) {
+      setBookData(data);
+    });
+
+    return () => {
+      channel.unsubscribe();
+      channel.unbind_all();
+    };
+  }, []);
+
+  useEffect(() => {
+    const channel = pusher.subscribe("comments");
+    channel.bind("inserted-comment", function (data) {
+      setCommentsSet([...commentsSet, data]);
+    });
+
+    return () => {
+      channel.unsubscribe();
+      channel.unbind_all();
+    };
+  }, [commentsSet]);
+
   return (
     <Container>
       <Grid stackable columns={2} container centered>
@@ -170,21 +195,20 @@ const Book = (props) => {
           <h3>Author: {bookData.author}</h3>
           <h4>Genre: {bookData.genre}</h4>
           <p>Description: {bookData.description}</p>
-          {console.log(props)}
           <Link to={`/ratings/${props.match.params.id}`}>
             <button class="ui right labeled icon button">
               <h3>Current Rating </h3>
               <i class="right arrow icon"></i>
               <Rating
                 icon="star"
-                defaultRating={currentRating}
+                defaultRating={bookData.rating}
                 maxRating={5}
                 disabled
-                key={currentRating}
+                key={bookData.rating}
                 style={{ margin: "25px 0 ", fontSize: "18px" }}
               />
               <span style={{ color: "#909090", fontSize: "14px" }}>
-                ({currentRating})
+                ({bookData.rating})
               </span>
               <p>Click to see who rated</p>
             </button>
