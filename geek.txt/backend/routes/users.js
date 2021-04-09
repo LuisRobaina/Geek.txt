@@ -80,11 +80,11 @@ router.route("/add").post((req, res) => {
         "lastName" : "Test",
         "email": "testuser@test.com",
         "password" : "ABCD3F5",
-        "password2" : "ABCD3F5",
         "nickname" : "User",
         "creditCard" : [],
         "Address" : [],
     */
+
   const geekID = req.body.geekID;
   const firstName = req.body.firstName;
   const lastName = req.body.lastName;
@@ -125,254 +125,74 @@ router.route("/addcard").post((req, res) => {
   /* 
     Sample POST request body:
     {
-        "Creator": "601d7b8e7e0708245caabc48"
+        "cardOwner": "601d7b8e7e0708245caabc48"
         "cardName": "Card 1",
-        "nameOnCard": "Name User",
-        "number": 0123 4567 8910,
-        "expYear":2022,
-        "expMonth":7,
-        "CVV":123,
-        "address" : 1234 Lane Dr
+        "nameOnCard": "Logan Simijoski",
+        "number": 0123 4567 8910
+        "expDate":03/21
+        "CVV":123
     }
     */
-  
-    var today = new Date();
-    var currMonth = today.getMonth();
-    var currYear = today.getFullYear();   
 
-    const cardOwner = mongoose.Types.ObjectId(req.body.cardOwner);
-    const cardName = req.body.cardName;
-    const nameOnCard = req.body.nameOnCard;
-    const number = req.body.number;
-    const expYear = req.body.expYear;
-    const expMonth = req.body.expMonth;
-    const CVV = req.body.CVV;
-    const address = req.body.address;
+  const cardOwner = mongoose.Types.ObjectId(req.body.cardOwner);
+  const cardName = req.body.cardName;
+  const nameOnCard = req.body.nameOnCard;
+  const number = req.body.number;
+  const expDate = req.body.expDate;
+  const CVV = req.body.CVV;
 
-    if (expYear < currYear) return res.status(400).json("Invalid Expiration Date");
-    if (((expMonth - 1) < currMonth) && (expYear === currYear)) return res.status(400).json("Invalid Expiration Date");
+  // Create new comment using the Comments model.
+  const newCard = new Users.creditCard({
+    cardOwner,
+    cardName,
+    nameOnCard,
+    number,
+    expDate,
+    CVV,
+  });
 
-    Users.updateOne(
-        { _id: cardOwner },
-        {
-            $push: {
-                creditCard: {
-                    cardName,
-                    nameOnCard,
-                    number,
-                    expYear,
-                    expMonth,
-                    CVV,
-                    address
-                }
-            }
-        }
-
-    ).then(res.status(200).json('Added new address Successfully'))
-        .catch(err => res.status(400).json('Error: ' + err))
+  // Save new card to database.
+  newCard
+    .save()
+    .then(() => res.status(200).json("Card Added Successfully."))
+    .catch((err) => res.status(400).json("Error: " + err));
 });
 
 router.route("/addaddress").post((req, res) => {
   /* 
     Sample POST request body:
     {
-        "addressOwner": "60392b329b00b252eaa3b3b8"
+        "addressOwner": "601d7b8e7e0708245caabc48"
         "addressName": "Address 1", 
         "street": "123 Something Lane",
-        "state": "FL",
+        "state": "FL", //make arraylist of states?
         "city": "Miami",
         "zipcode": "33199" 
     }
     */
 
+  const addressOwner = mongoose.Types.ObjectId(req.body.addressOwner);
+  const addressName = req.body.addressName;
+  const street = req.body.street;
+  const state = req.body.state;
+  const city = req.body.city;
+  const zipcode = req.body.zipcode;
 
-    const addressOwner = mongoose.Types.ObjectId(req.body.addressOwner);
-    const addressName = req.body.addressName;
-    const street = req.body.street;
-    const state = req.body.state;
-    const city = req.body.city;
-    const zipcode = req.body.zipcode;
+  // Create new comment using the Comments model.
+  const newAddress = new Users.Address({
+    addressOwner,
+    addressName,
+    street,
+    state,
+    city,
+    zipcode,
+  });
 
-    Users.updateOne(
-        { _id: addressOwner },
-        {
-            $push: {
-                Address: {
-                    addressName,
-                    street,
-                    state,
-                    city,
-                    zipcode
-                }
-            }
-        }
-    ).then(res.status(200).json('Added new address Successfully'))
-        // If there is an error return status 400 with Error.
-        .catch(err => res.status(400).json('Error: ' + err))
-});
-
-router.route('/editprofile').post((req, res) => {
-    /**
-     * Sample POST request body:
-     *  {
-     *      "Owner": "60392b329b00b252eaa3b3b8",
-     *      "geekID" : "Geek123",
-            "firstName" : "User",
-            "lastName" : "Test",
-            "email": "usertest@test.com",
-            "password" : "123password",
-            "password2" : "123password",
-            "nickname" : "Booklover1",
-     *      
-     *  }
-     */
-
-    const Owner = mongoose.Types.ObjectId(req.body.Owner);
-    const geekID = req.body.geekId;
-    const firstName = req.body.firstName;
-    const lastName = req.body.lastName;
-    const email = req.body.email;
-    const password = req.body.password;
-    const password2 = req.body.password2;
-    const nickname = req.body.nickname;
-
-    if (email !== /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/) return res.status(400).json("Invalid Email");
-    if (password !== password2) return res.status(400).json("Passwords do not match");
-    if (password !== /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/) return res.status(400).json("Password must be between 6-20 characters, contain an uppercase letter, lowercase letter, and a number");
-
-    Users.findOneAndUpdate(
-        {
-            Owner: Owner,
-        },
-        {
-            geekID: geekID,
-            firstName: firstName,
-            lastName: lastName,
-            email: email,
-            password: password,
-            password2: password2,
-            nickname: nickname
-        }
-
-
-    ).then(updatedProf => res.status(200).json('Profile Updated' + updatedProf))
-        .catch(err => res.status(400).json('Error: ' + err))
-});
-
-router.route('/editcard').post((req, res) => {
-    /**
-     * Sample POST request body:
-     *  {
-     *      "Owner": "60392b329b00b252eaa3b3b8",
-     *      "cardID": "60392b329b00b252eaa3b3b8",
-     *      "cardName": "Card 1",
-            "nameOnCard": "Name User",
-            "number": 0123 4567 8910,
-            "expYear":2022,
-            "expMonth":7,
-            "CVV":123,
-            "address" : 123 Lane Dr
-     *      
-     *  }
-     */
-
-    var today = new Date();
-    var currMonth = today.getMonth();
-    var currYear = today.getFullYear(); 
-
-    const Owner = mongoose.Types.ObjectId(req.body.Owner);
-    const cardName = req.body.cardName;
-    const cardID = mongoose.Types.ObjectId(req.body.cardID);
-    const nameOnCard = req.body.nameOnCard;
-    const number = req.body.number;
-    const expYear = req.body.expYear;
-    const expMonth = req.body.expMonth;
-    const CVV = req.body.CVV;
-    const address = req.body.address;
-
-    if (expYear < currYear) return res.status(400).json("Invalid Expiration Date");
-    if (((expMonth - 1) < currMonth) && (expYear === currYear)) return res.status(400).json("Invalid Expiration Date");
-
-    // Get the user by its _id.
-    Users.where("_id").equals(Owner)
-        .then(user => {
-            let cards = user.creditCard
-            cards.forEach(card => {
-                if (card._id === cardID) {
-                    // Update.
-                    card.cardName = cardName
-                    card.nameOnCard = nameOnCard
-                    card.number = number
-                    card.expYear = expYear
-                    card.expMonth = expMonth
-                    card.CVV = CVV
-                    card.address = address
-                }
-            });
-            // Update.
-            Users.findOneAndUpdate(
-                {
-                    _id: Owner,
-                },
-                {
-                    creditCard: cards
-                })
-                .then(updatedCard => res.status(200).json('Credit Card Updated' + updatedCard))
-                .catch(err => res.status(400).json('Error: ' + err))
-        })
-        // If there is an error return status 400 with Error.
-        .catch(err => res.status(400).json('Error: ' + err))
-});
-
-router.route('/editaddress').post((req, res) => {
-    /**
-     * Sample POST request body:
-     *  {
-     *      "Owner": "60392b329b00b252eaa3b3b8",
-     *      "addressID" : "60392b329b00b252eaa3b3b9",
-     *      "addressName": "Home Address",
-            "street": "123 Somewhere Lane",
-            "state": "FL"
-            "city": "Miami",
-            "zipcode": "33199"
-     *      
-     *  }
-     */
-
-    const Owner = mongoose.Types.ObjectId(req.body.Owner); 
-    const addressID = mongoose.Types.ObjectId(req.body.addressID);
-    const addressName = req.body.addressName;
-    const street = req.body.street;
-    const state = req.body.state;
-    const city = req.body.city;
-    const zipcode = req.body.zipcode;
-
-        Users.where("_id").equals(Owner)
-        .then(user => {
-            let addresses = user.Address
-            addresses.forEach(address => {
-                if (address._id === addressID) {
-                    // Update.
-                    address.addressName = addressName
-                    address.street = street
-                    address.state = state
-                    address.city = city
-                    address.zipcode = zipcode
-                }
-            });
-            // Update.
-            Users.findOneAndUpdate(
-                {
-                    _id: Owner,
-                },
-                {
-                    Address: addresses
-                })
-                .then(updatedCard => res.status(200).json('Address Updated' + updatedCard))
-                .catch(err => res.status(400).json('Error: ' + err))
-        })
-        // If there is an error return status 400 with Error.
-        .catch(err => res.status(400).json('Error: ' + err))
+  // Save new address to database.
+  newAddress
+    .save()
+    .then(() => res.status(200).json("Address Added Successfully."))
+    .catch((err) => res.status(400).json("Error: " + err));
 });
 
 // <------ Helper Functions ----->
