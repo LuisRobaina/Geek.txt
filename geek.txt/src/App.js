@@ -3,6 +3,7 @@ import { useState } from "react";
 import { getUser } from "./utils/userService";
 
 // Import React Components
+
 import NavBar from "./components/Navbar/Navbar";
 import "./App.css";
 import Home from "./views/Home";
@@ -10,8 +11,15 @@ import Book from "./views/Book";
 import NotFound from "./views/NotFound";
 import UserLogIn from "./views/UserLogIn";
 import UserRegister from "./views/UserRegister";
+import UserProfilePage from './views/UserProfilePage';
+import AddNewCard from './views/AddNewCard';
+import AddNewAddress from './views/AddNewAddress';
+import EditProfile from './views/EditProfile';
+import EditCard from './views/EditCard';
+import EditAddress from './views/EditAddress';
 import RatingsRecord from "./views/RatingRecods";
 import CommunityGuidelines from "./views/CommunityGuidelines";
+
 
 // Example of component routing:
 // <Route path="/" exact component={BookBrowser} />
@@ -23,6 +31,7 @@ const App = () => {
     <Router>
       <NavBar user={user} setUser={setUser} />
       <Switch>
+
         <Route path="/login" exact>
           <UserLogIn setUser={setUser} />
         </Route>
@@ -39,6 +48,7 @@ const App = () => {
         <Route path="/" exact>
           <Home user={user} />
         </Route>
+
         <Route path="/*" component={NotFound} />
       </Switch>
     </Router>

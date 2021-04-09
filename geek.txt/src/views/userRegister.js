@@ -22,6 +22,7 @@ const UserRegister = ({ setUser }) => {
     setUserInput({ [e.target.name]: e.target.value });
   };
 
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrors("");
@@ -42,6 +43,7 @@ const UserRegister = ({ setUser }) => {
       console.dir(err);
     }
   };
+
 
   return (
     <div>
@@ -91,6 +93,7 @@ const UserRegister = ({ setUser }) => {
                   onChange={handleChange}
                 />
               </Form.Field>
+
 
               <Form.Field>
                 <label>Password</label>
