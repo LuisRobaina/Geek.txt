@@ -50,7 +50,7 @@ router.route('/login').post((req, res) => {
              if(!user){
                  return res.status(400).json('Invalid Credentials')
              }
-             const result = bcrypt.compareSync(password, user.password); //look into changing later
+             const result = bcrypt.compareSync(password, user.password); 
              if(result){
                  return res.json(user)
              }
@@ -58,7 +58,7 @@ router.route('/login').post((req, res) => {
                  return res.status(400).json('Invalid Credentials')
              }
          })
-         // If there is an error return status 400 with Error.   check if password  matches hashed in DB, return error if not
+         // If there is an error return status 400 with Error.
          .catch(err => res.status(400).json('Error: ' + err))
     }  
 });
@@ -93,7 +93,7 @@ router.route('/add').post((req, res) => {
     if (password !== password2) return res.status(400).json("Passwords do not match");
     if (password !== /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/) return res.status(400).json("Password must be between 6-20 characters, contain an uppercase letter, lowercase letter, and a number");
 
-    bcrypt.hash(password, saltRounds, function (err, hash) { // });
+    bcrypt.hash(password, saltRounds, function (err, hash) { 
 
         if (err) return res.status(400);
         // password = hash;
