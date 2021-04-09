@@ -55,6 +55,7 @@ connection.once("open", () => {
   });
 
   commentStream.on("change", async (change) => {
+    console.log(change);
     if (change.operationType === "insert") {
       pusher.trigger("comments", "inserted-comment", change.fullDocument);
     }

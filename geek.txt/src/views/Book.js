@@ -18,16 +18,16 @@ const Book = (props) => {
   const [bookData, setBookData] = useState({});
   const [commentsSet, setCommentsSet] = useState([]);
   const [NewCommentText, setNewComment] = useState("");
-  const [currentRating, setCurrentRating] = useState(0);
+  //const [currentRating, setCurrentRating] = useState(0);
   const [rating, setNewRating] = useState(0);
 
   const userOwnsBook = true;
   const handleNewCommentChange = (e) => {
-    e.preventDefault();
+    //e.preventDefault();
     setNewComment(e.currentTarget.value);
   };
   const handleNewRatingChange = (e, data) => {
-    e.preventDefault();
+    //e.preventDefault();
     setNewRating(data.rating);
     console.log("Current rating: ", data.rating);
   };
@@ -92,7 +92,7 @@ const Book = (props) => {
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
 
-    alert("Thanks for rating anonymously.");
+    //alert("Thanks for rating anonymously.");
     //window.location.reload();
   };
   const handleNewCommentPost = (e) => {
@@ -150,6 +150,7 @@ const Book = (props) => {
       })
       .catch((err) => console.log(err));
 
+    // This can be removed dont need to find  specific user
     axios
       .get(`/users/${"60426686e0804e3b0cc20702"}`)
       .then((comments) => {
