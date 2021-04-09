@@ -1,60 +1,89 @@
-import { useReducer, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Grid, Button, Form, Segment, Message } from 'semantic-ui-react';
-import axios from '../config/axios';
+import { useReducer, useState } from "react";
+import { Link, useHistory } from "react-router-dom";
+import { Grid, Button, Form, Segment, Message } from "semantic-ui-react";
+import { getUser, login } from "../utils/userService";
 
-const UserLogIn = () => {
+const UserLogIn = ({ setUser }) => {
   const [errors, setErrors] = useState("");
+  const [loggedIn, setLoggedIn] = useState(false);
+  const history = useHistory();
+
   const [userInput, setUserInput] = useReducer(
     (state, newState) => ({ ...state, ...newState }),
     {
-      email: "",
-      password: ""
+      credential: "",
+      password: "",
     }
   );
 
   const handleChange = (e) => {
-    setUserInput({[e.target.name]: e.target.value})
-  }
+    setUserInput({ [e.target.name]: e.target.value });
+  };
 
-  const handleSubmit= (e) => {
-    setErrors("");
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    axios.post('/users/login', userInput).then(res => {
-      console.log(res);
-    }).catch(({response}) => setErrors(response.data))
-  }
+    setErrors("");
+    try {
+      const token = await login(userInput);
+      setUser(getUser(token));
+      history.push("/");
+    } catch (err) {
+      setErrors(err.response.data);
+    }
+  };
 
   return (
     <div>
+      {errors.form && <div className="alert alert-danger">{errors.form}</div>}
+      {loggedIn && (
+        <Message positive>
+          <Message.Header>You are in! We missed you</Message.Header>
+          <p>
+            Go to your{" "}
+            <Link to={`/userhome`}>
+              <b>Home</b>
+            </Link>{" "}
+            page to see books.
+          </p>
+        </Message>
+      )}
       <Grid centered>
         <Grid.Column style={{ maxWidth: 550, margin: 20 }}>
           <Segment>
             {errors && (
               <Message negative>
                 <Message.Header>{errors}</Message.Header>
-            </Message>
+              </Message>
             )}
-            <Form onSubmit={handleSubmit} >
+            <Form onSubmit={handleSubmit}>
               <Form.Field>
                 <label>GeekID or E-mail</label>
-                <input placeholder='GeekID/E-mail' name="email" value={userInput.email} onChange={handleChange} />
+                <input
+                  placeholder="GeekID/E-mail"
+                  name="credential"
+                  value={userInput.credential}
+                  onChange={handleChange}
+                />
               </Form.Field>
               <Form.Field>
                 <label>Password</label>
-                <input type='password' 
-                  placeholder='Password'
+                <input
+                  type="password"
+                  placeholder="Password"
                   name="password"
-                  onChange={handleChange} 
-                  value={userInput.password}/>
+                  onChange={handleChange}
+                  value={userInput.password}
+                />
               </Form.Field>
               <div>
                 <Button.Group>
                   <Button positive>Log In!</Button>
                   <Button.Or />
                   <Link to="/register">
-                    <Button animated='fade' onClick={() => handleSubmit}>
-                      <Button.Content visible>Register for an account</Button.Content>
+                    <Button animated="fade" onClick={() => handleSubmit}>
+                      <Button.Content visible>
+                        Register for an account
+                      </Button.Content>
                       <Button.Content hidden>It is free!</Button.Content>
                     </Button>
                   </Link>
@@ -65,7 +94,7 @@ const UserLogIn = () => {
         </Grid.Column>
       </Grid>
     </div>
-  )
+  );
 };
 
 export default UserLogIn;

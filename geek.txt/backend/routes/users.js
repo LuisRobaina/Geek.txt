@@ -1,30 +1,29 @@
 // API routes related to the User model.
-//var jwt = require('jsonwebtoken');
-const mongoose = require('mongoose');
-const bcrypt = require('bcrypt');
-const saltRounds = 10;
-let Users = require('../models/users.model');
-let EmailValidator = require('../utils/validators')
-const router = require('express').Router();
+const jwt = require("jsonwebtoken");
+const mongoose = require("mongoose");
+const bcrypt = require("bcrypt");
+const Users = require("../models/users.model");
+let { validateEmail, registerValidate } = require("../utils/validators");
+const router = require("express").Router();
 
 // Handles incomming GET requests to url/users/ .
-router.route('/').get((req, res) => {
-    // List of all users in the DB.
-    Users.find()
-        // If promise return then return all users as JSON.
-        .then(users => res.json(users))
-        // If there is an error return status 400 with Error.
-        .catch(err => res.status(400).json('Error: ' + err))
+router.route("/").get((req, res) => {
+  // List of all users in the DB.
+  Users.find()
+    // If promise return then return all users as JSON.
+    .then((users) => res.json(users))
+    // If there is an error return status 400 with Error.
+    .catch((err) => res.status(400).json("Error: " + err));
 });
 
 // Handles incomming POST requests to users/login.
-router.route('/login').post((req, res) => {
-
-    /*
+router.route("/login").post((req, res) => {
+  /*
     Sample POST request:
         "credential" : "testUser",
         "password" : "User"
     */
+<<<<<<< HEAD
     // Credential can be an email or a geek ID.
     const credential = req.body.email;
     const password = req.body.password;
@@ -61,11 +60,59 @@ router.route('/login').post((req, res) => {
          // If there is an error return status 400 with Error.
          .catch(err => res.status(400).json('Error: ' + err))
     }  
+=======
+  // Credential can be an email or a geek ID.
+  const credential = req.body.credential;
+  const password = req.body.password;
+
+  // Login by email.
+  if (validateEmail(credential)) {
+    Users.findOne({ email: credential })
+      .then((user) => {
+        if (!user) {
+          return res
+            .status(401)
+            .json({ errors: { form: "Invalid Credentials" } });
+        }
+        bcrypt.compare(password, user.password, function (err, valid) {
+          if (!valid) {
+            return res
+              .status(401)
+              .json({ errors: { form: "Invalid Credentials" } });
+          }
+          const token = generateJWT(user);
+          return res.json(token);
+        });
+      })
+      .catch((err) =>
+        res.status(401).json({ errors: { form: "Invalid Credentials" } })
+      );
+  } else {
+    // Look user by GeekID.
+    Users.findOne({ geekID: credential })
+      // If promise return then return all users as JSON.
+      .then((user) => {
+        if (!user) {
+          return res
+            .status(401)
+            .json({ errors: { form: "Invalid Credentials" } });
+        }
+        bcrypt.compare(password, user.password, function (err, valid) {
+          if (!valid) return res.status(401).json("Invalid Credentials");
+          res.json(generateJWT(user));
+        });
+      })
+      // If there is an error return status 400 with Error. check if password  matches hashed in DB, return error if not
+      .catch((err) =>
+        res.status(401).json({ errors: { form: "Something went wrong!" } })
+      );
+  }
+>>>>>>> e54d5424b2016f1e03e63c4873e7bf5442dd506c
 });
 
 // Handle post request to add new user.
-router.route('/add').post((req, res) => {
-    /*
+router.route("/add").post((req, res) => {
+  /*
     Sample POST request:
         "geekID" : "testUser",
         "firstName" : "User",
@@ -77,6 +124,7 @@ router.route('/add').post((req, res) => {
         "creditCard" : [],
         "Address" : [],
     */
+<<<<<<< HEAD
 
     const geekID = req.body.geekId;
     const firstName = req.body.firstName;
@@ -116,11 +164,46 @@ router.route('/add').post((req, res) => {
             .catch(err => res.status(400).json('Error: ' + err))
     });
 
+=======
+  const geekID = req.body.geekID;
+  const firstName = req.body.firstName;
+  const lastName = req.body.lastName;
+  const email = req.body.email;
+  const password = req.body.password;
+  const nickname = req.body.nickname;
+  const creditCard = [];
+  const Address = [];
+  // const wishList = [];
+  let { errors, isValid } = registerValidate(req.body);
+  if (!isValid) return res.json({ errors });
+
+  // Create new user using the User model.
+  const newUser = {
+    geekID,
+    firstName,
+    lastName,
+    email,
+    password,
+    nickname,
+    creditCard,
+    Address,
+    // wishList
+  };
+
+  // Save new user to database.
+  Users.create(newUser, function (err, doc) {
+    if (err)
+      return res
+        .status(401)
+        .json({ errors: "Unable to create User. Try again" }); // need better error response
+    const token = generateJWT(doc);
+    return res.json(token);
+  });
+>>>>>>> e54d5424b2016f1e03e63c4873e7bf5442dd506c
 });
 
-router.route('/addcard').post((req, res) => {
-
-    /* 
+router.route("/addcard").post((req, res) => {
+  /* 
     Sample POST request body:
     {
         "Creator": "601d7b8e7e0708245caabc48"
@@ -133,7 +216,7 @@ router.route('/addcard').post((req, res) => {
         "address" : 1234 Lane Dr
     }
     */
-
+  
     var today = new Date();
     var currMonth = today.getMonth();
     var currYear = today.getFullYear();   
@@ -170,9 +253,8 @@ router.route('/addcard').post((req, res) => {
         .catch(err => res.status(400).json('Error: ' + err))
 });
 
-router.route('/addaddress').post((req, res) => {
-
-    /* 
+router.route("/addaddress").post((req, res) => {
+  /* 
     Sample POST request body:
     {
         "addressOwner": "60392b329b00b252eaa3b3b8"
@@ -183,6 +265,7 @@ router.route('/addaddress').post((req, res) => {
         "zipcode": "33199" 
     }
     */
+
 
     const addressOwner = mongoose.Types.ObjectId(req.body.addressOwner);
     const addressName = req.body.addressName;
@@ -373,6 +456,11 @@ router.route('/editaddress').post((req, res) => {
         .catch(err => res.status(400).json('Error: ' + err))
 });
 
+// <------ Helper Functions ----->
+
+function generateJWT(user) {
+  return jwt.sign({ user }, process.env.SECERT, { expiresIn: "2h" });
+}
 
 // Export all User routes in this routers object.
-module.exports = router
+module.exports = router;

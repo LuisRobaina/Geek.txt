@@ -1,42 +1,58 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { useState } from "react";
+import { getUser } from "./utils/userService";
 
 // Import React Components
-import NavBar from "./components/Navbar/Navbar"
-import './App.css';
-import Home from './views/Home';
-import Book from './views/Book';
-import NotFound from './views/NotFound';
-import UserLogIn from './views/UserLogIn';
-import UserRegister from './views/UserRegister'; 
+
+import NavBar from "./components/Navbar/Navbar";
+import "./App.css";
+import Home from "./views/Home";
+import Book from "./views/Book";
+import NotFound from "./views/NotFound";
+import UserLogIn from "./views/UserLogIn";
+import UserRegister from "./views/UserRegister";
 import UserProfilePage from './views/UserProfilePage';
 import AddNewCard from './views/AddNewCard';
 import AddNewAddress from './views/AddNewAddress';
 import EditProfile from './views/EditProfile';
 import EditCard from './views/EditCard';
 import EditAddress from './views/EditAddress';
+import RatingsRecord from "./views/RatingRecods";
+import CommunityGuidelines from "./views/CommunityGuidelines";
+
 
 // Example of component routing:
 // <Route path="/" exact component={BookBrowser} />
 
 const App = () => {
+  const [user, setUser] = useState(getUser());
+
   return (
     <Router>
-      <NavBar />
+      <NavBar user={user} setUser={setUser} />
       <Switch>
-        <Route path="/login" exact component={UserLogIn}/>
-        <Route path="/register" exact component={UserRegister} />
-        <Route path="/books/:id" exact component={Book} />
-        <Route path="/" exact component={Home} />
-        <Route path="/profile" exact component={UserProfilePage}/>
-        <Route path="/addcard" component={AddNewCard} />
-        <Route path="/addaddress" component={AddNewAddress} />
-        <Route path="/editprofile" component={EditProfile} />
-        <Route path="/editcards" component={EditCard} />
-        <Route path="/editaddresses" component={EditAddress} />
+
+        <Route path="/login" exact>
+          <UserLogIn setUser={setUser} />
+        </Route>
+        <Route path="/register" exact>
+          <UserRegister setUser={setUser} />
+        </Route>
+        <Route
+          path="/books/:id"
+          exact
+          render={(props) => <Book {...props} user={user} />}
+        />
+        <Route path="/guidelines" exact component={CommunityGuidelines} />
+        <Route path="/ratings/:id" exact component={RatingsRecord} />
+        <Route path="/" exact>
+          <Home user={user} />
+        </Route>
+
         <Route path="/*" component={NotFound} />
       </Switch>
     </Router>
   );
-}
+};
 
 export default App;
