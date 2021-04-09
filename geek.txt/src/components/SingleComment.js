@@ -6,9 +6,8 @@ const SingleComment = ({ CommentID, Creator, Text, Replies }) => {
 
     // State.
     const [CommentText, setComment] = useState("")
-    const [RepliesSet, setRepliesSet] = useState([])
     const [Reply, setReply] = useState(false)
-
+    
     const loadReplies = () => {
         let replies = Replies.map(function (reply) {
             return (
@@ -52,7 +51,10 @@ const SingleComment = ({ CommentID, Creator, Text, Replies }) => {
             Text: CommentText
         }
         axios.post('/comments/reply', postObject)
-            .then(res => console.log(res))
+            .then(res => {
+                console.log(res);
+                window.location.reload();
+            })
             .catch(err => alert(err))
     }
 
@@ -62,7 +64,7 @@ const SingleComment = ({ CommentID, Creator, Text, Replies }) => {
             <Comment.Content>
                 <Comment.Author as='a'>{Creator}</Comment.Author>
                 <Comment.Metadata>
-                    <div>Yesterday at 12:30AM</div>
+                    <div>Just Now</div>
                 </Comment.Metadata>
                 <Comment.Text>
                     <p>{Text}</p>
