@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken");
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const Users = require("../models/users.model");
-let { EmailValidator, registerValidate } = require("../utils/validators");
+let { validateEmail, registerValidate } = require("../utils/validators");
 const router = require("express").Router();
 
 // Handles incomming GET requests to url/users/ .
@@ -28,7 +28,7 @@ router.route("/login").post((req, res) => {
   const password = req.body.password;
 
   // Login by email.
-  if (EmailValidator.validateEmail(credential)) {
+  if (validateEmail(credential)) {
     Users.findOne({ email: credential })
       .then((user) => {
         if (!user) {
@@ -90,7 +90,6 @@ router.route("/add").post((req, res) => {
   const lastName = req.body.lastName;
   const email = req.body.email;
   const password = req.body.password;
-  const password2 = req.body.password2;
   const nickname = req.body.nickname;
   const creditCard = [];
   const Address = [];
