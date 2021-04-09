@@ -19,8 +19,12 @@ export function getUser() {
 
 export async function signUp(userData) {
   const res = await axios.post("/users/add", userData);
-  localStorage.setItem("token", res.data);
-  return res.data;
+  if (res.data.errors) {
+    return res.data;
+  } else {
+    localStorage.setItem("token", res.data);
+    return res.data;
+  }
 }
 
 export async function login(userData) {

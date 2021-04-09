@@ -85,7 +85,7 @@ router.route("/add").post((req, res) => {
         "Address" : [],
     */
 
-  const geekID = req.body.geekId;
+  const geekID = req.body.geekID;
   const firstName = req.body.firstName;
   const lastName = req.body.lastName;
   const email = req.body.email;
@@ -95,7 +95,6 @@ router.route("/add").post((req, res) => {
   const creditCard = [];
   const Address = [];
   // const wishList = [];
-  console.log("made it in here");
   let { errors, isValid } = registerValidate(req.body);
   if (!isValid) return res.json({ errors });
 
@@ -114,7 +113,10 @@ router.route("/add").post((req, res) => {
 
   // Save new user to database.
   Users.create(newUser, function (err, doc) {
-    if (err) return res.status(401).json("Unable to create user"); // need better error response
+    if (err)
+      return res
+        .status(401)
+        .json({ errors: "Unable to create User. Try again" }); // need better error response
     const token = generateJWT(doc);
     return res.json(token);
   });

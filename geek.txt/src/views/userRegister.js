@@ -4,9 +4,8 @@ import { Link, useHistory } from "react-router-dom";
 import { getUser, signUp } from "../utils/userService";
 
 const UserRegister = ({ setUser }) => {
-  const [errors, setErrors] = useState("");
+  const [errors, setErrors] = useState(null);
   const history = useHistory();
-  const [registered, setRegistered] = useState(false);
   const [userInput, setUserInput] = useReducer(
     (state, newState) => ({ ...state, ...newState }),
     {
@@ -15,7 +14,7 @@ const UserRegister = ({ setUser }) => {
       email: "",
       password: "",
       password2: "",
-      geekId: "",
+      geekID: "",
     }
   );
 
@@ -28,34 +27,33 @@ const UserRegister = ({ setUser }) => {
     setErrors("");
     try {
       const token = await signUp(userInput);
-      setUser(getUser(token));
-      history.push("/");
+      console.log(token.errors);
+      if (token.errors) {
+        setErrors(token.errors);
+      } else {
+        setUser(getUser(token));
+        history.push("/");
+      }
+      console.log(token);
     } catch (err) {
-      console.dir(err.response.data);
-      //setErrors(err);
+      if (err.response.data.errors) {
+        setErrors(err.response.data);
+      }
+      console.dir(err);
     }
   };
 
   return (
     <div>
-      {registered && (
-        <Message positive>
-          <Message.Header>Welcome! We have created your account</Message.Header>
-          <p>
-            Now{" "}
-            <Link to={`/login`}>
-              <b>login</b>
-            </Link>{" "}
-            with your cretentials. See you around!
-          </p>
-        </Message>
-      )}
       <Grid centered>
         <Grid.Column style={{ maxWidth: 550, margin: 20 }}>
           <Segment>
             {errors && (
               <Message negative>
-                <Message.Header>{errors}</Message.Header>
+                <Message.Header>Error creating user.</Message.Header>
+                {Object.entries(errors).map(([key, value]) => (
+                  <li>{value}</li>
+                ))}
               </Message>
             )}
             <Form onSubmit={handleSubmit}>
@@ -79,8 +77,8 @@ const UserRegister = ({ setUser }) => {
                 <label>Geek ID</label>
                 <input
                   placeholder="This is how other Geeks will know you!"
-                  name="geekId"
-                  value={userInput.geekId}
+                  name="geekID"
+                  value={userInput.geekID}
                   onChange={handleChange}
                 />
               </Form.Field>
@@ -100,6 +98,7 @@ const UserRegister = ({ setUser }) => {
                   name="password"
                   value={userInput.password}
                   onChange={handleChange}
+                  type="password"
                 />
               </Form.Field>
 
@@ -109,6 +108,7 @@ const UserRegister = ({ setUser }) => {
                   name="password2"
                   value={userInput.password2}
                   onChange={handleChange}
+                  type="password"
                 />
               </Form.Field>
 
