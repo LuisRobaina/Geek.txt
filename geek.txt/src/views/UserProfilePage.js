@@ -15,10 +15,10 @@ const UserProfilePage = () => {
             <Grid columns='two' divided>
             <Grid.Column>
             <Segment.Group>
-            <Segment vertical textAlign='center'><Header size='medium'>User: Fname Lname</Header></Segment>
-            <Segment vertical textAlign='center'><Header size='medium'>Email: Fname Lname</Header></Segment>
-            <Segment vertical textAlign='center'><Header size='medium'>GeekID: Fname Lname</Header></Segment>
-            <Segment vertical textAlign='center'><Header size='medium'>Nickname: Fname Lname</Header></Segment>
+            <Segment vertical textAlign='center'><Header size='medium'>User: -fName lName- </Header></Segment>
+            <Segment vertical textAlign='center'><Header size='medium'>Email: -email- </Header></Segment>
+            <Segment vertical textAlign='center'><Header size='medium'>GeekID: -GeekID- </Header></Segment>
+            <Segment vertical textAlign='center'><Header size='medium'>Nickname: -Nickname- </Header></Segment>
             </Segment.Group>
             </Grid.Column>
 
