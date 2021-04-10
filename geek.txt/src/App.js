@@ -13,11 +13,6 @@ import UserLogIn from "./views/UserLogIn";
 import UserRegister from "./views/UserRegister";
 
 import UserProfilePage from './views/UserProfilePage';
-import AddNewCard from './views/AddNewCard';
-import AddNewAddress from './views/AddNewAddress';
-import EditProfile from './views/EditProfile';
-import EditCard from './views/EditCard';
-import EditAddress from './views/EditAddress';
 
 import RatingsRecord from "./views/RatingRecods";
 import CommunityGuidelines from "./views/CommunityGuidelines";

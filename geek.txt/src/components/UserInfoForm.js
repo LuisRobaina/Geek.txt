@@ -1,12 +1,13 @@
-import { useState, useReducer } from "react";
+import { useState} from "react"; 
 import { Grid, Button, Form, Segment, Message } from "semantic-ui-react";
 
 const UserInfoForm = ({ user }) => {
 
-  const [errors, setErrors] = useState(null);
+  const [errors, setErrors] = useState(null); 
   const [firstName, setFirstName] = useState(user.firstName)
   const [lastName, setLastName] = useState(user.lastName)
-  const [geekID, setgeekID] = useState(user.geekID)
+  const [geekID, setGeekID] = useState(user.geekID)
+  const [email, setEmail] = useState(user.email)
 
   const handleChangeFirstName = (e) => {
     e.preventDefault();
@@ -17,6 +18,18 @@ const UserInfoForm = ({ user }) => {
     e.preventDefault();
     setLastName(e.target.value);
   };
+
+  const handleChangeGeekID = (e) => {
+    e.preventDefault();
+    setGeekID(e.target.value);
+  };
+
+  const handleChangeEmail = (e) => {
+    e.preventDefault();
+    setEmail(e.target.value);
+  };
+
+  //need to be able to update password but not show it on frontend
 
   return (
     <div>
@@ -49,13 +62,13 @@ const UserInfoForm = ({ user }) => {
                   onChange={handleChangeLastName}
                 />
               </Form.Field>
-              {/* <Form.Field>
+               <Form.Field>
                 <label>Geek ID</label>
                 <input
                   placeholder="This is how other Geeks will know you!"
                   name="geekID"
-                  value={user.geekID}
-                  onChange={handleChange}
+                  value={geekID}
+                  onChange={handleChangeGeekID}
                 />
               </Form.Field>
 
@@ -63,10 +76,11 @@ const UserInfoForm = ({ user }) => {
                 <label>Email</label>
                 <input
                   name="email"
-                  value={user.email}
-                  onChange={handleChange}
+                  value={email}
+                  onChange={handleChangeEmail}
                 />
-              </Form.Field> */}
+              </Form.Field> 
+
               {/* <Form.Field>
                 <label>Password</label>
                 <input

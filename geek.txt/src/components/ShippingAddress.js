@@ -1,7 +1,7 @@
 //import { Comment, Header, Statistic } from 'semantic-ui-react';
 //import { useState } from 'react';
 
-const CreditCard = (props) => {
+const ShippingAddress = (props) => {
     return (
         <div>
             <div class="ui cards">
@@ -9,35 +9,30 @@ const CreditCard = (props) => {
                     <div class="content">
                             
                             <div class="header">
-                                0000 2121 1212 1212
-                                {//card number
+                                Address 1
+                                {//Address Name
                                 }
                             </div>
                             <div class="meta">
-                                11 / 2021
+                                10555 West Flagler Street
                                 {//exp month / exp year
                                 }
                             </div>
                             <div class="meta">
-                                CVV
-                                {//CVV num
+                                Miami, FL
+                                {//city, state
                                 }
                             </div>
                             <div class="description">
-                                Full Name...
-                                {//Name on Card
-                                }
-                            </div>
-                            <div class="description">
-                                Card Name
-                                {//cardName
+                                33174
+                                {//zipcode
                                 }
                             </div>
                             
                     </div>
                         <div class="extra content">
                             <div class="ui two buttons">
-                                <div class="ui basic green button">Edit Card</div>
+                                <div class="ui basic green button">Edit Address</div>
                             </div>
                         </div>
                     </div>
@@ -48,4 +43,5 @@ const CreditCard = (props) => {
 
 
 
-export default CreditCard;
+
+export default ShippingAddress;

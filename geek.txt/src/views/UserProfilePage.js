@@ -1,7 +1,7 @@
 import {useState} from 'react'
 import {Segment, Message, Button } from 'semantic-ui-react';
 import UserInfoForm from '../components/UserInfoForm';
-import PaymentInfoFrom from '../components/PaymentInfoFrom';
+import PaymentInfoFrom from '../components/PaymentInfoForm';
 
 const UserProfilePage = ({ user }) => {
     const [userInfo, setUserInfo] = useState(true);
@@ -14,12 +14,29 @@ const UserProfilePage = ({ user }) => {
         e.preventDefault();
         setUserInfo(!userInfo)
         setPaymentInfo(false)
+        setShippingInfo(false)
+        setBooksInfo(false)
     };
     const handleChangePaymentInfo = (e) => {
         e.preventDefault();
         setPaymentInfo(!paymentInfo)
         setUserInfo(false)
-        // ...
+        setShippingInfo(false)
+        setBooksInfo(false)
+    };
+    const handleChangeShippingInfo = (e) => {
+        e.preventDefault();
+        setShippingInfo(!shippingInfo)
+        setUserInfo(false)
+        setPaymentInfo(false)
+        setBooksInfo(false)
+    };
+    const handleChangeBooksInfo = (e) => {
+        e.preventDefault();
+        setBooksInfo(!booksInfo)
+        setUserInfo(false)
+        setPaymentInfo(false)
+        setShippingInfo(false)
     };
 
     return (
@@ -38,12 +55,12 @@ const UserProfilePage = ({ user }) => {
                     <Button onClick={handleChangePaymentInfo}>
                         Payment
                     </Button>
-                    <a class="item">
+                    <Button onClick={handleChangeShippingInfo}>
                         Shipping
-                    </a>
-                    <a class="item">
+                    </Button>
+                    <Button onClick={handleChangeBooksInfo}>
                         My Books
-                    </a>
+                    </Button>
                 </div>
             </div>
             <div class="twelve wide stretched column">

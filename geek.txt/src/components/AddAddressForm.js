@@ -3,19 +3,17 @@ import { Grid, Button, Form, Segment, Message } from "semantic-ui-react";
 //import { Link, useHistory } from "react-router-dom";
 //import { getUser, signUp } from "../utils/userService";
 
-const AddCardForm = ({ user }) => {
+const AddAddressForm = ({ user }) => {
   const [errors, setErrors] = useState(null);
   //const history = useHistory();
   const [userInput, setUserInput] = useReducer(
     (state, newState) => ({ ...state, ...newState }),
     {
-      cardName: "",
-      nameOnCard: "",
-      number: "",
-      expMonth: "",
-      expYear: "",
-      CVV: "",
-      Address: ""
+      addressName: "",
+      street: "",
+      state: "",
+      city: "",
+      zipcode: ""
     }
   );
 
@@ -42,67 +40,45 @@ const AddCardForm = ({ user }) => {
             )}
             <Form onSubmit={handleSubmit}>
               <Form.Field>
-                <label>Card Name</label>
+                <label>Address Name</label>
                 <input
-                  placeholder="Ex. Card1, Moms Card, etc"
-                  name="cardName"
-                  value={userInput.cardName}
+                  placeholder="Ex. Address1, Moms Address, etc"
+                  name="addressName"
+                  value={userInput.addressName}
                   onChange={handleChange}
                 />
               </Form.Field>
               <Form.Field>
-                <label>Name on Card</label>
+                <label>Street</label>
                 <input
-                  placeholder="Card owner"
-                  name="nameOnCard"
-                  value={userInput.nameOnCard}
+                  name="street"
+                  value={userInput.street}
                   onChange={handleChange}
                 />
               </Form.Field>
               <Form.Field>
-                <label>Card Number</label>
+                <label>City</label>
                 <input
-                  name="number"
-                  value={userInput.number}
-                  onChange={handleChange}
-                />
-              </Form.Field>
-
-              <Form.Field>
-                <label>Expiration Month</label>
-                <input
-                  placeholder="Month must be a digit eg. 4"
-                  name="expMonth"
-                  value={userInput.expMonth}
-                  onChange={handleChange}
-                />
-              </Form.Field>
-
-
-              <Form.Field>
-                <label>Expiration Year</label>
-                <input
-                  placeholder="Card owner"
-                  name="password"
-                  value={userInput.password}
+                  name="city"
+                  value={userInput.city}
                   onChange={handleChange}
                 />
               </Form.Field>
 
               <Form.Field>
-                <label>CVV Number</label>
+                <label>State</label>
                 <input
-                  name="CVV"
-                  value={userInput.CVV}
+                  name="state"
+                  value={userInput.state}
                   onChange={handleChange}
                 />
               </Form.Field>
 
               <Form.Field>
-                <label>Billing Address</label>
+                <label>Zipcode</label>
                 <input
-                  name="Address"
-                  value={userInput.Address}
+                  name="zipcode"
+                  value={userInput.zipcode}
                   onChange={handleChange}
                 />
               </Form.Field>
@@ -110,7 +86,7 @@ const AddCardForm = ({ user }) => {
               <div>
                 <Button.Group>
                   <Button positive>
-                    <Button.Content visible>Add Card</Button.Content>
+                    <Button.Content visible>Add Address</Button.Content>
                     </Button>
                 </Button.Group>
               </div>
@@ -122,4 +98,4 @@ const AddCardForm = ({ user }) => {
   );
 };
 
-export default AddCardForm;
+export default AddAddressForm;

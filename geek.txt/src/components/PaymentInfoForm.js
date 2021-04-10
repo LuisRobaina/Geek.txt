@@ -1,12 +1,14 @@
-import { Comment, Header, Statistic } from 'semantic-ui-react';
-import { useState } from 'react';
+//import { Comment, Header, Statistic } from 'semantic-ui-react';
+//import { useState } from 'react';
 import CreditCard from '../components/CreditCard';
 import AddCardForm from '../components/AddCardForm';
 
-const PaymentInfoFrom = ({user}) => {
+const PaymentInfoForm = ({user}) => {
     return (
         <div>
         <h1>My Cards</h1>
+        {//loop through all card instances, and call addcardform for each specific card
+        }
         <CreditCard></CreditCard>
         <CreditCard></CreditCard>
         <CreditCard></CreditCard>
@@ -17,4 +19,4 @@ const PaymentInfoFrom = ({user}) => {
         )
 }
 
-export default PaymentInfoFrom;
+export default PaymentInfoForm;
