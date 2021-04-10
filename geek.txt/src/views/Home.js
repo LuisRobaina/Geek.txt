@@ -48,6 +48,14 @@ const Home = ({ user }) => {
           </p>
         </Message>
       )}
+      {user && (
+        <Message positive>
+          <Message.Header>Hello {user.geekID}</Message.Header>
+          <Link to={`/register`}>
+            <p>My books</p>
+          </Link>
+        </Message>
+      )}
       <h2>Our collection of Books</h2>
       <div style={{ display: "flex", justifyContent: "flex-end" }}>
         <Dropdown
