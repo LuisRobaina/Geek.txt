@@ -1,7 +1,9 @@
 import {useState} from 'react'
 import {Segment, Message, Button } from 'semantic-ui-react';
 import UserInfoForm from '../components/UserInfoForm';
-import PaymentInfoFrom from '../components/PaymentInfoForm';
+import PaymentInfoForm from '../components/PaymentInfoForm';
+import ShippingInfoForm from '../components/ShippingInfoForm';
+//import BooksInfoForm from '../components/BooksInfoForm';
 
 const UserProfilePage = ({ user }) => {
     const [userInfo, setUserInfo] = useState(true);
@@ -66,7 +68,12 @@ const UserProfilePage = ({ user }) => {
             <div class="twelve wide stretched column">
                 <div class="ui segment">
                     {userInfo && ( <UserInfoForm user={user}></UserInfoForm>)}
-                    {paymentInfo && (<PaymentInfoFrom></PaymentInfoFrom>)}
+                    {paymentInfo && (<PaymentInfoForm></PaymentInfoForm>)}
+                    {shippingInfo && (<ShippingInfoForm></ShippingInfoForm>)}
+                    
+                    {//{booksInfo && (<BooksInfoForm></BooksInfoForm>)}
+                    }
+
                 </div>
             </div>
         </div>
