@@ -12,6 +12,7 @@ import UserLogIn from "./views/UserLogIn";
 import UserRegister from "./views/UserRegister";
 import RatingsRecord from "./views/RatingRecods";
 import CommunityGuidelines from "./views/CommunityGuidelines";
+import MyBooks from "./views/MyBooks";
 
 // Example of component routing:
 // <Route path="/" exact component={BookBrowser} />
@@ -34,6 +35,9 @@ const App = () => {
           exact
           render={(props) => <Book {...props} user={user} />}
         />
+        <Route path="/mybooks" exact>
+          <MyBooks user={user}/>
+        </Route>
         <Route path="/guidelines" exact component={CommunityGuidelines} />
         <Route path="/ratings/:id" exact component={RatingsRecord} />
         <Route path="/" exact>

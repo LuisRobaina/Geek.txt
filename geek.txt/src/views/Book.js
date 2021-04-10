@@ -23,13 +23,26 @@ const Book = (props) => {
   const [recentPurchase, setRecentPurshase] = useState(false);
 
   const buyBook = (e) => {
-    setUserOwnsBook(true)
-    setRecentPurshase(true)
-  }
+    const postObject = {
+      UserID: props.user._id,
+      BookID: props.match.params.id,
+      Title: bookData.title,
+      CoverURL: bookData.coverUrl
+    };
 
+    axios.post("/books/buy", postObject)
+      .then((res) => {
+          console.log(res)
+          setUserOwnsBook(true)
+          setRecentPurshase(true)
+    })
+    .catch(err => console.log(err))
+
+  }
   const handleRecentPurchase = (e) => {
     setRecentPurshase(!recentPurchase)
-  }
+  };
+
   const handleNewCommentChange = (e) => {
     //e.preventDefault();
     setNewComment(e.currentTarget.value);
@@ -52,22 +65,10 @@ const Book = (props) => {
     };
     axios
       .post("/comments/add", postObject)
-      .then((res) => {
-        // TODO: remove this log.
-        console.log(res);
-        // Make an api call to get the comments associated with this book.
-        // TODO change book request string to props.match.params.id
-        // axios
-        //   .get(`/comments/${props.match.params.id}`)
-        //   .then((comments) => {
-        //     // TODO: remove this log.
-        //     console.log(comments);
-        //     setCommentsSet(comments.data);
-        //   })
-        //   .catch((err) => console.log(err));
-      })
+      .then((res) => {})
       .catch((err) => console.log(err));
   };
+
   const handleNewRating = (e) => {
     console.log(e.currentTarget);
     const postObject = {
@@ -140,15 +141,7 @@ const Book = (props) => {
       })
       .catch((err) => console.log(err));
 
-    // axios
-    //   .get(`/rate/getAvg/${props.match.params.id}`)
-    //   .then((res) => {
-    //     setCurrentRating(res.data.avg.toFixed(2));
-    //   })
-    //   .catch((err) => console.log(err));
-
     // Make an api call to get the comments associated with this book.
-    // TODO change book request string to props.match.params.id
     axios
       .get(`/comments/${props.match.params.id}`)
       .then((comments) => {
@@ -157,16 +150,20 @@ const Book = (props) => {
         setCommentsSet(comments.data);
       })
       .catch((err) => console.log(err));
-
-    // This can be removed dont need to find  specific user
-    axios
-      .get(`/users/${"60426686e0804e3b0cc20702"}`)
-      .then((comments) => {
-        // TODO: remove this log.
-        console.log(comments);
-        setCommentsSet(comments.data);
+   
+      const postObj = {
+        UserID: props.user._id,
+        BookID: props.match.params.id
+      }
+      axios
+      .post(`/purchases/check`, postObj)
+      .then((res) => {
+          console.log("Check", res)
+          if(res.data.length >=1){
+            setUserOwnsBook(true)
+          }
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err));    
   }, []);
 
   useEffect(() => {
@@ -254,8 +251,8 @@ const Book = (props) => {
                 <div class="ui positive message">
                   <i class="close icon" onClick={handleRecentPurchase}></i>
                     <div class="header">
-                    <p>Thanks for buying "<b>{bookData.title}</b>".</p>
-                    <Link to={`/`}>
+                    <p>Thanks for buying <b>{bookData.title}</b> - Don't forget to rate and comment.</p>
+                    <Link to={`/mybooks`}>
                       <b>see my books</b>
                     </Link>
                     </div>
