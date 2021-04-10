@@ -14,7 +14,7 @@ const bookOptions = [
   { id: 2, name: 20 },
 ];
 
-const Home = () => {
+const Home = (props) => {
   const [books, setBooks] = useState([]);
   const [defaultBooks, setDefaultBooks] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -33,19 +33,30 @@ const Home = () => {
 
   return (
     <Container>
-      <Message positive>
-        <Message.Header>Hello... mmm not sure who you are :(</Message.Header>
-        <p>
-          Please{" "}
-          <Link to={`/login`}>
-            <b>log in</b>
-          </Link>{" "}
+      {props.user == null && (
+        <Message negative>
+          <Message.Header>Hello... mmm not sure who you are :(</Message.Header>
+          <p>
+            Please{" "}
+            <Link to={`/login`}>
+              <b>log in</b>
+            </Link>{" "}
           or{" "}
-          <Link to={`/register`}>
-            <b>register</b>
-          </Link>
-        </p>
-      </Message>
+            <Link to={`/register`}>
+              <b>register</b>
+            </Link>
+          </p>
+        </Message>
+      )}
+    {props.user != null && (
+        <Message positive>
+          <Message.Header>Hello {props.user.geekID}!</Message.Header>
+          <p>Welcome back</p>
+          <Link to={`/login`}>
+              <b>My books</b>
+            </Link>{" "}
+        </Message>
+      )}
       <h2>Our collection of Books</h2>
       <div style={{ display: "flex", justifyContent: "flex-end" }}>
         <Dropdown

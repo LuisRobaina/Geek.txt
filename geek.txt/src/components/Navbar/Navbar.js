@@ -32,7 +32,7 @@ const NavBar = ({ user, setUser }) => {
             <>
               <Link to="/">
                 <li className={classes.listItem} onClick={handleLogOut}>
-                  {user.firstName} Profile
+                  {user.firstName+"'s"} Profile
                 </li>
               </Link>
               <Link to="/">

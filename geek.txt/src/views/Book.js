@@ -35,7 +35,7 @@ const Book = (props) => {
     e.preventDefault();
     // TODO: Add the creators ID once we get login running.
     const postObject = {
-      Creator: "60426686e0804e3b0cc20702",
+      Creator: props.user._id,
       CreatorName: "Anonymous",
       Anonymous: "true",
       BookID: props.match.params.id,
@@ -62,8 +62,8 @@ const Book = (props) => {
   const handleNewRating = (e) => {
     console.log(e.currentTarget);
     const postObject = {
-      Creator: "60426686e0804e3b0cc20702",
-      NickName: "TestUser",
+      Creator: props.user._id,
+      NickName: props.user.geekID ,
       BookID: props.match.params.id,
       Rating: rating,
     };
@@ -80,7 +80,7 @@ const Book = (props) => {
   const handleNewAnonymousRating = (e) => {
     console.log(e.currentTarget);
     const postObject = {
-      Creator: "60426686e0804e3b0cc20702",
+      Creator: props.user._id,
       BookID: props.match.params.id,
       Rating: rating,
     };
@@ -98,8 +98,8 @@ const Book = (props) => {
     e.preventDefault();
     // TODO: Add the creators ID once we get login running.
     const postObject = {
-      Creator: "60426686e0804e3b0cc20702",
-      CreatorName: "Peter",
+      Creator: props.user._id,
+      CreatorName: props.user.geekID,
       Anonymous: "false",
       BookID: props.match.params.id,
       Text: NewCommentText,
