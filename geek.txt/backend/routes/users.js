@@ -125,7 +125,7 @@ router.route("/addcard").post((req, res) => {
   /* 
     Sample POST request body:
     {
-        "Creator": "601d7b8e7e0708245caabc48"
+        "cardOwner": "601d7b8e7e0708245caabc48"
         "cardName": "Card 1",
         "nameOnCard": "Name User",
         "number": 0123 4567 8910,
@@ -147,7 +147,7 @@ router.route("/addcard").post((req, res) => {
     const expYear = req.body.expYear;
     const expMonth = req.body.expMonth;
     const CVV = req.body.CVV;
-    const address = req.body.address;
+    const Address = req.body.address;
 
     if (expYear < currYear) return res.status(400).json("Invalid Expiration Date");
     if (((expMonth - 1) < currMonth) && (expYear === currYear)) return res.status(400).json("Invalid Expiration Date");
@@ -156,20 +156,28 @@ router.route("/addcard").post((req, res) => {
         { _id: cardOwner },
         {
             $push: {
-                creditCard: {
+                creditCards: {
                     cardName,
                     nameOnCard,
                     number,
-                    expYear,
                     expMonth,
+                    expYear,
                     CVV,
-                    address
+                    Address
                 }
             }
         }
-
-    ).then(res.status(200).json('Added new address Successfully'))
-        .catch(err => res.status(400).json('Error: ' + err))
+        /*
+        cardName: { type: String },
+        nameOnCard: { type: String },
+        number: { type: Number }, //must be 16 long
+        expMonth: { type: Number },
+        expYear: {type: Number},
+        CVV: { type: Number }, //must be 3 long
+        Address: { type: String },
+        */
+    ).then(res.status(200).json('Added new card Successfully'))
+    .catch(err => res.status(400).json('Error: ' + err))
 });
 
 router.route("/addaddress").post((req, res) => {
@@ -215,46 +223,39 @@ router.route('/editprofile').post((req, res) => {
     /**
      * Sample POST request body:
      *  {
-     *      "Owner": "60392b329b00b252eaa3b3b8",
-     *      "geekID" : "Geek123",
+            "Owner": "60392b329b00b252eaa3b3b8",
+            "geekID" : "Geek123",
             "firstName" : "User",
             "lastName" : "Test",
             "email": "usertest@test.com",
             "password" : "123password",
             "password2" : "123password",
-            "nickname" : "Booklover1",
      *      
      *  }
      */
 
     const Owner = mongoose.Types.ObjectId(req.body.Owner);
-    const geekID = req.body.geekId;
+    const geekID = req.body.geekID;
     const firstName = req.body.firstName;
     const lastName = req.body.lastName;
     const email = req.body.email;
     const password = req.body.password;
     const password2 = req.body.password2;
-    const nickname = req.body.nickname;
 
-    if (email !== /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/) return res.status(400).json("Invalid Email");
-    if (password !== password2) return res.status(400).json("Passwords do not match");
-    if (password !== /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/) return res.status(400).json("Password must be between 6-20 characters, contain an uppercase letter, lowercase letter, and a number");
+    let { errors, isValid } = registerValidate(req.body);
+    if (!isValid) return res.json({ errors });
 
     Users.findOneAndUpdate(
         {
-            Owner: Owner,
+            _id: Owner,
         },
         {
             geekID: geekID,
             firstName: firstName,
             lastName: lastName,
             email: email,
-            password: password,
-            password2: password2,
-            nickname: nickname
+            password: password
         }
-
-
     ).then(updatedProf => res.status(200).json('Profile Updated' + updatedProf))
         .catch(err => res.status(400).json('Error: ' + err))
 });

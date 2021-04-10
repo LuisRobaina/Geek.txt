@@ -68,7 +68,7 @@ const UserProfilePage = ({ user }) => {
             <div class="twelve wide stretched column">
                 <div class="ui segment">
                     {userInfo && ( <UserInfoForm user={user}></UserInfoForm>)}
-                    {paymentInfo && (<PaymentInfoForm></PaymentInfoForm>)}
+                    {paymentInfo && (<PaymentInfoForm user={user} cards={user.creditCards}></PaymentInfoForm>)}
                     {shippingInfo && (<ShippingInfoForm></ShippingInfoForm>)}
                     
                     {//{booksInfo && (<BooksInfoForm></BooksInfoForm>)}

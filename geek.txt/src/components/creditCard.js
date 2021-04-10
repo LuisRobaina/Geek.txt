@@ -1,39 +1,27 @@
 //import { Comment, Header, Statistic } from 'semantic-ui-react';
 //import { useState } from 'react';
 
-const CreditCard = (props) => {
+const CreditCard = ({number, owner, name, expDate, CVV}) => {
     return (
         <div>
             <div class="ui cards">
                 <div class="card">
                     <div class="content">
-                            
                             <div class="header">
-                                0000 2121 1212 1212
-                                {//card number
-                                }
+                                {number}
                             </div>
                             <div class="meta">
-                                11 / 2021
-                                {//exp month / exp year
-                                }
+                                {expDate}
                             </div>
                             <div class="meta">
-                                CVV
-                                {//CVV num
-                                }
+                                {CVV}
                             </div>
                             <div class="description">
-                                Full Name...
-                                {//Name on Card
-                                }
+                                {owner}
                             </div>
                             <div class="description">
-                                Card Name
-                                {//cardName
-                                }
-                            </div>
-                            
+                                {name}
+                            </div>    
                     </div>
                         <div class="extra content">
                             <div class="ui two buttons">
