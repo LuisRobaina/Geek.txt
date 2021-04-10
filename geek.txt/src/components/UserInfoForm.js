@@ -1,53 +1,52 @@
-import { useState} from "react"; 
+import { useState } from "react";
 import { Grid, Button, Form, Segment, Message } from "semantic-ui-react";
 import axios from '../config/axios';
+import { Link } from "react-router-dom";
+import { signOut } from "../utils/userService";
 
-const UserInfoForm = ({ user }) => {
+  
+const UserInfoForm = ({ user, setUser }) => {
+  
+  const handleLogOut = () => {
+    signOut();
+    setUser(null);
+  };
 
   const [errors, setErrors] = useState(null);
-  const [alert, setAlert] = useState(null); 
-  const [firstName, setFirstName] = useState(user.firstName)
-  const [lastName, setLastName] = useState(user.lastName)
-  const [geekID, setGeekID] = useState(user.geekID)
-  const [email, setEmail] = useState(user.email)
-  const [password1, setPass1] = useState(user.password)
-  const [password2, setPass2] = useState(user.password)
+  const [alert, setAlert] = useState(null);
+  const [firstName, setFirstName] = useState(user ? user.firstName : "")
+  const [lastName, setLastName] = useState(user ? user.lastName : "")
+  const [geekID, setGeekID] = useState(user ? user.geekID : "")
+  const [email, setEmail] = useState(user ? user.email : "")
+
 
   const handleChangeFirstName = (e) => {
     e.preventDefault();
     setFirstName(e.target.value);
   };
-  const handleChangePass1 = (e) => {
-    e.preventDefault();
-    setPass1(e.target.value);
-  }
-  const handleChangePass2 = (e) => {
-    e.preventDefault();
-    setPass2(e.target.value);
-  }
+
   const handleSubmit = () => {
-    console.log("submit")
     setErrors("");
     setAlert("");
 
     const postObj = {
-        Owner: user._id,
-        geekID,
-        firstName,
-        lastName,
-        email,
-        password: "ABCD",
-        password2: "ABCD"
+      Owner: user._id,
+      geekID,
+      firstName,
+      lastName,
+      email
     }
     axios.post('/users/editprofile', postObj)
-    .then((res) => {
+      .then((res) => {
         console.log(res)
         setAlert(res.data)
-    })
-    .catch((err) => {
-      console.log(err)
-      setErrors(err.data.errors)
-    })
+        handleLogOut()
+        
+      })
+      .catch((err) => {
+        console.log(err)
+        setErrors("Error updating profile.")
+      })
 
   };
   const handleChangeLastName = (e) => {
@@ -70,10 +69,10 @@ const UserInfoForm = ({ user }) => {
   return (
     <div>
       {alert && (
-              <Message negative>
-                <Message.Header>Update profile.</Message.Header>
-                <p>{alert}</p>
-              </Message>
+        <Message positive>
+          <Message.Header>Updated profile.</Message.Header>
+          <p>You must <Link to="/login"><b>log in</b></Link> again to get the changes</p>
+        </Message>
       )}
       <h1>Account Info</h1>
       <Grid centered>
@@ -82,7 +81,6 @@ const UserInfoForm = ({ user }) => {
             {errors && (
               <Message negative>
                 <Message.Header>Error updating user.</Message.Header>
-                {errors}
               </Message>
             )}
             <Form>
@@ -102,7 +100,7 @@ const UserInfoForm = ({ user }) => {
                   onChange={handleChangeLastName}
                 />
               </Form.Field>
-               <Form.Field>
+              <Form.Field>
                 <label>Geek ID</label>
                 <input
                   placeholder="This is how other Geeks will know you!"
@@ -119,28 +117,7 @@ const UserInfoForm = ({ user }) => {
                   value={email}
                   onChange={handleChangeEmail}
                 />
-              </Form.Field> 
-
-              <Form.Field>
-                <label>Password</label>
-                <input
-                  name="password"
-                  value={password1}
-                  onChange={handleChangePass1}
-                  type="password"
-                />
               </Form.Field>
-
-              <Form.Field>
-                <label>Confirm Password</label>
-                <input
-                  name="password2"
-                  value={password2}
-                  onChange={handleChangePass2}
-                  type="password"
-                />
-              </Form.Field>
-
               <div>
                 <Button.Group >
                   <Button positive animated="fade" onClick={handleSubmit}>

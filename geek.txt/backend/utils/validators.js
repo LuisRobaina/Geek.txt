@@ -60,4 +60,39 @@ module.exports = {
       isValid: Object.keys(errors).length === 0 ? true : false,
     };
   },
+  updateValidate: (data) => {
+    let errors = {};
+    let { firstName, lastName, geekID, email, password, password2 } = data;
+
+    if (validator.isEmpty(firstName)) {
+      errors.firstName = "First name field is required";
+    } else if (!validator.isLength(firstName, { min: 3 })) {
+      errors.firstName = "First name must be longer than 3 characters";
+    }
+
+    //Last Name check
+    if (validator.isEmpty(lastName)) {
+      errors.lastName = "Last name field is required";
+    } else if (!validator.isLength(lastName, { min: 3 })) {
+      errors.lastName = "Last name must be longer than 3 characters";
+    }
+
+    //User Name check
+    if (validator.isEmpty(geekID)) {
+      errors.geekID = "GeekID field is required";
+    } else if (!validator.isLength(geekID, { min: 3 })) {
+      errors.geekID = "Username must be atleast 3 charcters";
+    }
+
+    //Email
+    if (validator.isEmpty(email)) {
+      errors.email = "Email field is required";
+    } else if (!validator.isEmail(email)) {
+      errors.email = "Email is invalid";
+    }
+    return {
+      errors,
+      isValid: Object.keys(errors).length === 0 ? true : false,
+    };
+  },
 };
