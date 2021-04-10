@@ -18,10 +18,18 @@ const Book = (props) => {
   const [bookData, setBookData] = useState({});
   const [commentsSet, setCommentsSet] = useState([]);
   const [NewCommentText, setNewComment] = useState("");
-  //const [currentRating, setCurrentRating] = useState(0);
   const [rating, setNewRating] = useState(0);
+  const [userOwnsBook, setUserOwnsBook] = useState(false);
+  const [recentPurchase, setRecentPurshase] = useState(false);
 
-  const userOwnsBook = true;
+  const buyBook = (e) => {
+    setUserOwnsBook(true)
+    setRecentPurshase(true)
+  }
+
+  const handleRecentPurchase = (e) => {
+    setRecentPurshase(!recentPurchase)
+  }
   const handleNewCommentChange = (e) => {
     //e.preventDefault();
     setNewComment(e.currentTarget.value);
@@ -64,7 +72,7 @@ const Book = (props) => {
     console.log(e.currentTarget);
     const postObject = {
       Creator: props.user._id,
-      NickName: props.user.geekID ,
+      NickName: props.user.geekID,
       BookID: props.match.params.id,
       Rating: rating,
     };
@@ -217,14 +225,24 @@ const Book = (props) => {
           <div>
             <br></br>
             <Grid.Column>
+              {!props.user && (
+                <Message positive>
+                  <Message.Header>
+                  </Message.Header>
+                  <p>
+                    Login or Register to buy books.
+                </p>
+                </Message>
+              )}
               <Button
                 animated
+                disabled={!props.user || userOwnsBook}
                 style={{
                   background:
                     "linear-gradient(98.95deg, #FF785A 19.47%, #FE5B00 82.33%)",
                 }}
-                onClick={() => console.log("click")}
-              >
+                onClick={() => buyBook()}>
+
                 <Button.Content visible style={{ color: "white" }}>
                   $ {bookData.price}
                 </Button.Content>
@@ -232,11 +250,24 @@ const Book = (props) => {
                   <Icon name="cart" />
                 </Button.Content>
               </Button>
+              {recentPurchase && (
+                <div class="ui positive message">
+                  <i class="close icon" onClick={handleRecentPurchase}></i>
+                    <div class="header">
+                    <p>Thanks for buying "<b>{bookData.title}</b>".</p>
+                    <Link to={`/`}>
+                      <b>see my books</b>
+                    </Link>
+                    </div>
+                </div>
+
+              )}
             </Grid.Column>
           </div>
         </Grid.Column>
       </Grid>
       <div>
+
         <br></br>
         <Segment>
           {/* Comments section */}
@@ -244,10 +275,10 @@ const Book = (props) => {
           {!userOwnsBook && (
             <Message negative>
               <Message.Header>
-                You can only comment and rate books you already own
+                You can only comment and rate books you already own.
               </Message.Header>
               <p>
-                Buy <b>{bookData.title}</b> to unlock comments and rating
+                Buy <b>{bookData.title}</b> to unlock comments and rating.
               </p>
             </Message>
           )}
