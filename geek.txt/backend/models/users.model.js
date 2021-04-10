@@ -48,7 +48,7 @@ const userSchema = new Schema(
         Address: { type: String },
       },
     ],
-    Addresses: [
+    addresses: [
       {
         addressName: { type: String },
         street: { type: String },
@@ -58,7 +58,7 @@ const userSchema = new Schema(
       },
     ],
 
-    WishList: [
+    wishList: [
       {
         List: { type: mongoose.Schema.Types.ObjectId, ref: "WishList" },
         // max: 3 // TODO verify this.

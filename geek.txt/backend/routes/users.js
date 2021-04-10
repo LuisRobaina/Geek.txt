@@ -2,9 +2,8 @@
 const jwt = require("jsonwebtoken");
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
-const saltRounds = 10;
 const Users = require("../models/users.model");
-let EmailValidator = require("../utils/validators");
+let { validateEmail, registerValidate } = require("../utils/validators");
 const router = require("express").Router();
 
 // Handles incomming GET requests to url/users/ .
@@ -29,7 +28,7 @@ router.route("/login").post((req, res) => {
   const password = req.body.password;
 
   // Login by email.
-  if (EmailValidator.validateEmail(credential)) {
+  if (validateEmail(credential)) {
     Users.findOne({ email: credential })
       .then((user) => {
         if (!user) {
@@ -86,19 +85,17 @@ router.route("/add").post((req, res) => {
         "Address" : [],
     */
 
-  const geekID = req.body.geekId;
+  const geekID = req.body.geekID;
   const firstName = req.body.firstName;
   const lastName = req.body.lastName;
   const email = req.body.email;
   const password = req.body.password;
-  const password2 = req.body.password2;
   const nickname = req.body.nickname;
   const creditCard = [];
   const Address = [];
   // const wishList = [];
-
-  if (password !== password2)
-    return res.status(400).json("Invalid Credentials");
+  let { errors, isValid } = registerValidate(req.body);
+  if (!isValid) return res.json({ errors });
 
   // Create new user using the User model.
   const newUser = {
@@ -115,7 +112,10 @@ router.route("/add").post((req, res) => {
 
   // Save new user to database.
   Users.create(newUser, function (err, doc) {
-    if (err) return res.status(401).json("Unable to create user"); // need better error response
+    if (err)
+      return res
+        .status(401)
+        .json({ errors: "Unable to create User. Try again" }); // need better error response
     const token = generateJWT(doc);
     return res.json(token);
   });
@@ -198,7 +198,6 @@ router.route("/addaddress").post((req, res) => {
 // <------ Helper Functions ----->
 
 function generateJWT(user) {
-  console.log(user);
   return jwt.sign({ user }, process.env.SECERT, { expiresIn: "2h" });
 }
 
