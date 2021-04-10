@@ -2,10 +2,10 @@ import SingleComment from './SingleComment';
 import {Comment, Header, Statistic } from 'semantic-ui-react';
 import { useState } from 'react';
 
-const CommentsList = ({ commentsList }) => {
+const CommentsList = ({ User, commentsList }) => {
     const getComments = () => {
         let comments = commentsList.map(function (comment) {
-            return <SingleComment CommentID={comment._id} Creator={comment.CreatorName} Text={comment.Text} Replies={comment.Replies} />;
+            return <SingleComment User={User} CommentID={comment._id} Creator={comment.CreatorName} Text={comment.Text} Replies={comment.Replies} />;
         });
         return comments.reverse();
     }

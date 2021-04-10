@@ -1,13 +1,13 @@
 import axios from '../config/axios';
 import { useState } from 'react';
-import { Button, Comment, Form } from 'semantic-ui-react';
+import { Popup, Grid, Button, Comment, Form } from 'semantic-ui-react';
 
-const SingleComment = ({ CommentID, Creator, Text, Replies }) => {
+const SingleComment = ({ User, CommentID, Creator, Text, Replies }) => {
 
     // State.
     const [CommentText, setComment] = useState("")
     const [Reply, setReply] = useState(false)
-    
+
     const loadReplies = () => {
         let replies = Replies.map(function (reply) {
             return (
@@ -35,19 +35,53 @@ const SingleComment = ({ CommentID, Creator, Text, Replies }) => {
         return (
             <div>
                 <Form.TextArea onChange={handleChange} value={CommentText} />
-                <Button content='Add Reply' labelPosition='left' icon='edit' primary onClick={handleReplyPost} />
+                <Popup
+                    trigger={
+                        <Button content='Add Reply' labelPosition='left' icon='edit' primary />
+                    }
+                    flowing
+                    hoverable
+                >
+                    <h4>We value privacy</h4>
+                    <Grid centered divided columns={2}>
+                        <Grid.Column textAlign="center">
+                            <Button positive onClick={handleReplyPost}>
+                                Show Nickname
+                            </Button>
+                        </Grid.Column>
+                        <Grid.Column textAlign="center">
+                            <Button secondary onClick={handleAnonymousReply}>
+                                Hide my name!
+                            </Button>
+                        </Grid.Column>
+                    </Grid>
+                </Popup>
             </div>
         )
     }
     const handleChange = (e) => {
+        e.preventDefault()
         setComment(e.currentTarget.value)
     }
     const handleReplyPost = (e) => {
         e.preventDefault()
-        // TODO: Add the creators ID once we get login running.
         const postObject = {
             OriginalCommentID: CommentID,
-            Creator: "MyUser",
+            Creator: User.geekID,
+            Text: CommentText
+        }
+        axios.post('/comments/reply', postObject)
+            .then(res => {
+                console.log(res);
+                window.location.reload();
+            })
+            .catch(err => alert(err))
+    }
+    const handleAnonymousReply = (e) => {
+        e.preventDefault()
+        const postObject = {
+            OriginalCommentID: CommentID,
+            Creator: "Anonymous",
             Text: CommentText
         }
         axios.post('/comments/reply', postObject)

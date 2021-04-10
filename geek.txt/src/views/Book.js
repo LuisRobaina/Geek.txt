@@ -85,7 +85,6 @@ const Book = (props) => {
       .catch((err) => console.log(err));
 
     console.log("Thanks for rating");
-    //window.location.reload();
   };
   const handleNewAnonymousRating = (e) => {
     console.log(e.currentTarget);
@@ -95,14 +94,10 @@ const Book = (props) => {
       Rating: rating,
     };
     console.log(postObject);
-
     axios
       .post("/rate/add", postObject)
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
-
-    //alert("Thanks for rating anonymously.");
-    //window.location.reload();
   };
   const handleNewCommentPost = (e) => {
     e.preventDefault();
@@ -116,19 +111,7 @@ const Book = (props) => {
     };
     axios
       .post("/comments/add", postObject)
-      .then((res) => {
-        // Get the set of comments
-        // Make an api call to get the comments associated with this book.
-        // TODO change book request string to props.match.params.id
-        // axios
-        //   .get(`/comments/${props.match.params.id}`)
-        //   .then((comments) => {
-        //     // TODO: remove this log.
-        //     console.log(comments);
-        //     setCommentsSet(comments.data);
-        //   })
-        //   .catch((err) => console.log(err));
-      })
+      .then((res) => {})
       .catch((err) => console.log(err));
   };
 
@@ -145,8 +128,6 @@ const Book = (props) => {
     axios
       .get(`/comments/${props.match.params.id}`)
       .then((comments) => {
-        // TODO: remove this log.
-        console.log(comments);
         setCommentsSet(comments.data);
       })
       .catch((err) => console.log(err));
@@ -360,7 +341,7 @@ const Book = (props) => {
       </div>
       <div>
         <Segment>
-          <CommentsList commentsList={commentsSet} />
+          <CommentsList User={props.user} commentsList={commentsSet} />
         </Segment>
       </div>
     </Container>
