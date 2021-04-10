@@ -1,63 +1,60 @@
-//import { useState} from 'react'
-import { Link } from 'react-router-dom';
-import { Header, Divider, Segment, Button, Grid } from 'semantic-ui-react';
+import {useState} from 'react'
+import {Segment, Message, Button } from 'semantic-ui-react';
+import UserInfoForm from '../components/UserInfoForm';
+import PaymentInfoFrom from '../components/PaymentInfoFrom';
 
-
-const UserProfilePage = () => {
+const UserProfilePage = ({ user }) => {
+    const [userInfo, setUserInfo] = useState(true);
+    const [paymentInfo, setPaymentInfo] = useState(false);
+    const [shippingInfo, setShippingInfo] = useState(false);
+    const [booksInfo, setBooksInfo] = useState(false);
+    
+    const handleChangeUserInfo = (e) => {
+        console.log(user)
+        e.preventDefault();
+        setUserInfo(!userInfo)
+        setPaymentInfo(false)
+    };
+    const handleChangePaymentInfo = (e) => {
+        e.preventDefault();
+        setPaymentInfo(!paymentInfo)
+        setUserInfo(false)
+        // ...
+    };
 
     return (
-        <div>
-            <Segment raised textAlign='center'>
-            <Header size='huge'>Account Overview</Header>
-            <Header size='large'>User Profile</Header>
-            </Segment>
-
-            <Grid columns='two' divided>
-            <Grid.Column>
-            <Segment.Group>
-            <Segment vertical textAlign='center'><Header size='medium'>User: -fName lName- </Header></Segment>
-            <Segment vertical textAlign='center'><Header size='medium'>Email: -email- </Header></Segment>
-            <Segment vertical textAlign='center'><Header size='medium'>GeekID: -GeekID- </Header></Segment>
-            <Segment vertical textAlign='center'><Header size='medium'>Nickname: -Nickname- </Header></Segment>
-            </Segment.Group>
-            </Grid.Column>
-
-            <Grid.Column>
-            <Segment.Group>
-            <Segment vertical textAlign='center'><Header size='medium'>Credit Cards: List?</Header></Segment>
-            <Segment vertical textAlign='center'><Header size='medium'>Addresses: List?</Header></Segment>
-            </Segment.Group>
-            </Grid.Column>
-            </Grid>
-
-            <Divider horizontal>Options</Divider>
-
-            <Segment basic textAlign='center'>
-                <Button.Group>
-                    <Link to="/addcard">
-                    <Button>Add Credit Card</Button>
-                    </Link>
-                    <Button.Or />
-                    <Link to="/addaddress">
-                    <Button>Add Address</Button>
-                    </Link>
-                    <Button.Or />
-                    <Link to="/editprofile">
-                    <Button>Edit Profile</Button>
-                    </Link>
-                    <Button.Or />
-                    <Link to="/editcards">
-                    <Button>Edit Credit Cards</Button>
-                    </Link>
-                    <Button.Or />
-                    <Link to="/editaddresses">
-                    <Button>Edit Addresses</Button>
-                    </Link>
-                </Button.Group>
-            </Segment>
-
+        <Segment>
+        {user && (
+        <Message positive>
+          <Message.Header>{user.geekID + "'s Account"}</Message.Header>
+        </Message>
+        )}
+        <div class="ui grid">
+            <div class="four wide column">
+                <div class="ui vertical fluid tabular menu">
+                    <Button onClick={handleChangeUserInfo}>
+                        User Info                 
+                    </Button>
+                    <Button onClick={handleChangePaymentInfo}>
+                        Payment
+                    </Button>
+                    <a class="item">
+                        Shipping
+                    </a>
+                    <a class="item">
+                        My Books
+                    </a>
+                </div>
+            </div>
+            <div class="twelve wide stretched column">
+                <div class="ui segment">
+                    {userInfo && ( <UserInfoForm user={user}></UserInfoForm>)}
+                    {paymentInfo && (<PaymentInfoFrom></PaymentInfoFrom>)}
+                </div>
+            </div>
         </div>
-      );
+        </Segment>
+    );
 };
 
 export default UserProfilePage;

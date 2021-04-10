@@ -30,8 +30,8 @@ const NavBar = ({ user, setUser }) => {
           </Link>
           {user ? (
             <>
-              <Link to="/">
-                <li className={classes.listItem} onClick={handleLogOut}>
+              <Link to="/profile">
+                <li className={classes.listItem}>
                   {user.firstName} Profile
                 </li>
               </Link>

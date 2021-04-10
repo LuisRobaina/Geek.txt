@@ -23,44 +23,6 @@ router.route("/login").post((req, res) => {
         "credential" : "testUser",
         "password" : "User"
     */
-<<<<<<< HEAD
-    // Credential can be an email or a geek ID.
-    const credential = req.body.email;
-    const password = req.body.password;
-
-    // Login by email.
-    if (EmailValidator.validateEmail(credential)) {
-        Users.findOne({ email: credential })
-            .then(user => {
-                if (!user) { return res.status(400).json('Invalid Credentials') }
-                bcrypt.compare(password, user.password, function (err, valid) {
-                    if (!valid) { return res.status(400).json('Invalid Credentials') }
-                    return res.json(user)
-                });
-            })
-            .catch(err => res.status(400).json('Error: ' + err))
-    } 
-     else {
-         console.log("id place")
-        // Look user by GeekID.
-         Users.findOne({geekID: credential}) 
-        // If promise return then return all users as JSON.
-         .then(user => {
-             if(!user){
-                 return res.status(400).json('Invalid Credentials')
-             }
-             const result = bcrypt.compareSync(password, user.password); 
-             if(result){
-                 return res.json(user)
-             }
-             else{
-                 return res.status(400).json('Invalid Credentials')
-             }
-         })
-         // If there is an error return status 400 with Error.
-         .catch(err => res.status(400).json('Error: ' + err))
-    }  
-=======
   // Credential can be an email or a geek ID.
   const credential = req.body.credential;
   const password = req.body.password;
@@ -107,7 +69,6 @@ router.route("/login").post((req, res) => {
         res.status(401).json({ errors: { form: "Something went wrong!" } })
       );
   }
->>>>>>> e54d5424b2016f1e03e63c4873e7bf5442dd506c
 });
 
 // Handle post request to add new user.
@@ -124,47 +85,6 @@ router.route("/add").post((req, res) => {
         "creditCard" : [],
         "Address" : [],
     */
-<<<<<<< HEAD
-
-    const geekID = req.body.geekId;
-    const firstName = req.body.firstName;
-    const lastName = req.body.lastName;
-    const email = req.body.email;
-    const password = req.body.password;
-    const password2 = req.body.password2;
-    const nickname = req.body.nickname;
-    const creditCard = [];
-    const Address = [];
-    // const wishList = [];
-
-    if (email !== /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/) return res.status(400).json("Invalid Email");
-    if (password !== password2) return res.status(400).json("Passwords do not match");
-    if (password !== /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/) return res.status(400).json("Password must be between 6-20 characters, contain an uppercase letter, lowercase letter, and a number");
-
-    bcrypt.hash(password, saltRounds, function (err, hash) { 
-
-        if (err) return res.status(400);
-        // password = hash;
-        // Create new user using the User model.
-        const newUser = new Users({
-            geekID,
-            firstName,
-            lastName,
-            email,
-            password: hash,
-            nickname,
-            creditCard,
-            Address,
-            // wishList
-        });
-
-        // Save new user to database. 
-        newUser.save()
-            .then(() => res.json('User Added Successfully.'))
-            .catch(err => res.status(400).json('Error: ' + err))
-    });
-
-=======
   const geekID = req.body.geekID;
   const firstName = req.body.firstName;
   const lastName = req.body.lastName;
@@ -199,7 +119,6 @@ router.route("/add").post((req, res) => {
     const token = generateJWT(doc);
     return res.json(token);
   });
->>>>>>> e54d5424b2016f1e03e63c4873e7bf5442dd506c
 });
 
 router.route("/addcard").post((req, res) => {
