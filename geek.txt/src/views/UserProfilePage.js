@@ -5,7 +5,7 @@ import PaymentInfoForm from '../components/PaymentInfoForm';
 import ShippingInfoForm from '../components/ShippingInfoForm';
 //import BooksInfoForm from '../components/BooksInfoForm';
 
-const UserProfilePage = ({ user }) => {
+const UserProfilePage = ({ user, setUser }) => {
     const [userInfo, setUserInfo] = useState(true);
     const [paymentInfo, setPaymentInfo] = useState(false);
     const [shippingInfo, setShippingInfo] = useState(false);
@@ -67,8 +67,8 @@ const UserProfilePage = ({ user }) => {
             </div>
             <div class="twelve wide stretched column">
                 <div class="ui segment">
-                    {userInfo && ( <UserInfoForm user={user}></UserInfoForm>)}
-                    {paymentInfo && (<PaymentInfoForm user={user} cards={user.creditCards}></PaymentInfoForm>)}
+                    {userInfo && ( <UserInfoForm user={user} setUser={setUser}></UserInfoForm>)}
+                    {paymentInfo && (<PaymentInfoForm user={user}></PaymentInfoForm>)}
                     {shippingInfo && (<ShippingInfoForm></ShippingInfoForm>)}
                     
                     {//{booksInfo && (<BooksInfoForm></BooksInfoForm>)}

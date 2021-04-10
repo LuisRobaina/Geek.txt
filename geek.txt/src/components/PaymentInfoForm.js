@@ -1,14 +1,22 @@
-//import { Comment, Header, Statistic } from 'semantic-ui-react';
-//import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import CreditCard from '../components/CreditCard';
 import AddCardForm from '../components/AddCardForm';
+import axios from "../config/axios";
 
-const PaymentInfoForm = ({user, cards}) => {
+const PaymentInfoForm = ({user}) => {
+    const [cards, setCards] = useState([])
 
-    const getCards = () => {
-        console.log(user)
+    useEffect(() => {
+        axios.get(`/users/getCards/${user._id}`)
+          .then((res) => {
+            setCards(res.data);
+        })
+          .catch((err) => console.log(err));
+      }, []);
+    
+    const getCards = (cards) => {
         let cardsComponent = cards.map(function (card) {
-            return <CreditCard name={card.cardName} owner={card.nameOnCard} expDate={card.expDate} CVV={card.CVV} />;    
+            return <CreditCard userID={user._id} ID={card._id} address={card.Address} number={card.number} name={card.cardName} owner={card.nameOnCard} expMonth={card.expMonth} expYear={card.expYear} CVV={card.CVV} />;    
         });
         return cardsComponent;
     }
@@ -16,7 +24,7 @@ const PaymentInfoForm = ({user, cards}) => {
         <div>
         <h1>My Cards</h1>
         {
-            getCards()
+            getCards(cards)
         }
         <h1>Add a new card:</h1>
         <AddCardForm user={user}></AddCardForm>

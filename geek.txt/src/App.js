@@ -35,7 +35,7 @@ const App = () => {
           <UserRegister setUser={setUser} />
         </Route>
         <Route path="/profile" exact>
-          <UserProfilePage user={user} />
+          <UserProfilePage user={user} setUser={setUser}/>
         </Route>
         <Route
           path="/books/:id"
