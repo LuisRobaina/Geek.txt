@@ -1,6 +1,6 @@
 //import { Comment, Header, Statistic } from 'semantic-ui-react';
 //import { useState } from 'react';
-import CreditCard from '../components/CreditCard';
+import CreditCard from './CreditCard';
 import AddCardForm from '../components/AddCardForm';
 
 const PaymentInfoForm = ({user, cards}) => {

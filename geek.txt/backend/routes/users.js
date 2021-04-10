@@ -240,11 +240,12 @@ router.route('/editprofile').post((req, res) => {
     const lastName = req.body.lastName;
     const email = req.body.email;
     const password = req.body.password;
-    const password2 = req.body.password2;
+    //const password2 = req.body.password2;
 
     let { errors, isValid } = registerValidate(req.body);
     if (!isValid) return res.json({ errors });
 
+    //bcrypt.hash(user.password, SALT_ROUNDS, function (err, hash) {
     Users.findOneAndUpdate(
         {
             _id: Owner,
@@ -258,6 +259,7 @@ router.route('/editprofile').post((req, res) => {
         }
     ).then(updatedProf => res.status(200).json('Profile Updated' + updatedProf))
         .catch(err => res.status(400).json('Error: ' + err))
+    
 });
 
 router.route('/editcard').post((req, res) => {

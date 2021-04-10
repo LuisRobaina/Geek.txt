@@ -25,10 +25,19 @@ const UserLogIn = ({ setUser }) => {
     setErrors("");
     try {
       const token = await login(userInput);
-      setUser(getUser(token));
-      history.push("/");
+      console.log(token.errors);
+      if (token.errors) {
+        setErrors(token.errors);
+      } else {
+        setUser(getUser(token));
+        history.push("/");
+      }
+      console.log(token);
     } catch (err) {
-      setErrors(err.response.data);
+      if (err.response.data.errors) {
+        setErrors(err.response.data);
+      }
+      console.dir(err);
     }
   };
 
