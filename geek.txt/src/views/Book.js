@@ -32,11 +32,11 @@ const Book = (props) => {
 
     axios.post("/books/buy", postObject)
       .then((res) => {
-          console.log(res)
-          setUserOwnsBook(true)
-          setRecentPurshase(true)
-    })
-    .catch(err => console.log(err))
+        console.log(res)
+        setUserOwnsBook(true)
+        setRecentPurshase(true)
+      })
+      .catch(err => console.log(err))
 
   }
   const handleRecentPurchase = (e) => {
@@ -65,7 +65,7 @@ const Book = (props) => {
     };
     axios
       .post("/comments/add", postObject)
-      .then((res) => {})
+      .then((res) => { })
       .catch((err) => console.log(err));
   };
 
@@ -111,7 +111,7 @@ const Book = (props) => {
     };
     axios
       .post("/comments/add", postObject)
-      .then((res) => {})
+      .then((res) => { })
       .catch((err) => console.log(err));
   };
 
@@ -131,20 +131,21 @@ const Book = (props) => {
         setCommentsSet(comments.data);
       })
       .catch((err) => console.log(err));
-   
+    if (props.user) {
       const postObj = {
         UserID: props.user._id,
         BookID: props.match.params.id
       }
       axios
-      .post(`/purchases/check`, postObj)
-      .then((res) => {
+        .post(`/purchases/check`, postObj)
+        .then((res) => {
           console.log("Check", res)
-          if(res.data.length >=1){
+          if (res.data.length >= 1) {
             setUserOwnsBook(true)
           }
-      })
-      .catch((err) => console.log(err));    
+        })
+        .catch((err) => console.log(err));
+    }
   }, []);
 
   useEffect(() => {
@@ -231,12 +232,12 @@ const Book = (props) => {
               {recentPurchase && (
                 <div class="ui positive message">
                   <i class="close icon" onClick={handleRecentPurchase}></i>
-                    <div class="header">
+                  <div class="header">
                     <p>Thanks for buying <b>{bookData.title}</b> - Don't forget to rate and comment.</p>
                     <Link to={`/mybooks`}>
                       <b>see my books</b>
                     </Link>
-                    </div>
+                  </div>
                 </div>
 
               )}
