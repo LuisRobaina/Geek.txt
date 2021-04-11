@@ -14,8 +14,6 @@ const EditCardForm = ({ userID, card }) => {
   const [cardAddress, setCardAddress] = useState(card.Address)
 
   const handleUpdateCard = () => {
-    console.log("UPDATE")
-
     const postObj = {
       Owner: userID,
       cardID: card.ID,
@@ -29,7 +27,7 @@ const EditCardForm = ({ userID, card }) => {
     }
     
     axios.post(`/users/editcard/`, postObj).then(res => {
-      console.log(res)
+      window.location.reload()
     })
       .catch(err => console.log(err))
   };
