@@ -167,15 +167,7 @@ router.route("/addcard").post((req, res) => {
         }
       }
     }
-    /*
-    cardName: { type: String },
-    nameOnCard: { type: String },
-    number: { type: Number }, //must be 16 long
-    expMonth: { type: Number },
-    expYear: {type: Number},
-    CVV: { type: Number }, //must be 3 long
-    Address: { type: String },
-    */
+    
   ).then(res.status(200).json('Added new card Successfully'))
     .catch(err => res.status(400).json('Error: ' + err))
 });
@@ -193,7 +185,6 @@ router.route("/addaddress").post((req, res) => {
     }
     */
 
-
   const addressOwner = mongoose.Types.ObjectId(req.body.addressOwner);
   const addressName = req.body.addressName;
   const street = req.body.street;
@@ -205,7 +196,7 @@ router.route("/addaddress").post((req, res) => {
     { _id: addressOwner },
     {
       $push: {
-        Address: {
+        addresses: {
           addressName,
           street,
           state,
@@ -232,6 +223,8 @@ router.route('/editprofile').post((req, res) => {
    *      
    *  }
    */
+
+  //TODO: Re-add password, sort out hashing, sort out how to handle password when editing profile in frontend
 
   const Owner = mongoose.Types.ObjectId(req.body.Owner);
   const geekID = req.body.geekID;
@@ -289,8 +282,6 @@ router.route('/editcard').post((req, res) => {
 
   if (expYear < currYear) return res.status(400).json("Invalid Expiration Date");
   if (((expMonth - 1) < currMonth) && (expYear === currYear)) return res.status(400).json("Invalid Expiration Date");
-
-
   
   // Get the user by its _id.
   Users.findOne({ _id: Owner })
@@ -356,11 +347,12 @@ router.route('/editaddress').post((req, res) => {
   const city = req.body.city;
   const zipcode = req.body.zipcode;
 
-  Users.where("_id").equals(Owner)
+  Users.findOne({_id: Owner})
     .then(user => {
-      let addresses = user.Address
-      addresses.forEach(address => {
-        if (address._id === addressID) {
+      let Addresses = user.addresses
+      Addresses.forEach(address => {
+        let ID = String(address._id)
+        if (ID === String(addressID)) {
           // Update.
           address.addressName = addressName
           address.street = street
@@ -369,13 +361,14 @@ router.route('/editaddress').post((req, res) => {
           address.zipcode = zipcode
         }
       });
+
       // Update.
       Users.findOneAndUpdate(
         {
           _id: Owner,
         },
         {
-          Address: addresses
+          addresses: Addresses
         })
         .then(updatedCard => res.status(200).json('Address Updated' + updatedCard))
         .catch(err => res.status(400).json('Error: ' + err))
@@ -383,6 +376,14 @@ router.route('/editaddress').post((req, res) => {
     // If there is an error return status 400 with Error.
     .catch(err => res.status(400).json('Error: ' + err))
 });
+
+router.route('/getAddresses/:UserID').get((req, res) => {
+  Users.findOne({ _id: req.params.UserID }).then(doc => {
+    console.log(doc)
+    res.status(200).json(doc.addresses)
+  })
+    .catch(err => res.json(err))
+})
 
 // <------ Helper Functions ----->
 

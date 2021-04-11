@@ -1,11 +1,5 @@
-<<<<<<< HEAD
-//import { Comment, Header, Statistic } from 'semantic-ui-react';
-//import { useState } from 'react';
-import CreditCard from './CreditCard';
-=======
 import { useState, useEffect } from 'react';
 import CreditCard from '../components/CreditCard';
->>>>>>> aa021431322d7cde1d30c5c47ce30304dcde2aed
 import AddCardForm from '../components/AddCardForm';
 import axios from "../config/axios";
 
