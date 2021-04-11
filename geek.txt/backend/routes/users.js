@@ -5,6 +5,7 @@ const bcrypt = require("bcrypt");
 const Users = require("../models/users.model");
 let { validateEmail, registerValidate, updateValidate, loginValidate, expirationValidate } = require("../utils/validators");
 const router = require("express").Router();
+const SALT_ROUNDS = 6;
 
 // Handles incomming GET requests to url/users/ .
 router.route("/").get((req, res) => {
@@ -164,7 +165,7 @@ router.route("/addcard").post((req, res) => {
         }
       }
     }
-    
+
   ).then(res.status(200).json('Added new card Successfully'))
     .catch(err => res.status(400).json('Error: ' + err))
 });
@@ -274,7 +275,7 @@ router.route('/editcard').post((req, res) => {
 
   let { errors, isValid } = expirationValidate(expMonth, expYear);
   if (!isValid) return res.json({ errors });
-  
+
   // Get the user by its _id.
   Users.findOne({ _id: Owner })
     .then(user => {
@@ -339,7 +340,7 @@ router.route('/editaddress').post((req, res) => {
   const city = req.body.city;
   const zipcode = req.body.zipcode;
 
-  Users.findOne({_id: addressOwner})
+  Users.findOne({ _id: addressOwner })
     .then(user => {
       let Addresses = user.addresses
       Addresses.forEach(address => {
@@ -374,6 +375,50 @@ router.route('/getAddresses/:UserID').get((req, res) => {
   })
     .catch(err => res.json(err))
 })
+
+
+
+router.route('/editpassword').post((req, res) => {
+
+  /**
+   * Sample POST request body:
+   *  {
+          "userID",
+          "oldpassword": 
+          "newpassword"
+   *      
+   *  }
+   */
+
+  const userID = mongoose.Types.ObjectId(req.body.userID);
+  const oldpassword = req.body.oldpassword;
+  const newpassword = req.body.newpassword;
+
+  Users.findOne({ _id: userID }).then(user => {
+
+    bcrypt.compare(oldpassword, user.password, function (err, valid) {
+      if (!valid) {
+        return res.status(401).json("Invalid Credentials");
+      }
+      else {
+        bcrypt.hash(newpassword, SALT_ROUNDS, function (err, hash) {
+          if (err) return res.status(401).json("Something went wrong!")
+          // Update.
+          Users.findOneAndUpdate(
+            {
+              _id: userID
+            },
+            {
+              password: hash
+            })
+            .then(updated => res.status(200).json('Password updated' + updated))
+            .catch(err => res.status(400).json('Error: ' + err))
+        })
+      }
+    })
+  })
+});
+
 
 // <------ Helper Functions ----->
 

@@ -78,7 +78,7 @@ const userSchema = new Schema(
 );
 
 userSchema.pre("save", function (next) {
-  // Hash password before saving to DB
+  // Hash password before saving to DB.
   const user = this;
   if (!user.isModified("password")) return next();
   bcrypt.hash(user.password, SALT_ROUNDS, function (err, hash) {
