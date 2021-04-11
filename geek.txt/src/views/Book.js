@@ -42,6 +42,7 @@ const Book = (props) => {
       })
       .catch((err) => console.log(err));
   };
+
   const handleRecentPurchase = (e) => {
     setRecentPurshase(!recentPurchase);
   };
@@ -68,7 +69,9 @@ const Book = (props) => {
     };
     axios
       .post("/comments/add", postObject)
-      .then((res) => {})
+      .then((res) => { 
+        window.location.reload()
+       })
       .catch((err) => console.log(err));
   };
 
@@ -114,7 +117,9 @@ const Book = (props) => {
     };
     axios
       .post("/comments/add", postObject)
-      .then((res) => {})
+      .then((res) => {
+        window.location.reload()
+       })
       .catch((err) => console.log(err));
   };
 
@@ -135,19 +140,21 @@ const Book = (props) => {
       })
       .catch((err) => console.log(err));
 
-    /*       const postObj = {
-            UserID: props.user._id,
-            BookID: props.match.params.id
+    if (props.user) {
+      const postObj = {
+        UserID: props.user._id,
+        BookID: props.match.params.id
+      }
+      axios
+        .post(`/purchases/check`, postObj)
+        .then((res) => {
+          console.log("Check", res)
+          if (res.data.length >= 1) {
+            setUserOwnsBook(true)
           }
-          axios
-          .post(`/purchases/check`, postObj)
-          .then((res) => {
-              console.log("Check", res)
-              if(res.data.length >=1){
-                setUserOwnsBook(true)
-              }
-          })
-          .catch((err) => console.log(err));    */
+        })
+        .catch((err) => console.log(err));
+    }
   }, []);
 
   useEffect(() => {
@@ -247,10 +254,7 @@ const Book = (props) => {
                 <div class="ui positive message">
                   <i class="close icon" onClick={handleRecentPurchase}></i>
                   <div class="header">
-                    <p>
-                      Thanks for buying <b>{bookData.title}</b> - Don't forget
-                      to rate and comment.
-                    </p>
+                    <p>Thanks for buying <b>{bookData.title}</b> - Don't forget to rate and comment.</p>
                     <Link to={`/mybooks`}>
                       <b>see my books</b>
                     </Link>
