@@ -3,13 +3,12 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const bcrypt = require("bcrypt");
 const SALT_ROUNDS = 6;
-// const { isEmail } = require("validator");
 
 const userSchema = new Schema(
   {
     geekID: {
       type: String,
-      unique: true,
+      unique: true
     },
     firstName: {
       type: String,
@@ -42,9 +41,10 @@ const userSchema = new Schema(
       {
         cardName: { type: String },
         nameOnCard: { type: String },
-        number: { type: Number }, //must be 16 long
-        expDate: { type: Date }, //date?
-        CVV: { type: Number }, //must be 3 long
+        number: { type: String }, //must be 16 long
+        expMonth: { type: Number },
+        expYear: {type: Number},
+        CVV: { type: String }, //must be 3 long
         Address: { type: String },
       },
     ],

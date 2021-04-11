@@ -10,6 +10,7 @@ import Book from "./views/Book";
 import NotFound from "./views/NotFound";
 import UserLogIn from "./views/UserLogIn";
 import UserRegister from "./views/UserRegister";
+import UserProfilePage from './views/UserProfilePage';
 import RatingsRecord from "./views/RatingRecods";
 import CommunityGuidelines from "./views/CommunityGuidelines";
 import MyBooks from "./views/MyBooks";
@@ -29,6 +30,9 @@ const App = () => {
         </Route>
         <Route path="/register" exact>
           <UserRegister setUser={setUser} />
+        </Route>
+        <Route path="/profile" exact>
+          <UserProfilePage user={user} setUser={setUser}/>
         </Route>
         <Route
           path="/books/:id"
