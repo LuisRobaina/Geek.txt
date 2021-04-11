@@ -42,6 +42,7 @@ const Book = (props) => {
       })
       .catch((err) => console.log(err));
   };
+
   const handleRecentPurchase = (e) => {
     setRecentPurshase(!recentPurchase);
   };
@@ -68,7 +69,9 @@ const Book = (props) => {
     };
     axios
       .post("/comments/add", postObject)
-      .then((res) => {})
+      .then((res) => {
+        window.location.reload();
+      })
       .catch((err) => console.log(err));
   };
 
@@ -114,7 +117,9 @@ const Book = (props) => {
     };
     axios
       .post("/comments/add", postObject)
-      .then((res) => {})
+      .then((res) => {
+        window.location.reload();
+      })
       .catch((err) => console.log(err));
   };
 
@@ -135,19 +140,21 @@ const Book = (props) => {
       })
       .catch((err) => console.log(err));
 
-    /*       const postObj = {
-            UserID: props.user._id,
-            BookID: props.match.params.id
+    if (props.user) {
+      const postObj = {
+        UserID: props.user._id,
+        BookID: props.match.params.id,
+      };
+      axios
+        .post(`/purchases/check`, postObj)
+        .then((res) => {
+          console.log("Check", res);
+          if (res.data.length >= 1) {
+            setUserOwnsBook(true);
           }
-          axios
-          .post(`/purchases/check`, postObj)
-          .then((res) => {
-              console.log("Check", res)
-              if(res.data.length >=1){
-                setUserOwnsBook(true)
-              }
-          })
-          .catch((err) => console.log(err));    */
+        })
+        .catch((err) => console.log(err));
+    }
   }, []);
 
   useEffect(() => {
@@ -181,32 +188,29 @@ const Book = (props) => {
           <Modal centered={true} onClose={() => setOpen(false)} open={open}>
             <Modal.Header>Cover Art</Modal.Header>
             <Modal.Content image>
-              <Image size="large" src={bookData.coverUrl} />
+              <Image size="fullscreen" src={bookData.coverUrl} />
             </Modal.Content>
           </Modal>
           <Image src={bookData.coverUrl} onClick={() => setOpen(true)} />
           <h4>Publisher: {bookData.publisher}</h4>
-          <h4>
-            Published Date: {new Date(bookData.publisherDate).toDateString()}
-          </h4>
           <h5>Copies Sold: {bookData.soldCount}</h5>
         </Grid.Column>
         <Grid.Column largeScreen={5}>
           <h2>{bookData.title}</h2>
           <h3>Author: {bookData.author}</h3>
           <Link to={`/books/${props.match.params.id}`}>
-            <button className="ui animated fade button" tabIndex="0">
-              <div className="visible content">More books by this author</div>
-              <div className="hidden content">{bookData.author}</div>
+            <button class="ui animated fade button" tabindex="0">
+              <div class="visible content">More books by this author</div>
+              <div class="hidden content">{bookData.author}</div>
             </button>
           </Link>
           <h4>Genre: {bookData.genre}</h4>
           <p>Description: {bookData.description}</p>
           <p>Author's biography: {bookData.authorBio}</p>
           <Link to={`/ratings/${props.match.params.id}`}>
-            <button className="ui right labeled icon button">
+            <button class="ui right labeled icon button">
               <h4>Current Rating </h4>
-              <i className="right arrow icon"></i>
+              <i class="right arrow icon"></i>
               <Rating
                 icon="star"
                 defaultRating={bookData.rating}
@@ -216,7 +220,7 @@ const Book = (props) => {
                 style={{ margin: "15px", fontSize: "15px" }}
               />
               <span style={{ color: "#909090", fontSize: "15px" }}>
-                ({bookData.rating && (bookData.rating).toFixed(2)})
+                ({bookData.rating && bookData.rating.toFixed(2)})
               </span>
               <p>Click to see who rated</p>
             </button>
@@ -247,9 +251,9 @@ const Book = (props) => {
                 </Button.Content>
               </Button>
               {recentPurchase && (
-                <div className="ui positive message">
-                  <i className="close icon" onClick={handleRecentPurchase}></i>
-                  <div className="header">
+                <div class="ui positive message">
+                  <i class="close icon" onClick={handleRecentPurchase}></i>
+                  <div class="header">
                     <p>
                       Thanks for buying <b>{bookData.title}</b> - Don't forget
                       to rate and comment.
