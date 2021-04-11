@@ -148,7 +148,6 @@ const Book = (props) => {
       axios
         .post(`/purchases/check`, postObj)
         .then((res) => {
-          console.log("Check", res);
           if (res.data.length >= 1) {
             setUserOwnsBook(true);
           }
@@ -188,7 +187,7 @@ const Book = (props) => {
           <Modal centered={true} onClose={() => setOpen(false)} open={open}>
             <Modal.Header>Cover Art</Modal.Header>
             <Modal.Content image>
-              <Image size="fullscreen" src={bookData.coverUrl} />
+              <Image size="large" src={bookData.coverUrl} />
             </Modal.Content>
           </Modal>
           <Image src={bookData.coverUrl} onClick={() => setOpen(true)} />
@@ -199,18 +198,18 @@ const Book = (props) => {
           <h2>{bookData.title}</h2>
           <h3>Author: {bookData.author}</h3>
           <Link to={`/books/${props.match.params.id}`}>
-            <button class="ui animated fade button" tabindex="0">
-              <div class="visible content">More books by this author</div>
-              <div class="hidden content">{bookData.author}</div>
+            <button className="ui animated fade button" tabIndex="0">
+              <div className="visible content">More books by this author</div>
+              <div className="hidden content">{bookData.author}</div>
             </button>
           </Link>
           <h4>Genre: {bookData.genre}</h4>
           <p>Description: {bookData.description}</p>
           <p>Author's biography: {bookData.authorBio}</p>
           <Link to={`/ratings/${props.match.params.id}`}>
-            <button class="ui right labeled icon button">
+            <button className="ui right labeled icon button">
               <h4>Current Rating </h4>
-              <i class="right arrow icon"></i>
+              <i className="right arrow icon"></i>
               <Rating
                 icon="star"
                 defaultRating={bookData.rating}
@@ -251,9 +250,9 @@ const Book = (props) => {
                 </Button.Content>
               </Button>
               {recentPurchase && (
-                <div class="ui positive message">
-                  <i class="close icon" onClick={handleRecentPurchase}></i>
-                  <div class="header">
+                <div className="ui positive message">
+                  <i className="close icon" onClick={handleRecentPurchase}></i>
+                  <div className="header">
                     <p>
                       Thanks for buying <b>{bookData.title}</b> - Don't forget
                       to rate and comment.
