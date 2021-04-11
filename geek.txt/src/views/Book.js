@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import React from 'react'
 import {
   Container,
   Grid,
@@ -7,6 +8,7 @@ import {
   Icon,
   TextArea,
   Popup,
+  Modal,
 } from "semantic-ui-react";
 import axios from "../config/axios";
 import { Segment, Button, Message } from "semantic-ui-react";
@@ -32,11 +34,11 @@ const Book = (props) => {
 
     axios.post("/books/buy", postObject)
       .then((res) => {
-          console.log(res)
-          setUserOwnsBook(true)
-          setRecentPurshase(true)
-    })
-    .catch(err => console.log(err))
+        console.log(res)
+        setUserOwnsBook(true)
+        setRecentPurshase(true)
+      })
+      .catch(err => console.log(err))
 
   }
   const handleRecentPurchase = (e) => {
@@ -65,7 +67,7 @@ const Book = (props) => {
     };
     axios
       .post("/comments/add", postObject)
-      .then((res) => {})
+      .then((res) => { })
       .catch((err) => console.log(err));
   };
 
@@ -111,7 +113,7 @@ const Book = (props) => {
     };
     axios
       .post("/comments/add", postObject)
-      .then((res) => {})
+      .then((res) => { })
       .catch((err) => console.log(err));
   };
 
@@ -131,20 +133,20 @@ const Book = (props) => {
         setCommentsSet(comments.data);
       })
       .catch((err) => console.log(err));
-   
-      const postObj = {
-        UserID: props.user._id,
-        BookID: props.match.params.id
-      }
-      axios
-      .post(`/purchases/check`, postObj)
-      .then((res) => {
-          console.log("Check", res)
-          if(res.data.length >=1){
-            setUserOwnsBook(true)
+
+    /*       const postObj = {
+            UserID: props.user._id,
+            BookID: props.match.params.id
           }
-      })
-      .catch((err) => console.log(err));    
+          axios
+          .post(`/purchases/check`, postObj)
+          .then((res) => {
+              console.log("Check", res)
+              if(res.data.length >=1){
+                setUserOwnsBook(true)
+              }
+          })
+          .catch((err) => console.log(err));    */
   }, []);
 
   useEffect(() => {
@@ -171,20 +173,41 @@ const Book = (props) => {
     };
   }, [commentsSet]);
 
+ 
   return (
     <Container>
       <Grid stackable columns={2} container centered>
         <Grid.Column largeScreen={5}>
+        <Modal
+        centered = {true}
+
+      trigger={<Button>Cover</Button>}
+    >
+      <Modal.Header>Cover Art</Modal.Header>
+      <Modal.Content image>
+        <Image size='fullscreen' src={bookData.coverUrl} />
+      </Modal.Content>
+    </Modal>
           <Image src={bookData.coverUrl} />
+          <h4>Publisher: {bookData.publisher}</h4>
+          <h5>Copies Sold: {bookData.soldCount}</h5>
         </Grid.Column>
         <Grid.Column largeScreen={5}>
           <h2>{bookData.title}</h2>
           <h3>Author: {bookData.author}</h3>
+          <Link to={`/books/${props.match.params.id}`}>
+          <button class="ui animated fade button" tabindex="0">
+            <div class="visible content">More books by this author</div>
+            <div class="hidden content">{bookData.author}
+          </div>
+          </button>
+          </Link>
           <h4>Genre: {bookData.genre}</h4>
           <p>Description: {bookData.description}</p>
+          <p>Author's biography: {bookData.authorBio}</p>
           <Link to={`/ratings/${props.match.params.id}`}>
             <button class="ui right labeled icon button">
-              <h3>Current Rating </h3>
+              <h4>Current Rating </h4>
               <i class="right arrow icon"></i>
               <Rating
                 icon="star"
@@ -192,9 +215,9 @@ const Book = (props) => {
                 maxRating={5}
                 disabled
                 key={bookData.rating}
-                style={{ margin: "25px 0 ", fontSize: "18px" }}
+                style={{ margin: "15px", fontSize: "15px" }}
               />
-              <span style={{ color: "#909090", fontSize: "14px" }}>
+              <span style={{ color: "#909090", fontSize: "15px" }}>
                 ({bookData.rating})
               </span>
               <p>Click to see who rated</p>
@@ -231,12 +254,12 @@ const Book = (props) => {
               {recentPurchase && (
                 <div class="ui positive message">
                   <i class="close icon" onClick={handleRecentPurchase}></i>
-                    <div class="header">
+                  <div class="header">
                     <p>Thanks for buying <b>{bookData.title}</b> - Don't forget to rate and comment.</p>
                     <Link to={`/mybooks`}>
                       <b>see my books</b>
                     </Link>
-                    </div>
+                  </div>
                 </div>
 
               )}
