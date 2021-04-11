@@ -1,33 +1,66 @@
-import { useState, useReducer } from "react";
+import { useState } from "react";
 import { Grid, Button, Form, Segment, Message } from "semantic-ui-react";
-//import axios from '../config/axios';
-//import { Link, useHistory } from "react-router-dom";
-//import { getUser, signUp } from "../utils/userService";
+import axios from '../config/axios';
 
 const AddCardForm = ({ user }) => {
-  const [errors, setErrors] = useState(null);
-  //const history = useHistory();
-  const [userInput, setUserInput] = useReducer(
-    (state, newState) => ({ ...state, ...newState }),
-    {
-      cardName: "",
-      nameOnCard: "",
-      number: "",
-      expMonth: "",
-      expYear: "",
-      CVV: "",
-      Address: ""
+
+  const [errors, setErrors] = useState("");
+  const [cardName, setCardName] = useState("")
+  const [cardNumber, setCardNumber] = useState("")
+  const [owner, setCardOwner] = useState("")
+  const [cardExpMonth, setCardMonth] = useState("")
+  const [cardExpYear, setCardYear] = useState("")
+  const [cardCVV, setCardCVV] = useState("")
+  const [cardAddress, setCardAddress] = useState("")
+
+  const handleAddCard = () => {
+    const postObj = {
+      cardOwner: user._id,
+      cardName: cardName,
+      nameOnCard: owner,
+      number: cardNumber,
+      expYear: cardExpYear,
+      expMonth: cardExpMonth,
+      CVV: cardCVV,
+      address: cardAddress
     }
-  );
-
-  const handleChange = (e) => {
-    setUserInput({ [e.target.name]: e.target.value });
+    
+    axios.post(`/users/addcard/`, postObj).then(res => {
+      window.location.reload()
+    })
+      .catch(err => {
+        console.log(err)
+        setErrors(String(err))
+      })
   };
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setErrors("");
-  };
-
+  const handleNameChange = (e) => {
+    e.preventDefault()
+    setCardName(e.target.value)
+  }
+  const handleNumberChange = (e) => {
+    e.preventDefault()
+    setCardNumber(e.target.value)
+  }
+  const handleOwnerChange = (e) => {
+    e.preventDefault()
+    setCardOwner(e.target.value)
+  }
+  const handleMonthChange = (e) => {
+    e.preventDefault()
+    setCardMonth(e.target.value)
+  }
+  const handleYearChange = (e) => {
+    e.preventDefault()
+    setCardYear(e.target.value)
+  }
+  const handleCVVChange = (e) => {
+    e.preventDefault()
+    setCardCVV(e.target.value)
+  }
+  const handleChangeAddress = (e) => {
+    e.preventDefault()
+    setCardAddress(e.target.value)
+  }
   return (
     <div>
       <Grid centered>
@@ -35,20 +68,17 @@ const AddCardForm = ({ user }) => {
           <Segment>
             {errors && (
               <Message negative>
-                <Message.Header>Error creating card.</Message.Header>
-                {Object.entries(errors).map(([key, value]) => (
-                  <li>{value}</li>
-                ))}
+                <Message.Header>Error adding card, check your inputs.</Message.Header>
               </Message>
             )}
-            <Form onSubmit={handleSubmit}>
+            <Form>
               <Form.Field>
                 <label>Card Name</label>
                 <input
                   placeholder="Ex. Card1, Moms Card, etc"
                   name="cardName"
-                  value={userInput.cardName}
-                  onChange={handleChange}
+                  value={cardName}
+                  onChange={handleNameChange}
                 />
               </Form.Field>
               <Form.Field>
@@ -56,16 +86,16 @@ const AddCardForm = ({ user }) => {
                 <input
                   placeholder="Card owner"
                   name="nameOnCard"
-                  value={userInput.nameOnCard}
-                  onChange={handleChange}
+                  value={owner}
+                  onChange={handleOwnerChange}
                 />
               </Form.Field>
               <Form.Field>
                 <label>Card Number</label>
                 <input
                   name="number"
-                  value={userInput.number}
-                  onChange={handleChange}
+                  value={cardNumber}
+                  onChange={handleNumberChange}
                 />
               </Form.Field>
 
@@ -74,19 +104,17 @@ const AddCardForm = ({ user }) => {
                 <input
                   placeholder="Month must be a digit eg. 4"
                   name="expMonth"
-                  value={userInput.expMonth}
-                  onChange={handleChange}
+                  value={cardExpMonth}
+                  onChange={handleMonthChange}
                 />
               </Form.Field>
-
-
               <Form.Field>
                 <label>Expiration Year</label>
                 <input
                   placeholder="Card owner"
-                  name="password"
-                  value={userInput.password}
-                  onChange={handleChange}
+                  name="expYear"
+                  value={cardExpYear}
+                  onChange={handleYearChange}
                 />
               </Form.Field>
 
@@ -94,25 +122,23 @@ const AddCardForm = ({ user }) => {
                 <label>CVV Number</label>
                 <input
                   name="CVV"
-                  value={userInput.CVV}
-                  onChange={handleChange}
+                  value={cardCVV}
+                  onChange={handleCVVChange}
                 />
               </Form.Field>
-
               <Form.Field>
                 <label>Billing Address</label>
                 <input
                   name="Address"
-                  value={userInput.Address}
-                  onChange={handleChange}
+                  value={cardAddress}
+                  onChange={handleChangeAddress}
                 />
               </Form.Field>
-
               <div>
                 <Button.Group>
-                  <Button positive>
-                    <Button.Content visible>Add Card</Button.Content>
-                    </Button>
+                  <Button positive onClick={handleAddCard}>
+                    <Button.Content visible >Add Card</Button.Content>
+                  </Button>
                 </Button.Group>
               </div>
             </Form>

@@ -10,27 +10,30 @@ module.exports = {
     }
   },
 
-  expirationValidate: function (data) {
+  expirationValidate: function (expMonth, expYear) {
     let errors = {};
-    let {expMonth, expYear} = data;
-
+    let isValid = true;
     var today = new Date();
     var currMonth = today.getMonth();
     var currYear = today.getFullYear();
 
-    if (((expMonth - 1) < currMonth) && (expYear === currYear)) {
-      errors.expMonth = "Credit Card is not valid";
-    }
     if ((expMonth) >= 13) {
       errors.expMonth = "Invalid expiration month";
+      isValid = false
     }
     if ((expMonth) <= 0) {
       errors.expMonth = "Invalid expiration month";
+      isValid = false
     }
     if (expYear < currYear) {
-      errors.expYear = "Credit Card is not valid";
+      errors.expYear = "Expired Credit Card.";
+      isValid = false
     }
-
+    else if ((expMonth < currMonth) && (expYear == currYear)) {
+      errors.expMonth = "Credit Card is not valid";
+      isValid = false
+    }
+    return {errors, isValid}
   },
 
 

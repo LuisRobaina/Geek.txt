@@ -149,7 +149,7 @@ router.route("/addcard").post((req, res) => {
   const Address = req.body.address;
 
   let { errors, isValid } = expirationValidate(expMonth, expYear);
-  if (!isValid) return res.json({ errors });
+  if (!isValid) return res.status(400).json("Invalid card, check your inputs");
 
   Users.updateOne(
     { _id: cardOwner },
@@ -322,7 +322,7 @@ router.route('/editaddress').post((req, res) => {
   /**
    * Sample POST request body:
    *  {
-   *      "Owner": "60392b329b00b252eaa3b3b8",
+   *      "addressOwner": "60392b329b00b252eaa3b3b8",
    *      "addressID" : "60392b329b00b252eaa3b3b9",
    *      "addressName": "Home Address",
           "street": "123 Somewhere Lane",
@@ -333,7 +333,7 @@ router.route('/editaddress').post((req, res) => {
    *  }
    */
 
-  const Owner = mongoose.Types.ObjectId(req.body.Owner);
+  const addressOwner = mongoose.Types.ObjectId(req.body.addressOwner);
   const addressID = mongoose.Types.ObjectId(req.body.addressID);
   const addressName = req.body.addressName;
   const street = req.body.street;
@@ -341,13 +341,12 @@ router.route('/editaddress').post((req, res) => {
   const city = req.body.city;
   const zipcode = req.body.zipcode;
 
-  Users.findOne({_id: Owner})
+  Users.findOne({_id: addressOwner})
     .then(user => {
       let Addresses = user.addresses
       Addresses.forEach(address => {
         let ID = String(address._id)
         if (ID === String(addressID)) {
-          // Update.
           address.addressName = addressName
           address.street = street
           address.state = state
@@ -355,11 +354,10 @@ router.route('/editaddress').post((req, res) => {
           address.zipcode = zipcode
         }
       });
-
       // Update.
       Users.findOneAndUpdate(
         {
-          _id: Owner,
+          _id: addressOwner,
         },
         {
           addresses: Addresses

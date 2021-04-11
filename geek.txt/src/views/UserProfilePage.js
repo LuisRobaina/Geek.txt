@@ -69,9 +69,9 @@ const UserProfilePage = ({ user, setUser }) => {
                 <div class="ui segment">
                     {userInfo && ( <UserInfoForm user={user} setUser={setUser}></UserInfoForm>)}
                     {paymentInfo && (<PaymentInfoForm user={user}></PaymentInfoForm>)}
-                    {shippingInfo && (<ShippingInfoForm></ShippingInfoForm>)}
-                    
-                    {//{booksInfo && (<BooksInfoForm></BooksInfoForm>)}
+                    {shippingInfo && (<ShippingInfoForm user={user}></ShippingInfoForm>)}
+                    {/* {booksInfo && (<BooksInfoForm></BooksInfoForm>)}
+                    } */
                     }
 
                 </div>

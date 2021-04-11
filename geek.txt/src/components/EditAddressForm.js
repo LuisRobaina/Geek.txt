@@ -4,10 +4,7 @@ import axios from '../config/axios';
 
 const EditAddressForm = ({ userID, address }) => { //do i need userID?
   
-  //userID????
-
-  const [errors, setErrors] = useState(null);
-  //const [owner, setAddressOwner] = useState(address.Owner) //do i need????
+  const [errors, setErrors] = useState(false);
   const [addressName, setAddressName] = useState(address.Name)
   const [addressStreet, setAddressStreet] = useState(address.Street)
   const [addressCity, setAddressCity] = useState(address.City)
@@ -15,10 +12,9 @@ const EditAddressForm = ({ userID, address }) => { //do i need userID?
   const [addressZipcode, setAddressZipcode] = useState(address.Zipcode)
 
   const handleUpdateAddress = () => {
-    console.log("UPDATE")
-
+ 
     const postObj = {
-      //Owner: userID,
+      addressOwner: userID,
       addressID: address.ID,
       addressName: addressName,
       street: addressStreet,
@@ -26,16 +22,13 @@ const EditAddressForm = ({ userID, address }) => { //do i need userID?
       state: addressState,
       zipcode: addressZipcode
     }
-    
     axios.post(`/users/editaddress/`, postObj).then(res => {
-      console.log(res)
+      window.location.reload()
     })
-      .catch(err => console.log(err))
+      .catch(err => {
+        setErrors(true)
+      })
   };
-  //const handleOwnerChange = (e) => {
-    //e.preventDefault()
-    //setAddressOwner(e.target.value)
-  //}
   const handleNameChange = (e) => {
     e.preventDefault()
     setAddressName(e.target.value)
@@ -65,9 +58,6 @@ const EditAddressForm = ({ userID, address }) => { //do i need userID?
             {errors && (
               <Message negative>
                 <Message.Header>Error editing address.</Message.Header>
-                {Object.entries(errors).map(([key, value]) => (
-                  <li>{value}</li>
-                ))}
               </Message>
             )}
             <Form>
@@ -118,7 +108,7 @@ const EditAddressForm = ({ userID, address }) => { //do i need userID?
               <div>
                 <Button.Group>
                   <Button onClick={handleUpdateAddress}>
-                    <Button.Content visible >Update Card</Button.Content>
+                    <Button.Content visible >Update Address</Button.Content>
                   </Button>
                 </Button.Group>
               </div>

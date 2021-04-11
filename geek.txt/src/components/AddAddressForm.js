@@ -1,31 +1,54 @@
-import { useState, useReducer } from "react";
+import { useState } from "react";
 import { Grid, Button, Form, Segment, Message } from "semantic-ui-react";
-//import axios from '../config/axios';
-//import { Link, useHistory } from "react-router-dom";
-//import { getUser, signUp } from "../utils/userService";
+import axios from '../config/axios';
 
 const AddAddressForm = ({ user }) => {
-  const [errors, setErrors] = useState(null);
-  //const history = useHistory();
-  const [userInput, setUserInput] = useReducer(
-    (state, newState) => ({ ...state, ...newState }),
-    {
-      addressName: "",
-      street: "",
-      state: "",
-      city: "",
-      zipcode: ""
+
+  const [errors, setErrors] = useState(false);
+  const [addressName, setName] = useState("")
+  const [street, setStreet] = useState("")
+  const [city, setCity] = useState("")
+  const [state, setState] = useState("")
+  const [zipcode, setZip] = useState("")
+  
+  const handleAddCard = () => {
+    const postObj = {
+      addressOwner: user._id,
+      addressName: addressName,
+      street,
+      state,
+      city,
+      zipcode
     }
-  );
-
-  const handleChange = (e) => {
-    setUserInput({ [e.target.name]: e.target.value });
+    
+    axios.post(`/users/addaddress/`, postObj).then(res => {
+      window.location.reload()
+    })
+      .catch(err => {
+        console.log(err)
+        setErrors(true)
+      })
   };
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setErrors("");
-  };
-
+  const handleAddressNameChange = (e) => {
+    e.preventDefault()
+    setName(e.target.value)
+  }
+  const handleStreetChange = (e) => {
+    e.preventDefault()
+    setStreet(e.target.value)
+  }
+  const handleStateChange = (e) => {
+    e.preventDefault()
+    setState(e.target.value)
+  }
+  const handleCityChange = (e) => {
+    e.preventDefault()
+    setCity(e.target.value)
+  }
+  const handleZipChange = (e) => {
+    e.preventDefault()
+    setZip(e.target.value)
+  }
   return (
     <div>
       <Grid centered>
@@ -33,62 +56,60 @@ const AddAddressForm = ({ user }) => {
           <Segment>
             {errors && (
               <Message negative>
-                <Message.Header>Error creating card.</Message.Header>
-                {Object.entries(errors).map(([key, value]) => (
-                  <li>{value}</li>
-                ))}
+                <Message.Header>Error adding address, check your inputs.</Message.Header>
               </Message>
             )}
-            <Form onSubmit={handleSubmit}>
+            <Form>
               <Form.Field>
                 <label>Address Name</label>
                 <input
-                  placeholder="Ex. Address1, Moms Address, etc"
+                  placeholder="Ex. Card1, Moms Card, etc"
                   name="addressName"
-                  value={userInput.addressName}
-                  onChange={handleChange}
+                  value={addressName}
+                  onChange={handleAddressNameChange}
                 />
               </Form.Field>
               <Form.Field>
                 <label>Street</label>
                 <input
-                  name="street"
-                  value={userInput.street}
-                  onChange={handleChange}
+                  placeholder="Card owner"
+                  name="addressStreet"
+                  value={street}
+                  onChange={handleStreetChange}
                 />
               </Form.Field>
               <Form.Field>
                 <label>City</label>
                 <input
                   name="city"
-                  value={userInput.city}
-                  onChange={handleChange}
+                  value={city}
+                  onChange={handleCityChange}
                 />
               </Form.Field>
 
               <Form.Field>
                 <label>State</label>
                 <input
+                  placeholder="Month must be a digit eg. 4"
                   name="state"
-                  value={userInput.state}
-                  onChange={handleChange}
+                  value={state}
+                  onChange={handleStateChange}
                 />
               </Form.Field>
-
               <Form.Field>
-                <label>Zipcode</label>
+                <label>zipcode</label>
                 <input
+                  placeholder="Card owner"
                   name="zipcode"
-                  value={userInput.zipcode}
-                  onChange={handleChange}
+                  value={zipcode}
+                  onChange={handleZipChange}
                 />
               </Form.Field>
-
               <div>
                 <Button.Group>
-                  <Button positive>
-                    <Button.Content visible>Add Address</Button.Content>
-                    </Button>
+                  <Button positive onClick={handleAddCard}>
+                    <Button.Content visible >Add Address</Button.Content>
+                  </Button>
                 </Button.Group>
               </div>
             </Form>
