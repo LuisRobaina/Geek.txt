@@ -4,7 +4,6 @@ import { Popup, Grid, Button, Comment, Form } from 'semantic-ui-react';
 
 const SingleComment = ({ User, CommentID, Creator, Text, Replies }) => {
 
-    // State.
     const [CommentText, setComment] = useState("")
     const [Reply, setReply] = useState(false)
 

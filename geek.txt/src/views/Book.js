@@ -65,7 +65,9 @@ const Book = (props) => {
     };
     axios
       .post("/comments/add", postObject)
-      .then((res) => { })
+      .then((res) => { 
+        window.location.reload()
+       })
       .catch((err) => console.log(err));
   };
 
@@ -111,7 +113,9 @@ const Book = (props) => {
     };
     axios
       .post("/comments/add", postObject)
-      .then((res) => { })
+      .then((res) => {
+        window.location.reload()
+       })
       .catch((err) => console.log(err));
   };
 
