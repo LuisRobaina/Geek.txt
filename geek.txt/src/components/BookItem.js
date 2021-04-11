@@ -29,7 +29,7 @@ const BookItem = ({ book }) => {
               style={{ margin: "10px 0 " }}
             />
             <span style={{ color: "#909090", fontSize: "12px" }}>
-              ({book.rating})
+              ({book.rating && (book.rating).toFixed(2)})
             </span>
           </Card.Content>
         </Link>

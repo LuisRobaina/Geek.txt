@@ -61,7 +61,7 @@ const UserLogIn = ({ setUser }) => {
           <Segment>
             {errors && (
               <Message negative>
-                <Message.Header>{errors}</Message.Header>
+                <Message.Header>There was an error loggin in!</Message.Header>
               </Message>
             )}
             <Form onSubmit={handleSubmit}>
