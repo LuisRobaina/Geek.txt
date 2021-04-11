@@ -94,7 +94,6 @@ const UserInfoForm = ({ user, setUser }) => {
     setEmail(e.target.value);
   };
 
-  //need to be able to update password but not show it on frontend
 
   return (
     <div>

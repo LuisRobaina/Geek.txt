@@ -63,7 +63,7 @@ const AddAddressForm = ({ user }) => {
               <Form.Field>
                 <label>Address Name</label>
                 <input
-                  placeholder="Ex. Card1, Moms Card, etc"
+                  placeholder="Ex. Home Address, Moms House, etc"
                   name="addressName"
                   value={addressName}
                   onChange={handleAddressNameChange}
@@ -72,7 +72,6 @@ const AddAddressForm = ({ user }) => {
               <Form.Field>
                 <label>Street</label>
                 <input
-                  placeholder="Card owner"
                   name="addressStreet"
                   value={street}
                   onChange={handleStreetChange}
@@ -90,7 +89,7 @@ const AddAddressForm = ({ user }) => {
               <Form.Field>
                 <label>State</label>
                 <input
-                  placeholder="Month must be a digit eg. 4"
+                  placeholder="State Abbreviation"
                   name="state"
                   value={state}
                   onChange={handleStateChange}
@@ -99,7 +98,7 @@ const AddAddressForm = ({ user }) => {
               <Form.Field>
                 <label>zipcode</label>
                 <input
-                  placeholder="Card owner"
+                  placeholder="5 digit area code"
                   name="zipcode"
                   value={zipcode}
                   onChange={handleZipChange}

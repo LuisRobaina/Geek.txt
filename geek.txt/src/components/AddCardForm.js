@@ -84,7 +84,7 @@ const AddCardForm = ({ user }) => {
               <Form.Field>
                 <label>Name on Card</label>
                 <input
-                  placeholder="Card owner"
+                  placeholder="Card Owner"
                   name="nameOnCard"
                   value={owner}
                   onChange={handleOwnerChange}
@@ -111,7 +111,7 @@ const AddCardForm = ({ user }) => {
               <Form.Field>
                 <label>Expiration Year</label>
                 <input
-                  placeholder="Card owner"
+                  placeholder="Full 4 digit year"
                   name="expYear"
                   value={cardExpYear}
                   onChange={handleYearChange}

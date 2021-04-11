@@ -76,7 +76,7 @@ const EditCardForm = ({ userID, card }) => {
               <Form.Field>
                 <label>Card Name</label>
                 <input
-                  placeholder="Ex. Card1, Moms Card, etc"
+                  placeholder="Ex. Card1, etc"
                   name="cardName"
                   value={cardName}
                   onChange={handleNameChange}
@@ -85,7 +85,7 @@ const EditCardForm = ({ userID, card }) => {
               <Form.Field>
                 <label>Name on Card</label>
                 <input
-                  placeholder="Card owner"
+                  placeholder="Card Owner"
                   name="nameOnCard"
                   value={owner}
                   onChange={handleOwnerChange}
@@ -112,7 +112,7 @@ const EditCardForm = ({ userID, card }) => {
               <Form.Field>
                 <label>Expiration Year</label>
                 <input
-                  placeholder="Card owner"
+                  placeholder="4 digit year"
                   name="expYear"
                   value={cardExpYear}
                   onChange={handleYearChange}
