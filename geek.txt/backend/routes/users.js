@@ -289,7 +289,7 @@ router.route('/editcard').post((req, res) => {
       let cards = user.creditCards
       cards.forEach(card => {
         let ID = String(card._id)
-        if (ID == String(cardID)) {
+        if (ID === String(cardID)) { //giving error for ==, make sure === works
           // Update.
           console.log("Updated ", cardID)
           card.cardName = cardName

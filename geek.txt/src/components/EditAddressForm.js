@@ -7,7 +7,7 @@ const EditAddressForm = ({ userID, address }) => { //do i need userID?
   //userID????
 
   const [errors, setErrors] = useState(null);
-  const [owner, setAddressOwner] = useState(address.Owner) //do i need????
+  //const [owner, setAddressOwner] = useState(address.Owner) //do i need????
   const [addressName, setAddressName] = useState(address.Name)
   const [addressStreet, setAddressStreet] = useState(address.Street)
   const [addressCity, setAddressCity] = useState(address.City)
@@ -18,7 +18,7 @@ const EditAddressForm = ({ userID, address }) => { //do i need userID?
     console.log("UPDATE")
 
     const postObj = {
-      Owner: userID, //do i need?
+      //Owner: userID,
       addressID: address.ID,
       addressName: addressName,
       street: addressStreet,
@@ -32,10 +32,10 @@ const EditAddressForm = ({ userID, address }) => { //do i need userID?
     })
       .catch(err => console.log(err))
   };
-  const handleOwnerChange = (e) => { //do i need?
-    e.preventDefault()
-    setAddressOwner(e.target.value)
-  }
+  //const handleOwnerChange = (e) => {
+    //e.preventDefault()
+    //setAddressOwner(e.target.value)
+  //}
   const handleNameChange = (e) => {
     e.preventDefault()
     setAddressName(e.target.value)
@@ -84,7 +84,7 @@ const EditAddressForm = ({ userID, address }) => { //do i need userID?
                 <label>Street</label>
                 <input
                   name="street"
-                  value={owner}
+                  value={addressStreet}
                   onChange={handleStreetChange}
                 />
               </Form.Field>
