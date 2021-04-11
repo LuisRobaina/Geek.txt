@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import React from "react";
 import {
   Container,
   Grid,
@@ -7,6 +8,7 @@ import {
   Icon,
   TextArea,
   Popup,
+  Modal,
 } from "semantic-ui-react";
 import axios from "../config/axios";
 import { Segment, Button, Message } from "semantic-ui-react";
@@ -21,26 +23,28 @@ const Book = (props) => {
   const [rating, setNewRating] = useState(0);
   const [userOwnsBook, setUserOwnsBook] = useState(false);
   const [recentPurchase, setRecentPurshase] = useState(false);
+  const [open, setOpen] = useState(false);
 
   const buyBook = (e) => {
     const postObject = {
       UserID: props.user._id,
       BookID: props.match.params.id,
       Title: bookData.title,
-      CoverURL: bookData.coverUrl
+      CoverURL: bookData.coverUrl,
     };
 
-    axios.post("/books/buy", postObject)
+    axios
+      .post("/books/buy", postObject)
       .then((res) => {
-        console.log(res)
-        setUserOwnsBook(true)
-        setRecentPurshase(true)
+        console.log(res);
+        setUserOwnsBook(true);
+        setRecentPurshase(true);
       })
-      .catch(err => console.log(err))
+      .catch((err) => console.log(err));
+  };
 
-  }
   const handleRecentPurchase = (e) => {
-    setRecentPurshase(!recentPurchase)
+    setRecentPurshase(!recentPurchase);
   };
 
   const handleNewCommentChange = (e) => {
@@ -135,6 +139,7 @@ const Book = (props) => {
         setCommentsSet(comments.data);
       })
       .catch((err) => console.log(err));
+
     if (props.user) {
       const postObj = {
         UserID: props.user._id,
@@ -180,16 +185,31 @@ const Book = (props) => {
     <Container>
       <Grid stackable columns={2} container centered>
         <Grid.Column largeScreen={5}>
-          <Image src={bookData.coverUrl} />
+          <Modal centered={true} onClose={() => setOpen(false)} open={open}>
+            <Modal.Header>Cover Art</Modal.Header>
+            <Modal.Content image>
+              <Image size="fullscreen" src={bookData.coverUrl} />
+            </Modal.Content>
+          </Modal>
+          <Image src={bookData.coverUrl} onClick={() => setOpen(true)} />
+          <h4>Publisher: {bookData.publisher}</h4>
+          <h5>Copies Sold: {bookData.soldCount}</h5>
         </Grid.Column>
         <Grid.Column largeScreen={5}>
           <h2>{bookData.title}</h2>
           <h3>Author: {bookData.author}</h3>
+          <Link to={`/books/${props.match.params.id}`}>
+            <button class="ui animated fade button" tabindex="0">
+              <div class="visible content">More books by this author</div>
+              <div class="hidden content">{bookData.author}</div>
+            </button>
+          </Link>
           <h4>Genre: {bookData.genre}</h4>
           <p>Description: {bookData.description}</p>
+          <p>Author's biography: {bookData.authorBio}</p>
           <Link to={`/ratings/${props.match.params.id}`}>
             <button class="ui right labeled icon button">
-              <h3>Current Rating </h3>
+              <h4>Current Rating </h4>
               <i class="right arrow icon"></i>
               <Rating
                 icon="star"
@@ -197,9 +217,9 @@ const Book = (props) => {
                 maxRating={5}
                 disabled
                 key={bookData.rating}
-                style={{ margin: "25px 0 ", fontSize: "18px" }}
+                style={{ margin: "15px", fontSize: "15px" }}
               />
-              <span style={{ color: "#909090", fontSize: "14px" }}>
+              <span style={{ color: "#909090", fontSize: "15px" }}>
                 ({bookData.rating})
               </span>
               <p>Click to see who rated</p>
@@ -210,11 +230,8 @@ const Book = (props) => {
             <Grid.Column>
               {!props.user && (
                 <Message positive>
-                  <Message.Header>
-                  </Message.Header>
-                  <p>
-                    Login or Register to buy books.
-                </p>
+                  <Message.Header></Message.Header>
+                  <p>Login or Register to buy books.</p>
                 </Message>
               )}
               <Button
@@ -224,8 +241,8 @@ const Book = (props) => {
                   background:
                     "linear-gradient(98.95deg, #FF785A 19.47%, #FE5B00 82.33%)",
                 }}
-                onClick={() => buyBook()}>
-
+                onClick={() => buyBook()}
+              >
                 <Button.Content visible style={{ color: "white" }}>
                   $ {bookData.price}
                 </Button.Content>
@@ -243,14 +260,12 @@ const Book = (props) => {
                     </Link>
                   </div>
                 </div>
-
               )}
             </Grid.Column>
           </div>
         </Grid.Column>
       </Grid>
       <div>
-
         <br></br>
         <Segment>
           {/* Comments section */}

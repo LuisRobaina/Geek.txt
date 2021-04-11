@@ -1,5 +1,6 @@
-import { Card, Image, Button, Icon, Rating } from "semantic-ui-react";
+import { Card, Image, Button, Icon, Rating} from "semantic-ui-react";
 import { Link } from "react-router-dom";
+
 
 const BookItem = ({ book }) => {
   return (
@@ -15,7 +16,7 @@ const BookItem = ({ book }) => {
                 fontWeight: "600",
                 padding: "10px 0",
               }}
-            >
+            >      
               {book.title}
             </Card.Header>
             <Card.Meta>Author: {book.author}</Card.Meta>
@@ -54,5 +55,6 @@ const BookItem = ({ book }) => {
     </>
   );
 };
+
 
 export default BookItem;
