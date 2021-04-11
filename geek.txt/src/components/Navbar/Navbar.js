@@ -1,11 +1,8 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
 import classes from "./Navbar.module.css";
 import { signOut } from "../../utils/userService";
 
 const NavBar = ({ user, setUser }) => {
-  const [active, setActive] = useState("home");
-
   const handleLogOut = () => {
     signOut();
     setUser(null);
@@ -32,7 +29,7 @@ const NavBar = ({ user, setUser }) => {
             <>
               <Link to="/profile">
                 <li className={classes.listItem}>
-                  {user.firstName+"'s"} Profile
+                  {user.firstName + "'s"} Profile
                 </li>
               </Link>
               <Link to="/">

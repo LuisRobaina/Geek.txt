@@ -29,10 +29,7 @@ const Home = ({ user }) => {
         setDefaultBooks([...res.data]);
       })
       .catch((err) => console.log(err));
-      // TODO: Remove this debug check.
-      if (user) {
-        console.log(user)
-      }
+    // TODO: Remove this debug check.
   }, []);
 
   return (

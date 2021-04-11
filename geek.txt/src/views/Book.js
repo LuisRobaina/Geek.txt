@@ -42,7 +42,6 @@ const Book = (props) => {
       })
       .catch((err) => console.log(err));
   };
-
   const handleRecentPurchase = (e) => {
     setRecentPurshase(!recentPurchase);
   };
@@ -69,9 +68,7 @@ const Book = (props) => {
     };
     axios
       .post("/comments/add", postObject)
-      .then((res) => { 
-        window.location.reload()
-       })
+      .then((res) => {})
       .catch((err) => console.log(err));
   };
 
@@ -117,9 +114,7 @@ const Book = (props) => {
     };
     axios
       .post("/comments/add", postObject)
-      .then((res) => {
-        window.location.reload()
-       })
+      .then((res) => {})
       .catch((err) => console.log(err));
   };
 
@@ -140,21 +135,19 @@ const Book = (props) => {
       })
       .catch((err) => console.log(err));
 
-    if (props.user) {
-      const postObj = {
-        UserID: props.user._id,
-        BookID: props.match.params.id
-      }
-      axios
-        .post(`/purchases/check`, postObj)
-        .then((res) => {
-          console.log("Check", res)
-          if (res.data.length >= 1) {
-            setUserOwnsBook(true)
+    /*       const postObj = {
+            UserID: props.user._id,
+            BookID: props.match.params.id
           }
-        })
-        .catch((err) => console.log(err));
-    }
+          axios
+          .post(`/purchases/check`, postObj)
+          .then((res) => {
+              console.log("Check", res)
+              if(res.data.length >=1){
+                setUserOwnsBook(true)
+              }
+          })
+          .catch((err) => console.log(err));    */
   }, []);
 
   useEffect(() => {
@@ -188,29 +181,32 @@ const Book = (props) => {
           <Modal centered={true} onClose={() => setOpen(false)} open={open}>
             <Modal.Header>Cover Art</Modal.Header>
             <Modal.Content image>
-              <Image size="fullscreen" src={bookData.coverUrl} />
+              <Image size="large" src={bookData.coverUrl} />
             </Modal.Content>
           </Modal>
           <Image src={bookData.coverUrl} onClick={() => setOpen(true)} />
           <h4>Publisher: {bookData.publisher}</h4>
+          <h4>
+            Published Date: {new Date(bookData.publisherDate).toDateString()}
+          </h4>
           <h5>Copies Sold: {bookData.soldCount}</h5>
         </Grid.Column>
         <Grid.Column largeScreen={5}>
           <h2>{bookData.title}</h2>
           <h3>Author: {bookData.author}</h3>
           <Link to={`/books/${props.match.params.id}`}>
-            <button class="ui animated fade button" tabindex="0">
-              <div class="visible content">More books by this author</div>
-              <div class="hidden content">{bookData.author}</div>
+            <button className="ui animated fade button" tabIndex="0">
+              <div className="visible content">More books by this author</div>
+              <div className="hidden content">{bookData.author}</div>
             </button>
           </Link>
           <h4>Genre: {bookData.genre}</h4>
           <p>Description: {bookData.description}</p>
           <p>Author's biography: {bookData.authorBio}</p>
           <Link to={`/ratings/${props.match.params.id}`}>
-            <button class="ui right labeled icon button">
+            <button className="ui right labeled icon button">
               <h4>Current Rating </h4>
-              <i class="right arrow icon"></i>
+              <i className="right arrow icon"></i>
               <Rating
                 icon="star"
                 defaultRating={bookData.rating}
@@ -251,10 +247,13 @@ const Book = (props) => {
                 </Button.Content>
               </Button>
               {recentPurchase && (
-                <div class="ui positive message">
-                  <i class="close icon" onClick={handleRecentPurchase}></i>
-                  <div class="header">
-                    <p>Thanks for buying <b>{bookData.title}</b> - Don't forget to rate and comment.</p>
+                <div className="ui positive message">
+                  <i className="close icon" onClick={handleRecentPurchase}></i>
+                  <div className="header">
+                    <p>
+                      Thanks for buying <b>{bookData.title}</b> - Don't forget
+                      to rate and comment.
+                    </p>
                     <Link to={`/mybooks`}>
                       <b>see my books</b>
                     </Link>
