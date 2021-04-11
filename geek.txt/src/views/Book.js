@@ -216,7 +216,7 @@ const Book = (props) => {
                 style={{ margin: "15px", fontSize: "15px" }}
               />
               <span style={{ color: "#909090", fontSize: "15px" }}>
-                ({bookData.rating})
+                ({bookData.rating && (bookData.rating).toFixed(2)})
               </span>
               <p>Click to see who rated</p>
             </button>
