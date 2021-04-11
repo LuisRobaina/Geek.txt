@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken");
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const Users = require("../models/users.model");
-let { validateEmail, registerValidate, updateValidate } = require("../utils/validators");
+let { validateEmail, registerValidate, updateValidate, loginValidate, expirationValidate } = require("../utils/validators");
 const router = require("express").Router();
 
 // Handles incomming GET requests to url/users/ .
@@ -26,6 +26,9 @@ router.route("/login").post((req, res) => {
   // Credential can be an email or a geek ID.
   const credential = req.body.credential;
   const password = req.body.password;
+
+  let { errors, isValid } = loginValidate(req.body);
+  if (!isValid) return res.json({ errors });
 
   // Login by email.
   if (validateEmail(credential)) {
@@ -136,10 +139,6 @@ router.route("/addcard").post((req, res) => {
     }
     */
 
-  var today = new Date();
-  var currMonth = today.getMonth();
-  var currYear = today.getFullYear();
-
   const cardOwner = mongoose.Types.ObjectId(req.body.cardOwner);
   const cardName = req.body.cardName;
   const nameOnCard = req.body.nameOnCard;
@@ -149,8 +148,8 @@ router.route("/addcard").post((req, res) => {
   const CVV = req.body.CVV;
   const Address = req.body.address;
 
-  if (expYear < currYear) return res.status(400).json("Invalid Expiration Date");
-  if (((expMonth - 1) < currMonth) && (expYear === currYear)) return res.status(400).json("Invalid Expiration Date");
+  let { errors, isValid } = expirationValidate(expMonth, expYear);
+  if (!isValid) return res.json({ errors });
 
   Users.updateOne(
     { _id: cardOwner },
@@ -224,8 +223,6 @@ router.route('/editprofile').post((req, res) => {
    *  }
    */
 
-  //TODO: Re-add password, sort out hashing, sort out how to handle password when editing profile in frontend
-
   const Owner = mongoose.Types.ObjectId(req.body.Owner);
   const geekID = req.body.geekID;
   const firstName = req.body.firstName;
@@ -266,9 +263,6 @@ router.route('/editcard').post((req, res) => {
    *  }
    */
 
-  var today = new Date();
-  var currMonth = today.getMonth();
-  var currYear = today.getFullYear();
 
   const Owner = mongoose.Types.ObjectId(req.body.Owner);
   const cardName = req.body.cardName;
@@ -280,8 +274,8 @@ router.route('/editcard').post((req, res) => {
   const CVV = req.body.CVV;
   const address = req.body.address;
 
-  if (expYear < currYear) return res.status(400).json("Invalid Expiration Date");
-  if (((expMonth - 1) < currMonth) && (expYear === currYear)) return res.status(400).json("Invalid Expiration Date");
+  let { errors, isValid } = expirationValidate(expMonth, expYear);
+  if (!isValid) return res.json({ errors });
   
   // Get the user by its _id.
   Users.findOne({ _id: Owner })
