@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken");
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const Users = require("../models/users.model");
-let { validateEmail, registerValidate, updateValidate } = require("../utils/validators");
+let { validateEmail, registerValidate, updateValidate, loginValidate, expirationValidate } = require("../utils/validators");
 const router = require("express").Router();
 
 // Handles incomming GET requests to url/users/ .
@@ -26,6 +26,9 @@ router.route("/login").post((req, res) => {
   // Credential can be an email or a geek ID.
   const credential = req.body.credential;
   const password = req.body.password;
+
+  let { errors, isValid } = loginValidate(req.body);
+  if (!isValid) return res.json({ errors });
 
   // Login by email.
   if (validateEmail(credential)) {
@@ -136,10 +139,6 @@ router.route("/addcard").post((req, res) => {
     }
     */
 
-  var today = new Date();
-  var currMonth = today.getMonth();
-  var currYear = today.getFullYear();
-
   const cardOwner = mongoose.Types.ObjectId(req.body.cardOwner);
   const cardName = req.body.cardName;
   const nameOnCard = req.body.nameOnCard;
@@ -149,8 +148,8 @@ router.route("/addcard").post((req, res) => {
   const CVV = req.body.CVV;
   const Address = req.body.address;
 
-  if (expYear < currYear) return res.status(400).json("Invalid Expiration Date");
-  if (((expMonth - 1) < currMonth) && (expYear === currYear)) return res.status(400).json("Invalid Expiration Date");
+  let { errors, isValid } = expirationValidate(expMonth, expYear);
+  if (!isValid) return res.json({ errors });
 
   Users.updateOne(
     { _id: cardOwner },
@@ -167,15 +166,7 @@ router.route("/addcard").post((req, res) => {
         }
       }
     }
-    /*
-    cardName: { type: String },
-    nameOnCard: { type: String },
-    number: { type: Number }, //must be 16 long
-    expMonth: { type: Number },
-    expYear: {type: Number},
-    CVV: { type: Number }, //must be 3 long
-    Address: { type: String },
-    */
+    
   ).then(res.status(200).json('Added new card Successfully'))
     .catch(err => res.status(400).json('Error: ' + err))
 });
@@ -193,7 +184,6 @@ router.route("/addaddress").post((req, res) => {
     }
     */
 
-
   const addressOwner = mongoose.Types.ObjectId(req.body.addressOwner);
   const addressName = req.body.addressName;
   const street = req.body.street;
@@ -205,7 +195,7 @@ router.route("/addaddress").post((req, res) => {
     { _id: addressOwner },
     {
       $push: {
-        Address: {
+        addresses: {
           addressName,
           street,
           state,
@@ -220,6 +210,7 @@ router.route("/addaddress").post((req, res) => {
 });
 
 router.route('/editprofile').post((req, res) => {
+
   /**
    * Sample POST request body:
    *  {
@@ -272,9 +263,6 @@ router.route('/editcard').post((req, res) => {
    *  }
    */
 
-  var today = new Date();
-  var currMonth = today.getMonth();
-  var currYear = today.getFullYear();
 
   const Owner = mongoose.Types.ObjectId(req.body.Owner);
   const cardName = req.body.cardName;
@@ -286,10 +274,8 @@ router.route('/editcard').post((req, res) => {
   const CVV = req.body.CVV;
   const address = req.body.address;
 
-  if (expYear < currYear) return res.status(400).json("Invalid Expiration Date");
-  if (((expMonth - 1) < currMonth) && (expYear === currYear)) return res.status(400).json("Invalid Expiration Date");
-
-
+  let { errors, isValid } = expirationValidate(expMonth, expYear);
+  if (!isValid) return res.json({ errors });
   
   // Get the user by its _id.
   Users.findOne({ _id: Owner })
@@ -297,7 +283,7 @@ router.route('/editcard').post((req, res) => {
       let cards = user.creditCards
       cards.forEach(card => {
         let ID = String(card._id)
-        if (ID == String(cardID)) {
+        if (ID === String(cardID)) { //giving error for ==, make sure === works
           // Update.
           console.log("Updated ", cardID)
           card.cardName = cardName
@@ -355,11 +341,12 @@ router.route('/editaddress').post((req, res) => {
   const city = req.body.city;
   const zipcode = req.body.zipcode;
 
-  Users.where("_id").equals(Owner)
+  Users.findOne({_id: Owner})
     .then(user => {
-      let addresses = user.Address
-      addresses.forEach(address => {
-        if (address._id === addressID) {
+      let Addresses = user.addresses
+      Addresses.forEach(address => {
+        let ID = String(address._id)
+        if (ID === String(addressID)) {
           // Update.
           address.addressName = addressName
           address.street = street
@@ -368,13 +355,14 @@ router.route('/editaddress').post((req, res) => {
           address.zipcode = zipcode
         }
       });
+
       // Update.
       Users.findOneAndUpdate(
         {
           _id: Owner,
         },
         {
-          Address: addresses
+          addresses: Addresses
         })
         .then(updatedCard => res.status(200).json('Address Updated' + updatedCard))
         .catch(err => res.status(400).json('Error: ' + err))
@@ -382,6 +370,14 @@ router.route('/editaddress').post((req, res) => {
     // If there is an error return status 400 with Error.
     .catch(err => res.status(400).json('Error: ' + err))
 });
+
+router.route('/getAddresses/:UserID').get((req, res) => {
+  Users.findOne({ _id: req.params.UserID }).then(doc => {
+    console.log(doc)
+    res.status(200).json(doc.addresses)
+  })
+    .catch(err => res.json(err))
+})
 
 // <------ Helper Functions ----->
 

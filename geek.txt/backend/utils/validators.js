@@ -10,6 +10,30 @@ module.exports = {
     }
   },
 
+  expirationValidate: function (data) {
+    let errors = {};
+    let {expMonth, expYear} = data;
+
+    var today = new Date();
+    var currMonth = today.getMonth();
+    var currYear = today.getFullYear();
+
+    if (((expMonth - 1) < currMonth) && (expYear === currYear)) {
+      errors.expMonth = "Credit Card is not valid";
+    }
+    if ((expMonth) >= 13) {
+      errors.expMonth = "Invalid expiration month";
+    }
+    if ((expMonth) <= 0) {
+      errors.expMonth = "Invalid expiration month";
+    }
+    if (expYear < currYear) {
+      errors.expYear = "Credit Card is not valid";
+    }
+
+  },
+
+
   registerValidate: (data) => {
     let errors = {};
     let { firstName, lastName, geekID, email, password, password2 } = data;
@@ -60,6 +84,23 @@ module.exports = {
       isValid: Object.keys(errors).length === 0 ? true : false,
     };
   },
+
+  loginValidate: (data) => {
+    let errors = {};
+    let { credential, password } = data;
+
+    if (validator.isEmpty(credential)) {
+      errors.firstName = "Username is required";
+    } 
+    if (validator.isEmpty(password)) {
+      errors.lastName = "Password is required";
+    }
+    return {
+      errors,
+      isValid: Object.keys(errors).length === 0 ? true : false,
+    };
+  },
+
   updateValidate: (data) => {
     let errors = {};
     let { firstName, lastName, geekID, email, password, password2 } = data;

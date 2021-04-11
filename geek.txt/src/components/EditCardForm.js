@@ -66,7 +66,7 @@ const EditCardForm = ({ userID, card }) => {
           <Segment>
             {errors && (
               <Message negative>
-                <Message.Header>Error creating card.</Message.Header>
+                <Message.Header>Error editing card.</Message.Header>
                 {Object.entries(errors).map(([key, value]) => (
                   <li>{value}</li>
                 ))}
