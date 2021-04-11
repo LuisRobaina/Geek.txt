@@ -76,6 +76,7 @@ const bookRouter = require("./routes/books");
 const commentsRouter = require("./routes/comments");
 const ratingsRouter = require("./routes/ratings");
 const wishListRouter = require("./routes/wishList");
+const purchaseRouter = require("./routes/purchases");
 
 // If a user browsers our API to the /users it will load all the
 // users router in routers/users.js.
@@ -84,6 +85,8 @@ app.use("/books", bookRouter);
 app.use("/comments", commentsRouter);
 app.use("/rate", ratingsRouter);
 app.use("/wishList", wishListRouter);
+app.use("/purchases", purchaseRouter);
+
 /*
  Start the server.
 */

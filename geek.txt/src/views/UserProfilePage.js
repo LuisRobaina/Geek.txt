@@ -3,6 +3,7 @@ import {Segment, Message, Button } from 'semantic-ui-react';
 import UserInfoForm from '../components/UserInfoForm';
 import PaymentInfoForm from '../components/PaymentInfoForm';
 import ShippingInfoForm from '../components/ShippingInfoForm';
+import MyBooks from './MyBooks';
 //import BooksInfoForm from '../components/BooksInfoForm';
 
 const UserProfilePage = ({ user, setUser }) => {
@@ -70,9 +71,9 @@ const UserProfilePage = ({ user, setUser }) => {
                     {userInfo && ( <UserInfoForm user={user} setUser={setUser}></UserInfoForm>)}
                     {paymentInfo && (<PaymentInfoForm user={user}></PaymentInfoForm>)}
                     {shippingInfo && (<ShippingInfoForm user={user}></ShippingInfoForm>)}
-                    {/* {booksInfo && (<BooksInfoForm></BooksInfoForm>)}
-                    } */
-                    }
+                    {booksInfo && (<MyBooks user={user}></MyBooks>)}
+                    
+                    
 
                 </div>
             </div>

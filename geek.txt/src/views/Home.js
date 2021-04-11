@@ -29,6 +29,10 @@ const Home = ({ user }) => {
         setDefaultBooks([...res.data]);
       })
       .catch((err) => console.log(err));
+      // TODO: Remove this debug check.
+      if (user) {
+        console.log(user)
+      }
   }, []);
 
   return (
@@ -46,6 +50,14 @@ const Home = ({ user }) => {
               <b>register</b>
             </Link>
           </p>
+        </Message>
+      )}
+      {user && (
+        <Message positive>
+          <Message.Header>Hello {user.geekID}</Message.Header>
+          <Link to={`/mybooks`}>
+            <b>My books</b>
+          </Link>
         </Message>
       )}
       <h2>Our collection of Books</h2>

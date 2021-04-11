@@ -18,10 +18,31 @@ const Book = (props) => {
   const [bookData, setBookData] = useState({});
   const [commentsSet, setCommentsSet] = useState([]);
   const [NewCommentText, setNewComment] = useState("");
-  //const [currentRating, setCurrentRating] = useState(0);
   const [rating, setNewRating] = useState(0);
+  const [userOwnsBook, setUserOwnsBook] = useState(false);
+  const [recentPurchase, setRecentPurshase] = useState(false);
 
-  const userOwnsBook = true;
+  const buyBook = (e) => {
+    const postObject = {
+      UserID: props.user._id,
+      BookID: props.match.params.id,
+      Title: bookData.title,
+      CoverURL: bookData.coverUrl
+    };
+
+    axios.post("/books/buy", postObject)
+      .then((res) => {
+        console.log(res)
+        setUserOwnsBook(true)
+        setRecentPurshase(true)
+      })
+      .catch(err => console.log(err))
+
+  }
+  const handleRecentPurchase = (e) => {
+    setRecentPurshase(!recentPurchase)
+  };
+
   const handleNewCommentChange = (e) => {
     //e.preventDefault();
     setNewComment(e.currentTarget.value);
@@ -36,7 +57,7 @@ const Book = (props) => {
     e.preventDefault();
     // TODO: Add the creators ID once we get login running.
     const postObject = {
-      Creator: "60426686e0804e3b0cc20702",
+      Creator: props.user._id,
       CreatorName: "Anonymous",
       Anonymous: "true",
       BookID: props.match.params.id,
@@ -44,27 +65,15 @@ const Book = (props) => {
     };
     axios
       .post("/comments/add", postObject)
-      .then((res) => {
-        // TODO: remove this log.
-        console.log(res);
-        // Make an api call to get the comments associated with this book.
-        // TODO change book request string to props.match.params.id
-        // axios
-        //   .get(`/comments/${props.match.params.id}`)
-        //   .then((comments) => {
-        //     // TODO: remove this log.
-        //     console.log(comments);
-        //     setCommentsSet(comments.data);
-        //   })
-        //   .catch((err) => console.log(err));
-      })
+      .then((res) => { })
       .catch((err) => console.log(err));
   };
+
   const handleNewRating = (e) => {
     console.log(e.currentTarget);
     const postObject = {
-      Creator: "60426686e0804e3b0cc20702",
-      NickName: "TestUser",
+      Creator: props.user._id,
+      NickName: props.user.geekID,
       BookID: props.match.params.id,
       Rating: rating,
     };
@@ -76,50 +85,33 @@ const Book = (props) => {
       .catch((err) => console.log(err));
 
     console.log("Thanks for rating");
-    //window.location.reload();
   };
   const handleNewAnonymousRating = (e) => {
     console.log(e.currentTarget);
     const postObject = {
-      Creator: "60426686e0804e3b0cc20702",
+      Creator: props.user._id,
       BookID: props.match.params.id,
       Rating: rating,
     };
     console.log(postObject);
-
     axios
       .post("/rate/add", postObject)
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
-
-    //alert("Thanks for rating anonymously.");
-    //window.location.reload();
   };
   const handleNewCommentPost = (e) => {
     e.preventDefault();
     // TODO: Add the creators ID once we get login running.
     const postObject = {
-      Creator: "60426686e0804e3b0cc20702",
-      CreatorName: "Peter",
+      Creator: props.user._id,
+      CreatorName: props.user.geekID,
       Anonymous: "false",
       BookID: props.match.params.id,
       Text: NewCommentText,
     };
     axios
       .post("/comments/add", postObject)
-      .then((res) => {
-        // Get the set of comments
-        // Make an api call to get the comments associated with this book.
-        // TODO change book request string to props.match.params.id
-        // axios
-        //   .get(`/comments/${props.match.params.id}`)
-        //   .then((comments) => {
-        //     // TODO: remove this log.
-        //     console.log(comments);
-        //     setCommentsSet(comments.data);
-        //   })
-        //   .catch((err) => console.log(err));
-      })
+      .then((res) => { })
       .catch((err) => console.log(err));
   };
 
@@ -132,33 +124,28 @@ const Book = (props) => {
       })
       .catch((err) => console.log(err));
 
-    // axios
-    //   .get(`/rate/getAvg/${props.match.params.id}`)
-    //   .then((res) => {
-    //     setCurrentRating(res.data.avg.toFixed(2));
-    //   })
-    //   .catch((err) => console.log(err));
-
     // Make an api call to get the comments associated with this book.
-    // TODO change book request string to props.match.params.id
     axios
       .get(`/comments/${props.match.params.id}`)
       .then((comments) => {
-        // TODO: remove this log.
-        console.log(comments);
         setCommentsSet(comments.data);
       })
       .catch((err) => console.log(err));
-
-    // This can be removed dont need to find  specific user
-    axios
-      .get(`/users/${"60426686e0804e3b0cc20702"}`)
-      .then((comments) => {
-        // TODO: remove this log.
-        console.log(comments);
-        setCommentsSet(comments.data);
-      })
-      .catch((err) => console.log(err));
+    if (props.user) {
+      const postObj = {
+        UserID: props.user._id,
+        BookID: props.match.params.id
+      }
+      axios
+        .post(`/purchases/check`, postObj)
+        .then((res) => {
+          console.log("Check", res)
+          if (res.data.length >= 1) {
+            setUserOwnsBook(true)
+          }
+        })
+        .catch((err) => console.log(err));
+    }
   }, []);
 
   useEffect(() => {
@@ -217,14 +204,24 @@ const Book = (props) => {
           <div>
             <br></br>
             <Grid.Column>
+              {!props.user && (
+                <Message positive>
+                  <Message.Header>
+                  </Message.Header>
+                  <p>
+                    Login or Register to buy books.
+                </p>
+                </Message>
+              )}
               <Button
                 animated
+                disabled={!props.user || userOwnsBook}
                 style={{
                   background:
                     "linear-gradient(98.95deg, #FF785A 19.47%, #FE5B00 82.33%)",
                 }}
-                onClick={() => console.log("click")}
-              >
+                onClick={() => buyBook()}>
+
                 <Button.Content visible style={{ color: "white" }}>
                   $ {bookData.price}
                 </Button.Content>
@@ -232,11 +229,24 @@ const Book = (props) => {
                   <Icon name="cart" />
                 </Button.Content>
               </Button>
+              {recentPurchase && (
+                <div class="ui positive message">
+                  <i class="close icon" onClick={handleRecentPurchase}></i>
+                  <div class="header">
+                    <p>Thanks for buying <b>{bookData.title}</b> - Don't forget to rate and comment.</p>
+                    <Link to={`/mybooks`}>
+                      <b>see my books</b>
+                    </Link>
+                  </div>
+                </div>
+
+              )}
             </Grid.Column>
           </div>
         </Grid.Column>
       </Grid>
       <div>
+
         <br></br>
         <Segment>
           {/* Comments section */}
@@ -244,10 +254,10 @@ const Book = (props) => {
           {!userOwnsBook && (
             <Message negative>
               <Message.Header>
-                You can only comment and rate books you already own
+                You can only comment and rate books you already own.
               </Message.Header>
               <p>
-                Buy <b>{bookData.title}</b> to unlock comments and rating
+                Buy <b>{bookData.title}</b> to unlock comments and rating.
               </p>
             </Message>
           )}
@@ -332,7 +342,7 @@ const Book = (props) => {
       </div>
       <div>
         <Segment>
-          <CommentsList commentsList={commentsSet} />
+          <CommentsList User={props.user} commentsList={commentsSet} />
         </Segment>
       </div>
     </Container>

@@ -83,11 +83,11 @@ router.route("/add").post((req, res) => {
         "lastName" : "Test",
         "email": "testuser@test.com",
         "password" : "ABCD3F5",
-        "password2" : "ABCD3F5",
         "nickname" : "User",
         "creditCard" : [],
         "Address" : [],
     */
+
   const geekID = req.body.geekID;
   const firstName = req.body.firstName;
   const lastName = req.body.lastName;
@@ -130,12 +130,10 @@ router.route("/addcard").post((req, res) => {
     {
         "cardOwner": "601d7b8e7e0708245caabc48"
         "cardName": "Card 1",
-        "nameOnCard": "Name User",
-        "number": 0123 4567 8910,
-        "expYear":2022,
-        "expMonth":7,
-        "CVV":123,
-        "address" : 1234 Lane Dr
+        "nameOnCard": "Logan Simijoski",
+        "number": 0123 4567 8910
+        "expDate":03/21
+        "CVV":123
     }
     */
 
@@ -175,10 +173,10 @@ router.route("/addaddress").post((req, res) => {
   /* 
     Sample POST request body:
     {
-        "addressOwner": "60392b329b00b252eaa3b3b8"
+        "addressOwner": "601d7b8e7e0708245caabc48"
         "addressName": "Address 1", 
         "street": "123 Something Lane",
-        "state": "FL",
+        "state": "FL", //make arraylist of states?
         "city": "Miami",
         "zipcode": "33199" 
     }

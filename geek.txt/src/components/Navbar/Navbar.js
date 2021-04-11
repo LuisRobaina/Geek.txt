@@ -32,7 +32,7 @@ const NavBar = ({ user, setUser }) => {
             <>
               <Link to="/profile">
                 <li className={classes.listItem}>
-                  {user.firstName} Profile
+                  {user.firstName+"'s"} Profile
                 </li>
               </Link>
               <Link to="/">

@@ -1,7 +1,6 @@
 // This is a base for the user model.
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-
 const bcrypt = require("bcrypt");
 const SALT_ROUNDS = 6;
 
@@ -28,11 +27,15 @@ const userSchema = new Schema(
     email: {
       // Primary key.
       type: String,
-      unique: true
+      unique: true,
+      // validate: [isEmail, "Invalid Email"]
+      //match: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i email validation???
     },
     password: {
       type: String,
-      required: true
+      required: true,
+      //match: /(?=.*[a-zA-Z])(?=.*[0-9]+).*/,  alphanumeric
+      //minlength: 8 //must be atleast 8 characters long
     },
     creditCards: [
       {
