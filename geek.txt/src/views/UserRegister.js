@@ -36,9 +36,10 @@ const UserRegister = ({ setUser }) => {
       }
       console.log(token);
     } catch (err) {
-      if (err.response.data.errors) {
-        setErrors(err.response.data);
-      }
+      console.log("There was an error logging in.");
+      //if (err.response.data.errors) {
+        //setErrors(err.response.data);
+      //}
       console.dir(err);
     }
   };

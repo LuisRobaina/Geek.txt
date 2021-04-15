@@ -40,6 +40,9 @@ const NavBar = ({ user, setUser }) => {
             </>
           ) : (
             <>
+              <Link to="/cart">
+	              <li className={classes.listItem}>Cart</li>
+              </Link>
               <Link to="/login">
                 <li className={classes.listItem}>Login</li>
               </Link>

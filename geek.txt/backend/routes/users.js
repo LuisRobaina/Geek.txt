@@ -419,7 +419,6 @@ router.route('/editpassword').post((req, res) => {
   })
 });
 
-
 // <------ Helper Functions ----->
 
 function generateJWT(user) {

@@ -11,3 +11,17 @@
 .ratingSpan:hover {
   border-bottom: 1px solid rgb(156, 156, 156);
 }
+
+.cart-left-side {
+  columns: 2;
+  -webkit-columns: 1;
+  -moz-columns: 2;
+  align-content:left;
+}
+
+.cart-total {
+  margin-top: 30px;;
+  height:100%;
+  width: 100%;
+} 
+

@@ -14,6 +14,7 @@ import UserProfilePage from './views/UserProfilePage';
 import RatingsRecord from "./views/RatingRecods";
 import CommunityGuidelines from "./views/CommunityGuidelines";
 import MyBooks from "./views/MyBooks";
+import Cart from "./views/ShoppingCart/Cart";
 
 // Example of component routing:
 // <Route path="/" exact component={BookBrowser} />
@@ -27,6 +28,9 @@ const App = () => {
       <Switch>
         <Route path="/login" exact>
           <UserLogIn setUser={setUser} />
+        </Route>
+        <Route path="/cart" exact>
+          <Cart setUser={setUser} />
         </Route>
         <Route path="/register" exact>
           <UserRegister setUser={setUser} />
